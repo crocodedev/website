@@ -1,0 +1,20 @@
+{
+  "spaceId": "source space id",
+  "environmentId": "master",
+  "managementToken": "destination space management token",
+  "deliveryToken": "token to export both entries and assets from the Contentful Delivery API",
+  "exportDir": "contentful",
+  "saveFile": true,
+  "contentFile": "export.json",
+  "includeDrafts": true,
+  "includeArchived": true,
+  "skipContentModel": false,
+  "skipContent": false,
+  "skipRoles": false,
+  "skipWebhooks": false,
+  "contentOnly": false,
+  "downloadAssets": false,
+  "maxAllowedLimit": 1000,
+  "errorLogFile": "contentful/error.log",
+  "useVerboseRenderer": false
+}

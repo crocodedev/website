@@ -1,0 +1,34 @@
+name: 'Netlify Preview Deploy'
+
+env:
+  NODE_OPTIONS: --max-old-space-size=7168
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
+
+jobs:
+  deploy-preview:
+    name: 'Deploy Preview'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy to preview mode
+        id: pr
+        uses: thundermiracle/netlify-deploy@v3
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+          deploy-dir: "./public"
+          build-command: yarn testbuild
+          extra-cache-path: |
+            .cache
+            public
+
+      - name: run lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: ${{ steps.pr.outputs.NETLIFY_PREVIEW_URL }}
+          device: all
+          prCommentEnabled: true
+          gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}

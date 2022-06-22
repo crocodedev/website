@@ -1,0 +1,27 @@
+name: 'Netlify Deploy'
+
+env:
+  NODE_OPTIONS: --max-old-space-size=7168
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy to production mode
+        uses: thundermiracle/netlify-deploy@v3
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+          deploy-dir: "./public"
+          build-command: yarn testbuild
+          extra-cache-path: |
+            .cache
+            public
+          production: true
