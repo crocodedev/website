@@ -90,5 +90,6 @@
     "Safari >= 12",
     "not Explorer <= 11"
   ],
+  "license": "MIT",
   "main": "n/a"
 }

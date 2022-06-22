@@ -2184,14 +2184,14 @@
   integrity sha512-fpnI00dt+yO1cKx9qBXelKhPBdEgvc8ZPav1+0r09j0woYQU2N79w/jcGawSY5UGlgQ3vjaJsFHnGbGvvqdLzg==
 
 "@netlify/build@^27.1.3":
-  version "27.1.5"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-27.1.5.tgz#10b774a51be7f711e84cd2f504dad38ff35c2c62"
-  integrity sha512-ESlvMYSQvwKq14KFqYzBWI8Wy7mRrSKqJEOzK5hpSZq+kYsDsRcEVRUQ4MU/fqpOuKgn24JMHfpNrnUbvNv6zQ==
+  version "27.1.6"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-27.1.6.tgz#e91b0bc5dd9c8143828755d3e7aee21be1d032ae"
+  integrity sha512-Xy5ipN6fMrJzwr3dyB6vv26RbYoTUXTKHTyVw3FmWyY0Zag88cY5A5fauqeXHjrVFIu1U6Y34t/8o8L8Nb8/ow==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^4.0.0"
-    "@netlify/config" "^18.0.0"
-    "@netlify/edge-bundler" "^1.2.1"
+    "@netlify/config" "^18.0.2"
+    "@netlify/edge-bundler" "^1.3.0"
     "@netlify/functions-utils" "^4.1.15"
     "@netlify/git-utils" "^4.0.0"
     "@netlify/plugins-list" "^6.28.0"
@@ -2257,10 +2257,10 @@
     path-exists "^5.0.0"
     readdirp "^3.4.0"
 
-"@netlify/config@^18.0.0", "@netlify/config@^18.0.1":
-  version "18.0.1"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-18.0.1.tgz#4cfa0feb151b063bff4bd0f7c955bf9b7c065ec9"
-  integrity sha512-DqRjJfFIh+sDXzwpn4xoO5+xp4TjWF9GZ0y+RPpwyZpoL6h/kGJx13bsNrpiTGz07aS0GX8wYljeMGj/M8ABRw==
+"@netlify/config@^18.0.1", "@netlify/config@^18.0.2":
+  version "18.0.2"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-18.0.2.tgz#0b802e9ba03d96eb6a3ecc69c6150e151e5de933"
+  integrity sha512-iFp3HZxDXMgSmtNkiB3ZW/RW+iA0fEQ/G28va1hwlsRdj4L2gJbDZrcDB1AjM0L9kRRlPguZRSYtlJiHbLaoXQ==
   dependencies:
     chalk "^5.0.0"
     cron-parser "^4.1.0"
@@ -2275,7 +2275,7 @@
     is-plain-obj "^4.0.0"
     js-yaml "^4.0.0"
     map-obj "^5.0.0"
-    netlify "^11.0.1"
+    netlify "^11.0.2"
     netlify-headers-parser "^6.0.2"
     netlify-redirect-parser "13.0.5"
     omit.js "^2.0.2"
@@ -2287,10 +2287,10 @@
     validate-npm-package-name "^4.0.0"
     yargs "^17.3.1"
 
-"@netlify/edge-bundler@^1.2.0", "@netlify/edge-bundler@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-1.2.1.tgz#79d3cfe46caea058d6b2c996e872612a23a8cc4d"
-  integrity sha512-fZaVWBMqzSHWcUviP2pvwx0GkE4XI2rkylnvd79lwz3GhKFX20MjsnUamQ3NPWrvuBxJOcdP/jeEC94CH2VPng==
+"@netlify/edge-bundler@^1.2.0", "@netlify/edge-bundler@^1.3.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-1.4.0.tgz#87f36d123cd40e04f52ee6a187393d22601534ad"
+  integrity sha512-JyT3sWyU2YJefPWP9IPaUwwnCc3oyw5W3j02uLdCJzDLmyYgzxpYFzPnOajgjUu/mFcx6JX5eyHG5FuCgmmcHQ==
   dependencies:
     common-path-prefix "^3.0.0"
     del "^6.0.0"
@@ -2597,9 +2597,9 @@
     yargs "^17.0.0"
 
 "@netlify/zip-it-and-ship-it@^5.10.1":
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.11.0.tgz#73fb56fe497fafe9ba70841dad2e7a890b7663c9"
-  integrity sha512-3Q7nulHfrqw5kixeOKG74uZBMfI4T1qC/d9ImUIKFqilwAWXcGjHpoeAD72W4+kGaHPJESB1rM3QtJpdWykkEg==
+  version "5.11.1"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.11.1.tgz#9e36c6f24787abdc9c0695acdd69f26f97c1ab09"
+  integrity sha512-xjDmbTcrzSvQvyYK/rAsHq7R1UQIDpn4KUjxEgrc0S/cjpvzQ610JtRz3JMrnSvjzOTTnLlBOD3b+aow1Edt9g==
   dependencies:
     "@babel/parser" "7.16.8"
     "@netlify/esbuild" "0.14.25"
@@ -4896,15 +4896,14 @@ braces@^3.0.2, braces@~3.0.2:
     fill-range "^7.0.1"
 
 browserslist@^4.0.0, browserslist@^4.14.5, browserslist@^4.16.3, browserslist@^4.16.6, browserslist@^4.17.5, browserslist@^4.18.1, browserslist@^4.20.2, browserslist@^4.20.3, browserslist@^4.20.4, browserslist@^4.6.6:
-  version "4.20.4"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.20.4.tgz#98096c9042af689ee1e0271333dbc564b8ce4477"
-  integrity sha512-ok1d+1WpnU24XYN7oC3QWgTyMhY/avPJ/r9T00xxvUOIparA/gc+UPUMaod3i+G6s+nI2nUb9xZ5k794uIwShw==
+  version "4.21.0"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.21.0.tgz#7ab19572361a140ecd1e023e2c1ed95edda0cefe"
+  integrity sha512-UQxE0DIhRB5z/zDz9iA03BOfxaN2+GQdBYH/2WrSIWEUrnpzTPJbhqt+umq6r3acaPRTW1FNTkrcp0PXgtFkvA==
   dependencies:
-    caniuse-lite "^1.0.30001349"
-    electron-to-chromium "^1.4.147"
-    escalade "^3.1.1"
+    caniuse-lite "^1.0.30001358"
+    electron-to-chromium "^1.4.164"
     node-releases "^2.0.5"
-    picocolors "^1.0.0"
+    update-browserslist-db "^1.0.0"
 
 bser@2.1.1:
   version "2.1.1"
@@ -5135,7 +5134,7 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001349:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001358:
   version "1.0.30001358"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001358.tgz#473d35dabf5e448b463095cab7924e96ccfb8c00"
   integrity sha512-hvp8PSRymk85R20bsDra7ZTCpSVGN/PAz9pSAjPSjKC+rNmnUk5vCRgJwiTT/O4feQ/yu/drvZYpKxxhbFuChw==
@@ -6931,10 +6930,10 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
-electron-to-chromium@^1.4.147:
-  version "1.4.164"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.164.tgz#3d0f5c83557d8ec8a7faa531e498f198c3bd974a"
-  integrity sha512-K7iy5y6XyP9Pzh3uaDti0KC4JUNT6T1tLG5RTOmesqq2YgAJpYYYJ32m+anvZYjCV35llPTEh87kvEV/uSsiyQ==
+electron-to-chromium@^1.4.164:
+  version "1.4.165"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.165.tgz#a1ae079a4412b0c2d3bf6908e8db54511fb0bbac"
+  integrity sha512-DKQW1lqUSAYQvn9dnpK7mWaDpWbNOXQLXhfCi7Iwx0BKxdZOxkKcCyKw1l3ihWWW5iWSxKKbhEUoNRoHvl/hbA==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -11720,9 +11719,9 @@ log-update@^5.0.0:
     wrap-ansi "^8.0.1"
 
 logform@^2.3.2, logform@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/logform/-/logform-2.4.0.tgz#131651715a17d50f09c2a2c1a524ff1a4164bcfe"
-  integrity sha512-CPSJw4ftjf517EhXZGGvTHHkYobo7ZCc0kvwUoOYcjfR2UVrI66RHj8MCrfAdEitdmFqbu2BYdYs8FHHZSb6iw==
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/logform/-/logform-2.4.1.tgz#512c9eaef738044d1c619790ba0f806c80d9d3a9"
+  integrity sha512-7XB/tqc3VRbri9pRjU6E97mQ8vC27ivJ3lct4jhyT+n0JNDd4YKldFl0D75NqDp46hk8RC7Ma1Vjv/UPf67S+A==
   dependencies:
     "@colors/colors" "1.5.0"
     fecha "^4.2.0"
@@ -11861,9 +11860,9 @@ map-obj@^4.0.0:
   integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
 
 map-obj@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-5.0.1.tgz#7623fb9f565284860977a96f9295fa155d31644c"
-  integrity sha512-p3Qoax94q4c4Pb4etNi2lQSQGlqOA4PoD3ARovo7NllRoObZHwNEYd40fz4qgX1zTFK4geU/R1kbowl5hU5OVg==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-5.0.2.tgz#174ad9f7e5e4e777a219126d9a734ff3e14a1c68"
+  integrity sha512-K6K2NgKnTXimT3779/4KxSvobxOtMmx1LBZ3NwRxT/MDIR3Br/fQ4Q+WCX5QxjyUR8zg5+RV9Tbf2c5pAWTD2A==
 
 map-visit@^1.0.0:
   version "1.0.0"
@@ -12746,7 +12745,7 @@ netlify-redirector@^0.2.1:
   resolved "https://registry.yarnpkg.com/netlify-redirector/-/netlify-redirector-0.2.1.tgz#efdb761ea2c52edb3ecb5f237db0e10861f2ff0e"
   integrity sha512-17vDR9p1Loanp+vd57y+b6WlKb5X+qb0LZ44oTYsKJbdonz4Md+Ybv1lzH1w1aKm5YWWXHR8LMpWyY9bjlAJKw==
 
-netlify@^11.0.1:
+netlify@^11.0.1, netlify@^11.0.2:
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/netlify/-/netlify-11.0.2.tgz#d65f6b67d60315c669c863e59b7f48bac597f6c5"
   integrity sha512-dOgKAADwP0qQ9iHmbB4erimtpW0YczJtQLrnYGBTFElstG2Y9sj+ZRFlIUvJhVLOOdzFy4j+x9Zmn9dUoD1e0A==
@@ -17124,6 +17123,14 @@ untildify@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/untildify/-/untildify-3.0.3.tgz#1e7b42b140bcfd922b22e70ca1265bfe3634c7c9"
   integrity sha512-iSk/J8efr8uPT/Z4eSUywnqyrQU7DSdMfdqK4iWEaUVVmcP5JcnpRqmVMwcwcnmI1ATFNgC5V90u09tBynNFKA==
+
+update-browserslist-db@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.0.3.tgz#6c47cb996f34afb363e924748e2f6e4d983c6fc1"
+  integrity sha512-ufSazemeh9Gty0qiWtoRpJ9F5Q5W3xdIPm1UZQqYQv/q0Nyb9EMHUB2lu+O9x1re9WsorpMAUu4Y6Lxcs5n+XQ==
+  dependencies:
+    escalade "^3.1.1"
+    picocolors "^1.0.0"
 
 update-notifier@^5.0.0, update-notifier@^5.1.0:
   version "5.1.0"
