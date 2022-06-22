@@ -4,11 +4,10 @@ import ImageStatic from "@/components/Image";
 import OurTeamImage from "@/components/OurTeam/OurTeamImage";
 import OurTeamStack from "@/components/OurTeam/OurTeamStack";
 import OurTeamItem from "@/components/OurTeam/OurTeamItem";
-import OurTeamPosition from "@/components/OurTeam/OurTeamPosition";
-import OurTeamName from "@/components/OurTeam/OurTeamName";
 import OurTeamInfo from "@/components/OurTeam/OurTeamInfo";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
+import Text from "@/components/Text";
 
 const data = {
   title: "Our Team",
@@ -57,7 +56,7 @@ const data = {
 };
 
 const OurTeam = () => (
-  <SectionWrapper>
+  <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
       <OurTeamStack>
@@ -67,15 +66,13 @@ const OurTeam = () => (
               <ImageStatic src={src} />
             </OurTeamImage>
             <OurTeamInfo>
-              <OurTeamName>{name}</OurTeamName>
-              <OurTeamPosition>{role}</OurTeamPosition>
+              <Text fontWeight="bold">{name}</Text>
+              <Text fontSize="captionText">{role}</Text>
             </OurTeamInfo>
           </OurTeamItem>
         ))}
       </OurTeamStack>
       <Button variant="outlined">Show more</Button>
-      <Button variant="contained">Show more</Button>
-      <Button variant="text">Show more</Button>
     </Container>
   </SectionWrapper>
 );
