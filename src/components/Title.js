@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const Title = styled.h1`
-  font-weight: ${({ theme }) => theme.typography.fontWeightBold};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   color: ${({ theme }) => theme.palette.text.primary};
   text-align: center;
   text-transform: uppercase;
@@ -25,13 +25,13 @@ const Title = styled.h1`
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    font-size: 40px;
     gap: 5px;
+    font-size: ${({ theme }) => theme.typography.fontSize.title1 * 0.5}px;
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-size: 60px;
     gap: 10px;
+    font-size: ${({ theme }) => theme.typography.fontSize.title1}px;
   }
 `;
 

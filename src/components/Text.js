@@ -7,14 +7,14 @@ const dynamicStyles = ({ theme, color, fontWeight, fontSize, lineHeight, textAli
 `;
 
 const Text = styled.p`
-  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.typography.fontSize.subtitle * 0.5};
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.typography.fontSize.subtitle};
   }
 
   ${dynamicStyles}
