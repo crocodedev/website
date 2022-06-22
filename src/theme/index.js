@@ -7,7 +7,6 @@ const breakpoints = {
     "2xl": 1684,
   },
 };
-
 const theme = {
   breakpoints: {
     ...breakpoints,
@@ -56,7 +55,7 @@ const theme = {
   },
   typography: {
     rootFontSize: 16,
-    pxToRem: (value) => `${(value / this.typography.rootFontSize).toFixed(3)}rem`,
+    pxToRem: (value) => `${(value / theme.typography.rootFontSize).toFixed(3)}rem`,
     fontFamily: `Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'`,
     fontWeight: {
       bold: 700,
