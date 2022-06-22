@@ -7,13 +7,13 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import "destyle.css/destyle.css";
-import SectionHeading from "@/components/SectionHeading";
+import RelatedArticles from "@/sections/RelatedArticles";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
-    <SectionHeading text="subscription" title="heading of section" />
+    <RelatedArticles />
   </ThemeProvider>
 );
 
