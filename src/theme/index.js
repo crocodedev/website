@@ -57,10 +57,20 @@ const theme = {
     rootFontSize: 16,
     pxToRem: (value) => `${(value / theme.typography.rootFontSize).toFixed(3)}rem`,
     fontFamily: `Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'`,
-    fontWeightBold: 700,
-    fontWeightSemiBold: 600,
-    fontWeightMedium: 500,
-    fontWeightRegular: 400,
+    fontWeight: {
+      bold: 700,
+      semiBold: 600,
+      medium: 500,
+      regular: 400,
+    },
+    fontSize: {
+      title1: 60,
+      title2: 42,
+      title3: 30,
+      subtitle: 20,
+      text: 16,
+      captionText: 14,
+    },
   },
 };
 
