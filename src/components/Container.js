@@ -12,6 +12,10 @@ const dynamicStyle = ({ disablePaddings }) => css`
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
     margin-right: auto;

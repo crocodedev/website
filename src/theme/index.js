@@ -42,9 +42,9 @@ const theme = {
     },
   },
   borderRadius: {
-    small: 10,
-    large: 20,
-    button: 100,
+    small: "10px",
+    large: "20px",
+    button: "100px",
     circle: "100%",
   },
   shadows: {
