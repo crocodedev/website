@@ -5,7 +5,7 @@ const theme = {
       md: 768,
       lg: 992,
       xl: 1280,
-      "2xl": 1692,
+      "2xl": 1684,
     },
     up: (key) => `@media (min-width: ${this.breakpoints.values[key]}px)`,
     down: (key) => `@media (max-width: ${this.breakpoints.values[key] - 0.02}px)`,
