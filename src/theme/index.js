@@ -1,17 +1,20 @@
+const breakpoints = {
+  values: {
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1280,
+    "2xl": 1684,
+  },
+};
 const theme = {
   breakpoints: {
-    values: {
-      sm: 480,
-      md: 768,
-      lg: 992,
-      xl: 1280,
-      "2xl": 1684,
-    },
-    up: (key) => `@media (min-width: ${this.breakpoints.values[key]}px)`,
-    down: (key) => `@media (max-width: ${this.breakpoints.values[key] - 0.02}px)`,
+    ...breakpoints,
+    up: (key) => `@media (min-width: ${breakpoints.values[key]}px)`,
+    down: (key) => `@media (max-width: ${breakpoints.values[key] - 0.02}px)`,
     between: (min, max) =>
-      `@media (min-width: ${this.breakpoints.values[min]}px) and (max-width: ${
-        this.breakpoints.values[max] - 0.02
+      `@media (min-width: ${breakpoints.values[min]}px) and (max-width: ${
+        breakpoints.values[max] - 0.02
       }px)`,
   },
   palette: {
@@ -52,7 +55,7 @@ const theme = {
   },
   typography: {
     rootFontSize: 16,
-    pxToRem: (value) => `${(value / this.typography.rootFontSize).toFixed(3)}rem`,
+    pxToRem: (value) => `${(value / theme.typography.rootFontSize).toFixed(3)}rem`,
     fontFamily: `Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'`,
     fontWeightBold: 700,
     fontWeightSemiBold: 600,

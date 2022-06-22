@@ -1,17 +1,23 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-const Text = styled.div`
-    font-weight: ${({ theme }) => theme.typography.fontWeightBold};
-    color: ${({theme}) => theme.palette.text.primary};
+const dynamicStyles = ({ theme, color, fontWeight, fontSize, lineHeight, textAlign }) => css`
+  color: ${color === "white" ? theme.palette.text.secondary : theme.palette.text.primary};
+  text-align: ${textAlign || "unset"};
+`;
 
-    ${({ theme }) => theme.breakpoints.down('md')} {
-        font-size: 16px;
-    }
+const Text = styled.p`
+  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
 
-    ${({ theme }) => theme.breakpoints.up('md')} {
-        font-size: 20px;
-    }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    font-size: 16px;
+  }
 
-`
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    font-size: 20px;
+  }
 
-export default Text
+  ${dynamicStyles}
+`;
+
+export default Text;
