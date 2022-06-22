@@ -57,7 +57,7 @@ const data = {
 };
 
 const OurTeam = () => (
-  <SectionWrapper>
+  <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
       <OurTeamStack>
@@ -74,8 +74,6 @@ const OurTeam = () => (
         ))}
       </OurTeamStack>
       <Button variant="outlined">Show more</Button>
-      <Button variant="contained">Show more</Button>
-      <Button variant="text">Show more</Button>
     </Container>
   </SectionWrapper>
 );
