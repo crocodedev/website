@@ -8,6 +8,7 @@ import OurTeamPosition from "@/components/OurTeam/OurTeamPosition";
 import OurTeamName from "@/components/OurTeam/OurTeamName";
 import OurTeamInfo from "@/components/OurTeam/OurTeamInfo";
 import Button from "@/components/Button";
+import SectionHeading from "@/components/SectionHeading";
 
 const data = {
   title: "Our Team",
@@ -58,6 +59,7 @@ const data = {
 const OurTeam = () => (
   <SectionWrapper>
     <Container>
+      <SectionHeading title={data.title} />
       <OurTeamStack>
         {data.items.map(({ src, name, role }) => (
           <OurTeamItem key={name}>
@@ -71,7 +73,9 @@ const OurTeam = () => (
           </OurTeamItem>
         ))}
       </OurTeamStack>
-      <Button>Show more</Button>
+      <Button variant="outlined">Show more</Button>
+      <Button variant="contained">Show more</Button>
+      <Button variant="text">Show more</Button>
     </Container>
   </SectionWrapper>
 );
