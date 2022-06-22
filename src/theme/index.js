@@ -1,17 +1,21 @@
+const breakpoints = {
+  values: {
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1280,
+    "2xl": 1684,
+  },
+};
+
 const theme = {
   breakpoints: {
-    values: {
-      sm: 480,
-      md: 768,
-      lg: 992,
-      xl: 1280,
-      "2xl": 1684,
-    },
-    up: (key) => `@media (min-width: ${this.breakpoints.values[key]}px)`,
-    down: (key) => `@media (max-width: ${this.breakpoints.values[key] - 0.02}px)`,
+    ...breakpoints,
+    up: (key) => `@media (min-width: ${breakpoints.values[key]}px)`,
+    down: (key) => `@media (max-width: ${breakpoints.values[key] - 0.02}px)`,
     between: (min, max) =>
-      `@media (min-width: ${this.breakpoints.values[min]}px) and (max-width: ${
-        this.breakpoints.values[max] - 0.02
+      `@media (min-width: ${breakpoints.values[min]}px) and (max-width: ${
+        breakpoints.values[max] - 0.02
       }px)`,
   },
   palette: {
@@ -54,10 +58,20 @@ const theme = {
     rootFontSize: 16,
     pxToRem: (value) => `${(value / this.typography.rootFontSize).toFixed(3)}rem`,
     fontFamily: `Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'`,
-    fontWeightBold: 700,
-    fontWeightSemiBold: 600,
-    fontWeightMedium: 500,
-    fontWeightRegular: 400,
+    fontWeight: {
+      bold: 700,
+      semiBold: 600,
+      medium: 500,
+      regular: 400,
+    },
+    fontSize: {
+      title1: 60,
+      title2: 42,
+      title3: 30,
+      subtitle: 20,
+      text: 16,
+      captionText: 14,
+    },
   },
 };
 
