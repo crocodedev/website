@@ -10,6 +10,7 @@ import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
 import ListFour from "@/sections/ListFour";
+import ListFive from "@/sections/ListFive";
 import ListSix from "@/sections/ListSix";
 import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
@@ -25,6 +26,7 @@ const HomePage = () => (
     <ListTwo />
     <ListThree />
     <ListFour />
+    <ListFive />
     <ListSix />
     <ListSeven />
     <OurTeam />
