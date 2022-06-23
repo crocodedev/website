@@ -12,6 +12,7 @@ import RelatedArticles from "@/sections/RelatedArticles";
 import ListThree from "@/sections/ListThree";
 
 import "destyle.css/destyle.css";
+import ListOne from "@/sections/ListOne";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -21,6 +22,7 @@ const HomePage = () => (
     <OurTeam />
     <RelatedArticles />
     <ListThree />
+    <ListOne />
   </ThemeProvider>
 );
 
