@@ -6,6 +6,7 @@ const dynamicStyles = ({ theme, color, fontWeight, fontSize, lineHeight, textAli
   text-align: ${textAlign || "unset"};
   font-size: ${theme.typography.fontSize[fontSize] || theme.typography.fontSize.text}px;
   font-weight: ${theme.typography.fontWeight[fontWeight] || theme.typography.fontWeight.regular};
+  line-height: ${theme.typography.lineHeight[lineHeight] || theme.typography.lineHeight.md};
 `;
 
 const Text = styled.p`

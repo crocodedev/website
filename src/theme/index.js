@@ -71,6 +71,11 @@ const theme = {
       text: 16,
       captionText: 14,
     },
+    lineHeight: {
+      sm: "150%",
+      md: "170%",
+      lg: "200%",
+    },
   },
 };
 

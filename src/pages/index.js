@@ -8,6 +8,7 @@ import fontMontserrat from "@/styles/fontMontserrat";
 
 import OurTeam from "@/sections/OurTeam";
 import RelatedArticles from "@/sections/RelatedArticles";
+import ListThree from "@/sections/ListThree";
 
 import "destyle.css/destyle.css";
 
@@ -17,6 +18,7 @@ const HomePage = () => (
     <Global styles={[reboot, fontMontserrat]} />
     <OurTeam />
     <RelatedArticles />
+    <ListThree />
   </ThemeProvider>
 );
 
