@@ -16,6 +16,7 @@ import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import RelatedArticles from "@/sections/RelatedArticles";
+import Footer from "@/sections/Footer";
 
 import "destyle.css/destyle.css";
 
@@ -33,6 +34,7 @@ const HomePage = () => (
     <OurTeam />
     <FAQ />
     <RelatedArticles />
+    <Footer />
   </ThemeProvider>
 );
 
