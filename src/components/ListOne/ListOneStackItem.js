@@ -4,6 +4,8 @@ const ListOneStackItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
     gap: 15px;
