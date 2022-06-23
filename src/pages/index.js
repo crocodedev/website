@@ -11,6 +11,7 @@ import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
 import ListFour from "@/sections/ListFour";
 import ListSix from "@/sections/ListSix";
+import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
 import RelatedArticles from "@/sections/RelatedArticles";
 
@@ -25,6 +26,7 @@ const HomePage = () => (
     <ListThree />
     <ListFour />
     <ListSix />
+    <ListSeven />
     <OurTeam />
     <RelatedArticles />
   </ThemeProvider>
