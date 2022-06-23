@@ -6,12 +6,13 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
+import ListThree from "@/sections/ListThree";
+import ListFour from "@/sections/ListFour";
+import ListSix from "@/sections/ListSix";
 import OurTeam from "@/sections/OurTeam";
 import RelatedArticles from "@/sections/RelatedArticles";
-import ListThree from "@/sections/ListThree";
-import ListSix from "@/sections/ListSix";
-import ListOne from "@/sections/ListOne";
 
 import "destyle.css/destyle.css";
 
@@ -19,12 +20,13 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <ListOne />
     <ListTwo />
+    <ListThree />
+    <ListFour />
+    <ListSix />
     <OurTeam />
     <RelatedArticles />
-    <ListThree />
-    <ListOne />
-    <ListSix />
   </ThemeProvider>
 );
 
