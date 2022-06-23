@@ -10,6 +10,7 @@ import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
 import ListFour from "@/sections/ListFour";
+import ListSix from "@/sections/ListSix";
 import OurTeam from "@/sections/OurTeam";
 import RelatedArticles from "@/sections/RelatedArticles";
 
@@ -23,6 +24,7 @@ const HomePage = () => (
     <ListTwo />
     <ListThree />
     <ListFour />
+    <ListSix />
     <OurTeam />
     <RelatedArticles />
   </ThemeProvider>
