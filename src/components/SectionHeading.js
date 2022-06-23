@@ -4,7 +4,9 @@ import Title from "./Title";
 import Text from "./Text";
 
 const Component = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 10px;
@@ -16,9 +18,6 @@ const Component = styled.div`
 `;
 
 const SectionHeadingText = styled(Text)`
-  ${({ theme }) => theme.breakpoints.down("md")} {
-  }
-
   ${({ theme }) => theme.breakpoints.up("md")} {
     max-width: 844px;
   }
