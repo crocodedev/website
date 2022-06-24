@@ -19,6 +19,7 @@ import RelatedArticles from "@/sections/RelatedArticles";
 import Footer from "@/sections/Footer";
 
 import "destyle.css/destyle.css";
+import OurClients from "@/sections/OurClients";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -33,6 +34,7 @@ const HomePage = () => (
     <ListSeven />
     <OurTeam />
     <FAQ />
+    <OurClients />
     <RelatedArticles />
     <Footer />
   </ThemeProvider>
