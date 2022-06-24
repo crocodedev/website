@@ -72,6 +72,7 @@ const theme = {
       captionText: 14,
     },
     lineHeight: {
+      xsm: "120%",
       sm: "150%",
       md: "170%",
       lg: "200%",
