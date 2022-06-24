@@ -16,10 +16,11 @@ import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import RelatedArticles from "@/sections/RelatedArticles";
+import Benefits from "@/sections/Benefits";
 import Footer from "@/sections/Footer";
+import OurClients from "@/sections/OurClients";
 
 import "destyle.css/destyle.css";
-import OurClients from "@/sections/OurClients";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -36,6 +37,7 @@ const HomePage = () => (
     <FAQ />
     <OurClients />
     <RelatedArticles />
+    <Benefits />
     <Footer />
   </ThemeProvider>
 );
