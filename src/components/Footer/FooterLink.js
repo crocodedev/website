@@ -27,6 +27,7 @@ const dynamicStyle = ({ theme, isHeading }) => css`
 
 const FooterLink = styled(Link)`
   height: min-content;
+  padding: 5px;
   transition: 0.3s;
   line-height: ${({ theme }) => theme.typography.lineHeight.sm};
   ${dynamicStyle}

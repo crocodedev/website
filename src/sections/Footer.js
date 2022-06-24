@@ -12,12 +12,13 @@ import FooterCompanyInfo from "@/components/Footer/FooterCompanyInfo";
 import FooterSocialLink from "@/components/Footer/FooterSocialLink";
 import FooterLink from "@/components/Footer/FooterLink";
 import Text from "@/components/Text";
+import ImageStatic from "@/components/Image";
 
 const data = {
-  logo: "uploads/logo.svg",
+  logo: "uploads/footer-logo.svg",
   socials: [
-    { logo: "uploads/facebook.svg", src: "www.facebook.com" },
-    { logo: "uploads/linkedin.svg", src: "www.linkedin.com" },
+    { logo: "uploads/footer-facebook.svg", src: "https://www.facebook.com" },
+    { logo: "uploads/footer-linkedin.svg", src: "https://www.linkedin.com" },
   ],
   links: [
     {
@@ -96,10 +97,15 @@ const Footer = () => {
       <Container>
         <FooterTop>
           <FooterCompanyInfo>
-            <FooterLogo />
+            <FooterLogo>
+              <ImageStatic src={data.logo} />
+            </FooterLogo>
             <FooterSocials>
-              <FooterSocialLink />
-              <FooterSocialLink />
+              {data.socials.map(({ logo, src }) => (
+                <FooterSocialLink key={src} to={src}>
+                  <ImageStatic src={logo} />
+                </FooterSocialLink>
+              ))}
             </FooterSocials>
           </FooterCompanyInfo>
           <FooterTopStack>

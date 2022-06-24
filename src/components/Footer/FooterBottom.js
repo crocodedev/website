@@ -5,7 +5,18 @@ const FooterBottom = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+
+  gap: 20px;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    padding: 20px 0;
+  }
 `;
 
 export default FooterBottom;
