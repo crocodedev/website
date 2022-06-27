@@ -18,8 +18,8 @@ import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-import Benefits from "@/sections/Benefits";
-import Contacts from "@/sections/Contacts";
+// import Benefits from "@/sections/Benefits";
+// import Contacts from "@/sections/Contacts";
 import Footer from "@/sections/Footer";
 
 import "destyle.css/destyle.css";
@@ -28,6 +28,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <RelatedArticles />
     <ListOne />
     <ListTwo />
     <ListThree />
@@ -38,10 +39,9 @@ const HomePage = () => (
     <OurTeam />
     <FAQ />
     <OurClients />
-    <RelatedArticles />
     <Reviews />
-    <Benefits />
-    <Contacts />
+    {/* <Benefits /> */}
+    {/* <Contacts /> */}
     <Footer />
   </ThemeProvider>
 );

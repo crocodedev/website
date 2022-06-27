@@ -5,9 +5,17 @@ const RelatedArticlesItem = styled.div`
   flex-direction: column;
   scroll-snap-align: start;
 
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    max-width: 280px;
+  }
+
   ${({ theme }) => theme.breakpoints.down("md")} {
-    flex: 0 0 calc(100% - 20px);
+    flex: 0 0 100%;
     gap: 10px;
+
+    &:last-child {
+      margin-right: 20px;
+    }
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {

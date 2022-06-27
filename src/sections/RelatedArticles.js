@@ -10,6 +10,7 @@ import RelatedArticlesItemDescription from "@/components/RelatedArticles/Related
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
+import RelatedArticlesItemHeadingTitle from "@/components/RelatedArticles/RelatedArticlesItemHeadingTitle";
 
 const data = {
   title: "Related articles from our Blog",
@@ -64,9 +65,9 @@ const RelatedArticles = () => {
                 <ImageStatic src={src} />
               </RelatedArticlesImageWrapper>
               <RelatedArticlesItemHeading>
-                <Text fontSize="subtitle" fontWeight="bold">
+                <RelatedArticlesItemHeadingTitle fontSize="subtitle" fontWeight="bold">
                   {heading}
-                </Text>
+                </RelatedArticlesItemHeadingTitle>
                 <Text fontSize="captionText" color={theme.palette.text.disabled}>
                   {date}
                 </Text>
