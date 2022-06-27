@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const dynamicStyles = ({ theme, isOpen }) => css`
+const dynamicStyles = ({ isOpen }) => css`
   ${isOpen
     ? `
 max-height: 400px
