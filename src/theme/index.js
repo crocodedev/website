@@ -4,7 +4,7 @@ const breakpoints = {
     md: 768,
     lg: 992,
     xl: 1280,
-    "2xl": 1684,
+    "2xl": 1692,
   },
 };
 const theme = {

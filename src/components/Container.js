@@ -5,8 +5,8 @@ const dynamicStyle = ({ disablePaddings }) => css`
   ${disablePaddings
     ? ""
     : `
-      padding-right: 16px;
-      padding-left: 16px;
+      padding-right: 20px;
+      padding-left: 20px;
       `}
 `;
 
