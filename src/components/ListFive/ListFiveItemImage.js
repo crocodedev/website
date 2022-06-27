@@ -4,7 +4,7 @@ const ListFiveItemImage = styled.div`
   width: 130px;
   height: 130px;
   overflow: hidden;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
   flex-shrink: 0;
 
   & img {

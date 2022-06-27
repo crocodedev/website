@@ -6,7 +6,7 @@ const OurClientsImageWrapper = styled.div`
   justify-content: center;
   background: ${({ theme }) => theme.palette.background.default};
   box-shadow: ${({ theme }) => theme.shadows.card};
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
 
   & img {
     width: 100%;
