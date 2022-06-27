@@ -5,9 +5,9 @@ const dynamicStyle = ({ disablePaddings }) => css`
   ${disablePaddings
     ? ""
     : `
-      padding-right: 20px;
-      padding-left: 20px;
-      `}
+    padding-left: 20px;
+    padding-right: 20px;
+    `}
 `;
 
 const Container = styled.div`
