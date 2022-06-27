@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import Text from "@/components/Text";
@@ -11,9 +13,29 @@ import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
 
+// eslint-disable-next-line import/no-unresolved
+import "swiper/css";
+
 const data = {
   title: "Related articles from our Blog",
   articles: [
+    {
+      src: "/uploads/related-articles-article-image-1.jpg",
+      heading: "Break is an important part of work",
+      date: "12 Apr. 2022",
+      text: `How much tired eyes sometimes you notice, only after finishing hard work. 
+        Business is business, but even a ten-minute break will help both the eyes and even the memory. 
+        Rest with closed eyes has been the most obvious and accessible type of relaxation after sleep since ancient times.`,
+    },
+    {
+      src: "/uploads/related-articles-article-image-2.jpg",
+      heading: "A typical day at the office",
+      date: "10 Jan. 2022",
+      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office, 
+        to tell and show how everything is arranged here.
+        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable, 
+        relaxed, find quiet places to solve important tasks or creative space for inspiration and great ideas.`,
+    },
     {
       src: "/uploads/related-articles-article-image-1.jpg",
       heading: "Break is an important part of work",
@@ -41,24 +63,38 @@ const RelatedArticles = () => {
       <Container>
         <SectionHeading title={data.title} />
         <RelatedArticlesStack>
-          {data.articles.map(({ src, heading, date, text }) => (
-            <RelatedArticlesItem key={heading}>
-              <RelatedArticlesImageWrapper>
-                <ImageStatic src={src} />
-              </RelatedArticlesImageWrapper>
-              <RelatedArticlesItemHeading>
-                <Text fontSize="subtitle" fontWeight="bold">
-                  {heading}
-                </Text>
-                <Text fontSize="captionText" color={theme.palette.text.disabled}>
-                  {date}
-                </Text>
-              </RelatedArticlesItemHeading>
-              <RelatedArticlesItemDescription fontSize="subtitle">
-                {text}
-              </RelatedArticlesItemDescription>
-            </RelatedArticlesItem>
-          ))}
+          <Swiper
+            className="related-articles-swiper"
+            spaceBetween={30}
+            slidesPerView="auto"
+            breakpoints={{
+              992: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+            }}
+          >
+            {data.articles.map(({ src, heading, date, text }) => (
+              <SwiperSlide key={heading}>
+                <RelatedArticlesItem>
+                  <RelatedArticlesImageWrapper>
+                    <ImageStatic src={src} />
+                  </RelatedArticlesImageWrapper>
+                  <RelatedArticlesItemHeading>
+                    <Text fontSize="subtitle" fontWeight="bold">
+                      {heading}
+                    </Text>
+                    <Text fontSize="captionText" color={theme.palette.text.disabled}>
+                      {date}
+                    </Text>
+                  </RelatedArticlesItemHeading>
+                  <RelatedArticlesItemDescription fontSize="subtitle">
+                    {text}
+                  </RelatedArticlesItemDescription>
+                </RelatedArticlesItem>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </RelatedArticlesStack>
 
         <Button variant="outlined">Show more</Button>
