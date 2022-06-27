@@ -19,7 +19,7 @@ import RelatedArticles from "@/sections/RelatedArticles";
 import Benefits from "@/sections/Benefits";
 import Footer from "@/sections/Footer";
 import OurClients from "@/sections/OurClients";
-import Contacts from "@/sections/Contacts";
+//import Contacts from "@/sections/Contacts";
 
 import "destyle.css/destyle.css";
 
@@ -39,7 +39,7 @@ const HomePage = () => (
     <OurClients />
     <RelatedArticles />
     <Benefits />
-    <Contacts />
+    {/* <Contacts /> */}
     <Footer />
   </ThemeProvider>
 );

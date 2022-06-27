@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import Map from "react-map-gl";
+import Map, { Marker } from "react-map-gl";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -47,9 +47,12 @@ const Contacts = () => {
               zoom: 6,
             }}
             style={{ width: 1088, height: 640 }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
+            mapStyle="mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"
+            interactive={false}
             mapboxAccessToken="pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
-          />
+          >
+            <Marker longitude={22} latitude={49.92} anchor="bottom" />
+          </Map>
         </MapStack>
       </Container>
     </SectionWrapper>
