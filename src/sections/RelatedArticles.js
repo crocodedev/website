@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import Text from "@/components/Text";
@@ -12,9 +10,6 @@ import RelatedArticlesItemDescription from "@/components/RelatedArticles/Related
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
-
-// eslint-disable-next-line import/no-unresolved
-import "swiper/css";
 
 const data = {
   title: "Related articles from our Blog",
@@ -63,38 +58,24 @@ const RelatedArticles = () => {
       <Container>
         <SectionHeading title={data.title} />
         <RelatedArticlesStack>
-          <Swiper
-            className="related-articles-swiper"
-            spaceBetween={30}
-            slidesPerView="auto"
-            breakpoints={{
-              992: {
-                slidesPerView: 2,
-                spaceBetween: 40,
-              },
-            }}
-          >
-            {data.articles.map(({ src, heading, date, text }) => (
-              <SwiperSlide key={heading}>
-                <RelatedArticlesItem>
-                  <RelatedArticlesImageWrapper>
-                    <ImageStatic src={src} />
-                  </RelatedArticlesImageWrapper>
-                  <RelatedArticlesItemHeading>
-                    <Text fontSize="subtitle" fontWeight="bold">
-                      {heading}
-                    </Text>
-                    <Text fontSize="captionText" color={theme.palette.text.disabled}>
-                      {date}
-                    </Text>
-                  </RelatedArticlesItemHeading>
-                  <RelatedArticlesItemDescription fontSize="subtitle">
-                    {text}
-                  </RelatedArticlesItemDescription>
-                </RelatedArticlesItem>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {data.articles.map(({ src, heading, date, text }) => (
+            <RelatedArticlesItem key={text}>
+              <RelatedArticlesImageWrapper>
+                <ImageStatic src={src} />
+              </RelatedArticlesImageWrapper>
+              <RelatedArticlesItemHeading>
+                <Text fontSize="subtitle" fontWeight="bold">
+                  {heading}
+                </Text>
+                <Text fontSize="captionText" color={theme.palette.text.disabled}>
+                  {date}
+                </Text>
+              </RelatedArticlesItemHeading>
+              <RelatedArticlesItemDescription fontSize="subtitle">
+                {text}
+              </RelatedArticlesItemDescription>
+            </RelatedArticlesItem>
+          ))}
         </RelatedArticlesStack>
 
         <Button variant="outlined">Show more</Button>
