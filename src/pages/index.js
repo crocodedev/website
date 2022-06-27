@@ -18,6 +18,8 @@ import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
+import Benefits from "@/sections/Benefits";
+import Contacts from "@/sections/Contacts";
 import Footer from "@/sections/Footer";
 
 import "destyle.css/destyle.css";
@@ -38,6 +40,8 @@ const HomePage = () => (
     <OurClients />
     <RelatedArticles />
     <Reviews />
+    <Benefits />
+    <Contacts />
     <Footer />
   </ThemeProvider>
 );
