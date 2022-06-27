@@ -78,7 +78,7 @@ const dynamicStyle = ({ theme, variant }) => css`
 `;
 
 const StyledButton = styled.button`
-  font-size: ${({ theme }) => theme.typography.fontSize.captionText};
+  font-size: ${({ theme }) => theme.typography.fontSize.captionText}px;
   border-radius: ${({ theme }) => theme.borderRadius.button};
   line-height: 20px;
   text-align: center;

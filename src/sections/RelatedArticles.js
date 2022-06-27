@@ -71,7 +71,7 @@ const RelatedArticles = () => {
                   {date}
                 </Text>
               </RelatedArticlesItemHeading>
-              <RelatedArticlesItemDescription fontSize="subtitle">
+              <RelatedArticlesItemDescription fontSize="subtitle" mobileMultiplier={0.7}>
                 {text}
               </RelatedArticlesItemDescription>
             </RelatedArticlesItem>

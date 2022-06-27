@@ -26,7 +26,7 @@ const Title = styled.h1`
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 5px;
-    font-size: ${({ theme }) => theme.typography.fontSize.title1 * 0.5}px;
+    font-size: ${({ theme }) => theme.typography.fontSize.title1 * 0.535}px;
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {
