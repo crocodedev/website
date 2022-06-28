@@ -18,7 +18,7 @@ const Component = styled.div`
 `;
 
 const SectionHeadingText = styled(Text)`
-  ${({ theme }) => theme.breakpoints.up("md")} {
+  ${({ theme }) => theme.breakpoints.up("lg")} {
     max-width: 844px;
   }
 `;
@@ -27,7 +27,12 @@ const SectionHeading = ({ title, text }) => (
   <Component>
     {title && <Title>{title}</Title>}
     {text && (
-      <SectionHeadingText fontSize="subtitle" lineHeight="lg" textAlign="center">
+      <SectionHeadingText
+        fontSize="subtitle"
+        lineHeight="lg"
+        textAlign="center"
+        mobileMultiplier={0.7}
+      >
         {text}
       </SectionHeadingText>
     )}

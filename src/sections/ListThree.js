@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import ListThreeStack from "@/components/ListThree/ListThreeStack";
 import ListThreeStackItem from "@/components/ListThree/ListThreeStackItem";
+import ListThreeStackItemImage from "@/components/ListThree/ListThreeStackItemImage";
 import ImageStatic from "@/components/Image";
 
 const data = {
@@ -30,14 +31,18 @@ const data = {
 };
 
 const ListThree = () => (
-  <SectionWrapper bgColor="paper">
+  <SectionWrapper bgColor="paper" sectionGap={true}>
     <Container>
       <SectionHeading title={data.title} text={data.subtitle} />
+    </Container>
+    <Container disablePaddings={true}>
       <ListThreeStack>
         {data.items.map(({ src, caption }) => (
           <ListThreeStackItem key={caption}>
-            <ImageStatic src={src} />
-            <Text fontSize="subtitle" textAlign="center">
+            <ListThreeStackItemImage>
+              <ImageStatic src={src} />
+            </ListThreeStackItemImage>
+            <Text fontSize="subtitle" textAlign="center" mobileMultiplier={0.7}>
               {caption}
             </Text>
           </ListThreeStackItem>
