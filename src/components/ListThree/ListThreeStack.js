@@ -3,15 +3,24 @@ import styled from "@emotion/styled";
 const ListThreeStack = styled.div`
   display: flex;
   align-items: center;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  gap: 20px;
 
-  ${({ theme }) => theme.breakpoints.down("lg")} {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
     flex-direction: column;
-    gap: 20px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    margin-left: 40px;
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
-    flex-direction: row;
-    gap: 40px;
   }
 `;
 
