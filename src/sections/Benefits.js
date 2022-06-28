@@ -1,4 +1,3 @@
-import Text from "@/components/Text";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import BenefitsWrapper from "@/components/Benefits/BenefitsWrapper";
@@ -9,6 +8,7 @@ import BenefitsListItem from "@/components/Benefits/BenefitsListItem";
 import BenefitsListItemMarker from "@/components/Benefits/BenefitsListItemMarker";
 import BenefitsListItemTitle from "@/components/Benefits/BenefitsListItemTitle";
 import BenefitsListItemText from "@/components/Benefits/BenefitsListItemText";
+import BenefitsDescriptionText from "@/components/Benefits/BenefitsDescriptionText";
 
 const data = {
   title: "Benefits of Custom Software",
@@ -72,9 +72,9 @@ const Benefits = () => (
           >
             {data.title}
           </BenefitsDescriptionTitle>
-          <Text textAlign="center" fontSize="subtitle">
+          <BenefitsDescriptionText textAlign="center" fontSize="subtitle" mobileMultiplier={0.7}>
             {data.text}
-          </Text>
+          </BenefitsDescriptionText>
         </BenefitsDescription>
 
         <BenefitsList>

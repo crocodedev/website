@@ -18,7 +18,7 @@ import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-// import Benefits from "@/sections/Benefits";
+import Benefits from "@/sections/Benefits";
 // import Contacts from "@/sections/Contacts";
 import Footer from "@/sections/Footer";
 
@@ -29,6 +29,7 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <RelatedArticles />
+    <Benefits />
     <ListOne />
     <ListTwo />
     <ListThree />
@@ -40,7 +41,6 @@ const HomePage = () => (
     <FAQ />
     <OurClients />
     <Reviews />
-    {/* <Benefits /> */}
     {/* <Contacts /> */}
     <Footer />
   </ThemeProvider>
