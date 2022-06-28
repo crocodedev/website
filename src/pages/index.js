@@ -15,11 +15,12 @@ import ListSix from "@/sections/ListSix";
 import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
-import RelatedArticles from "@/sections/RelatedArticles";
-import Benefits from "@/sections/Benefits";
-import Footer from "@/sections/Footer";
 import OurClients from "@/sections/OurClients";
 import Contacts from "@/sections/Contacts";
+import RelatedArticles from "@/sections/RelatedArticles";
+import Reviews from "@/sections/Reviews";
+// import Benefits from "@/sections/Benefits";
+import Footer from "@/sections/Footer";
 
 import "destyle.css/destyle.css";
 
@@ -27,6 +28,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <RelatedArticles />
     <ListOne />
     <ListTwo />
     <ListThree />
@@ -40,6 +42,8 @@ const HomePage = () => (
     <RelatedArticles />
     <Benefits />
     <Contacts />
+    <Reviews />
+    {/* <Benefits /> */}
     <Footer />
   </ThemeProvider>
 );

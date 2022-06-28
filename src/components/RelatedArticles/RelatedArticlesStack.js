@@ -1,16 +1,25 @@
 import styled from "@emotion/styled";
 
 const RelatedArticlesStack = styled.div`
-  display: grid;
+  display: flex;
 
-  ${({ theme }) => theme.breakpoints.down("lg")} {
-    gap: 30px;
-    grid-template-rows: 1fr 1fr;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  ${({ theme }) => theme.breakpoints.up("lg")} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    gap: 10px;
+    width: calc(100% + 20px);
+    margin-right: -20px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
     gap: 40px;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 `;
 
