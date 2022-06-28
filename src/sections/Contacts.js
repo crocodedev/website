@@ -8,6 +8,7 @@ import MapStackInfo from "@/components/Map/MapStackInfo";
 import MapStackInfoItem from "@/components/Map/MapStackInfoItem";
 import ImageStatic from "@/components/Image";
 import MapStackLink from "@/components/Map/MapStackLink";
+import MapMarkerWrapper from "@/components/Map/MapMarkerWrapper";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -51,7 +52,11 @@ const Contacts = () => {
             interactive={false}
             mapboxAccessToken="pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
           >
-            <Marker longitude={22} latitude={49.92} anchor="bottom" />
+            <MapMarkerWrapper>
+              <Marker longitude={22} latitude={49.92} anchor="bottom">
+                <ImageStatic src="https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-HD.png" />
+              </Marker>
+            </MapMarkerWrapper>
           </Map>
         </MapStack>
       </Container>
