@@ -68,6 +68,7 @@ const theme = {
       title2: 42,
       title3: 30,
       subtitle: 20,
+      link: 18,
       text: 16,
       captionText: 14,
     },
