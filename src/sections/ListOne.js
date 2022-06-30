@@ -42,11 +42,11 @@ const ListOne = () => (
           <ListOneStackItem key={caption}>
             <ListOneStackItemTitle>
               <ImageStatic src={src} />
-              <Text fontSize="subtitle" fontWeight="bold">
+              <Text fontSize="subtitle" fontWeight="bold" mobileMultiplier={0.9}>
                 {title}
               </Text>
             </ListOneStackItemTitle>
-            <ListOneStackItemText fontSize="text">
+            <ListOneStackItemText fontSize="text" mobileMultiplier={0.879}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
               officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud
               amet.
