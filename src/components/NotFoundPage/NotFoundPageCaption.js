@@ -11,15 +11,18 @@ const NotFoundPageCaption = styled.div`
     display: block;
     background-color: ${({ theme }) => theme.palette.primary.main};
     margin: 0 auto;
+    height: 8px;
 
     ${({ theme }) => theme.breakpoints.down("md")} {
-      width: 100px;
-      height: 4px;
+      width: 160px;
     }
 
-    ${({ theme }) => theme.breakpoints.up("md")} {
+    ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+      width: 168px;
+    }
+
+    ${({ theme }) => theme.breakpoints.up("lg")} {
       width: 176px;
-      height: 8px;
     }
   }
 `;

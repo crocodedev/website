@@ -6,6 +6,7 @@ import ImageStatic from "@/components/Image";
 import NotFoundPageCaption from "@/components/NotFoundPage/NotFoundPageCaption";
 import NotFoundPageWrapper from "@/components/NotFoundPage/NotFoundPageWrapper";
 import NotFoundPageCaptionText from "@/components/NotFoundPage/NotFoundPageCaptionText";
+import NotFoundPageImageWrapper from "@/components/NotFoundPage/NotFoundPageImageWrapper";
 
 const data = {
   src: "/uploads/not-found-page-image.svg",
@@ -18,7 +19,9 @@ const NotFound = () => (
   <SectionWrapper>
     <Container>
       <NotFoundPageWrapper>
-        <ImageStatic src={data.src} />
+        <NotFoundPageImageWrapper>
+          <ImageStatic src={data.src} />
+        </NotFoundPageImageWrapper>
         <NotFoundPageCaption>
           <NotFoundPageCaptionText>
             <Text fontSize="title2" fontWeight="bold">
