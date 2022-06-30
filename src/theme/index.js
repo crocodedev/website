@@ -4,7 +4,7 @@ const breakpoints = {
     md: 768,
     lg: 992,
     xl: 1280,
-    "2xl": 1684,
+    "2xl": 1692,
   },
 };
 const theme = {
@@ -68,10 +68,12 @@ const theme = {
       title2: 42,
       title3: 30,
       subtitle: 20,
+      link: 18,
       text: 16,
       captionText: 14,
     },
     lineHeight: {
+      xsm: "120%",
       sm: "150%",
       md: "170%",
       lg: "200%",

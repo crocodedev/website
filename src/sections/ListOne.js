@@ -15,26 +15,26 @@ const data = {
     {
       src: "/uploads/list-one-item-mark.svg",
       title: "Retail & Supply Chain",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
       src: "/uploads/list-one-item-mark.svg",
       title: "Retail & Supply Chain",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
       src: "/uploads/list-one-item-mark.svg",
       title: "Retail & Supply Chain",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
   ],
 };
 
 const ListOne = () => (
-  <SectionWrapper>
+  <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
       <ListOneStack>

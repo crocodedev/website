@@ -6,7 +6,7 @@ const ListFourItem = styled.div`
   align-items: center;
   gap: 20px;
   padding: 40px;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
   box-shadow: ${({ theme }) => theme.shadows.card};
 `;
 

@@ -6,6 +6,7 @@ const Title = styled.h1`
   text-align: center;
   text-transform: uppercase;
   display: grid;
+  gap: 10px;
 
   &:after {
     content: "";
@@ -25,12 +26,14 @@ const Title = styled.h1`
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    gap: 5px;
-    font-size: ${({ theme }) => theme.typography.fontSize.title1 * 0.5}px;
+    font-size: ${({ theme }) => theme.typography.fontSize.title3}px;
   }
 
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    gap: 10px;
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    font-size: ${({ theme }) => theme.typography.fontSize.title2}px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
     font-size: ${({ theme }) => theme.typography.fontSize.title1}px;
   }
 `;
