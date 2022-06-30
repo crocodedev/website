@@ -24,10 +24,12 @@ const NotFound = () => (
         </NotFoundPageImageWrapper>
         <NotFoundPageCaption>
           <NotFoundPageCaptionText>
-            <Text fontSize="title2" fontWeight="bold">
+            <Text fontSize="title2" fontWeight="bold" mobileMultiplier={0.7}>
               {data.notFoundText1}
             </Text>
-            <Text fontSize="subtitle">{data.notFoundText2}</Text>
+            <Text fontSize="subtitle" mobileMultiplier={0.7}>
+              {data.notFoundText2}
+            </Text>
           </NotFoundPageCaptionText>
           <Button variant="contained">{data.buttonText}</Button>
         </NotFoundPageCaption>
