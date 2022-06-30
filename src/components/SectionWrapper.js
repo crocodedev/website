@@ -16,8 +16,20 @@ const dynamicStyle = ({ theme, bgColor, sectionGap }) => css`
 `;
 
 const SectionWrapper = styled.section`
-  padding-top: 110px;
-  padding-bottom: 100px;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
 
   ${dynamicStyle}
 `;

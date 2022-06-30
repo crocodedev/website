@@ -19,8 +19,9 @@ import OurClients from "@/sections/OurClients";
 import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-// import Benefits from "@/sections/Benefits";
+import CreateProject from "@/sections/CreateProject";
 import Footer from "@/sections/Footer";
+// import Benefits from "@/sections/Benefits";
 
 import "destyle.css/destyle.css";
 
@@ -30,6 +31,7 @@ const HomePage = () => (
     <Global styles={[reboot, fontMontserrat]} />
     <Contacts />
     <RelatedArticles />
+    <CreateProject />
     <ListOne />
     <ListTwo />
     <ListThree />
