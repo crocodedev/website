@@ -29,6 +29,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <ListSeven />
     <Contacts />
     <RelatedArticles />
     <CreateProject />
@@ -38,7 +39,6 @@ const HomePage = () => (
     <ListFour />
     <ListFive />
     <ListSix />
-    <ListSeven />
     <OurTeam />
     <FAQ />
     <OurClients />

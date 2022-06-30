@@ -30,6 +30,16 @@ const data = {
       text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
+    {
+      heading: "WEB Development Consulting",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
+    },
+    {
+      heading: "WEB Development Consulting",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
+    },
   ],
 };
 
