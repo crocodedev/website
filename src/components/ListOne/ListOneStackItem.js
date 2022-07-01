@@ -9,7 +9,7 @@ const ListOneStackItem = styled.div`
   scroll-snap-align: start;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    gap: 15p x;
+    gap: 15px;
     padding: 30px 20px;
     flex: 0 0 100%;
   }
