@@ -6,22 +6,58 @@ const BenefitsDescription = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 935px;
-  gap: 38px;
 
   &::before {
     content: "";
     z-index: -1;
     display: block;
     position: absolute;
-    width: 672px;
-    height: 672px;
     border-radius: ${({ theme }) => theme.borderRadius.circle};
-    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.primary.main},
-      0px 0px 0px 65px ${({ theme }) => theme.palette.background.default},
-      0px 0px 0px 67px rgba(125, 190, 59, 0.2),
-      0px 0px 0px 135px ${({ theme }) => theme.palette.background.default},
-      0px 0px 0px 137px rgba(125, 190, 59, 0.1);
+
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      width: 320px;
+      height: 320px;
+      box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.primary.main},
+        0px 0px 0px 30px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 32px rgba(125, 190, 59, 0.2),
+        0px 0px 0px 65px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 67px rgba(125, 190, 59, 0.1);
+    }
+
+    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+      width: 404px;
+      height: 404px;
+      box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.primary.main},
+        0px 0px 0px 39px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 41px rgba(125, 190, 59, 0.2),
+        0px 0px 0px 82px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 84px rgba(125, 190, 59, 0.1);
+    }
+
+    ${({ theme }) => theme.breakpoints.up("xl")} {
+      width: 672px;
+      height: 672px;
+      box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.primary.main},
+        0px 0px 0px 65px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 67px rgba(125, 190, 59, 0.2),
+        0px 0px 0px 135px ${({ theme }) => theme.palette.background.default},
+        0px 0px 0px 137px rgba(125, 190, 59, 0.1);
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    height: 446px;
+    gap: 5px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+    height: 562px;
+    gap: 10px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    height: 935px;
+    gap: 40px;
   }
 `;
 
