@@ -50,10 +50,12 @@ const ListSeven = () => (
       <ListSevenStack>
         {data.items.map(({ heading, text }) => (
           <ListSevenStackItem key={heading}>
-            <Text fontSize="title3" fontWeight="bold">
+            <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6669}>
               {heading}
             </Text>
-            <ListSevenStackItemText fontSize="subtitle">{text}</ListSevenStackItemText>
+            <ListSevenStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
+              {text}
+            </ListSevenStackItemText>
             <Button variant="text" to="/#">
               Learn more
             </Button>
