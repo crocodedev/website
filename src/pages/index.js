@@ -16,11 +16,12 @@ import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
+import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-import Benefits from "@/sections/Benefits";
-// import Contacts from "@/sections/Contacts";
+import CreateProject from "@/sections/CreateProject";
 import Footer from "@/sections/Footer";
+// import Benefits from "@/sections/Benefits";
 
 import "destyle.css/destyle.css";
 
@@ -28,20 +29,22 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <ListSix />
+    <ListSeven />
+    <Contacts />
     <RelatedArticles />
-    <Benefits />
+    <CreateProject />
     <ListOne />
     <ListTwo />
     <ListThree />
     <ListFour />
     <ListFive />
-    <ListSix />
-    <ListSeven />
     <OurTeam />
     <FAQ />
     <OurClients />
+    <RelatedArticles />
     <Reviews />
-    {/* <Contacts /> */}
+    {/* <Benefits /> */}
     <Footer />
   </ThemeProvider>
 );

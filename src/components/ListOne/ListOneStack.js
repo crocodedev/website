@@ -2,16 +2,25 @@ import styled from "@emotion/styled";
 
 const ListOneStack = styled.div`
   display: flex;
-  align-items: center;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  width: 100%;
 
-  ${({ theme }) => theme.breakpoints.down("xl")} {
-    gap: 25px;
-    flex-direction: column;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  ${({ theme }) => theme.breakpoints.up("xl")} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    gap: 10px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    gap: 35px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
     gap: 55px;
-    flex-direction: row;
   }
 `;
 

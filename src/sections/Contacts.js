@@ -1,5 +1,7 @@
+import React from "react";
 import { useTheme } from "@emotion/react";
-import Map, { Marker } from "react-map-gl";
+import useMedia from "@/hooks/use-media";
+import Map, { Marker, Popup } from "react-map-gl";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -8,6 +10,8 @@ import MapStackInfo from "@/components/Map/MapStackInfo";
 import MapStackInfoItem from "@/components/Map/MapStackInfoItem";
 import ImageStatic from "@/components/Image";
 import MapStackLink from "@/components/Map/MapStackLink";
+import MapMarkerIcon from "@/components/Map/MapMarkerIcon";
+import MapWrapper from "@/components/Map/MapWrapper";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -27,6 +31,25 @@ const data = {
 
 const Contacts = () => {
   const theme = useTheme();
+
+  const mapCoordinates = useMedia(
+    ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
+
+    [
+      { mapCords: { longitude: 22.5, latitude: 50, zoom: 4 }, popupOffset: [0, -90] },
+      { mapCords: { longitude: 21, latitude: 51, zoom: 6 }, popupOffset: [10, -90] },
+      { mapCords: { longitude: 21, latitude: 51, zoom: 6 }, popupOffset: [120, -35] },
+    ],
+
+    { longitude: 21, latitude: 51, zoom: 6 },
+  );
+
+  const [viewState, setViewState] = React.useState(mapCoordinates);
+
+  React.useEffect(() => {
+    setViewState(mapCoordinates);
+  }, [mapCoordinates]);
+
   return (
     <SectionWrapper>
       <Container>
@@ -40,19 +63,30 @@ const Contacts = () => {
               </MapStackInfoItem>
             ))}
           </MapStackInfo>
-          <Map
-            initialViewState={{
-              longitude: 21,
-              latitude: 51,
-              zoom: 6,
-            }}
-            style={{ width: 1088, height: 640 }}
-            mapStyle="mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"
-            interactive={false}
-            mapboxAccessToken="pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
-          >
-            <Marker longitude={22} latitude={49.92} anchor="bottom" />
-          </Map>
+          <MapWrapper>
+            <Map
+              {...viewState.mapCords}
+              mapStyle="mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"
+              interactive={false}
+              mapboxAccessToken="pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
+            >
+              <Marker longitude={22} latitude={50.06} anchor="bottom">
+                <MapMarkerIcon>
+                  <ImageStatic src="/uploads/map-marker-icon.png" />
+                </MapMarkerIcon>
+              </Marker>
+              <Popup
+                longitude={22}
+                latitude={50.06}
+                anchor="center"
+                offset={viewState.popupOffset}
+                closeButton={false}
+                closeOnClick={false}
+              >
+                Chkalova St, 56A-1B, 210041 Vitebsk, Belarus
+              </Popup>
+            </Map>
+          </MapWrapper>
         </MapStack>
       </Container>
     </SectionWrapper>

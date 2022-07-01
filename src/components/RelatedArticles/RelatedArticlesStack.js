@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 const RelatedArticlesStack = styled.div`
   display: flex;
-
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scrollbar-width: none;
