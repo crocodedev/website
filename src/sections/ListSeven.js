@@ -30,6 +30,16 @@ const data = {
       text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
+    {
+      heading: "WEB Development Consulting",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
+    },
+    {
+      heading: "WEB Development Consulting",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
+    },
   ],
 };
 
@@ -40,10 +50,12 @@ const ListSeven = () => (
       <ListSevenStack>
         {data.items.map(({ heading, text }) => (
           <ListSevenStackItem key={heading}>
-            <Text fontSize="title3" fontWeight="bold">
+            <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6669}>
               {heading}
             </Text>
-            <ListSevenStackItemText fontSize="subtitle">{text}</ListSevenStackItemText>
+            <ListSevenStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
+              {text}
+            </ListSevenStackItemText>
             <Button variant="text" to="/#">
               Learn more
             </Button>

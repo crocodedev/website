@@ -30,6 +30,7 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <ListSix />
+    <ListSeven />
     <Contacts />
     <RelatedArticles />
     <CreateProject />
@@ -38,7 +39,6 @@ const HomePage = () => (
     <ListThree />
     <ListFour />
     <ListFive />
-    <ListSeven />
     <OurTeam />
     <FAQ />
     <OurClients />

@@ -6,10 +6,21 @@ const ListSevenStackItem = styled.div`
   align-items: flex-start;
   border-radius: ${({ theme }) => theme.borderRadius.small};
 
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    flex: 0 0 100%;
+    max-width: 280px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    flex: 0 0 50%;
+    max-width: 334px;
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     gap: 20px;
     padding: 30px 30px 18px;
     min-height: 300px;
+    scroll-snap-align: start;
 
     &:nth-child(odd) {
       background-color: ${({ theme }) => theme.palette.secondary.main};
