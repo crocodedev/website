@@ -20,11 +20,11 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <ListSix />
     <ListOne />
     <ListTwo />
     <ListThree />
     <ListFour />
-    <ListSix />
     <OurTeam />
     <RelatedArticles />
   </ThemeProvider>
