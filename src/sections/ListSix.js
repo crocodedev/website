@@ -49,10 +49,12 @@ const ListSix = () => (
       <ListSixStack>
         {data.items.map(({ title, text }) => (
           <ListSixStackItem key={title}>
-            <Text fontSize="title3" fontWeight="bold">
+            <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6}>
               {title}
             </Text>
-            <ListSixStackItemText fontSize="subtitle">{text}</ListSixStackItemText>
+            <ListSixStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
+              {text}
+            </ListSixStackItemText>
           </ListSixStackItem>
         ))}
       </ListSixStack>
