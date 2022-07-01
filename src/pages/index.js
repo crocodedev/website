@@ -10,9 +10,18 @@ import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
 import ListFour from "@/sections/ListFour";
+import ListFive from "@/sections/ListFive";
 import ListSix from "@/sections/ListSix";
+import ListSeven from "@/sections/ListSeven";
 import OurTeam from "@/sections/OurTeam";
+import FAQ from "@/sections/FAQ";
+import OurClients from "@/sections/OurClients";
+import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
+import Reviews from "@/sections/Reviews";
+import CreateProject from "@/sections/CreateProject";
+import Footer from "@/sections/Footer";
+// import Benefits from "@/sections/Benefits";
 
 import "destyle.css/destyle.css";
 
@@ -21,12 +30,22 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <ListSix />
+    <Contacts />
+    <RelatedArticles />
+    <CreateProject />
     <ListOne />
     <ListTwo />
     <ListThree />
     <ListFour />
+    <ListFive />
+    <ListSeven />
     <OurTeam />
+    <FAQ />
+    <OurClients />
     <RelatedArticles />
+    <Reviews />
+    {/* <Benefits /> */}
+    <Footer />
   </ThemeProvider>
 );
 

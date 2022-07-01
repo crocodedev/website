@@ -35,7 +35,7 @@ const data = {
 };
 
 const ListFour = () => (
-  <SectionWrapper>
+  <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} text={data.text} />
       <ListFourStack>
