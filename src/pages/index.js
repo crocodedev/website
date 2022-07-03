@@ -21,6 +21,7 @@ import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
 import CreateProject from "@/sections/CreateProject";
 import Footer from "@/sections/Footer";
+import CtaForm from "@/sections/CtaForm";
 // import Benefits from "@/sections/Benefits";
 
 import "destyle.css/destyle.css";
@@ -29,6 +30,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <CtaForm />
     <ListSix />
     <ListSeven />
     <Contacts />
