@@ -1,28 +1,37 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const dynamicStyles = ({ align }) => css`
+const dynamicStyles = ({ theme, align }) => css`
   ${align === "left"
     ? `
+
+    ${theme.breakpoints.down("md")}{
+      grid-area: 1 / 1 / 2 / 2;
+
+      &::before {
+        left: 0;
+      }
+    }
+    
+    ${theme.breakpoints.up("md")}{
       grid-area: 1 / 2 / 2 / 2;
     
       &::before {
         right: 0;
       }
+    }
   `
     : `
       grid-area: 1 / 1 / 2 / 2;
 
       &::before {
-        left: 0;        
+        left: 0;
       }
   `}
 `;
 
 const BenefitsListItemMarker = styled.span`
   position: relative;
-  width: 80px;
-  height: 16px;
   display: flex;
   align-items: center;
 
@@ -35,15 +44,41 @@ const BenefitsListItemMarker = styled.span`
   }
 
   &::before {
-    width: 16px;
-    height: 16px;
     border-radius: ${({ theme }) => theme.borderRadius.circle};
   }
 
   &::after {
-    width: 80px;
-    height: 4px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
+  }
+
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    width: 40px;
+    height: 16px;
+
+    &::before {
+      width: 10px;
+      height: 10px;
+    }
+
+    &::after {
+      width: 40px;
+      height: 2px;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
+    width: 80px;
+    height: 16px;
+
+    &::before {
+      width: 16px;
+      height: 16px;
+    }
+
+    &::after {
+      width: 80px;
+      height: 4px;
+    }
   }
 
   ${dynamicStyles}

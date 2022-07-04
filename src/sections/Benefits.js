@@ -52,10 +52,11 @@ const Benefits = () => (
                 fontWeight="bold"
                 lineHeight="sm"
                 align="left"
+                mobileMultiplier={0.6}
               >
                 {itemTitle}
               </BenefitsListItemTitle>
-              <BenefitsListItemText fontSize="subtitle" align="left">
+              <BenefitsListItemText fontSize="subtitle" align="left" mobileMultiplier={0.7}>
                 {itemCaption}
               </BenefitsListItemText>
               <BenefitsListItemMarker align="left" />
@@ -85,10 +86,11 @@ const Benefits = () => (
                 fontWeight="bold"
                 lineHeight="sm"
                 align="right"
+                mobileMultiplier={0.6}
               >
                 {itemTitle}
               </BenefitsListItemTitle>
-              <BenefitsListItemText fontSize="subtitle" align="right">
+              <BenefitsListItemText fontSize="subtitle" align="right" mobileMultiplier={0.7}>
                 {itemCaption}
               </BenefitsListItemText>
               <BenefitsListItemMarker align="right" />
