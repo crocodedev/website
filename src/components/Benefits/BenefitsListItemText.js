@@ -2,11 +2,16 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Text from "../Text";
 
-const dynamicStyles = ({ align }) => css`
+const dynamicStyles = ({ theme, align }) => css`
   ${align === "left"
     ? `
-        grid-area: 2 / 1 / 2 / 2;
+    ${theme.breakpoints.down("md")}{
+        grid-area: 2 / 2 / 2 / 2;
+    }
 
+    ${theme.breakpoints.up("md")}{
+        grid-area: 2 / 1 / 2 / 2;
+    }
     `
     : `
         grid-area: 2 / 2 / 2 / 2;

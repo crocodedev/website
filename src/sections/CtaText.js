@@ -2,8 +2,8 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Text from "@/components/Text";
-import CreateProjectText from "@/components/CreateProject/CreateProjectText";
-import CreateProjectWrapper from "@/components/CreateProject/CreateProjectWrapper";
+import CtaTextCaption from "@/components/CtaText/CtaTextCaption";
+import CtaTextWrapper from "@/components/CtaText/CtaTextWrapper";
 
 const data = {
   title: "Can't find yours?",
@@ -11,18 +11,18 @@ const data = {
   buttonText: "Start project",
 };
 
-const CreateProject = () => (
+const CtaText = () => (
   <SectionWrapper>
     <Container>
-      <CreateProjectWrapper>
+      <CtaTextWrapper>
         <Text fontSize="title2" fontWeight="bold" mobileMultiplier={0.7}>
           {data.title}
         </Text>
-        <CreateProjectText textAlign="center">{data.description}</CreateProjectText>
+        <CtaTextCaption textAlign="center">{data.description}</CtaTextCaption>
         <Button variant="contained">{data.buttonText}</Button>
-      </CreateProjectWrapper>
+      </CtaTextWrapper>
     </Container>
   </SectionWrapper>
 );
 
-export default CreateProject;
+export default CtaText;
