@@ -21,7 +21,7 @@ import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
 import CreateProject from "@/sections/CreateProject";
 import Footer from "@/sections/Footer";
-// import Benefits from "@/sections/Benefits";
+import Benefits from "@/sections/Benefits";
 
 import "destyle.css/destyle.css";
 
@@ -44,7 +44,7 @@ const HomePage = () => (
     <OurClients />
     <RelatedArticles />
     <Reviews />
-    {/* <Benefits /> */}
+    <Benefits />
     <Footer />
   </ThemeProvider>
 );
