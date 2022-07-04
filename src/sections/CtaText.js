@@ -11,7 +11,7 @@ const data = {
   buttonText: "Start project",
 };
 
-const CreateProject = () => (
+const CtaText = () => (
   <SectionWrapper>
     <Container>
       <CreateProjectWrapper>
@@ -25,4 +25,4 @@ const CreateProject = () => (
   </SectionWrapper>
 );
 
-export default CreateProject;
+export default CtaText;

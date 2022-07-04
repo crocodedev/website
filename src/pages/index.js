@@ -19,7 +19,7 @@ import OurClients from "@/sections/OurClients";
 import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-import CreateProject from "@/sections/CreateProject";
+import CtaText from "@/sections/CtaText";
 import Footer from "@/sections/Footer";
 import Benefits from "@/sections/Benefits";
 
@@ -33,7 +33,7 @@ const HomePage = () => (
     <ListSeven />
     <Contacts />
     <RelatedArticles />
-    <CreateProject />
+    <CtaText />
     <ListOne />
     <ListTwo />
     <ListThree />
@@ -42,7 +42,6 @@ const HomePage = () => (
     <OurTeam />
     <FAQ />
     <OurClients />
-    <RelatedArticles />
     <Reviews />
     <Benefits />
     <Footer />
