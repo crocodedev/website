@@ -20,9 +20,10 @@ import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
 import Footer from "@/sections/Footer";
-import Benefits from "@/sections/Benefits";
+// import Benefits from "@/sections/Benefits";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
+import CtaImage from "@/sections/CtaImage";
 
 import "destyle.css/destyle.css";
 
@@ -30,10 +31,11 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
-    <CtaForm />
+    <CtaImage />
     <ListSix />
     <ListSeven />
     <Contacts />
+    <CtaForm />
     <RelatedArticles />
     <CtaText />
     <ListOne />
@@ -45,7 +47,7 @@ const HomePage = () => (
     <FAQ />
     <OurClients />
     <Reviews />
-    <Benefits />
+    {/* <Benefits /> */}
     <Footer />
   </ThemeProvider>
 );
