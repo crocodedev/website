@@ -1,3 +1,4 @@
+import { useTheme } from "@emotion/react";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
@@ -11,18 +12,39 @@ const data = {
   buttonText: "Start project",
 };
 
-const CtaText = () => (
-  <SectionWrapper>
-    <Container>
-      <CtaTextWrapper>
-        <Text fontSize="title2" fontWeight="bold" mobileMultiplier={0.7}>
-          {data.title}
-        </Text>
-        <CtaTextCaption textAlign="center">{data.description}</CtaTextCaption>
-        <Button variant="contained">{data.buttonText}</Button>
-      </CtaTextWrapper>
-    </Container>
-  </SectionWrapper>
-);
+const CtaText = () => {
+  const theme = useTheme();
+  return (
+    <SectionWrapper bgColor={data.bgColor}>
+      <Container>
+        <CtaTextWrapper>
+          <Text
+            fontSize="title2"
+            color={
+              data.bgColor === "dark"
+                ? theme.palette.tertiary.contrastText
+                : theme.palette.text.primary
+            }
+            fontWeight="bold"
+            mobileMultiplier={0.7}
+          >
+            {data.title}
+          </Text>
+          <CtaTextCaption
+            color={
+              data.bgColor === "dark"
+                ? theme.palette.tertiary.contrastText
+                : theme.palette.text.primary
+            }
+            textAlign="center"
+          >
+            {data.description}
+          </CtaTextCaption>
+          <Button variant="contained">{data.buttonText}</Button>
+        </CtaTextWrapper>
+      </Container>
+    </SectionWrapper>
+  );
+};
 
 export default CtaText;
