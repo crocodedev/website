@@ -22,6 +22,7 @@ const SectionHeadingText = styled(Text)`
   }
 `;
 
+// TODO: prop-types
 const SectionHeading = ({ title, text }) => (
   <Component>
     {title && <Title>{title}</Title>}

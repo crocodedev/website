@@ -63,7 +63,6 @@ module.exports = {
       },
     },
     /* */
-    "gatsby-transformer-inline-svg",
     "gatsby-plugin-emotion",
     {
       resolve: "gatsby-plugin-react-svg",

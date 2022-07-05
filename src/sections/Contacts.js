@@ -28,7 +28,7 @@ const data = {
   ],
 };
 
-const Contacts = ({ title }) => {
+const Contacts = () => {
   const mapCoordinates = useMedia(
     ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
 
@@ -50,7 +50,7 @@ const Contacts = ({ title }) => {
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading title={title} />
+        <SectionHeading title={data.title} />
         <MapStack>
           <MapStackInfo>
             {data.items.map(({ text, src }) => (

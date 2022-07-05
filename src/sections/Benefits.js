@@ -40,12 +40,12 @@ const data = {
   },
 };
 
-const Benefits = ({ items } = data) => (
+const Benefits = () => (
   <SectionWrapper>
     <Container>
       <BenefitsWrapper>
         <BenefitsList>
-          {items.leftColumn.map(({ itemTitle, itemCaption }) => (
+          {data.items.leftColumn.map(({ itemTitle, itemCaption }) => (
             <BenefitsListItem key={itemTitle} align="left">
               <BenefitsListItemTitle
                 fontSize="title3"
