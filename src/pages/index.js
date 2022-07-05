@@ -20,9 +20,11 @@ import OurClients from "@/sections/OurClients";
 import Contacts from "@/sections/Contacts";
 import RelatedArticles from "@/sections/RelatedArticles";
 import Reviews from "@/sections/Reviews";
-import CreateProject from "@/sections/CreateProject";
 import Footer from "@/sections/Footer";
-import Benefits from "@/sections/Benefits";
+// import Benefits from "@/sections/Benefits";
+import CtaText from "@/sections/CtaText";
+import CtaForm from "@/sections/CtaForm";
+import CtaImage from "@/sections/CtaImage";
 
 import "destyle.css/destyle.css";
 
@@ -31,11 +33,13 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <BlogList />
+    <CtaImage />
     <ListSix />
     <ListSeven />
     <Contacts />
+    <CtaForm />
     <RelatedArticles />
-    <CreateProject />
+    <CtaText />
     <ListOne />
     <ListTwo />
     <ListThree />
@@ -44,9 +48,8 @@ const HomePage = () => (
     <OurTeam />
     <FAQ />
     <OurClients />
-    <RelatedArticles />
     <Reviews />
-    <Benefits />
+    {/* <Benefits /> */}
     <Footer />
   </ThemeProvider>
 );
