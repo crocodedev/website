@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
 const ProjectsStackItemHeading = styled.div`
-  display: flex;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
 `;
 
 export default ProjectsStackItemHeading;
