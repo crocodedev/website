@@ -64,6 +64,7 @@ const theme = {
       regular: 400,
     },
     fontSize: {
+      title0: 80,
       title1: 60,
       title2: 42,
       title3: 30,
@@ -73,6 +74,7 @@ const theme = {
       captionText: 14,
     },
     lineHeight: {
+      "2xsm": "100%",
       xsm: "120%",
       sm: "150%",
       md: "170%",
