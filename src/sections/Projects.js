@@ -14,6 +14,8 @@ import ProjectsStackItemHeadingLabel from "@/components/Projects/ProjectsStackIt
 import ProjectsStackItemHeadingTitle from "@/components/Projects/ProjectsStackItemHeadingTitle";
 import ProjectsStackItemDescription from "@/components/Projects/ProjectsStackItemDescription";
 import Button from "@/components/Button";
+import Pagination from "@/components/Pagination";
+import React from "react";
 
 const data = {
   categories: [
@@ -154,59 +156,118 @@ const data = {
       text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
   ],
+  pages: [
+    {
+      id: 1,
+      title: "blog",
+    },
+    {
+      id: 2,
+      title: "contacts",
+    },
+
+    {
+      id: 3,
+      title: "blog",
+    },
+    {
+      id: 4,
+      title: "blog",
+    },
+    {
+      id: 5,
+      title: "blog",
+    },
+    {
+      id: 6,
+      title: "blog",
+    },
+    {
+      id: 7,
+      title: "blog",
+    },
+    {
+      id: 8,
+      title: "blog",
+    },
+    {
+      id: 8,
+      title: "blog",
+    },
+    {
+      id: 8,
+      title: "blog",
+    },
+
+    {
+      id: 8,
+      title: "blog",
+    },
+  ],
 };
-const Projects = () => (
-  <SectionWrapper>
-    <Container>
-      <ProjectsNavStack>
-        {data.categories.map(({ title, items }) => (
-          <ProjectsNavRow key={title}>
-            <Text fontSize="captionText">{title}</Text>
-            <ProjectsNavRowWrapper>
-              {items.map(({ title: itemTitle, link }) => (
-                <Button
-                  active={itemTitle === "Latest"}
-                  variant="outlined"
-                  to={link}
-                  key={itemTitle}
-                >
-                  {itemTitle}
-                </Button>
-              ))}
-            </ProjectsNavRowWrapper>
-          </ProjectsNavRow>
-        ))}
-      </ProjectsNavStack>
-      {/* gap: 40px */}
-      <ProjectsStack>
-        {data.articles.map(({ id, src, title, label, text }) => (
-          <ProjectsStackItem key={id}>
-            <ProjectsStackItemImageWrapper>
-              <ImageStatic src={src} />
-            </ProjectsStackItemImageWrapper>
-            <ProjectsStackItemContent>
-              <ProjectsStackItemHeading>
-                <ProjectsStackItemHeadingTitle
-                  mobileMultiplier={0.715}
-                  fontSize="title3"
-                  fontWeight="bold"
-                  lineHeight="sm"
-                >
-                  {title}
-                </ProjectsStackItemHeadingTitle>
-                <ProjectsStackItemHeadingLabel fontWeight="regular">
-                  {label}
-                </ProjectsStackItemHeadingLabel>
-              </ProjectsStackItemHeading>
-              <ProjectsStackItemDescription mobileMultiplier={0.875}>
-                {text}
-              </ProjectsStackItemDescription>
-            </ProjectsStackItemContent>
-          </ProjectsStackItem>
-        ))}
-      </ProjectsStack>
-    </Container>
-  </SectionWrapper>
-);
+const Projects = () => {
+  const [currPage, setCurrPage] = React.useState(1);
+  const handlerSetCurrPage = (page) => setCurrPage(page);
+
+  return (
+    <SectionWrapper>
+      <Container>
+        <ProjectsNavStack>
+          {data.categories.map(({ title, items }) => (
+            <ProjectsNavRow key={title}>
+              <Text fontSize="captionText">{title}</Text>
+              <ProjectsNavRowWrapper>
+                {items.map(({ title: itemTitle, link }) => (
+                  <Button
+                    active={itemTitle === "Latest"}
+                    variant="outlined"
+                    to={link}
+                    key={itemTitle}
+                  >
+                    {itemTitle}
+                  </Button>
+                ))}
+              </ProjectsNavRowWrapper>
+            </ProjectsNavRow>
+          ))}
+        </ProjectsNavStack>
+        {/* gap: 40px */}
+        <ProjectsStack>
+          {data.articles.map(({ id, src, title, label, text }) => (
+            <ProjectsStackItem key={id}>
+              <ProjectsStackItemImageWrapper>
+                <ImageStatic src={src} />
+              </ProjectsStackItemImageWrapper>
+              <ProjectsStackItemContent>
+                <ProjectsStackItemHeading>
+                  <ProjectsStackItemHeadingTitle
+                    mobileMultiplier={0.715}
+                    fontSize="title3"
+                    fontWeight="bold"
+                    lineHeight="sm"
+                  >
+                    {title}
+                  </ProjectsStackItemHeadingTitle>
+                  <ProjectsStackItemHeadingLabel fontWeight="regular">
+                    {label}
+                  </ProjectsStackItemHeadingLabel>
+                </ProjectsStackItemHeading>
+                <ProjectsStackItemDescription mobileMultiplier={0.875}>
+                  {text}
+                </ProjectsStackItemDescription>
+              </ProjectsStackItemContent>
+            </ProjectsStackItem>
+          ))}
+        </ProjectsStack>
+        {/* gap: 100px */}
+        <Pagination
+          pageCount={data.pages.length}
+          currentPage={currPage}
+          handler={handlerSetCurrPage}
+        />
+      </Container>
+    </SectionWrapper>
+  );
+};
 
 export default Projects;
