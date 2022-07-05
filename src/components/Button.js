@@ -113,16 +113,16 @@ const StyledButton = styled.button`
   ${dynamicStyle}
 `;
 
-const Button = ({ variant, handler, to, children, ...props }) =>
+const Button = ({ variant, handler, to, active, children, ...props }) =>
   to ? (
     <Link to={to} {...props}>
-      <StyledButton as="a" variant={variant}>
+      <StyledButton as="a" active={active} variant={variant}>
         {children}
         {variant === "text" && <span />}
       </StyledButton>
     </Link>
   ) : (
-    <StyledButton variant={variant} onClick={handler} {...props}>
+    <StyledButton variant={variant} active={active} onClick={handler} {...props}>
       {children}
       {variant === "text" && <span />}
     </StyledButton>
@@ -131,12 +131,14 @@ const Button = ({ variant, handler, to, children, ...props }) =>
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
+  active: PropTypes.bool,
   handler: PropTypes.func,
   to: PropTypes.string,
 };
 
 Button.defaultProps = {
   handler: null,
+  active: false,
   to: null,
 };
 

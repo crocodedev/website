@@ -2,7 +2,7 @@ import BlogListItem from "@/components/BlogList/BlogListItem";
 import BlogListItemContent from "@/components/BlogList/BlogListItemContent";
 import BlogListItemContentTop from "@/components/BlogList/BlogListItemContentTop";
 import BlogListItemImage from "@/components/BlogList/BlogListItemImage";
-import BlogListItemText from "@/components/BlogList/BlogListItemText";
+import BlogListItemDesc from "@/components/BlogList/BlogListItemDesc";
 import BlogListNavigationStack from "@/components/BlogList/BlogListNavigationStack";
 import BlogListStack from "@/components/BlogList/BlogListStack";
 import Button from "@/components/Button";
@@ -11,28 +11,30 @@ import ImageStatic from "@/components/Image";
 import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
 import { useTheme } from "@emotion/react";
+import BlogListItemHeading from "@/components/BlogList/BlogListItemHeading";
+import BlogListItemButton from "@/components/BlogList/BlogListItemButton";
 
 const data = {
   categories: [
     {
       title: "Latest",
-      link: "",
+      link: "/#",
     },
     {
       title: "Client Guides",
-      link: "",
+      link: "/#",
     },
     {
       title: "Technologies",
-      link: "",
+      link: "/#",
     },
     {
       title: "UX/UI Design",
-      link: "",
+      link: "/#",
     },
     {
       title: "Case Studies",
-      link: "",
+      link: "/#",
     },
   ],
   articles: [
@@ -92,23 +94,34 @@ const BlogList = () => {
               <BlogListItemContent>
                 {/* letter-spacing */}
                 <BlogListItemContentTop>
-                  <BlogListItemText color={theme.palette.text.disabled} fontSize="subtitle">
+                  <Text
+                    mobileMultiplier={0.6}
+                    color={theme.palette.text.disabled}
+                    fontSize="subtitle"
+                  >
                     {date}
-                  </BlogListItemText>
-                  <BlogListItemText
+                  </Text>
+                  <BlogListItemHeading
                     color={theme.palette.text.primary}
                     fontSize="title2"
+                    mobileMultiplier={0.48}
                     lineHeight="xsm"
                     fontWeight="bold"
                   >
                     {heading}
-                  </BlogListItemText>
+                  </BlogListItemHeading>
                 </BlogListItemContentTop>
-                <BlogListItemText fontSize="subtitle" color={theme.palette.text.primary}>
+                <BlogListItemDesc
+                  mobileMultiplier={0.7}
+                  fontSize="subtitle"
+                  color={theme.palette.text.primary}
+                >
                   {desc}
-                </BlogListItemText>
+                </BlogListItemDesc>
                 {/*  Цвет кнопки text */}
-                <Button variant="text">{linkText}</Button>
+                <BlogListItemButton>
+                  <Button variant="text">{linkText}</Button>
+                </BlogListItemButton>
               </BlogListItemContent>
             </BlogListItem>
           ))}
