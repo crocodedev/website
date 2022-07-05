@@ -13,7 +13,7 @@ import BenefitsDescriptionText from "@/components/Benefits/BenefitsDescriptionTe
 const data = {
   title: "Benefits of Custom Software",
   text: `
-    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
 
   items: {
@@ -40,12 +40,12 @@ const data = {
   },
 };
 
-const Benefits = () => (
+const Benefits = ({ items } = data) => (
   <SectionWrapper>
     <Container>
       <BenefitsWrapper>
         <BenefitsList>
-          {data.items.leftColumn.map(({ itemTitle, itemCaption }) => (
+          {items.leftColumn.map(({ itemTitle, itemCaption }) => (
             <BenefitsListItem key={itemTitle} align="left">
               <BenefitsListItemTitle
                 fontSize="title3"
@@ -69,7 +69,7 @@ const Benefits = () => (
             fontSize="title2"
             fontWeight="bold"
             textAlign="center"
-            lineHeight="xsm"
+            lineHeight="xs"
           >
             {data.title}
           </BenefitsDescriptionTitle>

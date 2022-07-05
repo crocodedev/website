@@ -8,31 +8,7 @@ const { robots, pwa } = require("./config/site");
 const {
   SITE_URL: siteUrl,
   GOOGLE_ANALYTICS_TRACKING_ID: trackingId,
-  // CONTENTFUL_SPACE_ID: spaceId,
-  // CONTENTFUL_HOST: host,
-  // CONTENTFUL_PREVIEW_ACCESS_TOKEN: previewAccessToken,
-  // CONTENTFUL_ACCESS_TOKEN: accessToken,
-  // CONTENTFUL_DELIVERY_TOKEN: deliveryToken,
-  // CONTENTFUL_ENVIRONMENT: environment,
 } = process.env;
-
-// If you want to use the preview API please define
-// CONTENTFUL_HOST and CONTENTFUL_PREVIEW_ACCESS_TOKEN in your
-// environment config.
-//
-// CONTENTFUL_HOST should map to `preview.contentful.com`
-// CONTENTFUL_PREVIEW_ACCESS_TOKEN should map to your
-// Content Preview API token
-//
-// For more information around the Preview API check out the documentation at
-// https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space/get-a-space/console/js
-//
-// To change back to the normal CDA, remove the CONTENTFUL_HOST variable from your environment.
-// const token = (host && previewAccessToken) || accessToken || deliveryToken;
-
-// if (!spaceId || !token) {
-//   throw new Error("Contentful spaceId and the access token need to be provided.")
-// }
 
 module.exports = {
   ...(siteUrl
@@ -86,17 +62,7 @@ module.exports = {
         checkSupportedExtensions: false,
       },
     },
-    /*
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        environment: environment || "master",
-        spaceId,
-        accessToken: token,
-        ...(host ? { host } : {}),
-      },
-    },
-*/
+    /* */
     "gatsby-transformer-inline-svg",
     "gatsby-plugin-emotion",
     {

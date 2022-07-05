@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Title from "./Title";
 import Text from "./Text";
@@ -38,15 +37,5 @@ const SectionHeading = ({ title, text }) => (
     )}
   </Component>
 );
-
-SectionHeading.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
-};
-
-SectionHeading.defaultProps = {
-  title: null,
-  text: null,
-};
 
 export default SectionHeading;

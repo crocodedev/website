@@ -1,44 +1,46 @@
-const breakpoints = {
-  values: {
-    sm: 480,
-    md: 768,
-    lg: 992,
-    xl: 1280,
-    "2xl": 1692,
-  },
-};
 const theme = {
   breakpoints: {
-    ...breakpoints,
-    up: (key) => `@media (min-width: ${breakpoints.values[key]}px)`,
-    down: (key) => `@media (max-width: ${breakpoints.values[key] - 0.02}px)`,
-    between: (min, max) =>
-      `@media (min-width: ${breakpoints.values[min]}px) and (max-width: ${
-        breakpoints.values[max] - 0.02
-      }px)`,
+    values: {
+      sm: 480,
+      md: 768,
+      lg: 992,
+      xl: 1280,
+      "2xl": 1692,
+    },
+    up(key) {
+      return `@media (min-width: ${this.values[key]}px)`;
+    },
+    down(key) {
+      return `@media (max-width: ${this.values[key] - 0.02}px)`;
+    },
+    between(min, max) {
+      return `@media (min-width: ${this.values[min]}px) and (max-width: ${
+        this.values[max] - 0.02
+      }px)`;
+    },
   },
   palette: {
     primary: {
-      main: "#7DBE3B",
+      main: "#7dbe3b",
       contrastText: "#fff",
     },
     secondary: {
-      light: "#F4FDEA",
-      main: "#E8FCD5",
-      dark: "#448C0D",
+      light: "#f4fdea",
+      main: "#e8fcd5",
+      dark: "#448c0d",
     },
     tertiary: {
       main: "#222",
       contrastText: "#fff",
     },
     background: {
-      paper: "#F8F8F8",
+      paper: "#f8f8f8",
       default: "#FFF",
     },
     text: {
       primary: "#222",
       secondary: "#fff",
-      disabled: "#A6A6A6",
+      disabled: "#a6a6a6",
     },
   },
   borderRadius: {
@@ -48,20 +50,22 @@ const theme = {
     circle: "100%",
   },
   shadows: {
-    header: "0px 0px 2px rgba(0, 0, 0, 0.2), 0px 2px 10px rgba(0, 0, 0, 0.1)",
-    card: "0px 0px 1px rgba(0, 0, 0, 0.25), 0px 1px 1px rgba(0, 0, 0, 0.05)",
-    cardAccent: "0px 0px 40px rgba(0, 0, 0, 0.06);",
-    popup: "0px 0px 4px rgba(0, 0, 0, 0.1), 0px 8px 40px rgba(0, 0, 0, 0.2)",
+    header: "0 0 2px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.1)",
+    card: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.05)",
+    cardAccent: "0 0 40px rgba(0, 0, 0, 0.06)",
+    popup: "0 0 4px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(0, 0, 0, 0.2)",
   },
   typography: {
     rootFontSize: 16,
-    pxToRem: (value) => `${(value / theme.typography.rootFontSize).toFixed(3)}rem`,
+    pxToRem(value) {
+      return `${(value / this.rootFontSize).toFixed(3)}rem`;
+    },
     fontFamily: `Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'`,
     fontWeight: {
-      bold: 700,
-      semiBold: 600,
-      medium: 500,
       regular: 400,
+      medium: 500,
+      semiBold: 600,
+      bold: 700,
     },
     fontSize: {
       title1: 60,
@@ -73,7 +77,7 @@ const theme = {
       captionText: 14,
     },
     lineHeight: {
-      xsm: "120%",
+      xs: "120%",
       sm: "150%",
       md: "170%",
       lg: "200%",
