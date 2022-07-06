@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import Button from "@/components/Button";
-import Container from "@/components/Container";
 import DevelopmentItem from "@/components/Development/DevelopmentItem";
 import DevelopmentItemContent from "@/components/Development/DevelopmentItemContent";
 import DevelopmentItemImage from "@/components/Development/DevelopmentItemImage";
@@ -9,6 +8,7 @@ import ImageStatic from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
+import DevelopmentContainer from "@/components/Development/DevelopmentWrapper";
 
 const pageData = {
   title: "Custom Web and Mobile Development",
@@ -37,7 +37,7 @@ const Development = ({ data = pageData }) => {
   const { title, text, items } = data;
   return (
     <SectionWrapper>
-      <Container>
+      <DevelopmentContainer>
         <SectionHeading title={title} text={text} />
         <DevelopmentStack>
           {items.map(({ id, image, heading, desc, link, linkText }) => (
@@ -59,9 +59,26 @@ const Development = ({ data = pageData }) => {
             </DevelopmentItem>
           ))}
         </DevelopmentStack>
-      </Container>
+      </DevelopmentContainer>
     </SectionWrapper>
   );
+};
+
+Development.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        image: PropTypes.string,
+        heading: PropTypes.string,
+        desc: PropTypes.string,
+        link: PropTypes.string,
+        linkText: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default Development;
