@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -11,28 +12,28 @@ import ImageStatic from "@/components/Image";
 import TechnologiesSlideText from "@/components/Technologies/TechnologiesSlideText";
 import Text from "@/components/Text";
 
-const data = {
+const pageData = {
   title: "Software Development Technologies",
   categories: [
     {
       id: 1,
-      title: "LBS",
+      name: "LBS",
     },
     {
       id: 2,
-      title: "Front-end",
+      name: "Front-end",
     },
     {
       id: 3,
-      title: "Back-end",
+      name: "Back-end",
     },
     {
       id: 4,
-      title: "Mobile",
+      name: "Mobile",
     },
     {
       id: 5,
-      title: "Cloud",
+      name: "Cloud",
     },
   ],
   items: [
@@ -76,39 +77,65 @@ const data = {
   ],
 };
 
-const Technologies = () => (
-  <SectionWrapper>
-    <Container>
-      <SectionHeading title={data.title} />
-      <TechnologiesWrapper>
-        <TechnologiesStack>
-          {data.categories.map(({ id, title }) => (
-            <TechnologiesStackItem key={id}>{title}</TechnologiesStackItem>
+const Technologies = ({ data = pageData }) => {
+  const { title, categories, items } = data;
+  return (
+    <SectionWrapper>
+      <Container>
+        <SectionHeading title={title} />
+        <TechnologiesWrapper>
+          <TechnologiesStack>
+            {categories.map(({ id, name }) => (
+              <TechnologiesStackItem key={id}>{name}</TechnologiesStackItem>
+            ))}
+          </TechnologiesStack>
+          {items.map(({ cards, text }) => (
+            <TechnologiesSlide key={cards}>
+              <TechnologiesSlideStack>
+                {cards.map(({ src, title: cardTitle }) => (
+                  <TechnologiesSlideStackItem key={text}>
+                    <ImageStatic src={src} />
+                    <Text>{cardTitle}</Text>
+                  </TechnologiesSlideStackItem>
+                ))}
+              </TechnologiesSlideStack>
+              <TechnologiesSlideText
+                lineHeight="lg"
+                fontSize="text"
+                fontWeight="regular"
+                mobileMultiplier={0.875}
+              >
+                {text}
+              </TechnologiesSlideText>
+            </TechnologiesSlide>
           ))}
-        </TechnologiesStack>
-        {data.items.map(({ cards, text }) => (
-          <TechnologiesSlide key={cards}>
-            <TechnologiesSlideStack>
-              {cards.map(({ src, title }) => (
-                <TechnologiesSlideStackItem key={text}>
-                  <ImageStatic src={src} />
-                  <Text>{title}</Text>
-                </TechnologiesSlideStackItem>
-              ))}
-            </TechnologiesSlideStack>
-            <TechnologiesSlideText
-              lineHeight="lg"
-              fontSize="text"
-              fontWeight="regular"
-              mobileMultiplier={0.875}
-            >
-              {text}
-            </TechnologiesSlideText>
-          </TechnologiesSlide>
-        ))}
-      </TechnologiesWrapper>
-    </Container>
-  </SectionWrapper>
-);
+        </TechnologiesWrapper>
+      </Container>
+    </SectionWrapper>
+  );
+};
+
+Technologies.propTypes = {
+  data: PropTypes.exact({
+    categories: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        name: PropTypes.string,
+      }),
+    ),
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        cards: PropTypes.arrayOf(
+          PropTypes.exact({
+            src: PropTypes.string,
+            title: PropTypes.string,
+          }),
+        ),
+        text: PropTypes.string,
+      }),
+    ),
+    title: PropTypes.string,
+  }).isRequired,
+};
 
 export default Technologies;
