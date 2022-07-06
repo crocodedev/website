@@ -5,10 +5,7 @@ require("dotenv").config({
 
 const { robots, pwa } = require("./config/site");
 
-const {
-  SITE_URL: siteUrl,
-  GOOGLE_ANALYTICS_TRACKING_ID: trackingId,
-} = process.env;
+const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
 
 module.exports = {
   ...(siteUrl
@@ -21,6 +18,14 @@ module.exports = {
   plugins: [
     ...(siteUrl
       ? [
+          {
+            resolve: "gatsby-source-sanity",
+            options: {
+              projectId: process.env.SANITY_PROJECT_ID,
+              dataset: process.env.SANITY_DATASET,
+              token: process.env.SANITY_TOKEN,
+            },
+          },
           {
             resolve: "gatsby-plugin-sitemap",
             options: {
