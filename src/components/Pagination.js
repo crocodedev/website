@@ -14,7 +14,6 @@ const dynamicStyle = ({ theme, active }) => css`
     background-color: ${theme.palette.secondary.dark};
     color: ${theme.palette.text.secondary};
     font-weight: ${theme.typography.fontWeight.bold};
-    display: block;
   `
     : ""}
 `;
@@ -23,12 +22,32 @@ const StyledPaginationItem = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 20px;
-  font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
-  line-height: ${({ theme }) => theme.typography.lineHeight.xsm};
+  text-align: center;
   border-radius: ${({ theme }) => theme.borderRadius.small};
   cursor: pointer;
   transition: 0.3s;
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    width: 32px;
+    height: 32px;
+    padding: 8px 6px;
+    font-size: ${({ theme }) => theme.typography.fontSize.captionText}px;
+    line-height: ${({ theme }) => theme.typography.lineHeight.xsm};
+  }
+  ${({ theme }) => theme.breakpoints.between("sm", "xl")} {
+    width: 45px;
+    height: 45px;
+    padding: 9px 10px;
+    font-size: ${({ theme }) => theme.typography.fontSize.text}px;
+    line-height: ${({ theme }) => theme.typography.lineHeight.xsm};
+  }
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    width: 52px;
+    height: 52px;
+    padding: 14px 20px;
+    font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
+    line-height: ${({ theme }) => theme.typography.lineHeight.xsm};
+  }
 
   ${dynamicStyle}
 `;
@@ -37,11 +56,7 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
   const [arrOfCurrButtons, setArrOfCurrButtons] = React.useState([]);
   const arrayOfPages = [];
 
-  for (let i = 0; i < pageCount; i += 1) {
-    /* remove if if works with address row */
-    if (i === 0) {
-      i += 1;
-    }
+  for (let i = 1; i < pageCount; i += 1) {
     arrayOfPages.push(i);
   }
   React.useEffect(() => {
@@ -93,7 +108,7 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
       </PaginationStack>
       <PaginationArrowLink
         align="right"
-        disabled={+currentPage === +pageCount}
+        disabled={+currentPage === +pageCount - 1}
         onClick={() => handler(currentPage + 1)}
       />
     </PaginationWrapper>

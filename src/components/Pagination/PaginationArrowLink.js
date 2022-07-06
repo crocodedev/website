@@ -7,11 +7,33 @@ const dynamicStyles = ({ theme, align, disabled }) => css`
     ${align === "left"
       ? `
     transform: rotate(-45deg);
-    left: 13px;
+    ${theme.breakpoints.down("sm")} {
+        left: 10px;
+      }
+       ${theme.breakpoints.between("sm", "md")} {
+        left: 17px;
+      }
+      ${theme.breakpoints.between("md", "xl")} {
+        left: 18px;
+      }
+      ${theme.breakpoints.up("xl")} {
+         left: 13px;
+      }
 `
       : `
     transform: rotate(135deg);
-    right: 13px;
+    ${theme.breakpoints.down("sm")} {
+        right: 10px;
+      }
+       ${theme.breakpoints.between("sm", "md")} {
+        right: 17px;
+      }
+      ${theme.breakpoints.between("md", "xl")} {
+        right: 18px;
+      }
+      ${theme.breakpoints.up("xl")} {
+         right: 13px;
+      }
 `}
   }
 
@@ -20,16 +42,40 @@ const dynamicStyles = ({ theme, align, disabled }) => css`
     pointer-events: none;
 
   &::before {
-    width: 38px;
-    height: 2px;
+
     background-color: ${theme.palette.text.disabled};
+     ${theme.breakpoints.down("sm")} {
+      height: 1px;
+    }
+      ${theme.breakpoints.down("md")} {
+      width: 20px;
+      height: 1px;
+    }
+    ${theme.breakpoints.between("md", "xl")} {
+      width: 21px;
+    }
+    ${theme.breakpoints.up("sm")} {
+      height: 2px;
+    }
+    ${theme.breakpoints.up("xl")} {
+      width: 38px;
+    }
   }
 
   &::after {
-    width: 10px;
-    height: 10px;
-    border-left: 2px solid ${theme.palette.text.disabled};
-    border-top: 2px solid ${theme.palette.text.disabled};
+
+     ${theme.breakpoints.down("sm")} {
+      width: 5px;
+      height: 5px;
+      border-left: 1px solid ${theme.palette.text.disabled};
+      border-top: 1px solid ${theme.palette.text.disabled};
+    }
+     ${theme.breakpoints.up("sm")} {
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid ${theme.palette.text.disabled};
+      border-top: 2px solid ${theme.palette.text.disabled};
+    }
   }
   `
     : `
@@ -38,8 +84,14 @@ const dynamicStyles = ({ theme, align, disabled }) => css`
   }
 
   &::after {
-    border-left: 2px solid ${theme.palette.primary.main};
-    border-top: 2px solid ${theme.palette.primary.main};
+     ${theme.breakpoints.down("sm")} {
+      border-left: 1px solid ${theme.palette.primary.main};
+      border-top: 1px solid ${theme.palette.primary.main};
+    }
+     ${theme.breakpoints.up("sm")} {
+      border-left: 2px solid ${theme.palette.primary.main};
+      border-top: 2px solid ${theme.palette.primary.main};
+    }
   }
   `}
 `;
@@ -59,13 +111,32 @@ const PaginationArrowLink = styled(Link)`
   }
 
   &::before {
-    width: 38px;
-    height: 2px;
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      height: 1px;
+    }
+    ${({ theme }) => theme.breakpoints.up("sm")} {
+      height: 2px;
+    }
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      width: 20px;
+    }
+    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+      width: 21px;
+    }
+    ${({ theme }) => theme.breakpoints.up("xl")} {
+      width: 38px;
+    }
   }
 
   &::after {
-    width: 10px;
-    height: 10px;
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      width: 5px;
+      height: 5px;
+    }
+    ${({ theme }) => theme.breakpoints.up("sm")} {
+      width: 10px;
+      height: 10px;
+    }
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
@@ -74,13 +145,13 @@ const PaginationArrowLink = styled(Link)`
     padding: 21px 11px;
   }
 
-  ${({ theme }) => theme.breakpoints.between("sm", "md")} {
+  ${({ theme }) => theme.breakpoints.between("sm", "xl")} {
     width: 55px;
     height: 55px;
     padding: 28px 17px;
   }
 
-  ${({ theme }) => theme.breakpoints.up("md")} {
+  ${({ theme }) => theme.breakpoints.up("xl")} {
     width: 62px;
     height: 62px;
     padding: 31px 12px;

@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 const PaginationWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 13px;
