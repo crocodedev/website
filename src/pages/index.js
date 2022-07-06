@@ -26,11 +26,13 @@ import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
 
 import "destyle.css/destyle.css";
+import Development from "@/sections/Development";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Development />
     <CtaImage />
     <ListSix />
     <ListSeven />
