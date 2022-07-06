@@ -24,6 +24,7 @@ import Footer from "@/sections/Footer";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
+import Technologies from "@/sections/Technologies";
 
 import "destyle.css/destyle.css";
 
@@ -31,6 +32,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Technologies />
     <CtaImage />
     <ListSix />
     <ListSeven />
