@@ -7,7 +7,7 @@ const Title = styled.h1`
   text-transform: uppercase;
   display: grid;
   gap: 10px;
-  line-height: ${({ theme }) => theme.typography.lineHeight.sm};
+  line-height: ${({ theme }) => theme.typography.lineHeight.xsm};
 
   &:after {
     content: "";
