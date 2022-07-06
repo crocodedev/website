@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "@emotion/react";
 import useMedia from "@/hooks/use-media";
 import Map, { Marker, Popup } from "react-map-gl";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -30,8 +29,6 @@ const data = {
 };
 
 const Contacts = () => {
-  const theme = useTheme();
-
   const mapCoordinates = useMedia(
     ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
 

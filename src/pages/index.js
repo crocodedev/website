@@ -25,6 +25,7 @@ import Footer from "@/sections/Footer";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
+import TextTwo from "@/sections/TextTwo";
 
 import "destyle.css/destyle.css";
 
@@ -33,23 +34,24 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <TextOne />
-    <CtaImage />
-    <ListSix />
-    <ListSeven />
-    <Contacts />
-    <CtaForm />
-    <RelatedArticles />
-    <CtaText />
+    <TextTwo />
     <ListOne />
     <ListTwo />
     <ListThree />
     <ListFour />
     <ListFive />
+    <ListSix />
+    <ListSeven />
+    <Contacts />
+    <CtaImage />
+    <CtaForm />
+    <CtaText />
+    <RelatedArticles />
     <OurTeam />
     <FAQ />
     <OurClients />
     <Reviews />
-    {/* <Benefits /> */}
+    <Benefits />
     <Footer />
   </ThemeProvider>
 );

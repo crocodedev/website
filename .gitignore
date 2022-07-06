@@ -73,9 +73,6 @@ yarn-error.log
 .env.development
 .env.production
 
-# Contentful config file
-contentful/config.json
-
 # Local Netlify folder
 .netlify
 
