@@ -21,13 +21,13 @@ const dynamicStyle = ({ theme, bgColor, sectionGap, disablePaddings }) => css`
         padding-top: 70px;
         padding-bottom: 70px;
       }
-
-      ${theme.breakpoints.between("md", "lg")} {
+    
+      ${theme.breakpoints.between("md", "xl")} {
         padding-top: 80px;
         padding-bottom: 80px;
       }
-
-      ${theme.breakpoints.up("lg")} {
+    
+      ${theme.breakpoints.up("xl")} {
         padding-top: 110px;
         padding-bottom: 100px;
       }
