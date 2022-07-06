@@ -22,7 +22,7 @@ const CtaForm = ({ data = dataPage }) => {
         <CtaFormWrapper>
           <CtaFormTitle
             fontSize="title2"
-            lineHeight="xsm"
+            lineHeight="xs"
             textAlign="center"
             color={
               data.bgColor === "dark"

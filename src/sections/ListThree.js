@@ -10,22 +10,22 @@ import ImageStatic from "@/components/Image";
 
 const dataPage = {
   title: "What You Can Expect",
-  subtitle: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+  subtitle: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet.`,
   items: [
     {
       src: "/uploads/list-three-image.svg",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
       src: "/uploads/list-three-image.svg",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
       src: "/uploads/list-three-image.svg",
-      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit.Exercitation veniam consequat sunt nostrud amet.`,
     },
   ],

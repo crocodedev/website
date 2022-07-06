@@ -14,7 +14,7 @@ import BenefitsDescriptionText from "@/components/Benefits/BenefitsDescriptionTe
 const dataPage = {
   title: "Benefits of Custom Software",
   text: `
-    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
 
   items: {
@@ -70,7 +70,7 @@ const Benefits = ({ data = dataPage }) => (
             fontSize="title2"
             fontWeight="bold"
             textAlign="center"
-            lineHeight="xsm"
+            lineHeight="xs"
           >
             {data.title}
           </BenefitsDescriptionTitle>

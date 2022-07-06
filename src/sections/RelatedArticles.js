@@ -20,34 +20,34 @@ const dataPage = {
       src: "/uploads/related-articles-article-image-1.jpg",
       heading: "Break is an important part of work",
       date: "12 Apr. 2022",
-      text: `How much tired eyes sometimes you notice, only after finishing hard work. 
-        Business is business, but even a ten-minute break will help both the eyes and even the memory. 
+      text: `How much tired eyes sometimes you notice, only after finishing hard work.
+        Business is business, but even a ten-minute break will help both the eyes and even the memory.
         Rest with closed eyes has been the most obvious and accessible type of relaxation after sleep since ancient times.`,
     },
     {
       src: "/uploads/related-articles-article-image-2.jpg",
       heading: "A typical day at the office",
       date: "10 Jan. 2022",
-      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office, 
+      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office,
         to tell and show how everything is arranged here.
-        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable, 
+        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable,
         relaxed, find quiet places to solve important tasks or creative space for inspiration and great ideas.`,
     },
     {
       src: "/uploads/related-articles-article-image-1.jpg",
       heading: "Break is an important part of work",
       date: "12 Apr. 2022",
-      text: `How much tired eyes sometimes you notice, only after finishing hard work. 
-        Business is business, but even a ten-minute break will help both the eyes and even the memory. 
+      text: `How much tired eyes sometimes you notice, only after finishing hard work.
+        Business is business, but even a ten-minute break will help both the eyes and even the memory.
         Rest with closed eyes has been the most obvious and accessible type of relaxation after sleep since ancient times.`,
     },
     {
       src: "/uploads/related-articles-article-image-2.jpg",
       heading: "A typical day at the office",
       date: "10 Jan. 2022",
-      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office, 
+      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office,
         to tell and show how everything is arranged here.
-        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable, 
+        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable,
         relaxed, find quiet places to solve important tasks or creative space for inspiration and great ideas.`,
     },
   ],
