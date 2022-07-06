@@ -11,6 +11,7 @@ import TechnologiesSlideStackItem from "@/components/Technologies/TechnologiesSl
 import ImageStatic from "@/components/Image";
 import TechnologiesSlideText from "@/components/Technologies/TechnologiesSlideText";
 import Text from "@/components/Text";
+import React from "react";
 
 const pageData = {
   title: "Software Development Technologies",
@@ -38,9 +39,10 @@ const pageData = {
   ],
   items: [
     {
+      category: "LBS",
       cards: [
         {
-          src: "/uploads/technologies.png",
+          src: "/uploads/our-team-person-1.jpg",
           title: "Google Maps",
         },
         {
@@ -48,7 +50,7 @@ const pageData = {
           title: "Google Maps",
         },
         {
-          src: "/uploads/technologies.png",
+          src: "/uploads/our-team-person-1.jpg",
           title: "Google Maps",
         },
         {
@@ -56,7 +58,7 @@ const pageData = {
           title: "Google Maps",
         },
         {
-          src: "/uploads/technologies.png",
+          src: "/uploads/our-team-person-1.jpg",
           title: "Google Maps",
         },
         {
@@ -64,7 +66,45 @@ const pageData = {
           title: "Google Maps",
         },
         {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
           src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+      ],
+      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      category: "Front-end",
+      cards: [
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
           title: "Google Maps",
         },
         {
@@ -79,6 +119,8 @@ const pageData = {
 
 const Technologies = ({ data = pageData }) => {
   const { title, categories, items } = data;
+  const [currSlide, setCurrSlide] = React.useState(1);
+  const handlerSetCurrSlide = (slide) => setCurrSlide(slide);
   return (
     <SectionWrapper>
       <Container>
@@ -86,7 +128,12 @@ const Technologies = ({ data = pageData }) => {
         <TechnologiesWrapper>
           <TechnologiesStack>
             {categories.map(({ id, name }) => (
-              <TechnologiesStackItem key={id}>{name}</TechnologiesStackItem>
+              <TechnologiesStackItem
+                active={id === currSlide}
+                key={id}
+                text={name}
+                handler={() => handlerSetCurrSlide(id)}
+              />
             ))}
           </TechnologiesStack>
           {items.map(({ cards, text }) => (

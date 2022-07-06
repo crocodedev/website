@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const TechnologiesSlideStackItems = styled.div`
+const TechnologiesSlideStackItem = styled.div`
   display: flex;
   align-items: c center;
   flex-direction: column;
@@ -12,8 +12,9 @@ const TechnologiesSlideStackItems = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: ${({ theme }) => theme.borderRadius.small};
     }
   }
 `;
 
-export default TechnologiesSlideStackItems;
+export default TechnologiesSlideStackItem;
