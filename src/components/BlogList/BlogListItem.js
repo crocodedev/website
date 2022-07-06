@@ -9,13 +9,11 @@ const BlogListItem = styled.article`
 
   ${({ theme }) => theme.breakpoints.between("md", "lg")} {
     grid-template-columns: 1fr 1fr;
-
     gap: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
     grid-template-columns: 1fr 1fr;
-
     gap: 40px;
   }
 `;
