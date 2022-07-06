@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { useTheme } from "@emotion/react";
 import useMedia from "@/hooks/use-media";
@@ -15,8 +16,9 @@ import MapWrapper from "@/components/Map/MapWrapper";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const data = {
+const dataPage = {
   title: "Connect with our Team",
+  adress: "Chkalova St, 56A-1B, 210041 Vitebsk, Belarus",
   items: [
     {
       text: "welcome@crocode.io",
@@ -29,7 +31,7 @@ const data = {
   ],
 };
 
-const Contacts = () => {
+const Contacts = ({ data = dataPage }) => {
   const theme = useTheme();
 
   const mapCoordinates = useMedia(
@@ -83,7 +85,7 @@ const Contacts = () => {
                 closeButton={false}
                 closeOnClick={false}
               >
-                Chkalova St, 56A-1B, 210041 Vitebsk, Belarus
+                {data.adress}
               </Popup>
             </Map>
           </MapWrapper>
@@ -91,6 +93,19 @@ const Contacts = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+Contacts.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    adress: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        text: PropTypes.string,
+        src: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default Contacts;

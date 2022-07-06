@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import FooterWrapper from "@/components/Footer/FooterWrapper";
@@ -14,16 +15,19 @@ import FooterLink from "@/components/Footer/FooterLink";
 import Text from "@/components/Text";
 import ImageStatic from "@/components/Image";
 
-const data = {
+const dataPage = {
   logo: "uploads/footer-logo.svg",
+
   socials: [
     { logo: "uploads/footer-facebook.svg", src: "https://www.facebook.com" },
     { logo: "uploads/footer-linkedin.svg", src: "https://www.linkedin.com" },
   ],
+
   links: [
     {
       title: "Services",
       src: "/#",
+
       links: [
         {
           title: "Dedicated Teams",
@@ -47,6 +51,7 @@ const data = {
         },
       ],
     },
+
     {
       title: "Technologies",
       src: "/#",
@@ -90,7 +95,7 @@ const data = {
   ],
 };
 
-const Footer = () => {
+const Footer = ({ data = dataPage }) => {
   const theme = useTheme();
   return (
     <FooterWrapper>
@@ -134,6 +139,30 @@ const Footer = () => {
       </Container>
     </FooterWrapper>
   );
+};
+
+Footer.propTypes = {
+  data: PropTypes.exact({
+    logo: PropTypes.string,
+    socials: PropTypes.arrayOf(
+      PropTypes.exact({
+        logo: PropTypes.string,
+        src: PropTypes.string,
+      }),
+    ),
+    links: PropTypes.arrayOf(
+      PropTypes.exact({
+        title: PropTypes.string,
+        src: PropTypes.string,
+        links: PropTypes.arrayOf(
+          PropTypes.exact({
+            title: PropTypes.string,
+            src: PropTypes.string,
+          }),
+        ),
+      }),
+    ),
+  }).isRequired,
 };
 
 export default Footer;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import Text from "@/components/Text";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -8,14 +9,14 @@ import NotFoundPageWrapper from "@/components/NotFoundPage/NotFoundPageWrapper";
 import NotFoundPageCaptionText from "@/components/NotFoundPage/NotFoundPageCaptionText";
 import NotFoundPageImageWrapper from "@/components/NotFoundPage/NotFoundPageImageWrapper";
 
-const data = {
+const dataPage = {
   src: "/uploads/not-found-page-image.svg",
   notFoundText1: "page not found",
   notFoundText2: "The link is broken or the page has been moved.",
   buttonText: "Home page",
 };
 
-const NotFound = () => (
+const NotFound = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <NotFoundPageWrapper>
@@ -37,5 +38,14 @@ const NotFound = () => (
     </Container>
   </SectionWrapper>
 );
+
+NotFound.propTypes = {
+  data: PropTypes.exact({
+    src: PropTypes.string,
+    notFoundText1: PropTypes.string,
+    notFoundText2: PropTypes.string,
+    buttonText: PropTypes.string,
+  }).isRequired,
+};
 
 export default NotFound;

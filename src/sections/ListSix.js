@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Text from "@/components/Text";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
@@ -6,7 +7,7 @@ import ListSixStack from "@/components/ListSix/ListSixStack";
 import ListSixStackItem from "@/components/ListSix/ListSixStackItem";
 import ListSixStackItemText from "@/components/ListSix/ListSixStackItemText";
 
-const data = {
+const dataPage = {
   title: "Our Team of Dedicated Software Developers & Engineers",
   items: [
     {
@@ -42,7 +43,7 @@ const data = {
   ],
 };
 
-const ListSix = () => (
+const ListSix = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={data.title} />
@@ -61,5 +62,17 @@ const ListSix = () => (
     </Container>
   </SectionWrapper>
 );
+
+ListSix.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        title: PropTypes.string,
+        text: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+};
 
 export default ListSix;

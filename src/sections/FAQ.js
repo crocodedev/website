@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -5,7 +6,7 @@ import FAQStack from "@/components/FAQ/FAQStack";
 import FAQColumn from "@/components/FAQ/FAQColumn";
 import FAQItem from "@/components/FAQ/FAQItem";
 
-const data = {
+const dataPage = {
   title: "questions you might have",
   items: [
     {
@@ -51,7 +52,7 @@ const data = {
   ],
 };
 
-const FAQ = () => (
+const FAQ = ({ data = dataPage }) => (
   <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
@@ -70,5 +71,17 @@ const FAQ = () => (
     </Container>
   </SectionWrapper>
 );
+
+FAQ.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        title: PropTypes.string,
+        text: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+};
 
 export default FAQ;

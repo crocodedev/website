@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import Text from "@/components/Text";
@@ -12,7 +13,7 @@ import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
 import RelatedArticlesItemHeadingTitle from "@/components/RelatedArticles/RelatedArticlesItemHeadingTitle";
 
-const data = {
+const dataPage = {
   title: "Related articles from our Blog",
   articles: [
     {
@@ -52,7 +53,7 @@ const data = {
   ],
 };
 
-const RelatedArticles = () => {
+const RelatedArticles = ({ data = dataPage }) => {
   const theme = useTheme();
   return (
     <SectionWrapper bgColor="paper">
@@ -83,6 +84,20 @@ const RelatedArticles = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+RelatedArticles.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    articles: PropTypes.arrayOf(
+      PropTypes.exact({
+        src: PropTypes.string,
+        heading: PropTypes.string,
+        date: PropTypes.string,
+        text: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default RelatedArticles;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -21,7 +22,7 @@ import ReviewsPagination from "@/components/Reviews/ReviewsPagination";
 import Text from "@/components/Text";
 import ImageStatic from "@/components/Image";
 
-const data = {
+const dataPage = {
   title: "What they say about us",
   items: [
     {
@@ -72,7 +73,7 @@ const data = {
   ],
 };
 
-const Reviews = () => {
+const Reviews = ({ data = dataPage }) => {
   const theme = useTheme();
 
   return (
@@ -132,6 +133,23 @@ const Reviews = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+Reviews.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.string,
+        authorName: PropTypes.string,
+        authorCountry: PropTypes.string,
+        authorPhoto: PropTypes.string,
+        rating: PropTypes.number,
+        text: PropTypes.string,
+        date: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default Reviews;
