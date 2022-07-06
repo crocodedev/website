@@ -6,6 +6,7 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
@@ -31,7 +32,8 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
-    <CtaImage />
+    <TextOne />
+    {/* <CtaImage />
     <ListSix />
     <ListSeven />
     <Contacts />
@@ -46,9 +48,9 @@ const HomePage = () => (
     <OurTeam />
     <FAQ />
     <OurClients />
-    <Reviews />
+    <Reviews /> */}
     {/* <Benefits /> */}
-    <Footer />
+    {/* <Footer /> */}
   </ThemeProvider>
 );
 
