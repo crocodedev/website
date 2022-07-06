@@ -6,7 +6,6 @@ import SectionWrapper from "@/components/SectionWrapper";
 import TextTwoContentWrapper from "@/components/TextTwo/TextTwoContentWrapper";
 import TextTwoImageWrapper from "@/components/TextTwo/TextTwoImageWrapper";
 import TextTwoInfoWrapper from "@/components/TextTwo/TextTwoInfoWrapper";
-import TextTwoInfoCaption from "@/components/TextTwo/TextTwoInfoCaption";
 import TextTwoInfoValues from "@/components/TextTwo/TextTwoInfoValues";
 import TextTwoInfoItem from "@/components/TextTwo/TextTwoInfoItem";
 import Text from "@/components/Text";
@@ -46,9 +45,9 @@ const TextTwo = () => {
             <ImageStatic src={data.src} />
           </TextTwoImageWrapper>
           <TextTwoInfoWrapper>
-            <TextTwoInfoCaption fontSize="subtitle" mobileMultiplier="0.7">
+            <Text fontSize="subtitle" mobileMultiplier="0.7">
               {data.caption}
-            </TextTwoInfoCaption>
+            </Text>
             <TextTwoInfoValues>
               {data.items.map(({ value, caption }) => (
                 <TextTwoInfoItem key={caption}>
