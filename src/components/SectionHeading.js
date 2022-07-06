@@ -23,6 +23,7 @@ const SectionHeadingText = styled(Text)`
 `;
 
 // TODO: prop-types
+// eslint-disable-next-line react/prop-types
 const SectionHeading = ({ title, text }) => (
   <Component>
     {title && <Title>{title}</Title>}
