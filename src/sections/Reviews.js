@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { useTheme } from "@emotion/react";
 
 import Container from "@/components/Container";

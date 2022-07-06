@@ -10,33 +10,33 @@ const data = {
   title: "Our Team of Dedicated Software Developers & Engineers",
   items: [
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers1",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers2",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers3",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers4",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers5",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
     {
-      title: "Some engineers",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+      title: "Some engineers6",
+      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
   ],

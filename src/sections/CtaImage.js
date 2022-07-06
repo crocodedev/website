@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
@@ -13,7 +12,6 @@ const data = {
 };
 
 const CtaImage = () => {
-  const theme = useTheme();
   return (
     <SectionWrapper disablePaddings={true} brColor={data.bgColor}>
       <Container>
