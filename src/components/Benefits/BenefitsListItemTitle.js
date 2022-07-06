@@ -8,14 +8,14 @@ const dynamicStyles = ({ theme, align }) => css`
     ${theme.breakpoints.down("md")}{
       grid-area: 1 / 2 / 2 / 2;
     }
-    
+
     ${theme.breakpoints.up("md")}{
         grid-area: 1 / 1 / 2 / 2;
     }
     `
     : `
         grid-area: 1 / 2 / 2 / 2;
-    
+
     `}
 `;
 
