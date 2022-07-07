@@ -1,5 +1,11 @@
 {
     "idStructure": "delimiter",
     "referenceBehavior": "strong",
-    "languages": ["en"]
+    
+    "base": "en",
+    "languages": [
+        {"id": "en", "title": "English"},
+        {"id": "de", "title": "Deutch"},
+        {"id": "pl", "title": "Polish"}
+    ]
 }
