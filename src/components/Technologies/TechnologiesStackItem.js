@@ -6,6 +6,7 @@ const dynamicStyle = ({ active, theme }) => css`
   ${active
     ? `
     background-color: ${theme.palette.secondary.main};
+    box-shadow: ${theme.shadows.card};
   `
     : `
     ""
@@ -13,15 +14,28 @@ const dynamicStyle = ({ active, theme }) => css`
 `;
 
 const StyledTechnologiesStackItem = styled.button`
-  width: 300px;
-  height: 104px;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   border-radius: ${({ theme }) => theme.borderRadius.small};
+  white-space: nowrap;
+  padding: 40px;
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
+    padding: 40px;
+  }
+  ${({ theme }) => theme.breakpoints.down("xl")} {
+    font-size: ${({ theme }) => theme.typography.fontSize.text}px;
+    padding: 12px;
+  }
+  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+  }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    width: 160px;
+  }
+
   ${dynamicStyle}
 `;
 

@@ -114,12 +114,126 @@ const pageData = {
       ],
       text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     },
+    {
+      category: "Back-end",
+      cards: [
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+      ],
+      text: "Amet  amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      category: "Mobile",
+      cards: [
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+      ],
+      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      category: "Cloud",
+      cards: [
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/our-team-person-1.jpg",
+          title: "Google Maps",
+        },
+        {
+          src: "/uploads/technologies.png",
+          title: "Google Maps",
+        },
+      ],
+      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
   ],
 };
 
 const Technologies = ({ data = pageData }) => {
   const { title, categories, items } = data;
-  const [currSlide, setCurrSlide] = React.useState(1);
+  const [currSlide, setCurrSlide] = React.useState("LBS");
   const handlerSetCurrSlide = (slide) => setCurrSlide(slide);
   return (
     <SectionWrapper>
@@ -129,20 +243,27 @@ const Technologies = ({ data = pageData }) => {
           <TechnologiesStack>
             {categories.map(({ id, name }) => (
               <TechnologiesStackItem
-                active={id === currSlide}
+                active={name === currSlide}
                 key={id}
                 text={name}
-                handler={() => handlerSetCurrSlide(id)}
+                handler={() => handlerSetCurrSlide(name)}
               />
             ))}
           </TechnologiesStack>
-          {items.map(({ cards, text }) => (
-            <TechnologiesSlide key={cards}>
+          {items.map(({ cards, text, category }) => (
+            <TechnologiesSlide key={cards} active={category === currSlide}>
               <TechnologiesSlideStack>
                 {cards.map(({ src, title: cardTitle }) => (
                   <TechnologiesSlideStackItem key={text}>
                     <ImageStatic src={src} />
-                    <Text>{cardTitle}</Text>
+                    <Text
+                      lineHeight="md"
+                      fontSize="text"
+                      fontWeight="regular"
+                      mobileMultiplier={0.75}
+                    >
+                      {cardTitle}
+                    </Text>
                   </TechnologiesSlideStackItem>
                 ))}
               </TechnologiesSlideStack>

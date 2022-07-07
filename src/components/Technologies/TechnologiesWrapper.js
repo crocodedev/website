@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 
 const TechnologiesWrapper = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
+  align-items: flex-start;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    gap: 0px;
+    width: 100%;
   }
-  ${({ theme }) => theme.breakpoints.up("sm")} {
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    gap: 20px;
   }
 `;
 
