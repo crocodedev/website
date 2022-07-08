@@ -15,14 +15,6 @@ const ProjectsStackItemImageWrapper = styled.div`
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-      ${({ theme }) => theme.breakpoints.down("md")} {
-      }
-
-      ${({ theme }) => theme.breakpoints.between("md", "2xl")} {
-      }
-
-      ${({ theme }) => theme.breakpoints.up("2xl")} {
-      }
     }
   }
 `;
