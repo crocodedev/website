@@ -6,9 +6,11 @@ const ProjectsStackItemDescription = styled(Text)`
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  
   ${({ theme }) => theme.breakpoints.down("md")} {
     -webkit-line-clamp: 5;
   }
+  
   ${({ theme }) => theme.breakpoints.up("md")} {
     -webkit-line-clamp: 4;
   }
