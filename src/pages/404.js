@@ -1,7 +1,8 @@
 import React from "react";
-import { Global, ThemeProvider } from "@emotion/react";
-import theme from "@/theme";
 import { Helmet } from "react-helmet";
+import { Global, ThemeProvider } from "@emotion/react";
+
+import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 

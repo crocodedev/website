@@ -15,7 +15,7 @@ const dynamicStyles = ({ theme, align }) => css`
     `
     : `
         grid-area: 2 / 2 / 2 / 2;
-    
+
     `}
 `;
 

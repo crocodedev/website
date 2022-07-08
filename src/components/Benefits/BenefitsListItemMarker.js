@@ -12,10 +12,10 @@ const dynamicStyles = ({ theme, align }) => css`
         left: 0;
       }
     }
-    
+
     ${theme.breakpoints.up("md")}{
       grid-area: 1 / 2 / 2 / 2;
-    
+
       &::before {
         right: 0;
       }
