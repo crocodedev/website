@@ -10,6 +10,7 @@ const ProjectsStack = styled.div`
   ${({ theme }) => theme.breakpoints.up("md")} {
     grid-template-columns: 1fr 1fr;
   }
+  
   ${({ theme }) => theme.breakpoints.down("xl")} {
     grid-row-gap: 40px;
     grid-column-gap: 20px;
