@@ -46,6 +46,7 @@ const SliderStepsArrow = styled.button`
   &.slider-steps__disabled {
     pointer-events: none;
     border-color: ${({ theme }) => theme.palette.text.disabled};
+    
     &::before {
       border-top-color: ${({ theme }) => theme.palette.text.disabled};
       border-right-color: ${({ theme }) => theme.palette.text.disabled};
