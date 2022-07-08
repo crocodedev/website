@@ -26,9 +26,10 @@ import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
 import TextTwo from "@/sections/TextTwo";
+import TextThree from "@/sections/TextThree";
 
 import "destyle.css/destyle.css";
-import TextThree from "@/sections/TextThree";
+
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
