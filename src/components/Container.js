@@ -15,7 +15,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+
+  ${({ theme }) => theme.breakpoints.down("xl")} {
+    gap: 40px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    gap: 60px;
+  }
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
     margin-right: auto;
