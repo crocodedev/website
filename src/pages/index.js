@@ -14,6 +14,7 @@ import ListFour from "@/sections/ListFour";
 import ListFive from "@/sections/ListFive";
 import ListSix from "@/sections/ListSix";
 import ListSeven from "@/sections/ListSeven";
+import Projects from "@/sections/Projects";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
@@ -31,6 +32,7 @@ import "destyle.css/destyle.css";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
+    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <TextOne />
