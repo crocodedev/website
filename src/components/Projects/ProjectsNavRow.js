@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const ProjectsNavRow = styled.div`
   display: flex;
   align-items: center;
+  
   p {
     white-space: nowrap;
   }
@@ -12,6 +13,7 @@ const ProjectsNavRow = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
+  
   ${({ theme }) => theme.breakpoints.up("md")} {
     gap: 20px;
   }
