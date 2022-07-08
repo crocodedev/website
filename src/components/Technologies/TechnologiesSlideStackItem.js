@@ -11,14 +11,17 @@ const TechnologiesSlideStackItem = styled.div`
       max-width: 110px;
       max-height: 110px;
     }
+    
     ${({ theme }) => theme.breakpoints.between("md", "xl")} {
       max-width: 90px;
       max-height: 90px;
     }
+    
     ${({ theme }) => theme.breakpoints.down("md")} {
       max-width: 86px;
       max-height: 86px;
     }
+    
     img {
       width: 100%;
       height: 100%;
