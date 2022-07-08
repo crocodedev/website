@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import Text from "@/components/Text";
 import Container from "@/components/Container";
@@ -8,7 +9,7 @@ import CtaImageSectionWrapper from "@/components/CtaImage/CtaImageSectionWrapper
 import CtaImageLink from "@/components/CtaImage/CtaImageLink";
 import CtaImageInfoWrapper from "@/components/CtaImage/CtaImageInfoWrapper";
 
-const data = {
+const dataPage = {
   bgColor: "dark",
   src: "/uploads/cta-image.png",
   title: "Let's talk!",
@@ -16,8 +17,9 @@ const data = {
   buttonText: "Schedule a Call",
 };
 
-const CtaImage = () => {
+const CtaImage = ({ data = dataPage }) => {
   const theme = useTheme();
+  
   return (
     <CtaImageSectionWrapper disablePaddings={true} bgColor={data.bgColor}>
       <Container>
@@ -51,6 +53,14 @@ const CtaImage = () => {
       </Container>
     </CtaImageSectionWrapper>
   );
+};
+
+CtaImage.propTypes = {
+  data: PropTypes.exact({
+    bgColor: PropTypes.string,
+    src: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
 };
 
 export default CtaImage;

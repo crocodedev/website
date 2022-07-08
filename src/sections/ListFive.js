@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import ImageStatic from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
@@ -9,7 +10,7 @@ import ListFiveItemImage from "@/components/ListFive/ListFiveItemImage";
 import ListFiveItem from "@/components/ListFive/ListFiveItem";
 import ListFiveItemContent from "@/components/ListFive/ListFiveItemContent";
 
-const data = {
+const dataPage = {
   title: "High-End Full Stack Consulting",
   text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
   items: [
@@ -43,7 +44,7 @@ const data = {
   ],
 };
 
-const ListFive = () => (
+const ListFive = ({ data = dataPage }) => (
   <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} text={data.text} />
@@ -68,5 +69,23 @@ const ListFive = () => (
     </Container>
   </SectionWrapper>
 );
+
+ListFive.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        src: PropTypes.string,
+        title: PropTypes.string,
+        text: PropTypes.string,
+        link: PropTypes.exact({
+          title: PropTypes.string,
+          src: PropTypes.string,
+        }),
+      }),
+    ),
+  }).isRequired,
+};
 
 export default ListFive;
