@@ -22,16 +22,17 @@ const StyledTechnologiesStackItem = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.small};
   white-space: nowrap;
   padding: 40px;
+  
   ${({ theme }) => theme.breakpoints.up("xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
     padding: 40px;
   }
+  
   ${({ theme }) => theme.breakpoints.down("xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.text}px;
     padding: 12px;
   }
-  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-  }
+  
   ${({ theme }) => theme.breakpoints.down("md")} {
     width: 160px;
   }
