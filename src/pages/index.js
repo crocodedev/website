@@ -31,6 +31,7 @@ import CtaImage from "@/sections/CtaImage";
 import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
+import TextThree from "@/sections/TextThree";
 
 import "destyle.css/destyle.css";
 
@@ -46,6 +47,7 @@ const HomePage = () => (
     <BlogList />
     <TextOne />
     <TextTwo />
+    <TextThree />
     <ListOne />
     <ListTwo />
     <ListThree />
