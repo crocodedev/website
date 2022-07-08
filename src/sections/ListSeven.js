@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -7,7 +8,7 @@ import ListSevenStack from "@/components/ListSeven/ListSevenStack";
 import ListSevenStackItem from "@/components/ListSeven/ListSevenStackItem";
 import ListSevenStackItemText from "@/components/ListSeven/ListSevenStackItemText";
 
-const data = {
+const dataPage = {
   title: "Our services",
   items: [
     {
@@ -43,7 +44,7 @@ const data = {
   ],
 };
 
-const ListSeven = () => (
+const ListSeven = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={data.title} />
@@ -65,5 +66,17 @@ const ListSeven = () => (
     </Container>
   </SectionWrapper>
 );
+
+ListSeven.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        heading: PropTypes.string,
+        text: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+};
 
 export default ListSeven;

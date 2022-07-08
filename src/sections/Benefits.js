@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import BenefitsWrapper from "@/components/Benefits/BenefitsWrapper";
@@ -10,7 +11,7 @@ import BenefitsListItemTitle from "@/components/Benefits/BenefitsListItemTitle";
 import BenefitsListItemText from "@/components/Benefits/BenefitsListItemText";
 import BenefitsDescriptionText from "@/components/Benefits/BenefitsDescriptionText";
 
-const data = {
+const dataPage = {
   title: "Benefits of Custom Software",
   text: `
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
@@ -40,7 +41,7 @@ const data = {
   },
 };
 
-const Benefits = () => (
+const Benefits = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <BenefitsWrapper>
@@ -101,5 +102,26 @@ const Benefits = () => (
     </Container>
   </SectionWrapper>
 );
+
+Benefits.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    items: PropTypes.exact({
+      rigthColumn: PropTypes.arrayOf(
+        PropTypes.exact({
+          itemTitle: PropTypes.string,
+          itemCaption: PropTypes.string,
+        }),
+      ),
+      leftColumn: PropTypes.arrayOf(
+        PropTypes.exact({
+          itemTitle: PropTypes.string,
+          itemCaption: PropTypes.string,
+        }),
+      ),
+    }),
+  }).isRequired,
+};
 
 export default Benefits;

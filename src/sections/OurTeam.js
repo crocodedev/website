@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import ImageStatic from "@/components/Image";
@@ -9,7 +10,7 @@ import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import Text from "@/components/Text";
 
-const data = {
+const dataPage = {
   title: "Our Team",
   items: [
     {
@@ -55,7 +56,7 @@ const data = {
   ],
 };
 
-const OurTeam = () => (
+const OurTeam = ({ data = dataPage }) => (
   <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
@@ -76,5 +77,18 @@ const OurTeam = () => (
     </Container>
   </SectionWrapper>
 );
+
+OurTeam.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        src: PropTypes.string,
+        name: PropTypes.string,
+        role: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+};
 
 export default OurTeam;

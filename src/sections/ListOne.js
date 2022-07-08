@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import Text from "@/components/Text";
 import ImageStatic from "@/components/Image";
@@ -9,7 +10,7 @@ import ListOneStackItem from "@/components/ListOne/ListOneStackItem";
 import ListOneStackItemTitle from "@/components/ListOne/ListOneStackItemTitle";
 import ListOneStackItemText from "@/components/ListOne/ListOneStackItemText";
 
-const data = {
+const dataPage = {
   title: "Industries",
   items: [
     {
@@ -33,7 +34,7 @@ const data = {
   ],
 };
 
-const ListOne = () => (
+const ListOne = ({ data = dataPage }) => (
   <SectionWrapper bgColor="paper">
     <Container>
       <SectionHeading title={data.title} />
@@ -58,5 +59,18 @@ const ListOne = () => (
     </Container>
   </SectionWrapper>
 );
+
+ListOne.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        src: PropTypes.string,
+        title: PropTypes.string,
+        caption: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+};
 
 export default ListOne;

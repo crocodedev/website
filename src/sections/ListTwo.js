@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import ImageStatic from "@/components/Image";
 import Button from "@/components/Button";
@@ -10,7 +11,7 @@ import ListTwoItemHeadingImage from "@/components/ListTwo/ListTwoItemHeadingImag
 import ListTwoItemHeading from "@/components/ListTwo/ListTwoItemHeading";
 import ListTwoItemContent from "@/components/ListTwo/ListTwoItemContent";
 
-const data = {
+const dataPage = {
   title: "Services",
   text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
   items: [
@@ -62,7 +63,7 @@ const data = {
   ],
 };
 
-const ListTwo = () => (
+const ListTwo = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={data.title} text={data.text} />
@@ -91,5 +92,23 @@ const ListTwo = () => (
     </Container>
   </SectionWrapper>
 );
+
+ListTwo.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        src: PropTypes.string,
+        title: PropTypes.string,
+        text: PropTypes.string,
+        link: PropTypes.exact({
+          title: PropTypes.string,
+          url: PropTypes.string,
+        }),
+      }),
+    ),
+  }).isRequired,
+};
 
 export default ListTwo;

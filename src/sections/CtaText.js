@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
@@ -6,13 +7,13 @@ import Text from "@/components/Text";
 import CtaTextCaption from "@/components/CtaText/CtaTextCaption";
 import CtaTextWrapper from "@/components/CtaText/CtaTextWrapper";
 
-const data = {
+const dataPage = {
   title: "Can't find yours?",
   description: "No a problem - we will find solution for you!",
   buttonText: "Start project",
 };
 
-const CtaText = () => {
+const CtaText = ({ data = dataPage }) => {
   const theme = useTheme();
   return (
     <SectionWrapper bgColor={data.bgColor}>
@@ -45,6 +46,14 @@ const CtaText = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+CtaText.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    buttonText: PropTypes.string,
+  }).isRequired,
 };
 
 export default CtaText;

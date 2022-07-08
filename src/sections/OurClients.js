@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "@/components/Container";
@@ -9,7 +10,7 @@ import OurClientsContent from "@/components/OurClients/OurClientsContent";
 // eslint-disable-next-line import/no-unresolved
 import "swiper/css/bundle";
 
-const data = {
+const dataPage = {
   title: "Our clients",
   sliders: [
     {
@@ -57,7 +58,7 @@ const data = {
   ],
 };
 
-const OurClients = () => (
+const OurClients = ({ data = dataPage }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={data.title} />
@@ -89,5 +90,22 @@ const OurClients = () => (
     </OurClientsContent>
   </SectionWrapper>
 );
+
+OurClients.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    sliders: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.string,
+        slider: PropTypes.arrayOf(
+          PropTypes.exact({
+            src: PropTypes.string,
+            id: PropTypes.string,
+          }),
+        ),
+      }),
+    ),
+  }).isRequired,
+};
 
 export default OurClients;
