@@ -27,6 +27,7 @@ import Benefits from "@/sections/Benefits";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
+import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 
@@ -38,9 +39,9 @@ const HomePage = () => (
     <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Technologies />
     <Development />
     <BlogList />
-    <CtaText />
     <TextOne />
     <TextTwo />
     <ListOne />
