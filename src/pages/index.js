@@ -28,11 +28,13 @@ import CtaImage from "@/sections/CtaImage";
 import TextTwo from "@/sections/TextTwo";
 
 import "destyle.css/destyle.css";
+import TextThree from "@/sections/TextThree";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <TextThree />
     <TextOne />
     <TextTwo />
     <ListOne />
