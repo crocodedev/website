@@ -6,6 +6,7 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import BlogList from "@/sections/BlogList";
 import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
@@ -14,6 +15,7 @@ import ListFour from "@/sections/ListFour";
 import ListFive from "@/sections/ListFive";
 import ListSix from "@/sections/ListSix";
 import ListSeven from "@/sections/ListSeven";
+import Projects from "@/sections/Projects";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
@@ -26,15 +28,20 @@ import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
 import Technologies from "@/sections/Technologies";
+import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 
 import "destyle.css/destyle.css";
 
+
 const HomePage = () => (
   <ThemeProvider theme={theme}>
+    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Technologies />
+    <Development />
+    <BlogList />
     <TextOne />
     <TextTwo />
     <ListOne />
