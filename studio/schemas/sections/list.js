@@ -8,6 +8,7 @@ export default {
   title: "List",
   name: "list",
   type: "document",
+  i18n: true,
   fields: [
     {
       title: "Section Title",
@@ -39,6 +40,11 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
+    },
+    {
+      title: "Text",
+      name: "text",
+      type: "text",
     },
     {
       title: "Items",

@@ -8,6 +8,7 @@ export default {
   title: "Hero",
   name: "hero",
   type: "document",
+  i18n: true,
   fields: [
     {
       title: "Section Title",
@@ -18,6 +19,11 @@ export default {
       title: "Position",
       name: "position",
       type: "number",
+    },
+    {
+      title: "Component",
+      name: "component",
+      type: "string",
     },
     {
       title: "Title",

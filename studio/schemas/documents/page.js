@@ -5,6 +5,7 @@ export default {
   type: "document",
   title: "Page",
   icon: MasterDetailIcon,
+  i18n: true,
 
   fields: [
     {
