@@ -6,6 +6,7 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import BlogList from "@/sections/BlogList";
 import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
@@ -35,6 +36,8 @@ const HomePage = () => (
     <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <BlogList />
+    <CtaText />
     <TextOne />
     <TextTwo />
     <ListOne />

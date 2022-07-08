@@ -3,11 +3,21 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Link from "./Link";
 
-const dynamicStyle = ({ theme, variant }) => css`
+const dynamicStyle = ({ theme, variant, active }) => css`
   ${variant === "outlined"
     ? `
+    ${
+      active
+        ? `
+    color: ${theme.palette.primary.contrastText};
+    background-color: ${theme.palette.primary.main};
+    pointer-events: none;
+    `
+        : `
     color: ${theme.palette.primary.main};
     border: 1px solid ${theme.palette.primary.main};
+    `
+    }
     font-weight: ${theme.typography.fontWeight.bold};
     padding: 12px 25px;
     display: block;
@@ -37,11 +47,26 @@ const dynamicStyle = ({ theme, variant }) => css`
   ${variant === "text"
     ? `
     color: ${theme.palette.primary.main};
-    font-weight: ${theme.typography.fontWeight.regular};
+    font-weight: ${theme.typography.fontWeight.medium};
     padding: 12px 0;
     display: flex;
     align-items: center;
     gap: 10px;
+
+    &:hover {
+      color: ${theme.palette.secondary.dark};
+
+      & span {
+        &::before{
+          background-color: ${theme.palette.secondary.dark};
+        }
+
+        &::after {
+          border-left-color: ${theme.palette.secondary.dark};
+          border-top-color: ${theme.palette.secondary.dark};
+        }
+      }
+    }
 
     & span {
       width: 20px;
@@ -88,16 +113,16 @@ const StyledButton = styled.button`
   ${dynamicStyle}
 `;
 
-const Button = ({ variant, handler, to, children, ...props }) =>
+const Button = ({ variant, handler, to, active, children, ...props }) =>
   to ? (
     <Link to={to} {...props}>
-      <StyledButton as="a" variant={variant}>
+      <StyledButton as="a" active={active} variant={variant}>
         {children}
         {variant === "text" && <span />}
       </StyledButton>
     </Link>
   ) : (
-    <StyledButton variant={variant} onClick={handler} {...props}>
+    <StyledButton variant={variant} active={active} onClick={handler} {...props}>
       {children}
       {variant === "text" && <span />}
     </StyledButton>
@@ -106,12 +131,14 @@ const Button = ({ variant, handler, to, children, ...props }) =>
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
+  active: PropTypes.bool,
   handler: PropTypes.func,
   to: PropTypes.string,
 };
 
 Button.defaultProps = {
   handler: null,
+  active: false,
   to: null,
 };
 
