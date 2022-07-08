@@ -31,7 +31,6 @@ const dataPage = {
 };
 
 const Contacts = ({ data = dataPage }) => {
-  const theme = useTheme();
   const mapCoordinates = useMedia(
     ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
 
