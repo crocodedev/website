@@ -27,15 +27,18 @@ import Benefits from "@/sections/Benefits";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
+import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 
 import "destyle.css/destyle.css";
+
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Development />
     <BlogList />
     <CtaText />
     <TextOne />
