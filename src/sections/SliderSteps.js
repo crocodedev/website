@@ -1,5 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Controller, EffectCreative, EffectCube, Navigation, Pagination } from "swiper";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
@@ -12,11 +15,9 @@ import SliderStepsArrow from "@/components/SliderSteps/SliderStepsArrow";
 import SliderStepsPagination from "@/components/SliderSteps/SliderStepsPagination";
 import SliderStepsContentWrapper from "@/components/SliderSteps/SliderStepsContentWrapper";
 import SliderStepsContent from "@/components/SliderSteps/SliderStepsContent";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller, EffectCreative, EffectCube, Navigation, Pagination } from "swiper";
 import SliderStepsImageWrapper from "@/components/SliderSteps/SliderStepsImageWrapper";
 import SliderStepsContainer from "@/components/SliderSteps/SliderStepsContainer";
-import { useState } from "react";
+
 import "swiper/css/effect-creative";
 
 const pageData = {
