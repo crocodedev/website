@@ -24,9 +24,10 @@ import Footer from "@/sections/Footer";
 import CtaText from "@/sections/CtaText";
 import CtaForm from "@/sections/CtaForm";
 import CtaImage from "@/sections/CtaImage";
+import Development from "@/sections/Development";
 
 import "destyle.css/destyle.css";
-import Development from "@/sections/Development";
+
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
