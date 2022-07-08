@@ -17,6 +17,7 @@ const data = {
 };
 
 const CtaImage = () => {
+  const theme = useTheme();
   return (
     <CtaImageSectionWrapper disablePaddings={true} bgColor={data.bgColor}>
       <Container>

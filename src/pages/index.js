@@ -6,6 +6,7 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import SliderSteps from "@/sections/SliderSteps";
 import BlogList from "@/sections/BlogList";
 import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
@@ -39,6 +40,7 @@ const HomePage = () => (
     <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <SliderSteps />
     <Technologies />
     <Development />
     <BlogList />
