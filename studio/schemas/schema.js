@@ -5,6 +5,11 @@ import hero from "./sections/hero";
 import list from "./sections/list";
 import link from "./objects/link";
 import listItem from "./objects/listItem";
+import linkInternal from "./objects/linkInternal";
+import linkExternal from "./objects/linkExternal";
+import pageSection from "./blocks/pageSection";
+import pageContent from "./blocks/pageContent";
+import imageWithAlt from "./blocks/imageWithAlt";
 
 export default createSchema({
   name: "default",
@@ -20,5 +25,12 @@ export default createSchema({
     // object
     link,
     listItem,
+    linkInternal,
+    linkExternal,
+
+    // blocks
+    pageSection,
+    pageContent,
+    imageWithAlt,
   ]),
 });

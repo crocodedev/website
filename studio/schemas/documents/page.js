@@ -5,9 +5,37 @@ export default {
   type: "document",
   title: "Page",
   icon: MasterDetailIcon,
-  i18n: true,
+  i18n: {
+    fieldNames: {
+      lang: "i18n_lang",
+      baseReference: "i18n_base",
+      references: "i18n_refs",
+    },
+  },
 
   fields: [
+    {
+      name: "i18n_lang",
+      type: "string",
+      hidden: true,
+    },
+    {
+      name: "i18n_base",
+      type: "reference",
+      to: [{ type: "page" }],
+      hidden: true,
+    },
+    {
+      name: "i18n_refs",
+      type: "array",
+      hidden: true,
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "page" }],
+        },
+      ],
+    },
     {
       name: "title",
       title: "Title",
@@ -24,16 +52,8 @@ export default {
     },
     {
       name: "content",
-      type: "array",
       title: "Page sections",
-      of: [
-        {
-          name: "section",
-          title: "Section",
-          type: "reference",
-          to: [{ type: "hero" }, { type: "list" }],
-        },
-      ],
+      type: "pageContent",
     },
   ],
 };

@@ -20,9 +20,9 @@ export default {
       type: "text",
     },
     {
-      title: "Image",
-      name: "image",
-      type: "image",
+      title: "Image With Alt Text",
+      name: "imageWithAltText",
+      type: "imageWithAlt",
     },
     {
       name: "link",

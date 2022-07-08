@@ -1,9 +1,23 @@
-// const path = require("path");
-// const config = require("./config/site");
+const path = require("path");
 
-// const {
-//   DEFAULT_LOCALE: defaultLocale = "",
-//   SITE_URL: siteUrl = "",
-//   SITE_NAME: name = "",
-//   GATSBY_RECAPTCHA_KEY: recaptchaKey = "",
-// } = process.env;
+exports.createPages = async ({ graphql, actions: { createPages }, reporter }) => {
+  const template = path.resolve("./src/teplates/template.js");
+
+  const { data, errors } = await graphql(``);
+
+  if (errors) {
+    reporter.panicOnBuild("There was an error loading your Sanity pages", errors);
+    return;
+  }
+
+  const pages = data.allSanityPages.nodes;
+
+  if (pages.lenght > 0) {
+    pages.forEach((page) => {
+      const url =
+        defaultLocale === page.locale
+          ? `/${page.slug.current}`
+          : `/${page.locale}/${page.slug.current}`;
+    });
+  }
+};

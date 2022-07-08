@@ -14,21 +14,28 @@ export default {
       title: "Section Title",
       name: "sectionTitle",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Position",
       name: "position",
       type: "number",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Component",
       name: "component",
       type: "string",
+      initialValue: "Hero",
+      readOnly: true,
+      hidden: true,
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Title",
       name: "title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Text",
@@ -36,16 +43,9 @@ export default {
       type: "text",
     },
     {
-      title: "Image",
-      name: "image",
-      type: "image",
-      fields: [
-        {
-          title: "Caption",
-          name: "alt",
-          type: "string",
-        },
-      ],
+      title: "Image With Alt Text",
+      name: "imageWithAltText",
+      type: "imageWithAlt",
     },
   ],
 };

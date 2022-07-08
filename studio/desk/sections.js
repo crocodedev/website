@@ -1,9 +1,10 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { DocumentsIcon } from "@sanity/icons";
-import { hero } from "./sections/hero";
-import { list } from "./sections/list";
+import { deLocale } from "./sections/deLocale";
+import { enLocale } from "./sections/enLocale";
+import { plLocale } from "./sections/plLocale";
 
 export const sections = S.listItem()
   .title("Sections")
   .icon(DocumentsIcon)
-  .child(S.list().title("Sections").items([hero, list]));
+  .child(S.list().title("Sections by locale").items([enLocale, plLocale, deLocale]));

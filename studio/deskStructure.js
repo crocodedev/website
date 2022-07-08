@@ -1,7 +1,8 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { sections } from "./desk/sections";
+import { pages } from "./desk/pages";
 
-const DOCUMENT_TYPES_IN_STRUCTURE = ["hero", "list"];
+const DOCUMENT_TYPES_IN_STRUCTURE = ["hero", "list", "page"];
 
 export default () => {
   // prettier-ignore
@@ -9,8 +10,9 @@ export default () => {
     S.list()
       .title('Content')
       .items([
+        pages,
         S.divider(),
-          sections,
+        sections,
         S.divider(),
         S.divider(),
         // Automatically add new document types to the root pane
