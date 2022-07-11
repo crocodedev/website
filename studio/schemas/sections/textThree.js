@@ -1,12 +1,12 @@
 export default {
   preview: {
     select: {
-      title: "textOne",
+      title: "sectionTitle",
     },
   },
 
-  title: "Text One",
-  name: "textOne",
+  title: "Text Three",
+  name: "textThree",
   type: "document",
   i18n: true,
   fields: [
@@ -39,18 +39,8 @@ export default {
       type: "text",
     },
     {
-      title: "Image for mobile",
-      name: "mobileImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for tablet",
-      name: "tabletImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for desktop",
-      name: "desktopImage",
+      title: "Image",
+      name: "image",
       type: "imageWithAlt",
     },
   ],

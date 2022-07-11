@@ -1,12 +1,12 @@
 export default {
   preview: {
     select: {
-      title: "textOne",
+      title: "sectionTitle",
     },
   },
 
-  title: "Text One",
-  name: "textOne",
+  title: "Benefits",
+  name: "benefits",
   type: "document",
   i18n: true,
   fields: [
@@ -34,24 +34,26 @@ export default {
       type: "text",
     },
     {
-      title: "Text",
-      name: "text",
-      type: "text",
+      title: "Left column items",
+      name: "itemsLeft",
+      type: "array",
+
+      of: [
+        {
+          type: "leftColumnItem",
+        },
+      ],
     },
     {
-      title: "Image for mobile",
-      name: "mobileImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for tablet",
-      name: "tabletImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for desktop",
-      name: "desktopImage",
-      type: "imageWithAlt",
+      title: "Right column items",
+      name: "itemsRight",
+      type: "array",
+
+      of: [
+        {
+          type: "rightColumnItem",
+        },
+      ],
     },
   ],
 };

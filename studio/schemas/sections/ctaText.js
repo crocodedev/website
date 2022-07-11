@@ -1,12 +1,12 @@
 export default {
   preview: {
     select: {
-      title: "textOne",
+      title: "sectionTitle",
     },
   },
 
-  title: "Text One",
-  name: "textOne",
+  title: "CTA Text",
+  name: "ctaText",
   type: "document",
   i18n: true,
   fields: [
@@ -34,24 +34,21 @@ export default {
       type: "text",
     },
     {
-      title: "Text",
-      name: "text",
-      type: "text",
+      name: "link",
+      type: "link",
     },
     {
-      title: "Image for mobile",
-      name: "mobileImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for tablet",
-      name: "tabletImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for desktop",
-      name: "desktopImage",
-      type: "imageWithAlt",
+      title: "Background color",
+      name: "bgColor",
+      type: "string",
+      options: {
+        color: [
+          { title: "dark", value: "dark" },
+          { title: "light", value: "light" },
+          { title: "paper", value: "paper" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

@@ -1,12 +1,12 @@
 export default {
   preview: {
     select: {
-      title: "textOne",
+      title: "sectionTitle",
     },
   },
 
-  title: "Text One",
-  name: "textOne",
+  title: "404 page",
+  name: "notFound",
   type: "document",
   i18n: true,
   fields: [
@@ -39,19 +39,8 @@ export default {
       type: "text",
     },
     {
-      title: "Image for mobile",
-      name: "mobileImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for tablet",
-      name: "tabletImage",
-      type: "imageWithAlt",
-    },
-    {
-      title: "Image for desktop",
-      name: "desktopImage",
-      type: "imageWithAlt",
+      name: "link",
+      type: "link",
     },
   ],
 };
