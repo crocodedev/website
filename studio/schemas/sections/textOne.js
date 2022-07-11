@@ -1,12 +1,12 @@
 export default {
   preview: {
     select: {
-      title: "sectionTitle",
+      title: "textOne",
     },
   },
 
-  title: "Hero",
-  name: "hero",
+  title: "Text One",
+  name: "textOne",
   type: "document",
   i18n: true,
   fields: [
@@ -26,9 +26,13 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "Hero",
-      readOnly: true,
-      hidden: true,
+      options: {
+        text: [
+          { title: "Text one", value: "TextOne" },
+          { title: "Text two", value: "TextTwo" },
+          { title: "Text three", value: "TextThree" },
+        ],
+      },
       validation: (Rule) => Rule.required(),
     },
     {
@@ -43,8 +47,23 @@ export default {
       type: "text",
     },
     {
-      title: "Image With Alt Text",
-      name: "imageWithAltText",
+      title: "Text",
+      name: "text",
+      type: "text",
+    },
+    {
+      title: "Image for mobile",
+      name: "mobileImage",
+      type: "imageWithAlt",
+    },
+    {
+      title: "Image for tablet",
+      name: "tabletImage",
+      type: "imageWithAlt",
+    },
+    {
+      title: "Image for desktop",
+      name: "desktopImage",
       type: "imageWithAlt",
     },
   ],

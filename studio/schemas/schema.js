@@ -3,6 +3,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import page from "./documents/page";
 import hero from "./sections/hero";
 import list from "./sections/list";
+import textOne from "./sections/textOne";
 import link from "./objects/link";
 import listItem from "./objects/listItem";
 import linkInternal from "./objects/linkInternal";
@@ -21,6 +22,7 @@ export default createSchema({
     // sections
     hero,
     list,
+    textOne,
 
     // object
     link,
