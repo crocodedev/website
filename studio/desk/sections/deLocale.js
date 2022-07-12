@@ -7,11 +7,12 @@ import { textThree } from "./deLocale/textThree";
 import { ctaText } from "./deLocale/ctaText";
 import { notFound } from "./deLocale/notFound";
 import { benefits } from "./deLocale/benefits";
+import { contacts } from "./deLocale/contacts";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
   .child(
     S.list()
       .title("DE Sections")
-      .items([hero, list, textOne, textTwo, textThree, ctaText, notFound, benefits]),
+      .items([hero, list, textOne, textTwo, textThree, ctaText, notFound, benefits, contacts]),
   );

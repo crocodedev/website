@@ -15,10 +15,12 @@ import rightColumnItem from "./objects/rightColumnItem";
 import textTwoItem from "./objects/textTwoItem";
 import linkInternal from "./objects/linkInternal";
 import linkExternal from "./objects/linkExternal";
+import contactItem from "./objects/contactItem";
 import pageSection from "./blocks/pageSection";
 import pageContent from "./blocks/pageContent";
 import imageWithAlt from "./blocks/imageWithAlt";
 import benefits from "./sections/benefits";
+import contacts from "./sections/contacts";
 
 export default createSchema({
   name: "default",
@@ -36,6 +38,7 @@ export default createSchema({
     ctaText,
     notFound,
     benefits,
+    contacts,
 
     // object
     link,
@@ -45,6 +48,7 @@ export default createSchema({
     textTwoItem,
     leftColumnItem,
     rightColumnItem,
+    contactItem,
 
     // blocks
     pageSection,

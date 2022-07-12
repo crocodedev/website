@@ -11,6 +11,7 @@ export default {
     { type: "ctaText" },
     { type: "notFound" },
     { type: "benefits" },
+    { type: "contacts" },
   ],
   options: {
     filter: ({ document }) => {

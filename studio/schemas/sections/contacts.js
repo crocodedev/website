@@ -33,5 +33,34 @@ export default {
       name: "subtitle",
       type: "text",
     },
+    {
+      title: "Pop up text",
+      name: "popUpText",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Style link",
+      name: "styleLink",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Access token",
+      name: "accessToken",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Contact items",
+      name: "contactItems",
+      type: "array",
+
+      of: [
+        {
+          type: "contactItem",
+        },
+      ],
+    },
   ],
 };
