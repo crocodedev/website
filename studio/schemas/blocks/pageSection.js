@@ -4,6 +4,7 @@ export default {
   type: "reference",
   to: [
     { type: "hero" },
+    { type: "heroMain" },
     { type: "list" },
     { type: "textOne" },
     { type: "textTwo" },
@@ -19,6 +20,7 @@ export default {
     { type: "sliderSteps" },
     { type: "ourClients" },
     { type: "reviews" },
+    { type: "technologyStack" },
   ],
 
   options: {

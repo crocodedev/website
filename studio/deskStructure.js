@@ -4,6 +4,7 @@ import { pages } from "./desk/pages";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
+  "heroMain",
   "list",
   "page",
   "benefits",
@@ -20,6 +21,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "textThree",
   "ourClients",
   "reviews",
+  "technologyStack",
 ];
 
 export default () => {
