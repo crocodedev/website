@@ -8,11 +8,35 @@ import { ctaText } from "./deLocale/ctaText";
 import { notFound } from "./deLocale/notFound";
 import { benefits } from "./deLocale/benefits";
 import { contacts } from "./deLocale/contacts";
+import { development } from "./deLocale/development";
+import { ourTeam } from "./deLocale/ourTeam";
+import { ctaImage } from "./deLocale/ctaImage";
+import { faq } from "./deLocale/faq";
+import { sliderSteps } from "./deLocale/sliderSteps";
+import { ourClients } from "./deLocale/ourClients";
+import { reviews } from "./deLocale/reviews";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
   .child(
     S.list()
       .title("DE Sections")
-      .items([hero, list, textOne, textTwo, textThree, ctaText, notFound, benefits, contacts]),
+      .items([
+        hero,
+        list,
+        textOne,
+        textTwo,
+        textThree,
+        ctaText,
+        notFound,
+        benefits,
+        contacts,
+        development,
+        ourTeam,
+        ctaImage,
+        faq,
+        sliderSteps,
+        ourClients,
+        reviews,
+      ]),
   );

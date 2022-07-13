@@ -8,11 +8,35 @@ import { ctaText } from "./plLocale/ctaText";
 import { notFound } from "./plLocale/notFound";
 import { benefits } from "./plLocale/benefits";
 import { contacts } from "./plLocale/contacts";
+import { development } from "./plLocale/development";
+import { ourTeam } from "./plLocale/ourTeam";
+import { ctaImage } from "./plLocale/ctaImage";
+import { faq } from "./plLocale/faq";
+import { sliderSteps } from "./plLocale/sliderSteps";
+import { ourClients } from "./plLocale/ourClients";
+import { reviews } from "./deLocale/reviews";
 
 export const plLocale = S.listItem()
   .title("PL Sections")
   .child(
     S.list()
       .title("PL Sections")
-      .items([hero, list, textOne, textTwo, textThree, ctaText, notFound, benefits, contacts]),
+      .items([
+        hero,
+        list,
+        textOne,
+        textTwo,
+        textThree,
+        ctaText,
+        notFound,
+        benefits,
+        contacts,
+        development,
+        ourTeam,
+        ctaImage,
+        faq,
+        sliderSteps,
+        ourClients,
+        reviews,
+      ]),
   );

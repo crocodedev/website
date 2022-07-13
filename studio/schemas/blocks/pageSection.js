@@ -12,7 +12,15 @@ export default {
     { type: "notFound" },
     { type: "benefits" },
     { type: "contacts" },
+    { type: "development" },
+    { type: "ourTeam" },
+    { type: "ctaImage" },
+    { type: "faq" },
+    { type: "sliderSteps" },
+    { type: "ourClients" },
+    { type: "reviews" },
   ],
+
   options: {
     filter: ({ document }) => {
       return {

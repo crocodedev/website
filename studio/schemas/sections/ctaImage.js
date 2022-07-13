@@ -5,8 +5,8 @@ export default {
     },
   },
 
-  title: "CTA Text",
-  name: "ctaText",
+  title: "CTA Image",
+  name: "ctaImage",
   type: "document",
   i18n: true,
   fields: [
@@ -26,7 +26,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "CtaText",
+      initialValue: "CtaImage",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),

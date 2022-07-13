@@ -2,7 +2,25 @@ import S from "@sanity/desk-tool/structure-builder";
 import { sections } from "./desk/sections";
 import { pages } from "./desk/pages";
 
-const DOCUMENT_TYPES_IN_STRUCTURE = ["hero", "list", "page"];
+const DOCUMENT_TYPES_IN_STRUCTURE = [
+  "hero",
+  "list",
+  "page",
+  "benefits",
+  "contacts",
+  "ctaImage",
+  "ctaText",
+  "development",
+  "faq",
+  "notFound",
+  "ourTeam",
+  "sliderSteps",
+  "textOne",
+  "textTwo",
+  "textThree",
+  "ourClients",
+  "reviews",
+];
 
 export default () => {
   // prettier-ignore

@@ -5,8 +5,8 @@ export default {
     },
   },
 
-  title: "CTA Text",
-  name: "ctaText",
+  title: "Our team",
+  name: "ourTeam",
   type: "document",
   i18n: true,
   fields: [
@@ -26,7 +26,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "CtaText",
+      initialValue: "OurTeam",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),
@@ -47,17 +47,15 @@ export default {
       type: "link",
     },
     {
-      title: "Background color",
-      name: "bgColor",
-      type: "string",
-      options: {
-        color: [
-          { title: "dark", value: "dark" },
-          { title: "light", value: "light" },
-          { title: "paper", value: "paper" },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
+      title: "Items",
+      name: "items",
+      type: "array",
+
+      of: [
+        {
+          type: "ourTeamItem",
+        },
+      ],
     },
   ],
 };

@@ -5,8 +5,8 @@ export default {
     },
   },
 
-  title: "CTA Text",
-  name: "ctaText",
+  title: "Slider steps",
+  name: "sliderSteps",
   type: "document",
   i18n: true,
   fields: [
@@ -26,7 +26,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "CtaText",
+      initialValue: "SliderSteps",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),
@@ -43,21 +43,28 @@ export default {
       type: "text",
     },
     {
-      name: "link",
-      type: "link",
+      title: "Items steps image",
+      name: "itemsStepsImage",
+      type: "array",
+
+      of: [
+        {
+          title: "Image item step",
+          name: "imageItemStep",
+          type: "imageWithAlt",
+        },
+      ],
     },
     {
-      title: "Background color",
-      name: "bgColor",
-      type: "string",
-      options: {
-        color: [
-          { title: "dark", value: "dark" },
-          { title: "light", value: "light" },
-          { title: "paper", value: "paper" },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
+      title: "Items steps",
+      name: "itemsSteps",
+      type: "array",
+
+      of: [
+        {
+          type: "textItemSteps",
+        },
+      ],
     },
   ],
 };

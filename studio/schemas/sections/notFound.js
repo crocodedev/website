@@ -29,6 +29,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Component",
+      name: "component",
+      type: "string",
+      initialValue: "NotFound",
+      readOnly: true,
+      hidden: true,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Subtitle",
       name: "subtitle",
       type: "text",

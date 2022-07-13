@@ -23,6 +23,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Component",
+      name: "component",
+      type: "string",
+      initialValue: "TextTwo",
+      readOnly: true,
+      hidden: true,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Title",
       name: "title",
       type: "string",
