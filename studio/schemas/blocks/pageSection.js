@@ -25,6 +25,9 @@ export default {
     { type: "caseStudies" },
     { type: "technologies" },
     { type: "relatedArticles" },
+    { type: "footer" },
+    { type: "header" },
+    { type: "contactUs" },
   ],
 
   options: {

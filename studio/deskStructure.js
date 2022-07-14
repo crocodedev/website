@@ -26,6 +26,9 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "caseStudies",
   "technologies",
   "relatedArticles",
+  "footer",
+  "header",
+  "contactUs",
 ];
 
 export default () => {

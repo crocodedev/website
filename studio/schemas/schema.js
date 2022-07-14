@@ -27,6 +27,9 @@ import technologyStack from "./sections/technologyStack";
 import caseStudies from "./sections/caseStudies";
 import technologies from "./sections/technologies";
 import relatedArticles from "./sections/relatedArticles";
+import footer from "./sections/footer";
+import header from "./sections/header";
+import contactUs from "./sections/contactUs";
 
 // objects
 import link from "./objects/link";
@@ -48,6 +51,10 @@ import projectFeature from "./objects/projectFeature";
 import casesItem from "./objects/casesItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./objects/articlesItem";
+import socialIconItem from "./objects/socialIcons";
+import columnLinkItem from "./objects/columnLinks";
+import iconLink from "./objects/iconLink";
+import textItem from "./objects/agreementTextItems";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -84,6 +91,9 @@ export default createSchema({
     caseStudies,
     technologies,
     relatedArticles,
+    footer,
+    header,
+    contactUs,
 
     // objects
     link,
@@ -105,6 +115,10 @@ export default createSchema({
     casesItem,
     technologiesItem,
     articlesItem,
+    socialIconItem,
+    columnLinkItem,
+    iconLink,
+    textItem,
 
     // blocks
     pageSection,
