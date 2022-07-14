@@ -32,15 +32,16 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import ContactUs from "@/sections/ContactUs";
 
 import "destyle.css/destyle.css";
 
-
 const HomePage = () => (
   <ThemeProvider theme={theme}>
-    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <ContactUs />
+    {/* <Projects />
     <SliderSteps />
     <Technologies />
     <Development />
@@ -64,7 +65,7 @@ const HomePage = () => (
     <FAQ />
     <OurClients />
     <Reviews />
-    <Benefits />
+    <Benefits /> */}
     <Footer />
   </ThemeProvider>
 );

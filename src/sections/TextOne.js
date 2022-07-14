@@ -34,7 +34,7 @@ const TextOne = () => {
       { src: "/uploads/text-one-bg-tablet.jpg" },
       { src: "/uploads/text-one-bg-desktop.jpg" },
     ],
-    { src: "/uploads/text-one-bg-mobile.jpg" }
+    { src: "/uploads/text-one-bg-mobile.jpg" },
   );
 
   const { src } = bgImages;
