@@ -7,6 +7,7 @@ import page from "./documents/page";
 // sections
 import hero from "./sections/hero";
 import heroMain from "./sections/heroMain";
+import heroProject from "./sections/heroProject";
 import list from "./sections/list";
 import textOne from "./sections/textOne";
 import textTwo from "./sections/textTwo";
@@ -23,6 +24,9 @@ import sliderSteps from "./sections/sliderSteps";
 import ourClients from "./sections/ourClients";
 import reviews from "./sections/reviews";
 import technologyStack from "./sections/technologyStack";
+import caseStudies from "./sections/caseStudies";
+import technologies from "./sections/technologies";
+import relatedArticles from "./sections/relatedArticles";
 
 // objects
 import link from "./objects/link";
@@ -40,6 +44,10 @@ import textItemSteps from "./objects/textItemSteps";
 import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
+import projectFeature from "./objects/projectFeature";
+import casesItem from "./objects/casesItem";
+import technologiesItem from "./objects/technologiesItem";
+import articlesItem from "./objects/articlesItem";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -56,6 +64,7 @@ export default createSchema({
     // sections
     hero,
     heroMain,
+    heroProject,
     list,
     textOne,
     textTwo,
@@ -72,6 +81,9 @@ export default createSchema({
     ourClients,
     reviews,
     technologyStack,
+    caseStudies,
+    technologies,
+    relatedArticles,
 
     // objects
     link,
@@ -89,6 +101,10 @@ export default createSchema({
     ourClientsItem,
     reviewItem,
     technologyStackItem,
+    projectFeature,
+    casesItem,
+    technologiesItem,
+    articlesItem,
 
     // blocks
     pageSection,

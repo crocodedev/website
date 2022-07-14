@@ -5,6 +5,7 @@ export default {
   to: [
     { type: "hero" },
     { type: "heroMain" },
+    { type: "heroProject" },
     { type: "list" },
     { type: "textOne" },
     { type: "textTwo" },
@@ -21,6 +22,9 @@ export default {
     { type: "ourClients" },
     { type: "reviews" },
     { type: "technologyStack" },
+    { type: "caseStudies" },
+    { type: "technologies" },
+    { type: "relatedArticles" },
   ],
 
   options: {

@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { hero } from "./plLocale/hero";
 import { heroMain } from "./plLocale/heroMain";
+import { heroProject } from "./plLocale/heroProject";
 import { list } from "./plLocale/list";
 import { textOne } from "./plLocale/textOne";
 import { textTwo } from "./plLocale/textTwo";
@@ -17,6 +18,9 @@ import { sliderSteps } from "./plLocale/sliderSteps";
 import { ourClients } from "./plLocale/ourClients";
 import { reviews } from "./plLocale/reviews";
 import { technologyStack } from "./plLocale/technologyStack";
+import { caseStudies } from "./plLocale/caseStudies";
+import { technologies } from "./plLocale/technologies";
+import { relatedArticles } from "./plLocale/relatedArticles";
 
 export const plLocale = S.listItem()
   .title("PL Sections")
@@ -26,6 +30,7 @@ export const plLocale = S.listItem()
       .items([
         hero,
         heroMain,
+        heroProject,
         list,
         textOne,
         textTwo,
@@ -42,5 +47,8 @@ export const plLocale = S.listItem()
         ourClients,
         reviews,
         technologyStack,
+        caseStudies,
+        technologies,
+        relatedArticles,
       ]),
   );

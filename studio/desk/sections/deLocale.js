@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { hero } from "./deLocale/hero";
 import { heroMain } from "./deLocale/heroMain";
+import { heroProject } from "./deLocale/heroProject";
 import { list } from "./deLocale/list";
 import { textOne } from "./deLocale/textOne";
 import { textTwo } from "./deLocale/textTwo";
@@ -17,6 +18,9 @@ import { sliderSteps } from "./deLocale/sliderSteps";
 import { ourClients } from "./deLocale/ourClients";
 import { reviews } from "./deLocale/reviews";
 import { technologyStack } from "./deLocale/technologyStack";
+import { caseStudies } from "./deLocale/caseStudies";
+import { technologies } from "./deLocale/technologies";
+import { relatedArticles } from "./deLocale/relatedArticles";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
@@ -26,6 +30,7 @@ export const deLocale = S.listItem()
       .items([
         hero,
         heroMain,
+        heroProject,
         list,
         textOne,
         textTwo,
@@ -42,5 +47,8 @@ export const deLocale = S.listItem()
         ourClients,
         reviews,
         technologyStack,
+        caseStudies,
+        technologies,
+        relatedArticles,
       ]),
   );

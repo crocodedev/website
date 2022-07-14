@@ -5,6 +5,7 @@ import { pages } from "./desk/pages";
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
   "heroMain",
+  "heroProject",
   "list",
   "page",
   "benefits",
@@ -22,6 +23,9 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "ourClients",
   "reviews",
   "technologyStack",
+  "caseStudies",
+  "technologies",
+  "relatedArticles",
 ];
 
 export default () => {
