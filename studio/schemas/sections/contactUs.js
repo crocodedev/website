@@ -93,6 +93,7 @@ export default {
       title: "Button text",
       name: "buttonText",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Agreement text",

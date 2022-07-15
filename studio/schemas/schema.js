@@ -30,6 +30,7 @@ import relatedArticles from "./sections/relatedArticles";
 import footer from "./sections/footer";
 import header from "./sections/header";
 import contactUs from "./sections/contactUs";
+import ctaForm from "./sections/ctaForm";
 
 // objects
 import link from "./objects/link";
@@ -94,6 +95,7 @@ export default createSchema({
     footer,
     header,
     contactUs,
+    ctaForm,
 
     // objects
     link,

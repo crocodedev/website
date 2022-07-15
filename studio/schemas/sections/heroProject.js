@@ -61,5 +61,17 @@ export default {
         },
       ],
     },
+    {
+      title: "Breadcrumbs",
+      name: "breadcrumbs",
+      type: "array",
+
+      of: [
+        {
+          name: "link",
+          type: "link",
+        },
+      ],
+    },
   ],
 };

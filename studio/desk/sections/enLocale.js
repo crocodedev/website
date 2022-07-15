@@ -24,6 +24,7 @@ import { relatedArticles } from "./enLocale/relatedArticles";
 import { footer } from "./enLocale/footer";
 import { header } from "./enLocale/header";
 import { contactUs } from "./enLocale/contactUs";
+import { ctaForm } from "./enLocale/ctaForm";
 
 export const enLocale = S.listItem()
   .title("EN Sections")
@@ -56,5 +57,6 @@ export const enLocale = S.listItem()
         footer,
         header,
         contactUs,
+        ctaForm,
       ]),
   );

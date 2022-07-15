@@ -5,8 +5,8 @@ export default {
     },
   },
 
-  title: "Hero",
-  name: "hero",
+  title: "CTA Form",
+  name: "ctaForm",
   type: "document",
   i18n: true,
   fields: [
@@ -26,7 +26,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "Hero",
+      initialValue: "CtaForm",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),
@@ -38,26 +38,29 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Subtitle",
-      name: "subtitle",
-      type: "text",
+      title: "Message placeholder",
+      name: "messagePlaceholder",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Image With Alt Text",
-      name: "imageWithAltText",
-      type: "imageWithAlt",
+      title: "Button text",
+      name: "buttonText",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Breadcrumbs",
-      name: "breadcrumbs",
-      type: "array",
-
-      of: [
-        {
-          name: "link",
-          type: "link",
-        },
-      ],
+      title: "Background color",
+      name: "bgColor",
+      type: "string",
+      options: {
+        color: [
+          { title: "dark", value: "dark" },
+          { title: "light", value: "light" },
+          { title: "paper", value: "paper" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

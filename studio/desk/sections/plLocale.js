@@ -24,6 +24,7 @@ import { relatedArticles } from "./plLocale/relatedArticles";
 import { footer } from "./plLocale/footer";
 import { header } from "./plLocale/header";
 import { contactUs } from "./plLocale/contactUs";
+import { ctaForm } from "./plLocale/ctaForm";
 
 export const plLocale = S.listItem()
   .title("PL Sections")
@@ -56,5 +57,6 @@ export const plLocale = S.listItem()
         footer,
         header,
         contactUs,
+        ctaForm,
       ]),
   );

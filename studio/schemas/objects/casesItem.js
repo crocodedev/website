@@ -30,5 +30,31 @@ export default {
       name: "marker",
       type: "string",
     },
+    /* {
+      title: "Technologies",
+      name: "technologies",
+      type: "array",
+      of: [
+        {
+          title: "Technology",
+          name: "item",
+          type: "reference",
+          to: [{ type: "technologies" }],
+        },
+      ],
+    },
+    {
+      title: "Countries",
+      name: "countries",
+      type: "array",
+      of: [
+        {
+          title: "Country",
+          name: "item",
+          type: "reference",
+          to: [{ type: "countries" }],
+        },
+      ],
+    }, */
   ],
 };
