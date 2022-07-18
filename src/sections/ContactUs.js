@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import * as yup from "yup";
-import { Formik } from "formik";
+import { Formik, Field } from "formik";
 
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -49,7 +49,7 @@ const ContactUs = ({ data = pageData }) => {
   const schema = yup.object().shape({
     name: yup.string().min(4).max(20).typeError("error message").required("required message"),
     email: yup.string().typeError("error message").required("required message"),
-    tel: yup.string().typeError("error message"),
+    tel: yup.string().typeError("error message").required("required message"),
     file: yup.string().typeError("error message").required("required message"),
     confirm: yup.boolean().typeError("error message").required("required message"),
   });
@@ -69,6 +69,7 @@ const ContactUs = ({ data = pageData }) => {
                 confirm: false,
               }}
               validateOnBlur
+              // eslint-disable-next-line no-console
               onSubmit={(values) => console.log(values)}
               validationSchema={schema}
             >
@@ -117,14 +118,18 @@ const ContactUs = ({ data = pageData }) => {
                     <Text mobileMultiplier={0.9} as="label">
                       Phone number
                     </Text>
-                    <ReactTelInput
-                      name="tel"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={tel}
-                      defaultCountry="us"
-                      flagsImagePath="/uploads/flags.png"
-                    />
+                    <Field name="tel">
+                      {({ form: { setFieldValue } }) => (
+                        <ReactTelInput
+                          defaultCountry="us"
+                          flagsImagePath="/uploads/flags.png"
+                          value={tel}
+                          onChange={(phone) => {
+                            setFieldValue("tel", phone);
+                          }}
+                        />
+                      )}
+                    </Field>
                     {touched.tel && errors.tel && <Text>{errors.tel}</Text>}
                   </ContactsUsItem>
                   <ContactsUsItem>

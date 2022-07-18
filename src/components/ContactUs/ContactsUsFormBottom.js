@@ -8,6 +8,11 @@ const ContactsUsFormBottom = styled.div`
 
   button {
     white-space: nowrap;
+
+    &:disabled {
+      pointer-events: none;
+      background-color: ${({ theme }) => theme.palette.secondary.dark};
+    }
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {

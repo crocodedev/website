@@ -89,10 +89,10 @@ const StyledContactsUsInput = styled.input`
 
 const ContactsUsInput = ({ placeholder, type, variant, name, ...props }) => (
   <StyledContactsUsInput
+    {...props}
     placeholder={placeholder}
     type={type}
-    {...props}
-    required
+    required={true}
     variant={variant}
     name={name}
   />
