@@ -3,6 +3,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // documents
 import page from "./documents/page";
+import blogCategory from "./documents/blogCategory";
 
 // sections
 import hero from "./sections/hero";
@@ -26,7 +27,6 @@ import reviews from "./sections/reviews";
 import technologyStack from "./sections/technologyStack";
 import caseStudies from "./sections/caseStudies";
 import technologies from "./sections/technologies";
-import relatedArticles from "./sections/relatedArticles";
 import footer from "./sections/footer";
 import header from "./sections/header";
 import contactUs from "./sections/contactUs";
@@ -51,11 +51,12 @@ import technologyStackItem from "./objects/technologyStackItem";
 import projectFeature from "./objects/projectFeature";
 import casesItem from "./objects/casesItem";
 import technologiesItem from "./objects/technologiesItem";
-import articlesItem from "./objects/articlesItem";
+import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
 import columnLinkItem from "./objects/columnLinks";
 import iconLink from "./objects/iconLink";
 import textItem from "./objects/agreementTextItems";
+import seo from "./objects/seo";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -68,6 +69,8 @@ export default createSchema({
   types: schemaTypes.concat([
     // documents
     page,
+    blogCategory,
+    articlesItem,
 
     // sections
     hero,
@@ -91,7 +94,6 @@ export default createSchema({
     technologyStack,
     caseStudies,
     technologies,
-    relatedArticles,
     footer,
     header,
     contactUs,
@@ -116,11 +118,11 @@ export default createSchema({
     projectFeature,
     casesItem,
     technologiesItem,
-    articlesItem,
     socialIconItem,
     columnLinkItem,
     iconLink,
     textItem,
+    seo,
 
     // blocks
     pageSection,

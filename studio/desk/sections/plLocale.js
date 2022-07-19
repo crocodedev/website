@@ -20,7 +20,6 @@ import { reviews } from "./plLocale/reviews";
 import { technologyStack } from "./plLocale/technologyStack";
 import { caseStudies } from "./plLocale/caseStudies";
 import { technologies } from "./plLocale/technologies";
-import { relatedArticles } from "./plLocale/relatedArticles";
 import { footer } from "./plLocale/footer";
 import { header } from "./plLocale/header";
 import { contactUs } from "./plLocale/contactUs";
@@ -53,7 +52,6 @@ export const plLocale = S.listItem()
         technologyStack,
         caseStudies,
         technologies,
-        relatedArticles,
         footer,
         header,
         contactUs,

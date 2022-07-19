@@ -25,7 +25,6 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "technologyStack",
   "caseStudies",
   "technologies",
-  "relatedArticles",
   "footer",
   "header",
   "contactUs",

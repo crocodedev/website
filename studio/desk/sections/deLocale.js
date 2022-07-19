@@ -20,7 +20,6 @@ import { reviews } from "./deLocale/reviews";
 import { technologyStack } from "./deLocale/technologyStack";
 import { caseStudies } from "./deLocale/caseStudies";
 import { technologies } from "./deLocale/technologies";
-import { relatedArticles } from "./deLocale/relatedArticles";
 import { footer } from "./deLocale/footer";
 import { header } from "./deLocale/header";
 import { contactUs } from "./deLocale/contactUs";
@@ -53,7 +52,6 @@ export const deLocale = S.listItem()
         technologyStack,
         caseStudies,
         technologies,
-        relatedArticles,
         footer,
         header,
         contactUs,

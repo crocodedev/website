@@ -24,11 +24,10 @@ export default {
     { type: "technologyStack" },
     { type: "caseStudies" },
     { type: "technologies" },
-    { type: "relatedArticles" },
     { type: "footer" },
     { type: "header" },
-    { type: "contactUs" },
     { type: "ctaForm" },
+    { type: "contactUs" },
   ],
 
   options: {

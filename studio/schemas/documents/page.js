@@ -55,5 +55,9 @@ export default {
       title: "Page sections",
       type: "pageContent",
     },
+    {
+      name: "seo",
+      type: "seo",
+    },
   ],
 };

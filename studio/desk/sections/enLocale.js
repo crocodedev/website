@@ -20,7 +20,6 @@ import { reviews } from "./enLocale/reviews";
 import { technologyStack } from "./enLocale/technologyStack";
 import { caseStudies } from "./enLocale/caseStudies";
 import { technologies } from "./enLocale/technologies";
-import { relatedArticles } from "./enLocale/relatedArticles";
 import { footer } from "./enLocale/footer";
 import { header } from "./enLocale/header";
 import { contactUs } from "./enLocale/contactUs";
@@ -53,7 +52,6 @@ export const enLocale = S.listItem()
         technologyStack,
         caseStudies,
         technologies,
-        relatedArticles,
         footer,
         header,
         contactUs,
