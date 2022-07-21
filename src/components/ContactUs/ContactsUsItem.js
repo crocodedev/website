@@ -17,6 +17,7 @@ const ContactsUsItem = styled.div`
       padding: 14px 15px 14px 40px;
       align-items: flex-start;
       box-shadow: ${({ theme }) => theme.shadows.card};
+      border: none;
       border-radius: ${({ theme }) => theme.borderRadius.small};
 
       &:focus-visible {
