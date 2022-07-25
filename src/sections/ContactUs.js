@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import * as yup from "yup";
 import { Formik, Field } from "formik";
-// import ReactTelInput from "react-telephone-input";
 import PhoneInput from "react-phone-input-2";
 
 import Container from "@/components/Container";

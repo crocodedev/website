@@ -43,8 +43,6 @@ const ContactsUsItem = styled.div`
     }
 
     .selected-flag {
-      // width: 0;
-      // height: 0;
       border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
       border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
       background-color: white;

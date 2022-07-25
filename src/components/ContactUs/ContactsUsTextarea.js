@@ -14,16 +14,6 @@ const ContactsUsTextarea = styled.textarea`
   &::-webkit-scrollbar {
     width: 0px;
   }
-
-  // &.invalid {
-  //   border: 1px solid #f40808;
-  //   box-shadow: 0px 0px 10px rgba(244, 8, 8, 0.1);
-  // }
-
-  // &.valid {
-  //   border: 1px solid ${({ theme }) => theme.palette.primary.main};
-  //   box-shadow: 0px 0px 10px rgba(125, 190, 59, 0.1);
-  // }
 `;
 
 export default ContactsUsTextarea;
