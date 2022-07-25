@@ -32,15 +32,16 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import CaseStudies from "@/sections/CaseStudies";
 
 import "destyle.css/destyle.css";
 
-
 const HomePage = () => (
   <ThemeProvider theme={theme}>
-    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <CaseStudies />
+    <Projects />
     <SliderSteps />
     <Technologies />
     <Development />
