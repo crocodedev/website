@@ -34,13 +34,14 @@ import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
 
 import "destyle.css/destyle.css";
-
+import TechnologyStack from "@/sections/TechnologyStack";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
-    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <TechnologyStack />
+    <Projects />
     <SliderSteps />
     <Technologies />
     <Development />

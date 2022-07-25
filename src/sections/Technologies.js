@@ -7,11 +7,9 @@ import TechnologiesStack from "@/components/Technologies/TechnologiesStack";
 import TechnologiesStackItem from "@/components/Technologies/TechnologiesStackItem";
 import TechnologiesSlide from "@/components/Technologies/TechnologiesSlide";
 import TechnologiesSlideStack from "@/components/Technologies/TechnologiesSlideStack";
-import TechnologiesSlideStackItem from "@/components/Technologies/TechnologiesSlideStackItem";
-import ImageStatic from "@/components/Image";
 import TechnologiesSlideText from "@/components/Technologies/TechnologiesSlideText";
-import Text from "@/components/Text";
 import React from "react";
+import TechnologyCard from "@/components/TechnologyCard";
 
 const pageData = {
   title: "Software Development Technologies",
@@ -253,18 +251,8 @@ const Technologies = ({ data = pageData }) => {
           {items.map(({ cards, text, category }) => (
             <TechnologiesSlide key={cards} active={category === currSlide}>
               <TechnologiesSlideStack>
-                {cards.map(({ src, title: cardTitle }) => (
-                  <TechnologiesSlideStackItem key={text}>
-                    <ImageStatic src={src} />
-                    <Text
-                      lineHeight="md"
-                      fontSize="text"
-                      fontWeight="regular"
-                      mobileMultiplier={0.75}
-                    >
-                      {cardTitle}
-                    </Text>
-                  </TechnologiesSlideStackItem>
+                {cards.map(({ id, ...props }) => (
+                  <TechnologyCard key={id} {...props} />
                 ))}
               </TechnologiesSlideStack>
               <TechnologiesSlideText

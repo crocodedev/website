@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller, EffectCreative, EffectCube, Navigation, Pagination } from "swiper";
+import { Controller, EffectCreative, Navigation, Pagination } from "swiper";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
