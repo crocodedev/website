@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import SectionWrapper from "../SectionWrapper";
 
 const ContactsUsWrapper = styled.div`
   ${({ theme }) => theme.breakpoints.down("md")} {
@@ -8,14 +7,14 @@ const ContactsUsWrapper = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("md", "lg")} {
     padding-top: 80px;
+
+    & div:first-child {
+      max-width: 100%;
+    }
   }
 
   ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
     padding-top: 80px;
-
-    & div:first-child {
-      max-width: auto;
-    }
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {

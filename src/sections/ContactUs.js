@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import * as yup from "yup";
 import { Formik, Field } from "formik";
-import ReactTelInput from "react-telephone-input";
+// import ReactTelInput from "react-telephone-input";
+import PhoneInput from "react-phone-input-2";
 
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -28,7 +29,7 @@ import ContactsUsPersonWrapper from "@/components/ContactUs/ContactsUsPersonWrap
 import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
 import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
 
-import "react-telephone-input/css/default.css";
+import "react-phone-input-2/lib/style.css";
 
 const pageData = {
   title: "Tell us about your project",
@@ -50,7 +51,6 @@ const ContactUs = ({ data = pageData }) => {
   const theme = useTheme();
 
   const textRef = createRef();
-  const phoneRef = createRef();
 
   const [fileUpload, setFileUpload] = useState("");
   const [check, setCheck] = useState(false);
@@ -87,7 +87,7 @@ const ContactUs = ({ data = pageData }) => {
       .max(40, "max message")
       .typeError("error message")
       .required("required message"),
-    tel: yup.string().min(9, "min message").max(18, "max message").required("required message"),
+    tel: yup.string().min(8, "min message").max(18, "max message").required("required message"),
     text: yup
       .string()
       .min(10, "min message")
@@ -114,10 +114,10 @@ const ContactUs = ({ data = pageData }) => {
               validateOnBlur
               onSubmit={({ name, email, tel, text, file }, { resetForm }) => {
                 console.log(
-                  `\n name: ${name},
-                  \n email: ${email},
-                  \n tel: ${tel},
-                  \n text: ${text},
+                  `\n name: ${name};
+                  \n email: ${email};
+                  \n tel: ${tel};
+                  \n text: ${text};
                   \n file: ${file}`,
                 );
                 resetForm({
@@ -125,10 +125,10 @@ const ContactUs = ({ data = pageData }) => {
                   email: "",
                   file: "",
                   text: "",
+                  tel: "",
                 });
                 setFileUpload("");
                 setCheck(false);
-                phoneRef.resetNumber();
               }}
               validationSchema={schema}
             >
@@ -148,6 +148,7 @@ const ContactUs = ({ data = pageData }) => {
                       Your name
                     </Text>
                     <ContactsUsInput
+                      className={errors.name ? "invalid" : "valid"}
                       name="name"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -164,6 +165,7 @@ const ContactUs = ({ data = pageData }) => {
                     </Text>
                     <ContactsUsInput
                       name="email"
+                      className={errors.email ? "invalid" : "valid"}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={email}
@@ -179,12 +181,13 @@ const ContactUs = ({ data = pageData }) => {
                     </Text>
                     <Field name="tel">
                       {({ form: { setFieldValue } }) => (
-                        <ReactTelInput
+                        <PhoneInput
+                          inputProps={{ name: "tel" }}
+                          containerClass={errors.tel ? "invalid" : "valid"}
                           onBlur={handleBlur}
-                          defaultCountry="us"
-                          flagsImagePath="/uploads/flags.png"
+                          country="us"
                           value={tel}
-                          ref={phoneRef}
+                          enableSearch
                           onChange={(phone) => {
                             setFieldValue("tel", phone);
                           }}
@@ -197,7 +200,7 @@ const ContactUs = ({ data = pageData }) => {
                     <Text mobileMultiplier={0.9} as="label">
                       Your comments
                     </Text>
-                    <ContactsUsInputFile>
+                    <ContactsUsInputFile className={errors.text ? "invalid" : "valid"}>
                       <Field name="text">
                         {({ form: { setFieldValue } }) => (
                           <ContactsUsTextarea
@@ -206,6 +209,7 @@ const ContactUs = ({ data = pageData }) => {
                             cols={1}
                             rows={1}
                             value={text}
+                            className={errors.text ? "invalid" : "valid"}
                             ref={textRef}
                             onChange={(e) => {
                               areaChange(e, setFieldValue);
@@ -231,8 +235,15 @@ const ContactUs = ({ data = pageData }) => {
                         </Field>
                       </Text>
                     </ContactsUsInputFile>
+                    {fileUpload ? (
+                      <Text color={theme.palette.primary.main}>
+                        <Text as="span">your file: </Text>
+                        {fileUpload}
+                      </Text>
+                    ) : (
+                      fileUpload
+                    )}
                     {touched.text && errors.text && <Text color="red">{errors.text}</Text>}
-                    <Text color={theme.palette.primary.main}>{fileUpload}</Text>
                   </ContactsUsItem>
                   <ContactsUsFormBottom>
                     <Text mobileMultiplier={0.9} as="label">
@@ -247,7 +258,6 @@ const ContactUs = ({ data = pageData }) => {
                       By sending this form I confirm that I have read and accept the{" "}
                       <ContactsUsLink to="/#">Privacy Policy</ContactsUsLink>.
                     </Text>
-                    {touched.accept && errors.accept && <Text>{errors.accept}</Text>}
                     <Button
                       type="submit"
                       disabled={!(isValid && dirty && check)}

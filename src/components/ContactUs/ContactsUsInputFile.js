@@ -9,6 +9,16 @@ const ContactsUsInputFile = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.small};
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
 
+  &.invalid {
+    border: 1px solid #f40808;
+    box-shadow: 0px 0px 10px rgba(244, 8, 8, 0.1);
+  }
+
+  &.valid {
+    border: 1px solid ${({ theme }) => theme.palette.primary.main};
+    box-shadow: 0px 0px 10px rgba(125, 190, 59, 0.1);
+  }
+
   & input {
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
@@ -18,7 +28,7 @@ const ContactsUsInputFile = styled.div`
 
   & label {
     cursor: pointer;
-    padding: 11px 45px 11px 15px;
+    padding: 11px 27px 11px 15px;
 
     &:after {
       width: 19px;

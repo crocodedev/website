@@ -9,6 +9,17 @@ const ContactsUsItem = styled.div`
   .react-tel-input {
     position: relative;
     width: 100%;
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+
+    &.invalid {
+      border: 1px solid #f40808;
+      box-shadow: 0px 0px 10px rgba(244, 8, 8, 0.1);
+    }
+
+    &.valid {
+      border: 1px solid ${({ theme }) => theme.palette.primary.main};
+      box-shadow: 0px 0px 10px rgba(125, 190, 59, 0.1);
+    }
 
     & input[type="tel"] {
       height: 100%;
@@ -19,24 +30,6 @@ const ContactsUsItem = styled.div`
       box-shadow: ${({ theme }) => theme.shadows.card};
       border: none;
       border-radius: ${({ theme }) => theme.borderRadius.small};
-
-      &:focus-visible {
-        outline: none;
-      }
-
-      &:disabled {
-        background-color: #eeeeee;
-      }
-
-      &:valid {
-        border: 1px solid ${({ theme }) => theme.palette.primary.main};
-        box-shadow: 0px 0px 10px rgba(125, 190, 59, 0.1);
-      }
-
-      &:invalid {
-        border: 1px solid #f40808;
-        box-shadow: 0px 0px 10px rgba(244, 8, 8, 0.1);
-      }
     }
 
     .flag-dropdown {
@@ -44,12 +37,17 @@ const ContactsUsItem = styled.div`
       display: flex;
       align-items: center;
       height: 100%;
-      margin-left: 7px;
+      border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
+      border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
+      border-color: white;
     }
 
     .selected-flag {
-      width: auto;
-      height: auto;
+      // width: 0;
+      // height: 0;
+      border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
+      border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
+      background-color: white;
 
       .arrow {
         display: none;
