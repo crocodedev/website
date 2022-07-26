@@ -15,15 +15,19 @@ const CaseTitle = styled(Title)`
     display: none;
   }
 
-  ${({ theme }) => theme.breakpoints.down("md")} {
+  ${({ theme }) => theme.breakpoints.down("2xl")} {
+    font-size: ${({ theme }) => theme.typography.fontSize.title2}px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("sm", "xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.title1}px;
   }
 
-  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+  ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.title0}px;
   }
 
-  ${({ theme }) => theme.breakpoints.up("lg")} {
+  ${({ theme }) => theme.breakpoints.up("2xl")} {
     font-size: 150px;
   }
 `;

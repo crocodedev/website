@@ -1,25 +1,64 @@
 import styled from "@emotion/styled";
 
 const CaseContent = styled.div`
+  width: 100%;
+
   & .swiper {
-    max-width: 1570px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    width: 100%;
+
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+      padding-top: 45px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
+      padding-top: 70px;
+    }
+
+    ${({ theme }) => theme.breakpoints.up("2xl")} {
+      padding-top: 90px;
+      padding-bottom: 35px;
+    }
 
     & .swiper-slide {
-      width: 516px;
-      height: 350px;
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.05);
       transition: transform 1.5s;
     }
 
     & .swiper-slide-active {
-      transform: scale(1.45);
       z-index: 1;
-      height: 415px;
-      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06);
+
+      ${({ theme }) => theme.breakpoints.down("md")} {
+        height: 100%;
+        width: 100%;
+        transform: scale(1.9);
+      }
+
+      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+        height: 180px;
+        transform: scale(1.3);
+      }
+
+      ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+        height: 250px;
+        transform: scale(1.35);
+      }
+
+      ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
+        height: 350px;
+        transform: scale(1.4);
+      }
+
+      ${({ theme }) => theme.breakpoints.up("2xl")} {
+        height: 415px;
+        transform: scale(1.45);
+      }
     }
   }
 `;

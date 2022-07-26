@@ -1,5 +1,8 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Controller } from "swiper";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -9,12 +12,10 @@ import CaseBottom from "@/components/Case/CaseBottom";
 import CaseBottomItem from "@/components/Case/CaseBottomItem";
 import Text from "@/components/Text";
 import ImageStatic from "@/components/Image";
-// import CaseContentItem from "@/components/Case/CaseContentItem";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller } from "swiper";
+
+import CaseImage from "@/components/Case/CaseImage";
 
 import "swiper/css";
-import { useState } from "react";
 
 const pageData = {
   title: "ATOMIC",
@@ -123,7 +124,9 @@ const Case = ({ data = pageData }) => {
           >
             {items.map(({ id, image }) => (
               <SwiperSlide key={id}>
-                <ImageStatic src={image} />
+                <CaseImage>
+                  <ImageStatic src={image} />
+                </CaseImage>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -133,7 +136,6 @@ const Case = ({ data = pageData }) => {
             modules={[Controller]}
             onSwiper={setSecondSwiper}
             controller={{ control: firstSwiper }}
-            // loop={true}
             centeredSlides={true}
             slidesPerView="auto"
             speed={1500}
@@ -143,10 +145,10 @@ const Case = ({ data = pageData }) => {
               <SwiperSlide key={id}>
                 {info.map(({ heading, desc }) => (
                   <CaseBottomItem key={heading}>
-                    <Text fontWeight="semiBold" lineHeight="sm">
+                    <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
                       {heading}
                     </Text>
-                    <Text>{desc}</Text>
+                    <Text mobileMultiplier={0.875}>{desc}</Text>
                   </CaseBottomItem>
                 ))}
               </SwiperSlide>
@@ -161,12 +163,18 @@ const Case = ({ data = pageData }) => {
 Case.propTypes = {
   data: PropTypes.exact({
     title: PropTypes.string,
-    // bottomItems: PropTypes.arrayOf(
-    //   PropTypes.shape({
-    //     heading: PropTypes.string,
-    //     desc: PropTypes.string,
-    //   }),
-    // ),
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        image: PropTypes.string,
+        info: PropTypes.arrayOf(
+          PropTypes.shape({
+            heading: PropTypes.string,
+            desc: PropTypes.string,
+          }),
+        ),
+      }),
+    ),
   }).isRequired,
 };
 
