@@ -34,15 +34,18 @@ import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
 
 import "destyle.css/destyle.css";
-
+import Hero from "@/sections/Hero";
+import HeroMain from "@/sections/HeroMain";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
-    <Projects />
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
-    <SliderSteps />
+    <HeroMain />
     <Technologies />
+    <Hero />
+    <Projects />
+    <SliderSteps />
     <Development />
     <BlogList />
     <TextOne />
