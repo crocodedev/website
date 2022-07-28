@@ -14,27 +14,27 @@ const HeroMainImage = styled.div`
     object-fit: cover;
 
     ${({ theme }) => theme.breakpoints.down("sm")} {
-      height: 560px;
+      height: 480px;
     }
 
     ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-      height: 540px;
+      height: 500px;
     }
 
     ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-      height: 700px;
+      height: 650px;
     }
 
     ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-      height: 870px;
+      height: 840px;
     }
 
     ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-      height: 1160px;
+      height: 1120px;
     }
 
     ${({ theme }) => theme.breakpoints.up("2xl")} {
-      height: 1330px;
+      height: 1270px;
     }
   }
 `;
