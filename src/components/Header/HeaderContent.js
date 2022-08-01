@@ -25,7 +25,7 @@ const HeaderContent = styled.div`
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     display: flex;
-    gap: 40px;
+    gap: 35px;
   }
 
   & button {

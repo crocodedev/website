@@ -22,12 +22,12 @@ import HeaderContentCloseWrapper from "@/components/Header/HeaderContentCloseWra
 
 const pageData = {
   logo: "/uploads/header-logo-desktop.svg",
-  shopifyIcon: "/uploads/header-shopify-icon.svg",
+  shopifyIcon: {
+    icon: "/uploads/header-shopify-icon.svg",
+    name: "Shopify dev",
+    link: "",
+  },
   items: [
-    {
-      name: "Shopify dev",
-      link: "",
-    },
     {
       name: "Home",
       link: "",
@@ -76,10 +76,10 @@ const Header = ({ data = pageData }) => {
               <ImageStatic src="/uploads/header-close.svg" />
             </HeaderContentClose>
           </HeaderContentCloseWrapper>
-          <HeaderContentItemShopify>
-            <ImageStatic src={shopifyIcon} />
+          <HeaderContentItemShopify to={shopifyIcon.link}>
+            <ImageStatic src={shopifyIcon.icon} />
             <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-              {items.shift().name}
+              {shopifyIcon.name}
             </Text>
           </HeaderContentItemShopify>
           {items.map(({ name, link }) => (

@@ -5,6 +5,8 @@ const HeaderMenu = styled.label`
   cursor: pointer;
   display: flex;
   padding: 10px;
+  position: relative;
+  transition-duration: 1s;
 `;
 
 export default HeaderMenu;

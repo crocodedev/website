@@ -24,7 +24,12 @@ const HeaderContentItem = styled(Link)`
     border-bottom: 3px solid #4b7223;
     padding-top: 3px;
 
-    ${({ theme }) => theme.breakpoints.down("xl")} {
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      border-bottom: none;
+      padding: 16px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
       border-bottom: none;
       padding: 20px;
     }

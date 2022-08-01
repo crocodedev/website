@@ -5,7 +5,6 @@ const HeaderLangMenu = styled.div`
   top: 100%;
   display: none;
   overflow: hidden;
-  margin-top: 20px;
   flex-direction: column;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
@@ -16,7 +15,9 @@ const HeaderLangMenu = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    left: 0;
+    // left: 0;
+    right: 0;
+    margin-top: 20px;
   }
 `;
 

@@ -14,7 +14,7 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    padding-right: 65px;
+    padding-right: 75px;
     padding-left: 75px;
   }
 
