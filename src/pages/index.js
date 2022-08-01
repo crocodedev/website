@@ -36,11 +36,13 @@ import TextThree from "@/sections/TextThree";
 import "destyle.css/destyle.css";
 import Hero from "@/sections/Hero";
 import HeroMain from "@/sections/HeroMain";
+import Header from "@/sections/Header";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Header />
     <HeroMain />
     <Technologies />
     <Hero />
