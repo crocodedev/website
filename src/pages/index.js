@@ -6,7 +6,7 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
-
+import Header from "@/sections/Header";
 import Article from "@/sections/Article";
 import Hero from "@/sections/Hero";
 import HeroMain from "@/sections/HeroMain";
@@ -45,10 +45,12 @@ import "destyle.css/destyle.css";
 
 
 
+
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Header />
     <Article />
     <Case />
     <TechnologyStack />

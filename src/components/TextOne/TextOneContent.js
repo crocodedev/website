@@ -30,7 +30,7 @@ const TextOneContent = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
     padding-top: 72px;
-    max-width: 700px;
+    max-width: 694px;
     transform: translateX(41%);
     gap: 40px;
   }
