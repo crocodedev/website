@@ -32,10 +32,11 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
-
-import "destyle.css/destyle.css";
 import Hero from "@/sections/Hero";
 import HeroMain from "@/sections/HeroMain";
+import CookiesPopup from "@/components/CookiesPopup";
+
+import "destyle.css/destyle.css";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -69,6 +70,7 @@ const HomePage = () => (
     <Reviews />
     <Benefits />
     <Footer />
+    <CookiesPopup />
   </ThemeProvider>
 );
 
