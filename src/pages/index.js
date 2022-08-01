@@ -6,6 +6,8 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import Hero from "@/sections/Hero";
+import HeroMain from "@/sections/HeroMain";
 import SliderSteps from "@/sections/SliderSteps";
 import BlogList from "@/sections/BlogList";
 import TextOne from "@/sections/TextOne";
@@ -36,13 +38,18 @@ import ContactUs from "@/sections/ContactUs";
 
 import "destyle.css/destyle.css";
 
+
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Projects />
     <SliderSteps />
+    <HeroMain />
     <Technologies />
+    <Hero />
+    <Projects />
+    <SliderSteps />
     <Development />
     <BlogList />
     <TextOne />

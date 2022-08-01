@@ -60,11 +60,11 @@ const TextThree = ({ data = pageData }) => {
 
 TextThree.propTypes = {
   data: PropTypes.exact({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
-    listItem1: PropTypes.string.isRequired,
-    listItem2: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    image: PropTypes.string,
+    desc: PropTypes.string,
+    listItem1: PropTypes.string,
+    listItem2: PropTypes.string,
   }).isRequired,
 };
 

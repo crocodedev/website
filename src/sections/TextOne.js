@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 /* eslint-disable react/prop-types */
 import ImageStatic from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
@@ -8,32 +9,21 @@ import TextOneContent from "@/components/TextOne/TextOneContent";
 import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
 import useMedia from "@/hooks/use-media";
 
-const data = {
+
+const pageData = {
   title: "ABOUT CROCODE",
-  imageHero: [
-    { desktop: "/uploads/text-one-bg-desktop.jpg" },
-    { tablet: "/uploads/text-one-bg-tablet.jpg" },
-    { mobile: "/uploads/text-one-bg-mobile.jpg" },
-  ],
-
-  text1:
-    "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-
-  text2:
-    "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  imageHeros: [
+    { src: "/uploads/text-one-bg-mobile.jpg" },
+    { src: "/uploads/text-one-bg-tablet.jpg" },
+    { src: "/uploads/text-one-bg-desktop.jpg" },
 };
 
-const TextOne = () => {
-  const { title } = data;
-  const { text1, text2 } = data;
+
+const TextOne = ({ data = pageData }) => {
+  const { title, imageHeros, text1, text2 } = data;
   const bgImages = useMedia(
     ["(max-width: 767px)", "(max-width: 991px)", "(min-width: 991px)"],
-
-    [
-      { src: "/uploads/text-one-bg-mobile.jpg" },
-      { src: "/uploads/text-one-bg-tablet.jpg" },
-      { src: "/uploads/text-one-bg-desktop.jpg" },
-    ],
+    imageHeros,
     { src: "/uploads/text-one-bg-mobile.jpg" },
   );
 
@@ -57,6 +47,21 @@ const TextOne = () => {
       </TextOneBgImage>
     </TextOneWrapper>
   );
+};
+
+TextOne.propTypes = {
+  data: PropTypes.exact({
+    title: PropTypes.string,
+    text1: PropTypes.string,
+    text2: PropTypes.string,
+    imageHero: PropTypes.arrayOf(
+      PropTypes.exact({
+        desktop: PropTypes.string,
+        tablet: PropTypes.string,
+        mobile: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default TextOne;
