@@ -3304,13 +3304,6 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
-"@types/classnames@^2.2.10":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.3.1.tgz#3c2467aa0f1a93f1f021e3b9bcf938bd5dfdc0dd"
-  integrity sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==
-  dependencies:
-    classnames "*"
-
 "@types/common-tags@^1.8.1":
   version "1.8.1"
   resolved "https://registry.npmjs.org/@types/common-tags/-/common-tags-1.8.1.tgz"
@@ -3335,11 +3328,6 @@
   version "2.8.12"
   resolved "https://registry.npmjs.org/@types/cors/-/cors-2.8.12.tgz"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
-
-"@types/debounce@^1.2.0":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/debounce/-/debounce-1.2.1.tgz#79b65710bc8b6d44094d286aecf38e44f9627852"
-  integrity sha512-epMsEE85fi4lfmJUH/89/iV/LI+F5CvNIvmgs5g5jYFPfhO2S/ae8WSsLOKWdwtoaZw9Q2IhJ4tQ5tFCcS/4HA==
 
 "@types/debug@^0.0.30":
   version "0.0.30"
@@ -3497,14 +3485,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/lodash.memoize@^4.1.6":
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/@types/lodash.memoize/-/lodash.memoize-4.1.7.tgz#aff94ab32813c557cbc1104e127030e3d60a3b27"
-  integrity sha512-lGN7WeO4vO6sICVpf041Q7BX/9k1Y24Zo3FY0aUezr1QlKznpjzsDk3T3wvH8ofYzoK0QupN9TWcFAFZlyPwQQ==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash@*", "@types/lodash@^4.14.175", "@types/lodash@^4.14.92":
+"@types/lodash@^4.14.175", "@types/lodash@^4.14.92":
   version "4.14.182"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.182.tgz"
   integrity sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==
@@ -5378,7 +5359,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@*, classnames@^2.1.2, classnames@^2.1.5, classnames@^2.2.6:
+classnames@^2.2.6:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
@@ -5924,11 +5905,6 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-country-telephone-data@0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/country-telephone-data/-/country-telephone-data-0.6.2.tgz#591a82a4ec605a2ab72537425c59a537c10b1990"
-  integrity sha512-DWlv73QKnPLSyGX3lmWVnn7ZIeM/z+Mv1v1pR0fsUMka0/ICDxwAzC2MRsUaNWQKS5a/J5MOm5GcLomDhWJ3Yg==
-
 cp-file@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/cp-file/-/cp-file-7.0.0.tgz"
@@ -5963,11 +5939,6 @@ cpy@^8.1.0:
     p-all "^2.1.0"
     p-filter "^2.1.0"
     p-map "^3.0.0"
-
-cramda@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/cramda/-/cramda-0.4.4.tgz#b3b390a9f20730acc27d6066e12cee57470e1242"
-  integrity sha512-3TI/CnrILcJ/xpmySoE64kjBtOhVL3lKWRVIrUpI0qWb/CNgB6BUnJWi5shq1eIlqZAwOM12Vs1PhgP6OpRRaA==
 
 crc-32@^1.2.0:
   version "1.2.2"
@@ -6284,11 +6255,6 @@ date-time@^3.1.0:
   integrity sha512-uqCUKXE5q1PNBXjPqvwhwJf9SwMoAHBgWJ6DcrnS5o+W2JOiIILl0JEdVD8SGujrNS02GGxgwAg2PN2zONgtjg==
   dependencies:
     time-zone "^1.0.0"
-
-debounce@^1.1.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
-  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
@@ -9796,11 +9762,6 @@ header-case@^2.0.4:
   dependencies:
     capital-case "^1.0.4"
     tslib "^2.0.3"
-
-hoist-non-react-statics@^2.1.1:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
-  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
 hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
   version "3.3.2"
@@ -14255,7 +14216,7 @@ prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.1, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.1, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -14477,13 +14438,6 @@ rc@1.2.8, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-click-outside@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
-  integrity sha512-d0KWFvBt+esoZUF15rL2UBB7jkeAqLU8L/Ny35oLK6fW6mIbOv/ChD+ExF4sR9PD26kVx+9hNfD0FTIqRZEyRQ==
-  dependencies:
-    hoist-non-react-statics "^2.1.1"
-
 react-cookie-consent@^7.5.0:
   version "7.5.0"
   resolved "https://registry.npmjs.org/react-cookie-consent/-/react-cookie-consent-7.5.0.tgz"
@@ -14595,13 +14549,6 @@ react-phone-input-2@^2.15.1:
     lodash.startswith "^4.2.1"
     prop-types "^15.7.2"
 
-react-phone-input@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-phone-input/-/react-phone-input-1.2.1.tgz#252ffdb0c6c3b3c9baf3f7fefa00c8a78a897428"
-  integrity sha512-33J39+s4Iw5XDKXoiImATltxKP09s8tncgSc+kN+MkltptDTGTopSH1xfyJY/JAl6t0A/5ks7f/qVLtMQFUFjw==
-  dependencies:
-    classnames "^2.1.5"
-
 react-refresh@^0.9.0:
   version "0.9.0"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.9.0.tgz"
@@ -14611,30 +14558,6 @@ react-side-effect@^2.1.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
   integrity sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==
-
-react-telephone-input@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-telephone-input/-/react-telephone-input-5.0.0.tgz#54339f850396ac150999c9c935b54029cc41e079"
-  integrity sha512-9QSfPWNSKNQrMZ+CtAXj7gzoHXjRPVwUEp0WFUPRwm4nptShYmLcWY86XS6mkbyr5DKsElzjI2aq8dJClZkWKA==
-  dependencies:
-    "@types/classnames" "^2.2.10"
-    "@types/debounce" "^1.2.0"
-    "@types/lodash.memoize" "^4.1.6"
-    classnames "^2.1.2"
-    country-telephone-data "0.6.2"
-    cramda "^0.4.4"
-    debounce "^1.1.0"
-    lodash.memoize "^4.1.2"
-    prop-types "^15.5.10"
-    react-click-outside "^3.0.1"
-    react-tiny-virtual-list "^2.1.4"
-
-react-tiny-virtual-list@^2.1.4:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-tiny-virtual-list/-/react-tiny-virtual-list-2.2.0.tgz#eafb6fcf764e4ed41150ff9752cdaad8b35edf4a"
-  integrity sha512-MDiy2xyqfvkWrRiQNdHFdm36lfxmcLLKuYnUqcf9xIubML85cmYCgzBJrDsLNZ3uJQ5LEHH9BnxGKKSm8+C0Bw==
-  dependencies:
-    prop-types "^15.5.7"
 
 react@^17.0.2:
   version "17.0.2"

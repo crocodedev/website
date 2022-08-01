@@ -111,14 +111,7 @@ const ContactUs = ({ data = pageData }) => {
                 accept: check,
               }}
               validateOnBlur
-              onSubmit={({ name, email, tel, text, file }, { resetForm }) => {
-                console.log(
-                  `\n name: ${name};
-                  \n email: ${email};
-                  \n tel: ${tel};
-                  \n text: ${text};
-                  \n file: ${file}`,
-                );
+              onSubmit={({ resetForm }) => {
                 resetForm({
                   name: "",
                   email: "",
