@@ -149,12 +149,14 @@ const SliderSteps = ({ data = pageData }) => {
 SliderSteps.propTypes = {
   data: PropTypes.exact({
     title: PropTypes.string,
-    items: PropTypes.exact({
-      id: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      heading: PropTypes.string.isRequired,
-      desc: PropTypes.string.isRequired,
-    }),
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        image: PropTypes.string,
+        heading: PropTypes.string,
+        desc: PropTypes.string,
+      }),
+    ),
   }).isRequired,
 };
 

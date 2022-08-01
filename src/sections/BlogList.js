@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import { useTheme } from "@emotion/react";
 import BlogListItem from "@/components/BlogList/BlogListItem";
 import BlogListItemContent from "@/components/BlogList/BlogListItemContent";
 import BlogListItemContentTop from "@/components/BlogList/BlogListItemContentTop";
@@ -10,11 +12,10 @@ import Container from "@/components/Container";
 import ImageStatic from "@/components/Image";
 import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
-import { useTheme } from "@emotion/react";
 import BlogListItemHeading from "@/components/BlogList/BlogListItemHeading";
 import BlogListItemButton from "@/components/BlogList/BlogListItemButton";
 
-const data = {
+const dataPage = {
   categories: [
     {
       title: "Latest",
@@ -73,7 +74,7 @@ const data = {
   ],
 };
 
-const BlogList = () => {
+const BlogList = ({ data = dataPage }) => {
   const theme = useTheme();
   return (
     <SectionWrapper>
@@ -129,6 +130,27 @@ const BlogList = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+BlogList.propTypes = {
+  data: PropTypes.exact({
+    categories: PropTypes.arrayOf(
+      PropTypes.exact({
+        title: PropTypes.string,
+        link: PropTypes.string,
+      }),
+    ),
+    articles: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.string,
+        image: PropTypes.string,
+        date: PropTypes.string,
+        heading: PropTypes.string,
+        desc: PropTypes.string,
+        linkText: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default BlogList;
