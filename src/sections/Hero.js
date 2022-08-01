@@ -13,16 +13,17 @@ const pageData = {
   title: "Technologies",
   image: "/uploads/hero-bg-image.jpg",
   desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  links: ["Home", "Technologies"],
 };
 
 const Hero = ({ data = pageData }) => {
-  const { title, image, desc } = data;
+  const { title, image, desc, links } = data;
 
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb />
+          <Breadcrumb links={links} />
           <SectionHeading title={title} />
           <HeroContent>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>
@@ -43,6 +44,7 @@ Hero.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
     desc: PropTypes.string,
+    links: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 
