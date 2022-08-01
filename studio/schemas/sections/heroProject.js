@@ -38,17 +38,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Project images",
-      name: "projectImages",
-      type: "array",
-
-      of: [
-        {
-          title: "Project image",
-          name: "projectImage",
-          type: "imageWithAlt",
-        },
-      ],
+      title: "Project image",
+      name: "projectImage",
+      type: "imageWithAlt",
     },
     {
       title: "Project features",

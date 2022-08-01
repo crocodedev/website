@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "columnLinks",
+      title: "title",
     },
   },
 
@@ -9,6 +9,11 @@ export default {
   name: "columnLinksItem",
   type: "object",
   fields: [
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
     {
       title: "Link",
       name: "link",

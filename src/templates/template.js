@@ -3,8 +3,15 @@ import * as React from "react";
 import Seo from "@/components/Seo";
 import { Global, ThemeProvider } from "@emotion/react";
 import * as Sections from "@/sections";
+import theme from "@/theme";
+import { Helmet } from "react-helmet";
+import reboot from "@/styles/reboot";
+import fontMontserrat from "@/styles/fontMontserrat";
 
-const Template = ({ pageContent: { baseUrl, seo, sections, cookieConsent, recaptchaKey } }) => {
+import "destyle.css/destyle.css";
+
+const Template = ({ pageContext: { baseUrl, seo, sections } }) => {
+  console.log(sections);
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
@@ -20,7 +27,7 @@ const Template = ({ pageContent: { baseUrl, seo, sections, cookieConsent, recapt
 };
 
 Template.propTypes = {
-  pageContent: PropTypes.exact({
+  pageContext: PropTypes.exact({
     baseUrl: PropTypes.string,
     seo: PropTypes.object,
     cookieConsent: PropTypes.object,

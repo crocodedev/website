@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "rightColumnItemTitle",
+      title: "title",
     },
   },
 
@@ -18,10 +18,6 @@ export default {
       title: "Item image",
       name: "itemimage",
       type: "imageWithAlt",
-    },
-    {
-      name: "link",
-      type: "link",
     },
   ],
 };

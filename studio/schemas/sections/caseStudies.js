@@ -53,9 +53,5 @@ export default {
         },
       ],
     },
-    {
-      name: "link",
-      type: "link",
-    },
   ],
 };

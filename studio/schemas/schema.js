@@ -31,6 +31,7 @@ import footer from "./sections/footer";
 import header from "./sections/header";
 import contactUs from "./sections/contactUs";
 import ctaForm from "./sections/ctaForm";
+import challenge from "./sections/challenge";
 
 // objects
 import link from "./objects/link";
@@ -53,15 +54,19 @@ import casesItem from "./objects/casesItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
-import columnLinkItem from "./objects/columnLinks";
+import columnLinksItem from "./objects/columnLinks";
 import iconLink from "./objects/iconLink";
 import textItem from "./objects/agreementTextItems";
 import seo from "./objects/seo";
+import columnGroup from "./objects/columnGroup";
 
 // blocks
 import pageSection from "./blocks/pageSection";
 import pageContent from "./blocks/pageContent";
 import imageWithAlt from "./blocks/imageWithAlt";
+import imageArray from "./blocks/imageArray";
+import itemsSteps from "./blocks/itemsSteps";
+import headerLinks from "./blocks/headerLinks";
 
 export default createSchema({
   name: "default",
@@ -98,6 +103,7 @@ export default createSchema({
     header,
     contactUs,
     ctaForm,
+    challenge,
 
     // objects
     link,
@@ -119,14 +125,18 @@ export default createSchema({
     casesItem,
     technologiesItem,
     socialIconItem,
-    columnLinkItem,
+    columnLinksItem,
     iconLink,
     textItem,
     seo,
+    columnGroup,
 
     // blocks
     pageSection,
     pageContent,
     imageWithAlt,
+    imageArray,
+    itemsSteps,
+    headerLinks,
   ]),
 });

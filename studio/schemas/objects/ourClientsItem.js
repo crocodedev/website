@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "ourClientsTitle",
+      title: "title",
     },
   },
 
@@ -9,6 +9,11 @@ export default {
   name: "ourClientsItem",
   type: "object",
   fields: [
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
     {
       title: "Client photo",
       name: "clientPhoto",

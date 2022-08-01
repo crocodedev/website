@@ -43,14 +43,7 @@ export default {
     {
       title: "Header links",
       name: "headerLinks",
-      type: "array",
-
-      of: [
-        {
-          name: "Link",
-          type: "link",
-        },
-      ],
+      type: "headerLinks",
     },
     {
       title: "Link with icon",

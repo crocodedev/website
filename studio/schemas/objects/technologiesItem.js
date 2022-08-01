@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "technologiesItemTitle",
+      title: "title",
     },
   },
 
@@ -18,10 +18,6 @@ export default {
       title: "Technology image",
       name: "technologyImage",
       type: "imageWithAlt",
-    },
-    {
-      name: "link",
-      type: "link",
     },
   ],
 };

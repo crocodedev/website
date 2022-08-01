@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "socialIcons",
+      title: "title",
     },
   },
 
@@ -9,6 +9,11 @@ export default {
   name: "socialIconsItem",
   type: "object",
   fields: [
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
     {
       title: "Icon image",
       name: "iconImage",

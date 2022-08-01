@@ -90,6 +90,24 @@ export default {
       type: "imageWithAlt",
     },
     {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+      description: "Photo of company manager",
+    },
+    {
+      title: "Image title",
+      name: "imageTitle",
+      type: "string",
+      description: "Name and surname of team member",
+    },
+    {
+      title: "Image subtitle",
+      name: "imageSubtitle",
+      type: "string",
+      description: "Post of team member",
+    },
+    {
       title: "Button text",
       name: "buttonText",
       type: "string",

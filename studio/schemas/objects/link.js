@@ -4,10 +4,10 @@ import { boolean } from "yup";
 export default {
   preview: {
     select: {
-      internalLabel: "internal.label",
-      internalTitle: "internal.reference.title",
-      externalLabel: "external.label",
-      externalHref: "external.text",
+      internalLabel: "linkInternal.label",
+      internalTitle: "linkInternal.reference.title",
+      externalLabel: "linkExternal.label",
+      externalHref: "linkExternal.text",
     },
     prepare({ internalLabel, internalTitle, externalLabel, externalHref }) {
       return {
@@ -22,6 +22,11 @@ export default {
   type: "object",
   icon: LinkIcon,
   fields: [
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
     {
       title: "Link Internal",
       name: "linkInternal",

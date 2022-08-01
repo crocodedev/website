@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "ourTeamTitle",
+      title: "title",
     },
   },
 
@@ -32,7 +32,7 @@ export default {
     {
       title: "Date",
       name: "date",
-      type: "text",
+      type: "string",
     },
     {
       title: "Rating",

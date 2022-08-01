@@ -24,6 +24,7 @@ import { footer } from "./deLocale/footer";
 import { header } from "./deLocale/header";
 import { contactUs } from "./deLocale/contactUs";
 import { ctaForm } from "./deLocale/ctaForm";
+import { challenge } from "./deLocale/challenge";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
@@ -56,5 +57,6 @@ export const deLocale = S.listItem()
         header,
         contactUs,
         ctaForm,
+        challenge,
       ]),
   );

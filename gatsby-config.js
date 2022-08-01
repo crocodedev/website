@@ -28,6 +28,13 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-transformer-svg-sprites",
+            options: {
+              optimize: process.env.NODE_ENV === "production",
+              skip: "",
+            },
+          },
+          {
             resolve: "gatsby-plugin-sitemap",
             options: {
               output: "/",

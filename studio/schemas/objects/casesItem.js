@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "sectionTitle",
+      title: "title",
     },
   },
 
@@ -29,6 +29,10 @@ export default {
       title: "Marker",
       name: "marker",
       type: "string",
+    },
+    {
+      name: "link",
+      type: "link",
     },
     /* {
       title: "Technologies",

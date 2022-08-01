@@ -52,10 +52,9 @@ export default {
       title: "Column",
       name: "column",
       type: "array",
-
       of: [
         {
-          type: "columnLinksItem",
+          type: "columnGroup",
         },
       ],
     },

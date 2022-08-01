@@ -29,6 +29,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "header",
   "contactUs",
   "ctaForm",
+  "challenge",
 ];
 
 export default () => {

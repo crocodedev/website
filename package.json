@@ -41,6 +41,7 @@
     "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-remark": "^5.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
+    "gatsby-transformer-svg-sprites": "^4.0.3",
     "gh-pages": "^4.0.0",
     "mapbox-gl": "^2.9.1",
     "prop-types": "^15.8.1",

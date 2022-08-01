@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "devItemTitle",
+      title: "title",
     },
   },
 
@@ -18,6 +18,11 @@ export default {
       title: "Text",
       name: "text",
       type: "text",
+    },
+    {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
     },
     {
       name: "link",

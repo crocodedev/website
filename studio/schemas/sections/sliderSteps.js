@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "sectionTitle",
+      title: "title",
     },
   },
 
@@ -45,15 +45,7 @@ export default {
     {
       title: "Items steps image",
       name: "itemsStepsImage",
-      type: "array",
-
-      of: [
-        {
-          title: "Image item step",
-          name: "imageItemStep",
-          type: "imageWithAlt",
-        },
-      ],
+      type: "itemsSteps",
     },
     {
       title: "Items steps",

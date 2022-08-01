@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "iconLink",
+      title: "title",
     },
   },
 
@@ -9,6 +9,11 @@ export default {
   name: "iconLink",
   type: "object",
   fields: [
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
     {
       name: "link",
       type: "link",
