@@ -35,6 +35,9 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import Hero from "@/sections/Hero";
+import HeroMain from "@/sections/HeroMain";
+import CookiesPopup from "@/components/CookiesPopup";
 import CaseStudies from "@/sections/CaseStudies";
 import Projects from "@/sections/Projects";
 import ContactUs from "@/sections/ContactUs";
@@ -42,9 +45,6 @@ import TechnologyStack from "@/sections/TechnologyStack";
 import Case from "@/sections/Case";
 
 import "destyle.css/destyle.css";
-
-
-
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -86,6 +86,7 @@ const HomePage = () => (
     <Benefits />
     <ContactUs />
     <Footer />
+    <CookiesPopup />
   </ThemeProvider>
 );
 
