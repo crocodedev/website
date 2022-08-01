@@ -1,17 +1,17 @@
 const { link } = require("../objects/link");
 const { image } = require("../objects/image");
 
-module.exports.development = `
-    ... on SanityDevelopment {
+module.exports.list = `
+    ... on SanityList {
       id
-      component
       position
-      subtitle
+      component
       title
+      text
       items {
-        title
         text
-        image {
+        title
+        imageWithAltText{
           ${image}
         }
         link {

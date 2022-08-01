@@ -1,18 +1,20 @@
 const { link } = require("../objects/link");
 const { image } = require("../objects/image");
 
-module.exports.ctaImage = `
-    ... on SanityCtaImage {
+module.exports.heroProject = `
+    ... on SanityHeroProject {
       id
       position
       component
       title
-      subtitle
-      bgColor
-      link {
+      breadcrumbs {
         ${link}
       }
-      image{
+      projectFeatures {
+        title
+        subtitle
+      }
+      projectImage {
         ${image}
       }
     }

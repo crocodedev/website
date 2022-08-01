@@ -1,4 +1,4 @@
-const Benefits = `
+module.exports.benefits = `
   ... on SanityBenefits {
     id
     component
@@ -18,5 +18,3 @@ const Benefits = `
     }
   }
 `;
-
-module.exports = Benefits;

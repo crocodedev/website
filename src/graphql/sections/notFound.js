@@ -1,15 +1,15 @@
 const { link } = require("../objects/link");
 
-module.exports.ctaText = `
-    ... on SanityCtaText {
+module.exports.notFound = `
+    ... on SanityNotFound {
       id
-      subtitle
-      title
       position
       component
+      title
+      subtitle
+      text
       link {
         ${link}
       }
-      bgColor
     }
 `;

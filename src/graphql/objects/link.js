@@ -1,4 +1,4 @@
-const link = `
+module.exports.link = `
     _key
     title
     linkExternal {
@@ -15,5 +15,3 @@ const link = `
       }
     }
 `;
-
-modal.exports = link;

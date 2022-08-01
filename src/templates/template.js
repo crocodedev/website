@@ -11,7 +11,6 @@ import fontMontserrat from "@/styles/fontMontserrat";
 import "destyle.css/destyle.css";
 
 const Template = ({ pageContext: { baseUrl, seo, sections } }) => {
-  console.log(sections);
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />

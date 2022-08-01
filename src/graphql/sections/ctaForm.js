@@ -1,4 +1,4 @@
-const ctaForm = `
+module.exports.ctaForm = `
     ... on SanityCtaForm {
       id
       position
@@ -9,5 +9,3 @@ const ctaForm = `
       bgColor
     }
 `;
-
-module.exports = ctaForm;

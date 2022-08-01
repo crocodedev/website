@@ -1,4 +1,4 @@
-const faq = `
+module.exports.faq = `
     ... on SanityFaq {
       id
       component
@@ -11,5 +11,3 @@ const faq = `
       }
     }
 `;
-
-module.exports = faq;

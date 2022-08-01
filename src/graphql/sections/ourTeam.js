@@ -1,19 +1,22 @@
 const { link } = require("../objects/link");
 const { image } = require("../objects/image");
 
-module.exports.ctaImage = `
-    ... on SanityCtaImage {
+module.exports.ourTeam = `
+    ... on SanityOurTeam {
       id
       position
       component
       title
       subtitle
-      bgColor
       link {
         ${link}
       }
-      image{
-        ${image}
+      items {
+        title
+        subtitle
+        teamMemberPhoto{
+          ${image}
+        }
       }
     }
 `;

@@ -1,32 +1,24 @@
-const header = `
+const { link } = require("../objects/link");
+const { image } = require("../objects/image");
+
+module.exports.header = `
         ... on SanityHeader {
           id
           position
           component
           logoImage {
-            image {
-                ${image}
-            }
-            altText
+            ${image}
           }
           linkWithIcon {
             icon {
-                ${image}
+              ${image}
             }
             link {
-              title
-              link {
-                ${link}
-              }
+              ${link}
             }
           }
           headerLinks {
-            title
-            link {
-                ${link} 
-            }
+            ${link} 
           }
         }
 `;
-
-module.exports = header;

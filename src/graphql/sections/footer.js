@@ -1,13 +1,23 @@
-const link = require("../objects/link");
+const { link } = require("../objects/link");
+const { image } = require("../objects/image");
 
-const footer = `
+module.exports.footer = `
     ... on SanityFooter {
       id
       position
       component
       copyrightText
-      logoImage
-      socialIcons
+      logoImage {
+        ${image}
+      }
+      socialIcons{
+        iconImage {
+          ${image}
+        }
+        link{
+          ${link}
+        }
+      }
       column {
         title
         items {
@@ -18,8 +28,8 @@ const footer = `
         }
         _key
       }
-      bottomLinks
+      bottomLinks {
+        ${link}
+      }
     }
 `;
-
-module.exports = footer;

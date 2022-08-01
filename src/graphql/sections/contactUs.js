@@ -1,7 +1,7 @@
-const link = require("../objects/link");
-const image = require("../objects/image");
+const { link } = require("../objects/link");
+const { image } = require("../objects/image");
 
-const contactUs = `
+module.exports.contactUs = `
 ... on SanityContactUs {
     id
     title
@@ -16,9 +16,7 @@ const contactUs = `
     emailText
     emailPlaceholder
     backgroundImage {
-      image {
         ${image}
-      }
     }
     imageTitle
     imageSubtitle
@@ -33,5 +31,3 @@ const contactUs = `
 }
     
 `;
-
-module.exports = contactUs;

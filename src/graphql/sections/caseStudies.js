@@ -1,7 +1,7 @@
-const link = require("../objects/link");
-const image = require("../objects/image");
+const { link } = require("../objects/link");
+const { image } = require("../objects/image");
 
-const caseStudies = `
+module.exports.caseStudies = `
     ... on SanityCaseStudies {
       id
       subtitle
@@ -14,7 +14,7 @@ const caseStudies = `
         title
         marker
         casesItemImage {
-          ${image}
+            ${image}
         }
         link {
           ${link}
@@ -22,5 +22,3 @@ const caseStudies = `
       }
     }
 `;
-
-module.exports = caseStudies;

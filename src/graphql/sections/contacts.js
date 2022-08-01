@@ -1,6 +1,6 @@
-const image = require("../objects/image");
+const { image } = require("../objects/image");
 
-const contacts = `
+module.exports.contacts = `
     ... on SanityContacts {
       id
       position
@@ -13,10 +13,8 @@ const contacts = `
       contactItems {
         title
         contactIcon {
-          ${image}
+            ${image}
         }
       }
     }
 `;
-
-module.exports = contacts;

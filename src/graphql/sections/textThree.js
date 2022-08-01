@@ -1,17 +1,13 @@
-const { link } = require("../objects/link");
 const { image } = require("../objects/image");
 
-module.exports.ctaImage = `
-    ... on SanityCtaImage {
+module.exports.textThree = `
+    ... on SanityTextThree {
       id
       position
       component
       title
       subtitle
-      bgColor
-      link {
-        ${link}
-      }
+      text
       image{
         ${image}
       }

@@ -1,4 +1,4 @@
-const image = `
+module.exports.image = `
     altText
     image {
       asset {
@@ -6,5 +6,3 @@ const image = `
       }
     }
 `;
-
-modal.exports = image;
