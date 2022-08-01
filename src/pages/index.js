@@ -37,13 +37,16 @@ import CaseStudies from "@/sections/CaseStudies";
 import Projects from "@/sections/Projects";
 import ContactUs from "@/sections/ContactUs";
 import TechnologyStack from "@/sections/TechnologyStack";
+import Case from "@/sections/Case";
 
 import "destyle.css/destyle.css";
+
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Case />
     <TechnologyStack />
     <CaseStudies />
     <Projects />
