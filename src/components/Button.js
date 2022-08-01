@@ -127,7 +127,6 @@ const Button = ({ variant, handler, to, active, children, ...props }) =>
       {variant === "text" && <span />}
     </StyledButton>
   );
-
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
