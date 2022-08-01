@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller, EffectCreative, EffectCube, Navigation, Pagination } from "swiper";
+import { Controller, EffectCreative, Navigation, Pagination } from "swiper";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
@@ -149,12 +149,14 @@ const SliderSteps = ({ data = pageData }) => {
 SliderSteps.propTypes = {
   data: PropTypes.exact({
     title: PropTypes.string,
-    items: PropTypes.exact({
-      id: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      heading: PropTypes.string.isRequired,
-      desc: PropTypes.string.isRequired,
-    }),
+    items: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        image: PropTypes.string,
+        heading: PropTypes.string,
+        desc: PropTypes.string,
+      }),
+    ),
   }).isRequired,
 };
 
