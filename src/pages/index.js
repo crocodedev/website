@@ -36,6 +36,7 @@ import TextThree from "@/sections/TextThree";
 import "destyle.css/destyle.css";
 import Hero from "@/sections/Hero";
 import HeroMain from "@/sections/HeroMain";
+import ContactUsModal from "@/sections/ContactUsModal";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -69,6 +70,7 @@ const HomePage = () => (
     <Reviews />
     <Benefits />
     <Footer />
+    <ContactUsModal />
   </ThemeProvider>
 );
 
