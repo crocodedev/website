@@ -18,7 +18,6 @@ import ListFour from "@/sections/ListFour";
 import ListFive from "@/sections/ListFive";
 import ListSix from "@/sections/ListSix";
 import ListSeven from "@/sections/ListSeven";
-import Projects from "@/sections/Projects";
 import OurTeam from "@/sections/OurTeam";
 import FAQ from "@/sections/FAQ";
 import OurClients from "@/sections/OurClients";
@@ -34,15 +33,17 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import CaseStudies from "@/sections/CaseStudies";
+import Projects from "@/sections/Projects";
 import ContactUs from "@/sections/ContactUs";
 
 import "destyle.css/destyle.css";
-
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <CaseStudies />
     <Projects />
     <SliderSteps />
     <HeroMain />
