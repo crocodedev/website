@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import ProjectsNavStack from "@/components/Projects/ProjectsNavStack";
@@ -10,7 +11,7 @@ import Pagination from "@/components/Pagination";
 import React from "react";
 import Card from "@/components/Card";
 
-const data = {
+const dataPage = {
   categories: [
     {
       title: "Tech stack:",
@@ -198,7 +199,8 @@ const data = {
     },
   ],
 };
-const Projects = () => {
+
+const Projects = ({ data = dataPage }) => {
   const [currPage, setCurrPage] = React.useState(1);
   const handlerSetCurrPage = (page) => setCurrPage(page);
 
@@ -239,6 +241,37 @@ const Projects = () => {
       </Container>
     </SectionWrapper>
   );
+};
+
+Projects.propTypes = {
+  data: PropTypes.exact({
+    categories: PropTypes.arrayOf(
+      PropTypes.exact({
+        title: PropTypes.string,
+        items: PropTypes.arrayOf(
+          PropTypes.exact({
+            title: PropTypes.string,
+            link: PropTypes.string,
+          }),
+        ),
+      }),
+    ),
+    articles: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        src: PropTypes.string,
+        title: PropTypes.string,
+        label: PropTypes.string,
+        text: PropTypes.string,
+      }),
+    ),
+    pages: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.number,
+        title: PropTypes.string,
+      }),
+    ),
+  }),
 };
 
 export default Projects;
