@@ -36,6 +36,7 @@ import TextThree from "@/sections/TextThree";
 import CaseStudies from "@/sections/CaseStudies";
 import Projects from "@/sections/Projects";
 import ContactUs from "@/sections/ContactUs";
+import TechnologyStack from "@/sections/TechnologyStack";
 
 import "destyle.css/destyle.css";
 
@@ -43,6 +44,7 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <TechnologyStack />
     <CaseStudies />
     <Projects />
     <SliderSteps />
