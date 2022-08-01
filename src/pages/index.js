@@ -6,9 +6,12 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import TextOne from "@/sections/TextOne";
+import Hero from "@/sections/Hero";
+import HeroMain from "@/sections/HeroMain";
+import ContactUsModal from "@/sections/ContactUsModal";
 import SliderSteps from "@/sections/SliderSteps";
 import BlogList from "@/sections/BlogList";
-import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import ListThree from "@/sections/ListThree";
@@ -32,16 +35,16 @@ import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import ContactUs from "@/sections/ContactUs";
 
 import "destyle.css/destyle.css";
-import Hero from "@/sections/Hero";
-import HeroMain from "@/sections/HeroMain";
-import ContactUsModal from "@/sections/ContactUsModal";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Projects />
+    <SliderSteps />
     <HeroMain />
     <Technologies />
     <Hero />
@@ -69,6 +72,7 @@ const HomePage = () => (
     <OurClients />
     <Reviews />
     <Benefits />
+    <ContactUs />
     <Footer />
     <ContactUsModal />
   </ThemeProvider>
