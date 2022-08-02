@@ -300,7 +300,7 @@ Projects.propTypes = {
         title: PropTypes.string,
       }),
     ),
-  }),
+  }).isRequired,
 };
 
 export default Projects;

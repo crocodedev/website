@@ -1,11 +1,21 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-const ContactUsModalWrapper = styled.div`
+const dynamicStyle = ({ variant }) => css`
+  ${variant === "none"
+    ? ""
+    : `
+  z-index: 2;
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  background-color: ${({ theme }) => theme.palette.primary.contrastText};
+  background-color: rgb(73 73 73 / 50%);
+`}
+`;
+
+const ContactUsModalWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  ${dynamicStyle}
 `;
 
 export default ContactUsModalWrapper;
