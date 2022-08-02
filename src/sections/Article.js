@@ -13,6 +13,7 @@ import ArticleBottom from "@/components/Article/ArticleBottom";
 import ArticleBottomList from "@/components/Article/ArticleBottomList";
 import ArticleBottomListItem from "@/components/Article/ArticleBottomListItem";
 import Link from "@/components/Link";
+import BackUpButton from "@/components/BackUpButton";
 
 const dataPage = {
   title: "Break is an important part of work",
@@ -125,6 +126,7 @@ const Article = ({ data = dataPage }) => {
           </ArticleContent>
         </ArticleContentWrapper>
       </Container>
+      <BackUpButton />
     </ArticleWrapper>
   );
 };
