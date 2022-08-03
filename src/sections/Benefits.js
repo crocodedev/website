@@ -11,43 +11,13 @@ import BenefitsListItemTitle from "@/components/Benefits/BenefitsListItemTitle";
 import BenefitsListItemText from "@/components/Benefits/BenefitsListItemText";
 import BenefitsDescriptionText from "@/components/Benefits/BenefitsDescriptionText";
 
-const dataPage = {
-  title: "Benefits of Custom Software",
-  text: `
-    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-    Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-
-  items: {
-    leftColumn: [
-      {
-        itemTitle: "Some text",
-        itemCaption: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-      },
-      {
-        itemTitle: "Some text",
-        itemCaption: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-      },
-    ],
-    rightColumn: [
-      {
-        itemTitle: "Some text",
-        itemCaption: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-      },
-      {
-        itemTitle: "Some text",
-        itemCaption: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-      },
-    ],
-  },
-};
-
-const Benefits = ({ data = dataPage }) => (
+const Benefits = ({ title, subtitle, itemsLeft, itemsRight }) => (
   <SectionWrapper>
     <Container>
       <BenefitsWrapper>
         <BenefitsList>
-          {data.items.leftColumn.map(({ itemTitle, itemCaption }) => (
-            <BenefitsListItem key={itemTitle} align="left">
+          {itemsLeft.map(({ title: itemTitle, text, _key }) => (
+            <BenefitsListItem key={_key} align="left">
               <BenefitsListItemTitle
                 fontSize="title3"
                 fontWeight="bold"
@@ -58,7 +28,7 @@ const Benefits = ({ data = dataPage }) => (
                 {itemTitle}
               </BenefitsListItemTitle>
               <BenefitsListItemText fontSize="subtitle" align="left" mobileMultiplier={0.7}>
-                {itemCaption}
+                {text}
               </BenefitsListItemText>
               <BenefitsListItemMarker align="left" />
             </BenefitsListItem>
@@ -72,16 +42,16 @@ const Benefits = ({ data = dataPage }) => (
             textAlign="center"
             lineHeight="xs"
           >
-            {data.title}
+            {title}
           </BenefitsDescriptionTitle>
           <BenefitsDescriptionText textAlign="center" fontSize="subtitle" mobileMultiplier={0.7}>
-            {data.text}
+            {subtitle}
           </BenefitsDescriptionText>
         </BenefitsDescription>
 
         <BenefitsList>
-          {data.items.rightColumn.map(({ itemTitle, itemCaption }) => (
-            <BenefitsListItem key={itemTitle} align="right">
+          {itemsRight.map(({ title: itemTitle, text, _key }) => (
+            <BenefitsListItem key={_key} align="right">
               <BenefitsListItemTitle
                 fontSize="title3"
                 fontWeight="bold"
@@ -92,7 +62,7 @@ const Benefits = ({ data = dataPage }) => (
                 {itemTitle}
               </BenefitsListItemTitle>
               <BenefitsListItemText fontSize="subtitle" align="right" mobileMultiplier={0.7}>
-                {itemCaption}
+                {text}
               </BenefitsListItemText>
               <BenefitsListItemMarker align="right" />
             </BenefitsListItem>
@@ -104,24 +74,22 @@ const Benefits = ({ data = dataPage }) => (
 );
 
 Benefits.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    text: PropTypes.string,
-    items: PropTypes.exact({
-      rigthColumn: PropTypes.arrayOf(
-        PropTypes.exact({
-          itemTitle: PropTypes.string,
-          itemCaption: PropTypes.string,
-        }),
-      ),
-      leftColumn: PropTypes.arrayOf(
-        PropTypes.exact({
-          itemTitle: PropTypes.string,
-          itemCaption: PropTypes.string,
-        }),
-      ),
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  itemsRight: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string,
+      text: PropTypes.string,
+      _key: PropTypes.string,
     }),
-  }).isRequired,
+  ).isRequired,
+  itemsLeft: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string,
+      text: PropTypes.string,
+      _key: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default Benefits;

@@ -11,6 +11,7 @@ module.exports.footer = `
         ${image}
       }
       socialIcons{
+        _key
         iconImage {
           ${image}
         }
@@ -20,13 +21,13 @@ module.exports.footer = `
       }
       column {
         title
+        _key
         items {
           _key
           link {
             ${link}
           }
         }
-        _key
       }
       bottomLinks {
         ${link}

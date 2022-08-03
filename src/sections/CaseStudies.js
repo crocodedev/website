@@ -5,50 +5,38 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import ProjectsStack from "@/components/Projects/ProjectsStack";
 import Card from "@/components/Card";
+import Link from "@/components/Link";
 
-const pageData = {
-  title: "Our Case Studies",
-  buttonText: "Show more",
-  items: [
-    {
-      id: 1,
-      image: "/uploads/projects-item-image.jpg",
-      heading: "BRU.",
-      label: "Food and Beverage Services",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      id: 2,
-      image: "/uploads/projects-item-image.jpg",
-      heading: "BRU.",
-      label: "Food and Beverage Services",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-  ],
-};
-
-const CaseStudies = ({ data = pageData }) => {
-  const { title, buttonText } = data;
-  return (
-    <SectionWrapper>
-      <Container>
-        <SectionHeading title={title} />
-        <ProjectsStack>
-          {data.items.map(({ id, ...props }) => (
-            <Card key={id} {...props} />
-          ))}
-        </ProjectsStack>
-        <Button variant="outlined">{buttonText}</Button>
-      </Container>
-    </SectionWrapper>
-  );
-};
+const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
+  <SectionWrapper>
+    <Container>
+      <SectionHeading title={title} text={subtitle} />
+      <ProjectsStack>
+        {items.map(({ _key, link: itemLink, ...info }) =>
+          itemLink ? (
+            <Link baseUrl={baseUrl} {...itemLink}>
+              <Card key={_key} {...info} />
+            </Link>
+          ) : (
+            <Card key={_key} {...info} />
+          ),
+        )}
+      </ProjectsStack>
+      {link && (
+        <Button baseUrl={baseUrl} link={link} variant="outlined">
+          {link.title}
+        </Button>
+      )}
+    </Container>
+  </SectionWrapper>
+);
 
 CaseStudies.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    buttonText: PropTypes.string,
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired,
+  link: PropTypes.object.isRequired,
 };
 
 export default CaseStudies;

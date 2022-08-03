@@ -8,6 +8,7 @@ module.exports.reviews = `
       title
       subtitle
       items {
+        _key
         title
         subtitle
         date

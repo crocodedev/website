@@ -6,6 +6,7 @@ module.exports.faq = `
       subtitle
       title
       items {
+        _key
         text
         title
       }

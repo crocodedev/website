@@ -17,12 +17,6 @@ const pageData = {
   listItem1: "Amet minim mollit non deserunt ullamco",
   listItem2: "Amet minim mollit non deserunt ullamco amet minim mollit non deserunt ullamco",
 };
-//   title: "Solution",
-//   image: "/uploads/text-three-variant2.jpg",
-//   desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-//   listItem1: "Amet minim mollit non deserunt ullamco",
-//   listItem2: "Amet minim mollit non deserunt ullamco amet minim mollit non deserunt ullamco",
-// };
 
 const TextThree = ({ data = pageData }) => {
   const { title, image, desc, listItem1, listItem2 } = data;

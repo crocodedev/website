@@ -20,66 +20,15 @@ import ReviewsSwiperWrapper from "@/components/Reviews/ReviewsSwiperWrapper";
 import ReviewsPagination from "@/components/Reviews/ReviewsPagination";
 
 import Text from "@/components/Text";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 
-const dataPage = {
-  title: "What they say about us",
-  items: [
-    {
-      id: "1",
-      authorName: "Dean Maslic",
-      authorCountry: "Australia",
-      authorPhoto: "/uploads/reviews-author.jpg",
-      rating: 0.5,
-      text: "Very talented Frontend team, fantastic CSS skills, completed all allocated tasks on time. Would highly recommend & looking forward together in the future.",
-      date: "2 Sep. 2020",
-    },
-    {
-      id: "2",
-      authorName: "Dean Maslic",
-      authorCountry: "Australia",
-      authorPhoto: "/uploads/reviews-author.jpg",
-      rating: 1.5,
-      text: "Very talented Frontend team, fantastic CSS skills, completed all allocated tasks on time. Would highly recommend & looking forward together in the future.",
-      date: "2 Sep. 2020",
-    },
-    {
-      id: "3",
-      authorName: "Dean Maslic",
-      authorCountry: "Australia",
-      authorPhoto: "/uploads/reviews-author.jpg",
-      rating: 2.5,
-      text: "Very talented Frontend team, fantastic CSS skills, completed all allocated tasks on time. Would highly recommend & looking forward together in the future.",
-      date: "2 Sep. 2020",
-    },
-    {
-      id: "3",
-      authorName: "Dean Maslic",
-      authorCountry: "Australia",
-      authorPhoto: "/uploads/reviews-author.jpg",
-      rating: 3.5,
-      text: "Very talented Frontend team, fantastic CSS skills, completed all allocated tasks on time. Would highly recommend & looking forward together in the future.",
-      date: "2 Sep. 2020",
-    },
-    {
-      id: "3",
-      authorName: "Dean Maslic",
-      authorCountry: "Australia",
-      authorPhoto: "/uploads/reviews-author.jpg",
-      rating: 4.5,
-      text: "Very talented Frontend team, fantastic CSS skills, completed all allocated tasks on time. Would highly recommend & looking forward together in the future.",
-      date: "2 Sep. 2020",
-    },
-  ],
-};
-
-const Reviews = ({ data = dataPage }) => {
-  const theme = useTheme();
+const Reviews = ({ title, subtitle, items, baseUrl }) => {
+  const theme = useTheme(title, subtitle, items, baseUrl);
 
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading title={data.title} />
+        <SectionHeading title={title} />
         <ReviewsContent>
           <ReviewsButton dir="left" className="reviews__prev-el" />
 
@@ -93,21 +42,29 @@ const Reviews = ({ data = dataPage }) => {
                 prevEl: ".reviews__prev-el",
               }}
             >
-              {data.items.map(
-                ({ id, authorPhoto, authorCountry, authorName, rating, text, date }) => (
-                  <SwiperSlide key={id}>
+              {items.map(
+                ({
+                  _key,
+                  title: itemTitle,
+                  subtitle: itemSubtitle,
+                  date,
+                  rating,
+                  text,
+                  userPhoto,
+                }) => (
+                  <SwiperSlide key={_key}>
                     <ReviewsItem>
                       <ReviewsItemHeading>
                         <ReviewsItemAuthor>
                           <ReviewsItemAuthorImage>
-                            <ImageStatic src={authorPhoto} />
+                            <Image {...userPhoto} />
                           </ReviewsItemAuthorImage>
                           <ReviewsItemAuthorContent>
                             <Text fontWeight="bold" lineHeight="sm">
-                              {authorName}
+                              {itemTitle}
                             </Text>
                             <Text color={theme.palette.primary.main} fontSize="captionText">
-                              {authorCountry}
+                              {itemSubtitle}
                             </Text>
                           </ReviewsItemAuthorContent>
                         </ReviewsItemAuthor>
@@ -136,20 +93,20 @@ const Reviews = ({ data = dataPage }) => {
 };
 
 Reviews.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        id: PropTypes.string,
-        authorName: PropTypes.string,
-        authorCountry: PropTypes.string,
-        authorPhoto: PropTypes.string,
-        rating: PropTypes.number,
-        text: PropTypes.string,
-        date: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
+      date: PropTypes.string,
+      rating: PropTypes.number,
+      text: PropTypes.string,
+      userPhoto: PropTypes.object,
+    }),
+  ).isRequired,
+  baseUrl: PropTypes.string.isRequired,
 };
 
 export default Reviews;

@@ -1,5 +1,4 @@
 import { LinkIcon } from "@sanity/icons";
-import { boolean } from "yup";
 
 export default {
   preview: {

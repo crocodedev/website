@@ -8,17 +8,21 @@ module.exports.caseStudies = `
       title
       position
       component
+      link {
+        ${link}
+      }
       items {
         _key
         text
         title
         marker
         casesItemImage {
-            ${image}
+          ${image}
         }
         link {
           ${link}
         }
       }
+
     }
 `;

@@ -11,9 +11,10 @@ module.exports.contacts = `
       styleLink
       accessToken
       contactItems {
+        _key
         title
         contactIcon {
-            ${image}
+          ${image}
         }
       }
     }

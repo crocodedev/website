@@ -16,11 +16,14 @@ module.exports.contactUs = `
     emailText
     emailPlaceholder
     backgroundImage {
-        ${image}
+      ${image}
     }
     imageTitle
     imageSubtitle
     buttonText
+    image {
+      ${image}
+    }
     agreementText {
       text
       title

@@ -10,6 +10,7 @@ module.exports.technologies = `
       technologiesTitles
       subtitle
       technologiesItems {
+        _key
         title
         technologyImage {
           ${image}

@@ -8,29 +8,15 @@ import SectionHeading from "@/components/SectionHeading";
 import MapStack from "@/components/Map/MapStack";
 import MapStackInfo from "@/components/Map/MapStackInfo";
 import MapStackInfoItem from "@/components/Map/MapStackInfoItem";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import MapStackLink from "@/components/Map/MapStackLink";
 import MapMarkerIcon from "@/components/Map/MapMarkerIcon";
 import MapWrapper from "@/components/Map/MapWrapper";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import { link } from "@/graphql/objects/link";
 
-const dataPage = {
-  title: "Connect with our Team",
-  adress: "Chkalova St, 56A-1B, 210041 Vitebsk, Belarus",
-  items: [
-    {
-      text: "welcome@crocode.io",
-      src: "/uploads/Vector-1.svg",
-    },
-    {
-      text: "+375 29 222 32 22",
-      src: "/uploads/Vector.svg",
-    },
-  ],
-};
-
-const Contacts = ({ data = dataPage }) => {
+const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subtitle }) => {
   const mapCoordinates = useMedia(
     ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
 
@@ -48,30 +34,34 @@ const Contacts = ({ data = dataPage }) => {
   React.useEffect(() => {
     setViewState(mapCoordinates);
   }, [mapCoordinates]);
-
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading title={data.title} />
+        <SectionHeading title={title} subtitle={subtitle} />
         <MapStack>
           <MapStackInfo>
-            {data.items.map(({ text, src }) => (
-              <MapStackInfoItem key={text}>
-                <ImageStatic src={src} />
-                <MapStackLink href="/#">{text}</MapStackLink>
+            {contactItems.map(({ title: infoTitle, contactIcon, _key, baseUrl }) => (
+              <MapStackInfoItem key={_key}>
+                <Image objectFit="scale-down" {...contactIcon} />
+                <MapStackLink {...link} baseUrl={baseUrl}>
+                  {infoTitle}
+                </MapStackLink>
               </MapStackInfoItem>
             ))}
           </MapStackInfo>
           <MapWrapper>
             <Map
               {...viewState.mapCords}
-              mapStyle="mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"
+              mapStyle={styleLink || "mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"}
               interactive={false}
-              mapboxAccessToken="pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
+              mapboxAccessToken={
+                accessToken ||
+                "pk.eyJ1IjoibWl0c3VydXlhbm8iLCJhIjoiY2w0c2Y0NTAyMDJhaDNjbXplNXViMDhlYSJ9.tXv1LSmf3LOf25M4ohCx5A"
+              }
             >
               <Marker longitude={22} latitude={50.06} anchor="bottom">
                 <MapMarkerIcon>
-                  <ImageStatic src="/uploads/map-marker-icon.png" />
+                  <Image src="/uploads/map-marker-icon.png" />
                 </MapMarkerIcon>
               </Marker>
               <Popup
@@ -82,7 +72,7 @@ const Contacts = ({ data = dataPage }) => {
                 closeButton={false}
                 closeOnClick={false}
               >
-                {data.adress}
+                {popUpText}
               </Popup>
             </Map>
           </MapWrapper>
@@ -93,16 +83,19 @@ const Contacts = ({ data = dataPage }) => {
 };
 
 Contacts.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    adress: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        text: PropTypes.string,
-        src: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  popUpText: PropTypes.string.isRequired,
+  accessToken: PropTypes.string.isRequired,
+  styleLink: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  contactItems: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string,
+      link: PropTypes.object,
+      _key: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default Contacts;

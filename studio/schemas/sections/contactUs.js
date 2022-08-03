@@ -116,13 +116,7 @@ export default {
     {
       title: "Agreement text",
       name: "agreementText",
-      type: "array",
-
-      of: [
-        {
-          type: "textItem",
-        },
-      ],
+      type: "textItem",
     },
   ],
 };

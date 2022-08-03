@@ -6,65 +6,19 @@ import FAQStack from "@/components/FAQ/FAQStack";
 import FAQColumn from "@/components/FAQ/FAQColumn";
 import FAQItem from "@/components/FAQ/FAQItem";
 
-const dataPage = {
-  title: "questions you might have",
-  items: [
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-    {
-      title: "Amet minim mollit non deserunt ullamco est sit aliqua?",
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim illo sunt aliquid similique nemo corrupti nulla praesentium in quae necessitatibus asperiores, repudiandae, natus quod. Labore cupiditate dolore suscipit ab sapiente?",
-    },
-  ],
-};
-
-const FAQ = ({ data = dataPage }) => (
+const FAQ = ({ subtitle, title, items }) => (
   <SectionWrapper bgColor="paper">
     <Container>
-      <SectionHeading title={data.title} />
+      <SectionHeading title={title} subtitle={subtitle} />
       <FAQStack>
         <FAQColumn>
-          {data.items.slice(0, data.items.length / 2).map(({ title, text }) => (
-            <FAQItem key={title} title={title} text={text} />
+          {items.slice(0, items.length / 2).map(({ title: itemTitle, text, _key }) => (
+            <FAQItem key={_key} title={itemTitle} text={text} />
           ))}
         </FAQColumn>
         <FAQColumn>
-          {data.items.slice(data.items.length / 2).map(({ title, text }) => (
-            <FAQItem key={title} title={title} text={text} />
+          {items.slice(items.length / 2).map(({ title: itemTitle, text, _key }) => (
+            <FAQItem key={_key} title={itemTitle} text={text} />
           ))}
         </FAQColumn>
       </FAQStack>
@@ -73,15 +27,15 @@ const FAQ = ({ data = dataPage }) => (
 );
 
 FAQ.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        title: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      _key: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default FAQ;
