@@ -7,6 +7,9 @@ import ChallengeImage from "@/components/Challenge/ChallengeImage";
 import ImageStatic from "@/components/Image";
 import ChallengeText from "@/components/Challenge/ChallengeText";
 import ChallengeContainer from "@/components/Challenge/ChallengeContainer";
+import ChallengeDot from "@/components/Challenge/ChallengeDot";
+import ChallengeDotContent from "@/components/Challenge/ChallengeDotContent";
+import ChallengeDotContentBottom from "@/components/Challenge/ChallengeDotContentBottom";
 
 const pageData = {
   title: "Challenge",
@@ -28,6 +31,13 @@ const Challenge = ({ data = pageData }) => {
             </Text>
           </ChallengeText>
           <ChallengeImage>
+            <ChallengeDotContent>
+              <ChallengeDot />
+              <ChallengeDotContentBottom>
+                <ChallengeDot />
+              </ChallengeDotContentBottom>
+              <ChallengeDot />
+            </ChallengeDotContent>
             <ImageStatic src={image} />
           </ChallengeImage>
         </ChallengeContent>

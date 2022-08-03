@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const ChallengeImage = styled.div`
   width: 100%;
   overflow: hidden;
+  position: relative;
 
   picture img {
     width: 100%;
