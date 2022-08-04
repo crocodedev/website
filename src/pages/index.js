@@ -49,7 +49,6 @@ const HomePage = () => (
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <ContactUs />
     <Article />
     <Case />
     <TechnologyStack />
@@ -83,7 +82,7 @@ const HomePage = () => (
     <OurClients />
     <Reviews />
     <Benefits />
-    {/* <ContactUs /> */}
+    <ContactUs />
     <Footer />
     <CookiesPopup />
   </ThemeProvider>
