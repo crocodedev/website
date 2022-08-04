@@ -8,8 +8,6 @@ import ImageStatic from "@/components/Image";
 import ChallengeText from "@/components/Challenge/ChallengeText";
 import ChallengeContainer from "@/components/Challenge/ChallengeContainer";
 import ChallengeDot from "@/components/Challenge/ChallengeDot";
-import ChallengeDotContent from "@/components/Challenge/ChallengeDotContent";
-import ChallengeDotContentBottom from "@/components/Challenge/ChallengeDotContentBottom";
 
 const pageData = {
   title: "Challenge",
@@ -31,13 +29,9 @@ const Challenge = ({ data = pageData }) => {
             </Text>
           </ChallengeText>
           <ChallengeImage>
-            <ChallengeDotContent>
-              <ChallengeDot />
-              <ChallengeDotContentBottom>
-                <ChallengeDot />
-              </ChallengeDotContentBottom>
-              <ChallengeDot />
-            </ChallengeDotContent>
+            <ChallengeDot align="left" />
+            <ChallengeDot align="center" />
+            <ChallengeDot align="right" />
             <ImageStatic src={image} />
           </ChallengeImage>
         </ChallengeContent>
