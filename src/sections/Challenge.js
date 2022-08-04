@@ -8,6 +8,8 @@ import ImageStatic from "@/components/Image";
 import ChallengeText from "@/components/Challenge/ChallengeText";
 import ChallengeContainer from "@/components/Challenge/ChallengeContainer";
 import ChallengeDot from "@/components/Challenge/ChallengeDot";
+import ChallengeModal from "@/components/Challenge/ChallengeModal";
+import ChallengeModalWrapper from "@/components/Challenge/ChallengeModalWrapper";
 
 const pageData = {
   title: "Challenge",
@@ -29,9 +31,36 @@ const Challenge = ({ data = pageData }) => {
             </Text>
           </ChallengeText>
           <ChallengeImage>
-            <ChallengeDot align="left" />
-            <ChallengeDot align="center" />
-            <ChallengeDot align="right" />
+            <ChallengeDot align="left">
+              <ChallengeModalWrapper>
+                <ChallengeModal>
+                  <Text fontWeight="bold" mobileMultiplier={0.8}>
+                    Modal text title
+                  </Text>
+                  <Text mobileMultiplier={0.8}>Modal text</Text>
+                </ChallengeModal>
+              </ChallengeModalWrapper>
+            </ChallengeDot>
+            <ChallengeDot align="center">
+              <ChallengeModalWrapper>
+                <ChallengeModal>
+                  <Text fontWeight="bold" mobileMultiplier={0.8}>
+                    Modal text title
+                  </Text>
+                  <Text mobileMultiplier={0.8}>Modal text</Text>
+                </ChallengeModal>
+              </ChallengeModalWrapper>
+            </ChallengeDot>
+            <ChallengeDot align="right">
+              <ChallengeModalWrapper>
+                <ChallengeModal>
+                  <Text fontWeight="bold" mobileMultiplier={0.8}>
+                    Modal text title
+                  </Text>
+                  <Text mobileMultiplier={0.8}>Modal text</Text>
+                </ChallengeModal>
+              </ChallengeModalWrapper>
+            </ChallengeDot>
             <ImageStatic src={image} />
           </ChallengeImage>
         </ChallengeContent>

@@ -110,6 +110,12 @@ const ChallengeDot = styled.span`
   position: absolute;
   z-index: 1;
 
+  &:hover {
+    & div {
+      display: flex;
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.down("sm")} {
     width: 14px;
     height: 14px;
