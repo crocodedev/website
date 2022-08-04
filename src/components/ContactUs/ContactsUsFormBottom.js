@@ -12,6 +12,8 @@ const ContactsUsFormBottom = styled.div`
 
     &:disabled {
       pointer-events: none;
+      background: ${({ theme }) => theme.palette.primary.main};
+      opacity: 0.4;
     }
   }
 
