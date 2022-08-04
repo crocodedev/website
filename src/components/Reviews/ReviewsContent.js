@@ -9,8 +9,12 @@ const ReviewsContent = styled.div`
 
   & .swiper {
     max-width: 764px;
-    margin-left: 0;
+    margin-left: 4px;
     margin-right: 0;
+
+    &-wrapper {
+      gap: 1px;
+    }
   }
 `;
 
