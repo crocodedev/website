@@ -81,7 +81,7 @@ const Reviews = ({ data = dataPage }) => {
       <Container>
         <SectionHeading title={data.title} />
         <ReviewsContent>
-          <ReviewsButton dir="left" className="reviews__prev-el" />
+          <ReviewsButton aria-label="left" dir="left" className="reviews__prev-el" />
 
           <ReviewsSwiperWrapper>
             <Swiper
@@ -100,7 +100,7 @@ const Reviews = ({ data = dataPage }) => {
                       <ReviewsItemHeading>
                         <ReviewsItemAuthor>
                           <ReviewsItemAuthorImage>
-                            <ImageStatic src={authorPhoto} />
+                            <ImageStatic loading="lazy" src={authorPhoto} />
                           </ReviewsItemAuthorImage>
                           <ReviewsItemAuthorContent>
                             <Text fontWeight="bold" lineHeight="sm">
@@ -128,7 +128,7 @@ const Reviews = ({ data = dataPage }) => {
             </Swiper>
             <ReviewsPagination className="reviews-pagination" />
           </ReviewsSwiperWrapper>
-          <ReviewsButton dir="right" className="reviews__next-el" />
+          <ReviewsButton aria-label="right" dir="right" className="reviews__next-el" />
         </ReviewsContent>
       </Container>
     </SectionWrapper>

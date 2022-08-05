@@ -64,7 +64,7 @@ const OurTeam = ({ data = dataPage }) => (
         {data.items.map(({ src, name, role }) => (
           <OurTeamItem key={name}>
             <OurTeamImage>
-              <ImageStatic src={src} />
+              <ImageStatic loading="lazy" src={src} />
             </OurTeamImage>
             <OurTeamInfo>
               <Text fontWeight="bold">{name}</Text>

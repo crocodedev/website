@@ -67,17 +67,17 @@ const Header = ({ data = pageData }) => {
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
-          <ImageStatic src={logo} />
+          <ImageStatic loading="lazy" src={logo} />
         </HeaderLogo>
         <input type="checkbox" id="mobile-content" />
         <HeaderContent>
           <HeaderContentCloseWrapper>
             <HeaderContentClose htmlFor="mobile-content">
-              <ImageStatic src="/uploads/header-close.svg" />
+              <ImageStatic loading="lazy" src="/uploads/header-close.svg" />
             </HeaderContentClose>
           </HeaderContentCloseWrapper>
           <HeaderContentItemShopify to={shopifyIcon.link}>
-            <ImageStatic src={shopifyIcon.icon} />
+            <ImageStatic loading="lazy" src={shopifyIcon.icon} />
             <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
               {shopifyIcon.name}
             </Text>
@@ -92,14 +92,14 @@ const Header = ({ data = pageData }) => {
           </HeaderContentBtnWrapper>
           <HeaderLangWrapper>
             <HeaderLang>
-              <ImageStatic src={langFlag} />
+              <ImageStatic loading="lazy" src={langFlag} />
               <HeaderLangMenu>
                 <HeaderLangMenuItem>
-                  <ImageStatic src={langFlag} />
+                  <ImageStatic loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
                 <HeaderLangMenuItem>
-                  <ImageStatic src={langFlag} />
+                  <ImageStatic loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
               </HeaderLangMenu>
@@ -108,7 +108,7 @@ const Header = ({ data = pageData }) => {
         </HeaderContent>
         <HeaderMenuWrapper>
           <HeaderMenu htmlFor="mobile-content">
-            <ImageStatic src={burgerIcon} />
+            <ImageStatic loading="lazy" src={burgerIcon} />
           </HeaderMenu>
         </HeaderMenuWrapper>
       </HeaderContainer>
