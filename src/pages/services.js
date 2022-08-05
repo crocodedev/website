@@ -7,39 +7,29 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
-import HeroMain from "@/sections/HeroMain";
-import ListOne from "@/sections/ListOne";
+import Hero from "@/sections/Hero";
 import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
-import Technologies from "@/sections/Technologies";
-import CaseStudies from "@/sections/CaseStudies";
+import FAQ from "@/sections/FAQ";
 import Reviews from "@/sections/Reviews";
-import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const ServicesPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="ServicesPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
-    <ListOne />
+    <Hero />
     <ListTwo />
-    <TextOne />
-    <OurTeam />
-    <Technologies />
-    <CaseStudies />
+    <FAQ />
     <Reviews />
-    <RelatedArticles />
     <ContactUs />
     <Footer />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default ServicesPage;

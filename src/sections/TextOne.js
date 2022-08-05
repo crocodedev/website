@@ -9,15 +9,14 @@ import TextOneContent from "@/components/TextOne/TextOneContent";
 import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
 import useMedia from "@/hooks/use-media";
 
-
 const pageData = {
   title: "ABOUT CROCODE",
   imageHeros: [
     { src: "/uploads/text-one-bg-mobile.jpg" },
     { src: "/uploads/text-one-bg-tablet.jpg" },
     { src: "/uploads/text-one-bg-desktop.jpg" },
+  ],
 };
-
 
 const TextOne = ({ data = pageData }) => {
   const { title, imageHeros, text1, text2 } = data;

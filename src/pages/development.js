@@ -7,11 +7,13 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
-import HeroMain from "@/sections/HeroMain";
+import Hero from "@/sections/Hero";
+import Development from "@/sections/Development";
+import Benefits from "@/sections/Benefits";
 import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
+import CtaText from "@/sections/CtaText";
+import SliderSteps from "@/sections/SliderSteps";
+import ListThree from "@/sections/ListThree";
 import Technologies from "@/sections/Technologies";
 import CaseStudies from "@/sections/CaseStudies";
 import Reviews from "@/sections/Reviews";
@@ -22,19 +24,22 @@ import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const DevelopmentPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="DevelopmentPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
+    <Hero />
+    <Development />
+    <Benefits />
     <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
+    <CtaText />
+    <SliderSteps />
+    <ListThree />
     <Technologies />
     <CaseStudies />
     <Reviews />
+    <CtaText />
     <RelatedArticles />
     <ContactUs />
     <Footer />
@@ -42,4 +47,4 @@ const HomePage = () => (
   </ThemeProvider>
 );
 
-export default HomePage;
+export default DevelopmentPage;

@@ -7,39 +7,37 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
-import HeroMain from "@/sections/HeroMain";
-import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
-import Technologies from "@/sections/Technologies";
+import Hero from "@/sections/Hero";
+import TextTwo from "@/sections/TextTwo";
+import ListSeven from "@/sections/ListSeven";
+import CtaText from "@/sections/CtaText";
+import SliderSteps from "@/sections/SliderSteps";
+import ListThree from "@/sections/ListThree";
 import CaseStudies from "@/sections/CaseStudies";
 import Reviews from "@/sections/Reviews";
-import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const MvpDevelopmentPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="MvpDevelopmentPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
-    <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
-    <Technologies />
+    <Hero />
+    <TextTwo />
+    <ListSeven />
+    <CtaText />
+    <SliderSteps />
+    <ListThree />
     <CaseStudies />
     <Reviews />
-    <RelatedArticles />
     <ContactUs />
     <Footer />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default MvpDevelopmentPage;

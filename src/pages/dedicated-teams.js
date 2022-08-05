@@ -7,39 +7,37 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
-import HeroMain from "@/sections/HeroMain";
-import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
+import Hero from "@/sections/Hero";
+import ListThree from "@/sections/ListThree";
+import ListSix from "@/sections/ListSix";
+import SliderSteps from "@/sections/SliderSteps";
+import ListFour from "@/sections/ListFour";
 import Technologies from "@/sections/Technologies";
 import CaseStudies from "@/sections/CaseStudies";
 import Reviews from "@/sections/Reviews";
-import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const DedicatedTeamsPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="DedicatedTeamsPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
-    <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
+    <Hero />
+    <ListThree />
+    <ListSix />
+    <SliderSteps />
+    <ListFour />
     <Technologies />
     <CaseStudies />
     <Reviews />
-    <RelatedArticles />
     <ContactUs />
     <Footer />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default DedicatedTeamsPage;

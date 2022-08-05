@@ -7,39 +7,35 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
-import HeroMain from "@/sections/HeroMain";
-import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
-import Technologies from "@/sections/Technologies";
-import CaseStudies from "@/sections/CaseStudies";
+import Case from "@/sections/Case";
+import TextThree from "@/sections/TextThree";
+import TechnologyStack from "@/sections/TechnologyStack";
 import Reviews from "@/sections/Reviews";
-import RelatedArticles from "@/sections/RelatedArticles";
+import CtaImage from "@/sections/CtaImage";
+import CaseStudies from "@/sections/CaseStudies";
 import ContactUs from "@/sections/ContactUs";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const CasePage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="CasePage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
-    <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
-    <Technologies />
-    <CaseStudies />
+    <Case />
+    {/* challenge */}
+    <TextThree />
+    <TechnologyStack />
+    <TextThree />
     <Reviews />
-    <RelatedArticles />
+    <CtaImage />
+    <CaseStudies />
     <ContactUs />
     <Footer />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default CasePage;
