@@ -24,7 +24,7 @@ const ConsultancyPage = () => (
     <Helmet defer={false} title="ConsultancyPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <Hero />
+    <Hero color="gray" />
     <ListSeven />
     <ListFive />
     <TextTwo />
