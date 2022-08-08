@@ -17,7 +17,6 @@ const HeaderLangMenu = styled.div`
   ${({ theme }) => theme.breakpoints.up("xl")} {
     // left: 0;
     right: 0;
-    margin-top: 20px;
   }
 `;
 
