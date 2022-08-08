@@ -108,7 +108,7 @@ const Footer = ({ data = dataPage }) => {
             <FooterSocials>
               {data.socials.map(({ logo, src }) => (
                 <FooterSocialLink key={src} to={src}>
-                  <ImageStatic src={logo} />
+                  <ImageStatic loading="lazy" src={logo} />
                 </FooterSocialLink>
               ))}
             </FooterSocials>
