@@ -104,9 +104,9 @@ const SliderSteps = ({ data = pageData }) => {
             </Swiper>
 
             <SliderStepsNavigation>
-              <SliderStepsArrow dir="left" className="sliderSteps__prev-el" />
+              <SliderStepsArrow aria-label="left" dir="left" className="sliderSteps__prev-el" />
               <SliderStepsPagination className="sliderSteps-pagination" />
-              <SliderStepsArrow dir="right" className="sliderSteps__next-el" />
+              <SliderStepsArrow aria-label="right" dir="right" className="sliderSteps__next-el" />
             </SliderStepsNavigation>
           </SliderStepsContent>
 
