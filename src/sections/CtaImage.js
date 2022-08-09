@@ -19,12 +19,12 @@ const dataPage = {
 
 const CtaImage = ({ data = dataPage }) => {
   const theme = useTheme();
-  
+
   return (
     <CtaImageSectionWrapper disablePaddings={true} bgColor={data.bgColor}>
       <Container>
         <CtaImageImgWrapper>
-          <ImageStatic src={data.src} />
+          <ImageStatic loading="lazy" src={data.src} />
         </CtaImageImgWrapper>
         <CtaImageInfoWrapper>
           <CtaImageTextWrapper>

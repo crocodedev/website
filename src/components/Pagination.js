@@ -93,6 +93,7 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
   return (
     <PaginationWrapper>
       <PaginationArrowLink
+        aria-label="left"
         align="left"
         disabled={+currentPage === 1}
         onClick={() => handler(currentPage - 1)}
@@ -107,6 +108,7 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
         })}
       </PaginationStack>
       <PaginationArrowLink
+        aria-label="right"
         align="right"
         disabled={+currentPage === +pageCount - 1}
         onClick={() => handler(currentPage + 1)}

@@ -19,7 +19,7 @@ const dataPage = {
       title: "Some Consulting",
       text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
       link: {
-        title: "Learn More",
+        title: "learn detailed",
         src: "/#",
       },
     },
@@ -28,7 +28,7 @@ const dataPage = {
       title: "Some Consulting",
       text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
       link: {
-        title: "Learn More",
+        title: "learn detailed",
         src: "/#",
       },
     },
@@ -37,7 +37,7 @@ const dataPage = {
       title: "Some Consulting",
       text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
       link: {
-        title: "Learn More",
+        title: "learn detailed",
         src: "/#",
       },
     },

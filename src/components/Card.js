@@ -12,7 +12,7 @@ const Card = ({ image, heading, label, desc }) => {
   return (
     <CardItem>
       <CardImage>
-        <ImageStatic src={image} />
+        <ImageStatic loading="lazy" src={image} />
       </CardImage>
       <CardContent>
         <CardHeading>

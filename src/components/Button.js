@@ -156,7 +156,7 @@ const StyledButton = styled.button`
 const Button = ({ variant, handler, to, active, children, ...props }) =>
   to ? (
     <Link to={to} {...props}>
-      <StyledButton as="a" active={active} variant={variant}>
+      <StyledButton {...props} href={to} as="a" active={active} variant={variant}>
         {children}
         {variant === ("text" || "backUp") && <span />}
       </StyledButton>

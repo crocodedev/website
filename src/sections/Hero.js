@@ -16,14 +16,14 @@ const pageData = {
   links: ["Home", "Technologies"],
 };
 
-const Hero = ({ data = pageData }) => {
+const Hero = ({ data = pageData, color }) => {
   const { title, image, desc, links } = data;
 
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb links={links} />
+          <Breadcrumb color={color} links={links} />
           <SectionHeading title={title} />
           <HeroContent>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>
@@ -46,6 +46,7 @@ Hero.propTypes = {
     desc: PropTypes.string,
     links: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Hero;
