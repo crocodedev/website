@@ -6,8 +6,12 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
-import Header from "@/sections/Header";
+import TextOne from "@/sections/TextOne";
+import Hero from "@/sections/Hero";
 import HeroMain from "@/sections/HeroMain";
+import ContactUsModal from "@/sections/ContactUsModal";
+import SliderSteps from "@/sections/SliderSteps";
+import BlogList from "@/sections/BlogList";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
 import TextOne from "@/sections/TextOne";
@@ -38,6 +42,7 @@ const HomePage = () => (
     <RelatedArticles />
     <ContactUs />
     <Footer />
+    <ContactUsModal />
     <CookiesPopup />
   </ThemeProvider>
 );
