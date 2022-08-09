@@ -27,6 +27,7 @@ import TechnologyStack from "@/sections/TechnologyStack";
 import Case from "@/sections/Case";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
+import Challenge from "@/sections/Challenge";
 
 import "destyle.css/destyle.css";
 
@@ -34,6 +35,14 @@ const HomePage = () => (
   <ThemeProvider theme={theme}>
     <Helmet defer={false} title="HomePage" />
     <Global styles={[reboot, fontMontserrat]} />
+    <Challenge />
+    <Projects />
+    <SliderSteps />
+    <Technologies />
+    <Development />
+    <BlogList />
+    <TextTwo />
+    <TextThree />
     <Header />
     <HeroMain />
     <ListOne />
