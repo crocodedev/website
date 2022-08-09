@@ -6,7 +6,7 @@ import Text from "./Text";
 const TechnologyCard = ({ src, title }) => {
   return (
     <TechnologyCardItem>
-      <ImageStatic src={src} />
+      <ImageStatic loading="lazy" src={src} />
       <Text lineHeight="md" fontSize="text" fontWeight="regular" mobileMultiplier={0.75}>
         {title}
       </Text>

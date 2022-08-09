@@ -12,7 +12,7 @@ import Text from "@/components/Text";
 
 const data = {
   title: "we are in numbers",
-  caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+  caption: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
               Velit officia consequat duis enim velit mollit.
               Exercitation veniam consequat sunt nostrud amet.
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
@@ -42,7 +42,7 @@ const TextTwo = () => {
         <SectionHeading title={data.title} />
         <TextTwoContentWrapper>
           <TextTwoImageWrapper>
-            <ImageStatic src={data.src} />
+            <ImageStatic loading="lazy" src={data.src} />
           </TextTwoImageWrapper>
           <TextTwoInfoWrapper>
             <Text fontSize="subtitle" mobileMultiplier="0.7">

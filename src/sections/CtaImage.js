@@ -24,7 +24,7 @@ const CtaImage = ({ data = dataPage }) => {
     <CtaImageSectionWrapper disablePaddings={true} bgColor={data.bgColor}>
       <Container>
         <CtaImageImgWrapper>
-          <ImageStatic src={data.src} />
+          <ImageStatic loading="lazy" src={data.src} />
         </CtaImageImgWrapper>
         <CtaImageInfoWrapper>
           <CtaImageTextWrapper>

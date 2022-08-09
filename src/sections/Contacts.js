@@ -64,6 +64,7 @@ const Contacts = ({ data = dataPage }) => {
           </MapStackInfo>
           <MapWrapper>
             <Map
+              reuseMaps
               {...viewState.mapCords}
               mapStyle="mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"
               interactive={false}

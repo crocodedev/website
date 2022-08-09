@@ -6,59 +6,45 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
-import TextOne from "@/sections/TextOne";
+import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
-import HeroMain from "@/sections/HeroMain";
-import ContactUsModal from "@/sections/ContactUsModal";
-import SliderSteps from "@/sections/SliderSteps";
-import BlogList from "@/sections/BlogList";
-import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import OurTeam from "@/sections/OurTeam";
-import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
-import TextTwo from "@/sections/TextTwo";
-import TextThree from "@/sections/TextThree";
+import Benefits from "@/sections/Benefits";
+import ListOne from "@/sections/ListOne";
+import CtaText from "@/sections/CtaText";
+import SliderSteps from "@/sections/SliderSteps";
+import ListThree from "@/sections/ListThree";
+import Technologies from "@/sections/Technologies";
 import CaseStudies from "@/sections/CaseStudies";
 import Reviews from "@/sections/Reviews";
 import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
-import TechnologyStack from "@/sections/TechnologyStack";
-import Case from "@/sections/Case";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
-import Challenge from "@/sections/Challenge";
 
 import "destyle.css/destyle.css";
-import TextOne from "@/sections/TextOne";
 
-const HomePage = () => (
+const DevelopmentPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="DevelopmentPage" />
     <Global styles={[reboot, fontMontserrat]} />
-    <Challenge />
-    <Projects />
-    <SliderSteps />
-    <Technologies />
-    <Development />
-    <BlogList />
-    <TextTwo />
-    <TextThree />
     <Header />
-    <HeroMain />
+    <Hero />
+    <Development />
+    <Benefits />
     <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
+    <CtaText />
+    <SliderSteps />
+    <ListThree />
     <Technologies />
     <CaseStudies />
     <Reviews />
+    <CtaText />
     <RelatedArticles />
     <ContactUs />
     <Footer />
-    <ContactUsModal />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default DevelopmentPage;

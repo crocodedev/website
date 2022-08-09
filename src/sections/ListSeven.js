@@ -42,6 +42,7 @@ const dataPage = {
             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
     },
   ],
+  btnText: "learn detailed",
 };
 
 const ListSeven = ({ data = dataPage }) => (
@@ -58,7 +59,7 @@ const ListSeven = ({ data = dataPage }) => (
               {text}
             </ListSevenStackItemText>
             <Button variant="text" to="/#">
-              Learn more
+              {data.btnText}
             </Button>
           </ListSevenStackItem>
         ))}
@@ -76,6 +77,7 @@ ListSeven.propTypes = {
         text: PropTypes.string,
       }),
     ),
+    btnText: PropTypes.string,
   }).isRequired,
 };
 

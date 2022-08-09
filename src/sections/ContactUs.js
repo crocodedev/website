@@ -217,6 +217,7 @@ const ContactUs = ({ data = pageData }) => {
                               variant="file"
                               type="file"
                               name="file"
+                              placeholder="file"
                               onBlur={handleBlur}
                               defaultValue={file}
                               onChange={(event) => {
@@ -264,7 +265,7 @@ const ContactUs = ({ data = pageData }) => {
             </Formik>
             <ContactsUsPersonWrapper>
               <ContactsUsImage>
-                <ImageStatic src={image} />
+                <ImageStatic loading="lazy" src={image} />
               </ContactsUsImage>
               <ContactsUsPerson>
                 <ContactsUsPersonInfo>
@@ -286,7 +287,7 @@ const ContactUs = ({ data = pageData }) => {
           </ContactsUsContent>
         </Container>
         <ContactsUsBgImage>
-          <ImageStatic src={bgImage} />
+          <ImageStatic loading="lazy" src={bgImage} />
         </ContactsUsBgImage>
       </ContactsUsWrapper>
     </ContactsUsBgImageWrapper>
