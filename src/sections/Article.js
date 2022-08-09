@@ -13,6 +13,7 @@ import ArticleBottom from "@/components/Article/ArticleBottom";
 import ArticleBottomList from "@/components/Article/ArticleBottomList";
 import ArticleBottomListItem from "@/components/Article/ArticleBottomListItem";
 import Link from "@/components/Link";
+import BackUpButton from "@/components/BackUpButton";
 import CtaForm from "./CtaForm";
 
 const dataPage = {
@@ -127,6 +128,7 @@ const Article = ({ data = dataPage }) => {
           </ArticleContent>
         </ArticleContentWrapper>
       </Container>
+      <BackUpButton />
     </ArticleWrapper>
   );
 };

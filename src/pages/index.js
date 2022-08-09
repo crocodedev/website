@@ -14,13 +14,17 @@ import SliderSteps from "@/sections/SliderSteps";
 import BlogList from "@/sections/BlogList";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
 import OurTeam from "@/sections/OurTeam";
 import Technologies from "@/sections/Technologies";
+import Development from "@/sections/Development";
+import TextTwo from "@/sections/TextTwo";
+import TextThree from "@/sections/TextThree";
 import CaseStudies from "@/sections/CaseStudies";
 import Reviews from "@/sections/Reviews";
 import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
+import TechnologyStack from "@/sections/TechnologyStack";
+import Case from "@/sections/Case";
 import Footer from "@/sections/Footer";
 import CookiesPopup from "@/components/CookiesPopup";
 
