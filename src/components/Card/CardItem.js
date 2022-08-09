@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const ProjectsStackItem = styled.div`
+const CardItem = styled.div`
   display: grid;
   grid-template-rows: max-content 1fr;
 
@@ -13,4 +13,4 @@ const ProjectsStackItem = styled.div`
   }
 `;
 
-export default ProjectsStackItem;
+export default CardItem;

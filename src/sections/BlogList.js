@@ -14,6 +14,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
 import BlogListItemHeading from "@/components/BlogList/BlogListItemHeading";
 import BlogListItemButton from "@/components/BlogList/BlogListItemButton";
+import Pagination from "@/components/Pagination";
 
 const dataPage = {
   categories: [
@@ -127,6 +128,7 @@ const BlogList = ({ data = dataPage }) => {
             </BlogListItem>
           ))}
         </BlogListStack>
+        <Pagination />
       </Container>
     </SectionWrapper>
   );

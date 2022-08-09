@@ -5,13 +5,7 @@ import BreadcrumbWrapper from "./Breadcrumb/BreadcrumbWrapper";
 import Link from "./Link";
 import Text from "./Text";
 
-const pageData = {
-  links: ["Home", "Technologies"],
-};
-
-const Breadcrumb = ({ data = pageData, color, disablePaddingBottom }) => {
-  const { links } = data;
-
+const Breadcrumb = ({ links, color, disablePaddingBottom }) => {
   const lastLink = links.pop();
 
   return (
@@ -31,9 +25,7 @@ const Breadcrumb = ({ data = pageData, color, disablePaddingBottom }) => {
 };
 
 Breadcrumb.propTypes = {
-  data: PropTypes.exact({
-    links: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+  links: PropTypes.arrayOf(PropTypes.string).isRequired,
   color: PropTypes.string,
   disablePaddingBottom: PropTypes.bool,
 };

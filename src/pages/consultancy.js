@@ -6,18 +6,11 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
-import TextOne from "@/sections/TextOne";
+import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
-import HeroMain from "@/sections/HeroMain";
-import ContactUsModal from "@/sections/ContactUsModal";
-import SliderSteps from "@/sections/SliderSteps";
-import BlogList from "@/sections/BlogList";
-import ListOne from "@/sections/ListOne";
-import ListTwo from "@/sections/ListTwo";
-import TextOne from "@/sections/TextOne";
-import OurTeam from "@/sections/OurTeam";
-import Technologies from "@/sections/Technologies";
-import CaseStudies from "@/sections/CaseStudies";
+import ListSeven from "@/sections/ListSeven";
+import ListFive from "@/sections/ListFive";
+import TextTwo from "@/sections/TextTwo";
 import Reviews from "@/sections/Reviews";
 import RelatedArticles from "@/sections/RelatedArticles";
 import ContactUs from "@/sections/ContactUs";
@@ -26,25 +19,21 @@ import CookiesPopup from "@/components/CookiesPopup";
 
 import "destyle.css/destyle.css";
 
-const HomePage = () => (
+const ConsultancyPage = () => (
   <ThemeProvider theme={theme}>
-    <Helmet defer={false} title="HomePage" />
+    <Helmet defer={false} title="ConsultancyPage" />
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
-    <HeroMain />
-    <ListOne />
-    <ListTwo />
-    <TextOne />
-    <OurTeam />
-    <Technologies />
-    <CaseStudies />
+    <Hero />
+    <ListSeven />
+    <ListFive />
+    <TextTwo />
     <Reviews />
     <RelatedArticles />
     <ContactUs />
     <Footer />
-    <ContactUsModal />
     <CookiesPopup />
   </ThemeProvider>
 );
 
-export default HomePage;
+export default ConsultancyPage;
