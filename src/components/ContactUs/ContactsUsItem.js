@@ -25,7 +25,7 @@ const ContactsUsItem = styled.div`
       height: 100%;
       width: 100%;
       display: flex;
-      padding: 14px 15px 14px 40px;
+      padding: 16px 15px 17px 40px;
       align-items: flex-start;
       box-shadow: ${({ theme }) => theme.shadows.card};
       border: none;

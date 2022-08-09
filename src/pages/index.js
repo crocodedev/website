@@ -30,6 +30,7 @@ import CookiesPopup from "@/components/CookiesPopup";
 import Challenge from "@/sections/Challenge";
 
 import "destyle.css/destyle.css";
+import TextOne from "@/sections/TextOne";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>

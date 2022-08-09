@@ -233,6 +233,7 @@ const Technologies = ({ data = pageData }) => {
   const { title, categories, items } = data;
   const [currSlide, setCurrSlide] = React.useState("LBS");
   const handlerSetCurrSlide = (slide) => setCurrSlide(slide);
+
   return (
     <SectionWrapper>
       <Container>
@@ -244,7 +245,7 @@ const Technologies = ({ data = pageData }) => {
                 active={name === currSlide}
                 key={id}
                 text={name}
-                handler={() => handlerSetCurrSlide(name)}
+                handler={(e) => handlerSetCurrSlide(name)}
               />
             ))}
           </TechnologiesStack>
