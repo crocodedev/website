@@ -22,7 +22,9 @@ const TextOne = ({ data = pageData }) => {
   const { title, imageHeros, text1, text2 } = data;
   const bgImages = useMedia(
     ["(max-width: 767px)", "(max-width: 991px)", "(min-width: 991px)"],
+
     imageHeros,
+
     { src: "/uploads/text-one-bg-mobile.jpg" },
   );
 
