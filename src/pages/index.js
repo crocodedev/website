@@ -6,35 +6,30 @@ import theme from "@/theme";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
+import TextOne from "@/sections/TextOne";
+import Hero from "@/sections/Hero";
+import HeroMain from "@/sections/HeroMain";
+import ContactUsModal from "@/sections/ContactUsModal";
 import SliderSteps from "@/sections/SliderSteps";
 import BlogList from "@/sections/BlogList";
-import TextOne from "@/sections/TextOne";
 import ListOne from "@/sections/ListOne";
 import ListTwo from "@/sections/ListTwo";
-import ListThree from "@/sections/ListThree";
-import ListFour from "@/sections/ListFour";
-import ListFive from "@/sections/ListFive";
-import ListSix from "@/sections/ListSix";
-import ListSeven from "@/sections/ListSeven";
-import Projects from "@/sections/Projects";
 import OurTeam from "@/sections/OurTeam";
-import FAQ from "@/sections/FAQ";
-import OurClients from "@/sections/OurClients";
-import Contacts from "@/sections/Contacts";
-import RelatedArticles from "@/sections/RelatedArticles";
-import Reviews from "@/sections/Reviews";
-import Footer from "@/sections/Footer";
-import Benefits from "@/sections/Benefits";
-import CtaText from "@/sections/CtaText";
-import CtaForm from "@/sections/CtaForm";
-import CtaImage from "@/sections/CtaImage";
 import Technologies from "@/sections/Technologies";
 import Development from "@/sections/Development";
 import TextTwo from "@/sections/TextTwo";
 import TextThree from "@/sections/TextThree";
+import CaseStudies from "@/sections/CaseStudies";
+import Reviews from "@/sections/Reviews";
+import RelatedArticles from "@/sections/RelatedArticles";
+import ContactUs from "@/sections/ContactUs";
+import TechnologyStack from "@/sections/TechnologyStack";
+import Case from "@/sections/Case";
+import Footer from "@/sections/Footer";
+import CookiesPopup from "@/components/CookiesPopup";
+import Challenge from "@/sections/Challenge";
 
 import "destyle.css/destyle.css";
-import Challenge from "@/sections/Challenge";
 
 const HomePage = () => (
   <ThemeProvider theme={theme}>
@@ -46,27 +41,22 @@ const HomePage = () => (
     <Technologies />
     <Development />
     <BlogList />
-    <TextOne />
     <TextTwo />
     <TextThree />
+    <Header />
+    <HeroMain />
     <ListOne />
     <ListTwo />
-    <ListThree />
-    <ListFour />
-    <ListFive />
-    <ListSix />
-    <ListSeven />
-    <Contacts />
-    <CtaImage />
-    <CtaForm />
-    <CtaText />
-    <RelatedArticles />
+    <TextOne />
     <OurTeam />
-    <FAQ />
-    <OurClients />
+    <Technologies />
+    <CaseStudies />
     <Reviews />
-    <Benefits />
+    <RelatedArticles />
+    <ContactUs />
     <Footer />
+    <ContactUsModal />
+    <CookiesPopup />
   </ThemeProvider>
 );
 

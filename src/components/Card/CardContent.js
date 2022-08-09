@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const ProjectsStackItemContent = styled.div`
+const CardContent = styled.div`
   display: grid;
 
   ${({ theme }) => theme.breakpoints.down("xl")} {
@@ -12,4 +12,4 @@ const ProjectsStackItemContent = styled.div`
   }
 `;
 
-export default ProjectsStackItemContent;
+export default CardContent;

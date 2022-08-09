@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const ProjectsStackItemImageWrapper = styled.div`
+const CardImage = styled.div`
   position: relative;
   height: 0;
   padding-bottom: 59%;
@@ -19,4 +19,4 @@ const ProjectsStackItemImageWrapper = styled.div`
   }
 `;
 
-export default ProjectsStackItemImageWrapper;
+export default CardImage;
