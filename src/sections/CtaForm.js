@@ -7,17 +7,10 @@ import CtaFormInput from "@/components/CtaForm/CtaFormInput";
 import CtaFormWrapper from "@/components/CtaForm/CtaFormWrapper";
 import CtaFormTitle from "@/components/CtaForm/CtaFormTitle";
 
-const dataPage = {
-  bgColor: "dark",
-  title: "Subscribe to our blog",
-  buttonText: "Subscribe",
-  placeholder: "Enter E-mail",
-};
-
-const CtaForm = ({ data = dataPage }) => {
+const CtaForm = ({ title, messagePlaceholder, buttonText, bgColor, baseUrl }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper bgColor={data.bgColor}>
+    <SectionWrapper bgColor={bgColor}>
       <Container>
         <CtaFormWrapper>
           <CtaFormTitle
@@ -25,17 +18,17 @@ const CtaForm = ({ data = dataPage }) => {
             lineHeight="xs"
             textAlign="center"
             color={
-              data.bgColor === "dark"
-                ? theme.palette.tertiary.contrastText
-                : theme.palette.text.primary
+              bgColor === "dark" ? theme.palette.tertiary.contrastText : theme.palette.text.primary
             }
             fontWeight="bold"
             mobileMultiplier={0.7}
           >
-            {data.title}
+            {title}
           </CtaFormTitle>
-          <CtaFormInput placeholder={data.placeholder} />
-          <Button variant="outlined">{data.buttonText}</Button>
+          <CtaFormInput placeholder={messagePlaceholder} />
+          <Button variant="outlined" baseUrl={baseUrl}>
+            {buttonText}
+          </Button>
         </CtaFormWrapper>
       </Container>
     </SectionWrapper>
@@ -43,12 +36,11 @@ const CtaForm = ({ data = dataPage }) => {
 };
 
 CtaForm.propTypes = {
-  data: PropTypes.exact({
-    bgColor: PropTypes.string,
-    title: PropTypes.string,
-    buttonText: PropTypes.string,
-    placeholder: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  messagePlaceholder: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
 };
 
 export default CtaForm;

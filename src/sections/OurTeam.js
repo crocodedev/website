@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import OurTeamImage from "@/components/OurTeam/OurTeamImage";
 import OurTeamStack from "@/components/OurTeam/OurTeamStack";
 import OurTeamItem from "@/components/OurTeam/OurTeamItem";
@@ -10,85 +10,43 @@ import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import Text from "@/components/Text";
 
-const dataPage = {
-  title: "Our Team",
-  items: [
-    {
-      src: "/uploads/our-team-person-1.jpg",
-      name: "Edward Hart",
-      role: "Company Director",
-    },
-    {
-      src: "/uploads/our-team-person-2.jpg",
-      name: "David Craig",
-      role: "Business Analyst",
-    },
-    {
-      src: "/uploads/our-team-person-3.jpg",
-      name: "Jane Cooper",
-      role: "Art Director",
-    },
-    {
-      src: "/uploads/our-team-person-4.jpg",
-      name: "Oliver Foster",
-      role: "Front-end Developer",
-    },
-    {
-      src: "/uploads/our-team-person-5.jpg",
-      name: "George Robbins",
-      role: "Tester",
-    },
-    {
-      src: "/uploads/our-team-person-6.jpg",
-      name: "Linda Clarke",
-      role: "Project Manager",
-    },
-    {
-      src: "/uploads/our-team-person-7.jpg",
-      name: "Mary Barrett",
-      role: "UX/UI Designer",
-    },
-    {
-      src: "/uploads/our-team-person-8.jpg",
-      name: "Eric Woods",
-      role: "Front-end Developer",
-    },
-  ],
-};
-
-const OurTeam = ({ data = dataPage }) => (
+const OurTeam = ({ title, link, baseUrl, items }) => (
   <SectionWrapper bgColor="paper">
     <Container>
-      <SectionHeading title={data.title} />
+      <SectionHeading title={title} />
       <OurTeamStack>
-        {data.items.map(({ src, name, role }) => (
-          <OurTeamItem key={name}>
+        {items.map(({ title: itemTitle, subtitle, teamMemberPhoto, _key }) => (
+          <OurTeamItem key={_key}>
             <OurTeamImage>
-              <ImageStatic loading="lazy" src={src} />
+              <Image {...teamMemberPhoto} />
             </OurTeamImage>
             <OurTeamInfo>
-              <Text fontWeight="bold">{name}</Text>
-              <Text fontSize="captionText">{role}</Text>
+              <Text fontWeight="bold">{itemTitle}</Text>
+              <Text fontSize="captionText">{subtitle}</Text>
             </OurTeamInfo>
           </OurTeamItem>
         ))}
       </OurTeamStack>
-      <Button variant="outlined">Show more</Button>
+      <Button variant="outlined" link={link} baseUrl={baseUrl}>
+        {link.title}
+      </Button>
     </Container>
   </SectionWrapper>
 );
 
 OurTeam.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        src: PropTypes.string,
-        name: PropTypes.string,
-        role: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      teamMemberPhoto: PropTypes.object.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default OurTeam;

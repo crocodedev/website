@@ -1,35 +1,36 @@
 import PropTypes from "prop-types";
 import { Link as GatsbyLink } from "gatsby";
 
-const Link = ({ to, target, noFollow, ...props }) => {
-  if (
-    /^(http|https):\/\/(\w+:?\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@\-/]))?$/.test(to) ||
-    // eslint-disable-next-line no-useless-escape
-    /^mailto:([^?]*)$/.test(to) ||
-    target !== null ||
-    noFollow === true
-  )
+const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
+  if (linkInternal) {
     return (
-      // eslint-disable-next-line jsx-a11y/anchor-has-content
-      <a
-        href={to || "/"}
-        target="_blank"
-        rel={`noopener noreferrer ${noFollow ? "nofollow" : ""}`}
-        {...props}
-      />
+      <GatsbyLink to={`${baseUrl}${linkInternal?.reference?.slug?.current}` || "/"} {...props}>
+        {children}
+      </GatsbyLink>
     );
-  return <GatsbyLink to={to || "/"} {...props} />;
+  }
+  return (
+    <a
+      href={linkExternal?.href || "/"}
+      target={linkExternal?.blank ? "_blank" : ""}
+      rel="noopener noreferrer"
+      {...props}
+    >
+      {children}
+    </a>
+  );
 };
 
 Link.propTypes = {
-  to: PropTypes.string.isRequired,
-  target: PropTypes.string,
-  noFollow: PropTypes.string,
+  linkInternal: PropTypes.object,
+  linkExternal: PropTypes.object,
+  baseUrl: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Link.defaultProps = {
-  target: null,
-  noFollow: null,
+  linkInternal: null,
+  linkExternal: null,
 };
 
 export default Link;

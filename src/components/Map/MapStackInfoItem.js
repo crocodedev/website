@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 const MapStackInfoItem = styled.div`
   display: flex;
+  flex-shrink: 0;
   gap: 20px;
   align-items: center;
   justify-content: center;

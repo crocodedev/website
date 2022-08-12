@@ -3,36 +3,31 @@ import Button from "@/components/Button";
 import Text from "@/components/Text";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import NotFoundPageCaption from "@/components/NotFoundPage/NotFoundPageCaption";
 import NotFoundPageWrapper from "@/components/NotFoundPage/NotFoundPageWrapper";
 import NotFoundPageCaptionText from "@/components/NotFoundPage/NotFoundPageCaptionText";
 import NotFoundPageImageWrapper from "@/components/NotFoundPage/NotFoundPageImageWrapper";
 
-const dataPage = {
-  src: "/uploads/not-found-page-image.svg",
-  notFoundText1: "page not found",
-  notFoundText2: "The link is broken or the page has been moved.",
-  buttonText: "Home page",
-};
-
-const NotFound = ({ data = dataPage }) => (
+const NotFound = ({ subtitle, image, text, link, baseUrl }) => (
   <SectionWrapper>
     <Container>
       <NotFoundPageWrapper>
         <NotFoundPageImageWrapper>
-          <ImageStatic src={data.src} />
+          <Image {...image} />
         </NotFoundPageImageWrapper>
         <NotFoundPageCaption>
           <NotFoundPageCaptionText>
             <Text fontSize="title2" fontWeight="bold" mobileMultiplier={0.7}>
-              {data.notFoundText1}
+              {subtitle}
             </Text>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>
-              {data.notFoundText2}
+              {text}
             </Text>
           </NotFoundPageCaptionText>
-          <Button variant="contained">{data.buttonText}</Button>
+          <Button variant="contained" link={link} baseUrl={baseUrl}>
+            {link.title}
+          </Button>
         </NotFoundPageCaption>
       </NotFoundPageWrapper>
     </Container>
@@ -40,12 +35,11 @@ const NotFound = ({ data = dataPage }) => (
 );
 
 NotFound.propTypes = {
-  data: PropTypes.exact({
-    src: PropTypes.string,
-    notFoundText1: PropTypes.string,
-    notFoundText2: PropTypes.string,
-    buttonText: PropTypes.string,
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  text: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
 };
 
 export default NotFound;

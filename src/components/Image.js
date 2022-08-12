@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ImageStatic = ({ src, ...props }) => {
   if (!src) return null;
@@ -16,39 +16,21 @@ ImageStatic.propTypes = {
 };
 
 // Render inline SVG with fallback non-svg images
-const Image = ({ svg, file, alt, gatsbyImageData, ...props }) => {
-  // Inlined SVGs
-  if (file?.contentType === "image/svg+xml" && svg?.content && svg.content.indexOf("mask") === -1) {
-    return <div dangerouslySetInnerHTML={{ __html: svg?.content }} {...props} />;
-  }
-  // SVGs that can/should not be inlined of gif's
-  if (file?.contentType === "image/svg+xml" || file?.contentType === "image/gif")
-    return <img src={file.url} alt={alt} {...props} />;
-
-  // Non SVG images
-  if (gatsbyImageData)
-    return <GatsbyImage image={getImage({ gatsbyImageData })} alt={alt} {...props} />;
+const Image = ({ altText, image, ...props }) => {
+  const gatsbyImageData = image?.asset?.gatsbyImageData;
+  if (gatsbyImageData) return <GatsbyImage image={gatsbyImageData} alt={altText} {...props} />;
 
   return null;
 };
 
 Image.propTypes = {
-  svg: PropTypes.shape({
-    content: PropTypes.string,
-  }),
-  file: PropTypes.shape({
-    contentType: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  alt: PropTypes.string,
-  gatsbyImageData: PropTypes.object,
+  altText: PropTypes.string,
+  image: PropTypes.object,
 };
 
 Image.defaultProps = {
-  svg: null,
-  file: null,
-  gatsbyImageData: null,
-  alt: "",
+  image: null,
+  altText: "",
 };
 
-export default ImageStatic;
+export default Image;

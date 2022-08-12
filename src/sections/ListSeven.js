@@ -8,58 +8,21 @@ import ListSevenStack from "@/components/ListSeven/ListSevenStack";
 import ListSevenStackItem from "@/components/ListSeven/ListSevenStackItem";
 import ListSevenStackItemText from "@/components/ListSeven/ListSevenStackItemText";
 
-const dataPage = {
-  title: "Our services",
-  items: [
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      heading: "WEB Development Consulting",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-  ],
-  btnText: "learn detailed",
-};
-
-const ListSeven = ({ data = dataPage }) => (
+const ListSeven = ({ title, items, baseUrl }) => (
   <SectionWrapper>
     <Container>
-      <SectionHeading title={data.title} />
+      <SectionHeading title={title} />
       <ListSevenStack>
-        {data.items.map(({ heading, text }) => (
-          <ListSevenStackItem key={heading}>
+        {items.map(({ _key, title: itemTitle, text: itemText, link }) => (
+          <ListSevenStackItem key={_key}>
             <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6669}>
-              {heading}
+              {itemTitle}
             </Text>
             <ListSevenStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
-              {text}
+              {itemText}
             </ListSevenStackItemText>
-            <Button variant="text" to="/#">
-              {data.btnText}
+            <Button variant="text" link={link} baseUrl={baseUrl}>
+              {link.title}
             </Button>
           </ListSevenStackItem>
         ))}
@@ -69,16 +32,16 @@ const ListSeven = ({ data = dataPage }) => (
 );
 
 ListSeven.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        heading: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    ),
-    btnText: PropTypes.string,
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      text: PropTypes.string,
+      title: PropTypes.string,
+      link: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default ListSeven;

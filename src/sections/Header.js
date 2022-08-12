@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import HeaderContainer from "@/components/Header/HeaderContainer";
 import HeaderLogo from "@/components/Header/HeaderLogo";
 import HeaderWrapper from "@/components/Header/HeaderWrapper";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import HeaderContent from "@/components/Header/HeaderContent";
 import HeaderContentItem from "@/components/Header/HeaderContentItem";
 import Text from "@/components/Text";
@@ -13,12 +13,10 @@ import HeaderLang from "@/components/Header/HeaderLang";
 import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
 import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
 import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
-import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
-import HeaderMenu from "@/components/Header/HeaderMenu";
-import HeaderContentClose from "@/components/Header/HeaderContentClose";
+import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
+import HeaderMenuIconWrapper from "@/components/Header/HeaderMenuIconWrapper";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
-import HeaderContentCloseWrapper from "@/components/Header/HeaderContentCloseWrapper";
 
 const pageData = {
   logo: "/uploads/header-logo-desktop.svg",
@@ -55,33 +53,26 @@ const pageData = {
   ],
   btnText: "Contact us",
   langFlag: "/uploads/header-flag-usa.svg",
-  burgerIcon: "/uploads/header-menu-burger.svg",
 };
 
 const Header = ({ data = pageData }) => {
   const theme = useTheme();
 
-  const { logo, shopifyIcon, items, btnText, langFlag, burgerIcon } = data;
+  const { logo, shopifyIcon, items, btnText, langFlag } = data;
 
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
-          <ImageStatic loading="lazy" src={logo} />
+          <Image loading="lazy" src={logo} />
         </HeaderLogo>
-        <input type="checkbox" id="mobile-content" />
+        <HeaderContentItemShopify to={shopifyIcon.link}>
+          <Image src={shopifyIcon.icon} />
+          <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
+            {shopifyIcon.name}
+          </Text>
+        </HeaderContentItemShopify>
         <HeaderContent>
-          <HeaderContentCloseWrapper>
-            <HeaderContentClose htmlFor="mobile-content">
-              <ImageStatic loading="lazy" src="/uploads/header-close.svg" />
-            </HeaderContentClose>
-          </HeaderContentCloseWrapper>
-          <HeaderContentItemShopify to={shopifyIcon.link}>
-            <ImageStatic loading="lazy" src={shopifyIcon.icon} />
-            <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-              {shopifyIcon.name}
-            </Text>
-          </HeaderContentItemShopify>
           {items.map(({ name, link }) => (
             <HeaderContentItem to={link} key={name}>
               <Text>{name}</Text>
@@ -92,25 +83,23 @@ const Header = ({ data = pageData }) => {
           </HeaderContentBtnWrapper>
           <HeaderLangWrapper>
             <HeaderLang>
-              <ImageStatic loading="lazy" src={langFlag} />
+              <Image loading="lazy" src={langFlag} />
               <HeaderLangMenu>
                 <HeaderLangMenuItem>
-                  <ImageStatic loading="lazy" src={langFlag} />
+                  <Image loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
                 <HeaderLangMenuItem>
-                  <ImageStatic loading="lazy" src={langFlag} />
+                  <Image loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
               </HeaderLangMenu>
             </HeaderLang>
           </HeaderLangWrapper>
         </HeaderContent>
-        <HeaderMenuWrapper>
-          <HeaderMenu htmlFor="mobile-content">
-            <ImageStatic loading="lazy" src={burgerIcon} />
-          </HeaderMenu>
-        </HeaderMenuWrapper>
+        <HeaderMenuIconWrapper>
+          <HeaderMenuIcon />
+        </HeaderMenuIconWrapper>
       </HeaderContainer>
     </HeaderWrapper>
   );

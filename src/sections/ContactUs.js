@@ -17,7 +17,7 @@ import Text from "@/components/Text";
 import ContactsUsFormBottom from "@/components/ContactUs/ContactsUsFormBottom";
 import Button from "@/components/Button";
 import ContactsUsLink from "@/components/ContactUs/ContactsUsLink";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import ContactsUsImage from "@/components/ContactUs/ContactsUsImage";
 import ContactsUsBgImage from "@/components/ContactUs/ContactsUsBgImage";
 import ContactsUsInputFile from "@/components/ContactUs/ContactsUsInputFile";
@@ -30,23 +30,24 @@ import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
 
 import "react-phone-input-2/lib/style.css";
 
-const pageData = {
-  title: "Tell us about your project",
-  bgImage: "/uploads/contact-us-bg-image.jpg",
-  person: {
-    image: "/uploads/contacts-us-person.png",
-    fullName: "Maria Thompson",
-    position: "Crocode manager",
-  },
-};
-
-const ContactUs = ({ data = pageData }) => {
-  const {
-    title,
-    bgImage,
-    person: { image, fullName, position },
-  } = data;
-
+const ContactUs = ({
+  title,
+  subtitle,
+  nameText,
+  namePlaceholder,
+  messagePlaceholder,
+  messageText,
+  phoneText,
+  emailText,
+  emailPlaceholder,
+  backgroundImage,
+  imageTitle,
+  imageSubtitle,
+  buttonText,
+  image,
+  agreementText,
+  baseUrl,
+}) => {
   const theme = useTheme();
 
   const textRef = createRef();
@@ -99,7 +100,7 @@ const ContactUs = ({ data = pageData }) => {
     <ContactsUsBgImageWrapper>
       <ContactsUsWrapper>
         <Container>
-          <SectionHeading title={title} />
+          <SectionHeading title={title} text={subtitle} />
           <ContactsUsContent>
             <Formik
               initialValues={{
@@ -137,7 +138,7 @@ const ContactUs = ({ data = pageData }) => {
                 <ContactsUsForm>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Your name
+                      {nameText}
                     </Text>
                     <ContactsUsInput
                       className={errors.name ? "invalid" : "valid"}
@@ -147,13 +148,13 @@ const ContactUs = ({ data = pageData }) => {
                       value={name}
                       variant="text"
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder={namePlaceholder}
                     />
                     {touched.name && errors.name && <Text color="red">{errors.name}</Text>}
                   </ContactsUsItem>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Corporate E-mail
+                      {emailText}
                     </Text>
                     <ContactsUsInput
                       name="email"
@@ -163,13 +164,13 @@ const ContactUs = ({ data = pageData }) => {
                       value={email}
                       variant="text"
                       type="email"
-                      placeholder="Enter E-mail"
+                      placeholder={emailPlaceholder}
                     />
                     {touched.email && errors.email && <Text color="red">{errors.email}</Text>}
                   </ContactsUsItem>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Phone number
+                      {phoneText}
                     </Text>
                     <Field name="tel">
                       {({ form: { setFieldValue } }) => (
@@ -190,7 +191,7 @@ const ContactUs = ({ data = pageData }) => {
                   </ContactsUsItem>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Your comments
+                      {messageText}
                     </Text>
                     <ContactsUsInputFile className={errors.text ? "invalid" : "valid"}>
                       <Field name="text">
@@ -206,7 +207,7 @@ const ContactUs = ({ data = pageData }) => {
                             onChange={(e) => {
                               areaChange(e, setFieldValue);
                             }}
-                            placeholder="Brief information about the project"
+                            placeholder={messagePlaceholder}
                           />
                         )}
                       </Field>
@@ -248,8 +249,11 @@ const ContactUs = ({ data = pageData }) => {
                         checked={check}
                         onChange={() => setCheck(!check)}
                       />
-                      By sending this form I confirm that I have read and accept the{" "}
-                      <ContactsUsLink to="/#">Privacy Policy</ContactsUsLink>.
+                      {agreementText.text}{" "}
+                      <ContactsUsLink baseUrl={baseUrl} {...agreementText.link}>
+                        {agreementText.title || agreementText.link.title}
+                      </ContactsUsLink>
+                      .
                     </Text>
                     <Button
                       type="submit"
@@ -257,7 +261,7 @@ const ContactUs = ({ data = pageData }) => {
                       handler={handleSubmit}
                       variant="contained"
                     >
-                      Send form
+                      {buttonText}
                     </Button>
                   </ContactsUsFormBottom>
                 </ContactsUsForm>
@@ -265,7 +269,7 @@ const ContactUs = ({ data = pageData }) => {
             </Formik>
             <ContactsUsPersonWrapper>
               <ContactsUsImage>
-                <ImageStatic loading="lazy" src={image} />
+                <Image {...image} />
               </ContactsUsImage>
               <ContactsUsPerson>
                 <ContactsUsPersonInfo>
@@ -276,10 +280,10 @@ const ContactUs = ({ data = pageData }) => {
                     fontSize="subtitle"
                     fontWeight="bold"
                   >
-                    {fullName}
+                    {imageTitle}
                   </Text>
                   <Text fontSize="captionText" lineHeight="2xsm">
-                    {position}
+                    {imageSubtitle}
                   </Text>
                 </ContactsUsPersonInfo>
               </ContactsUsPerson>
@@ -287,7 +291,7 @@ const ContactUs = ({ data = pageData }) => {
           </ContactsUsContent>
         </Container>
         <ContactsUsBgImage>
-          <ImageStatic loading="lazy" src={bgImage} />
+          <Image {...backgroundImage} />
         </ContactsUsBgImage>
       </ContactsUsWrapper>
     </ContactsUsBgImageWrapper>
@@ -295,14 +299,25 @@ const ContactUs = ({ data = pageData }) => {
 };
 
 ContactUs.propTypes = {
-  data: PropTypes.exact({
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  nameText: PropTypes.string.isRequired,
+  namePlaceholder: PropTypes.string.isRequired,
+  messagePlaceholder: PropTypes.string.isRequired,
+  messageText: PropTypes.string.isRequired,
+  phoneText: PropTypes.string.isRequired,
+  emailText: PropTypes.string.isRequired,
+  emailPlaceholder: PropTypes.string.isRequired,
+  backgroundImage: PropTypes.object.isRequired,
+  imageTitle: PropTypes.string.isRequired,
+  imageSubtitle: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  agreementText: PropTypes.exact({
+    text: PropTypes.string,
     title: PropTypes.string,
-    bgImage: PropTypes.string,
-    person: PropTypes.exact({
-      image: PropTypes.string,
-      name: PropTypes.string,
-      position: PropTypes.string,
-    }),
+    link: PropTypes.object,
   }).isRequired,
 };
 

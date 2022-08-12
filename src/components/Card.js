@@ -6,13 +6,13 @@ import CardHeadingLabel from "./Card/CardHeadingLabel";
 import CardHeadingTitle from "./Card/CardHeadingTitle";
 import CardImage from "./Card/CardImage";
 import CardItem from "./Card/CardItem";
-import ImageStatic from "./Image";
+import Image from "./Image";
 
-const Card = ({ image, heading, label, desc }) => {
+const Card = ({ text, title, marker, casesItemImage }) => {
   return (
     <CardItem>
       <CardImage>
-        <ImageStatic loading="lazy" src={image} />
+        <Image {...casesItemImage} />
       </CardImage>
       <CardContent>
         <CardHeading>
@@ -22,21 +22,21 @@ const Card = ({ image, heading, label, desc }) => {
             fontWeight="bold"
             lineHeight="sm"
           >
-            {heading}
+            {title}
           </CardHeadingTitle>
-          <CardHeadingLabel fontWeight="regular">{label}</CardHeadingLabel>
+          <CardHeadingLabel fontWeight="regular">{marker}</CardHeadingLabel>
         </CardHeading>
-        <CardDesc mobileMultiplier={0.875}>{desc}</CardDesc>
+        <CardDesc mobileMultiplier={0.875}>{text}</CardDesc>
       </CardContent>
     </CardItem>
   );
 };
 
 Card.propTypes = {
-  image: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
+  casesItemImage: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  marker: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Card;

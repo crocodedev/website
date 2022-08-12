@@ -1,71 +1,24 @@
 import PropTypes from "prop-types";
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "@/components/Link";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import OurClientsImageWrapper from "@/components/OurClients/OurClientsImageWrapper";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import OurClientsContent from "@/components/OurClients/OurClientsContent";
 // eslint-disable-next-line import/no-unresolved
 import "swiper/css/bundle";
 
-const dataPage = {
-  title: "Our clients",
-  sliders: [
-    {
-      id: "1",
-      slider: [
-        { src: "uploads/our-clients.svg", id: "1" },
-        { src: "uploads/our-clients.svg", id: "2" },
-        { src: "uploads/our-clients.svg", id: "3" },
-        { src: "uploads/our-clients.svg", id: "4" },
-        { src: "uploads/our-clients.svg", id: "5" },
-        { src: "uploads/our-clients.svg", id: "6" },
-        { src: "uploads/our-clients.svg", id: "7" },
-        { src: "uploads/our-clients.svg", id: "8" },
-        { src: "uploads/our-clients.svg", id: "9" },
-        { src: "uploads/our-clients.svg", id: "10" },
-        { src: "uploads/our-clients.svg", id: "11" },
-        { src: "uploads/our-clients.svg", id: "12" },
-        { src: "uploads/our-clients.svg", id: "13" },
-        { src: "uploads/our-clients.svg", id: "14" },
-        { src: "uploads/our-clients.svg", id: "15" },
-        { src: "uploads/our-clients.svg", id: "16" },
-      ],
-    },
-    {
-      id: "2",
-      slider: [
-        { src: "uploads/our-clients.svg", id: "1" },
-        { src: "uploads/our-clients.svg", id: "2" },
-        { src: "uploads/our-clients.svg", id: "3" },
-        { src: "uploads/our-clients.svg", id: "4" },
-        { src: "uploads/our-clients.svg", id: "5" },
-        { src: "uploads/our-clients.svg", id: "6" },
-        { src: "uploads/our-clients.svg", id: "7" },
-        { src: "uploads/our-clients.svg", id: "8" },
-        { src: "uploads/our-clients.svg", id: "9" },
-        { src: "uploads/our-clients.svg", id: "10" },
-        { src: "uploads/our-clients.svg", id: "11" },
-        { src: "uploads/our-clients.svg", id: "12" },
-        { src: "uploads/our-clients.svg", id: "13" },
-        { src: "uploads/our-clients.svg", id: "14" },
-        { src: "uploads/our-clients.svg", id: "15" },
-        { src: "uploads/our-clients.svg", id: "16" },
-      ],
-    },
-  ],
-};
-
-const OurClients = ({ data = dataPage }) => (
+const OurClients = ({ title, subtitle, sliders, baseUrl }) => (
   <SectionWrapper>
     <Container>
-      <SectionHeading title={data.title} />
+      <SectionHeading title={title} text={subtitle} />
     </Container>
 
     <OurClientsContent>
-      {data.sliders.map(({ id, slider }) => (
+      {sliders.map(({ _key, clientsList }) => (
         <Swiper
           slidesPerView="auto"
           centeredSlides={true}
@@ -76,12 +29,12 @@ const OurClients = ({ data = dataPage }) => (
               spaceBetween: 20,
             },
           }}
-          key={id}
+          key={_key}
         >
-          {slider.map(({ src, id: sliderId }) => (
-            <SwiperSlide key={sliderId}>
-              <OurClientsImageWrapper>
-                <ImageStatic src={src} />
+          {clientsList.map(({ _key: itemId, clientPhoto, link }) => (
+            <SwiperSlide key={itemId}>
+              <OurClientsImageWrapper as={link ? Link : "div"} {...link} baseUrl={baseUrl}>
+                <Image {...clientPhoto} />
               </OurClientsImageWrapper>
             </SwiperSlide>
           ))}
@@ -92,20 +45,21 @@ const OurClients = ({ data = dataPage }) => (
 );
 
 OurClients.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    sliders: PropTypes.arrayOf(
-      PropTypes.exact({
-        id: PropTypes.string,
-        slider: PropTypes.arrayOf(
-          PropTypes.exact({
-            src: PropTypes.string,
-            id: PropTypes.string,
-          }),
-        ),
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  sliders: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      clientsList: PropTypes.arrayOf(
+        PropTypes.exact({
+          _key: PropTypes.string,
+          clientPhoto: PropTypes.object,
+          link: PropTypes.object,
+        }),
+      ),
+    }),
+  ).isRequired,
 };
 
 export default OurClients;
