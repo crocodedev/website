@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, EffectCreative, Navigation, Pagination } from "swiper";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import Text from "@/components/Text";
 import SliderStepsItem from "@/components/SliderSteps/SliderStepsItem";
 import SliderStepsItemInfo from "@/components/SliderSteps/SliderStepsItemInfo";
@@ -20,51 +20,14 @@ import SliderStepsContainer from "@/components/SliderSteps/SliderStepsContainer"
 
 import "swiper/css/effect-creative";
 
-const pageData = {
-  title: "Developing Process",
-  items: [
-    {
-      id: 1,
-      image: "/uploads/slider-steps-item-image.jpg",
-      heading: "1 – Interview",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      id: 2,
-      image: "/uploads/slider-steps-item-image.jpg",
-      heading: "2 – Interview",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      id: 3,
-      image: "/uploads/slider-steps-item-image.jpg",
-      heading: "3 – Interview",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      id: 4,
-      image: "/uploads/slider-steps-item-image.jpg",
-      heading: "4 – Interview",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      id: 5,
-      image: "/uploads/slider-steps-item-image.jpg",
-      heading: "5 – Interview",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-  ],
-};
-
-const SliderSteps = ({ data = pageData }) => {
+const SliderSteps = ({ subtitle, title, itemsSteps }) => {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
-  const { title, items } = data;
   return (
     <SectionWrapper>
       <SliderStepsContainer>
-        <SectionHeading title={title} />
+        <SectionHeading title={title} text={subtitle} />
         <SliderStepsContentWrapper>
           <SliderStepsContent>
             <Swiper
@@ -82,8 +45,8 @@ const SliderSteps = ({ data = pageData }) => {
                 prevEl: ".sliderSteps__prev-el",
               }}
             >
-              {items.map(({ id, heading, desc }) => (
-                <SwiperSlide key={id}>
+              {itemsSteps.map(({ _key, title: itemTitle, text }) => (
+                <SwiperSlide key={_key}>
                   <SliderStepsItem>
                     <SliderStepsItemInfo>
                       <Text
@@ -92,10 +55,10 @@ const SliderSteps = ({ data = pageData }) => {
                         fontWeight="semiBold"
                         lineHeight="sm"
                       >
-                        {heading}
+                        {itemTitle}
                       </Text>
                       <Text mobileMultiplier={0.875} fontSize="text">
-                        {desc}
+                        {text}
                       </Text>
                     </SliderStepsItemInfo>
                   </SliderStepsItem>
@@ -131,10 +94,10 @@ const SliderSteps = ({ data = pageData }) => {
               modules={[Pagination, Controller, EffectCreative]}
               pagination={{ el: ".sliderSteps-pagination" }}
             >
-              {items.map(({ id, image }) => (
-                <SwiperSlide key={id}>
+              {itemsSteps.map(({ _key, image }) => (
+                <SwiperSlide key={_key}>
                   <SliderStepsItemImage>
-                    <ImageStatic src={image} />
+                    <Image {...image} />
                   </SliderStepsItemImage>
                 </SwiperSlide>
               ))}
@@ -147,17 +110,16 @@ const SliderSteps = ({ data = pageData }) => {
 };
 
 SliderSteps.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        id: PropTypes.number,
-        image: PropTypes.string,
-        heading: PropTypes.string,
-        desc: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  itemsSteps: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      title: PropTypes.string,
+      text: PropTypes.string,
+      image: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default SliderSteps;

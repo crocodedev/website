@@ -9,9 +9,10 @@ module.exports.list = `
       title
       text
       items {
+        _key
         text
         title
-        imageWithAltText{
+        imageWithAltText {
           ${image}
         }
         link {

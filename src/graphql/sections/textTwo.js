@@ -12,6 +12,7 @@ module.exports.textTwo = `
         ${image}
       }
       items {
+        _key
         title
         text
       }

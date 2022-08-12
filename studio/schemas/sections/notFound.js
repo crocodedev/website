@@ -38,6 +38,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+    },
+    {
       title: "Subtitle",
       name: "subtitle",
       type: "text",

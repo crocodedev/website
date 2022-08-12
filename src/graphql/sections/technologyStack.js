@@ -6,8 +6,8 @@ module.exports.technologyStack = `
       position
       component
       title
-      subtitle
       items {
+        _key
         title
         itemimage {
           ${image}

@@ -83,12 +83,12 @@ const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subt
 };
 
 Contacts.propTypes = {
+  baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   popUpText: PropTypes.string.isRequired,
   accessToken: PropTypes.string.isRequired,
   styleLink: PropTypes.string.isRequired,
-  baseUrl: PropTypes.string.isRequired,
   contactItems: PropTypes.arrayOf(
     PropTypes.exact({
       title: PropTypes.string,

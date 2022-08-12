@@ -54,21 +54,7 @@ export default {
 
       of: [
         {
-          title: "Text",
-          name: "text",
-          type: "string",
-        },
-      ],
-    },
-    {
-      title: "Breadcrumbs",
-      name: "breadcrumbs",
-      type: "array",
-
-      of: [
-        {
-          name: "link",
-          type: "link",
+          type: "heroMainItem",
         },
       ],
     },

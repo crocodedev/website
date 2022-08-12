@@ -9,6 +9,7 @@ module.exports.header = `
           logoImage {
             ${image}
           }
+          
           linkWithIcon {
             icon {
               ${image}
@@ -17,8 +18,12 @@ module.exports.header = `
               ${link}
             }
           }
+
           headerLinks {
             ${link} 
+          }
+          headerButton {
+            ${link}
           }
         }
 `;

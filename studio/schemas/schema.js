@@ -59,6 +59,11 @@ import iconLink from "./objects/iconLink";
 import textItem from "./objects/agreementTextItems";
 import seo from "./objects/seo";
 import columnGroup from "./objects/columnGroup";
+import heroMainItem from "./objects/heroMainItem";
+import ourClientsArray from "./objects/ourClientsArray";
+import ourClientsSlider from "./objects/ourClientsSlider";
+import technologyCategory from "./objects/technologyCategory";
+import technologiesArray from "./objects/technologiesArray";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -130,6 +135,11 @@ export default createSchema({
     textItem,
     seo,
     columnGroup,
+    heroMainItem,
+    ourClientsArray,
+    ourClientsSlider,
+    technologyCategory,
+    technologiesArray,
 
     // blocks
     pageSection,

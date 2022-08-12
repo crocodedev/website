@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ImageStatic = ({ src }) => {
   if (!src) return null;
@@ -18,7 +18,6 @@ ImageStatic.propTypes = {
 // Render inline SVG with fallback non-svg images
 const Image = ({ altText, image, ...props }) => {
   const gatsbyImageData = image?.asset?.gatsbyImageData;
-  console.log(image);
   if (gatsbyImageData) return <GatsbyImage image={gatsbyImageData} alt={altText} {...props} />;
 
   return null;

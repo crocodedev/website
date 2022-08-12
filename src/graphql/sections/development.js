@@ -9,6 +9,7 @@ module.exports.development = `
       subtitle
       title
       items {
+        _key
         title
         text
         image {

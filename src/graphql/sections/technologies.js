@@ -6,14 +6,17 @@ module.exports.technologies = `
       position
       component
       title
-      text
-      technologiesTitles
       subtitle
-      technologiesItems {
-        _key
+      categories {
         title
-        technologyImage {
-          ${image}
+        text
+        _key
+        technologiesList {
+          title
+          _key
+          technologyImage {
+            ${image}
+          }
         }
       }
     }

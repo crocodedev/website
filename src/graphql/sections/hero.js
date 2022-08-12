@@ -6,11 +6,10 @@ module.exports.hero = `
           id
           position
           component
-          sectionTitle
           title
           subtitle
           imageWithAltText {
-              ${image}
+            ${image}
           }
           breadcrumbs {
             ${link}

@@ -8,20 +8,16 @@ module.exports.ourClients = `
       component
       title
       subtitle
-      itemsBottomSlider {
-        clientPhoto {
-          ${image}
-        }
-        link {
-          ${link}
-        }
-      }
-      itemsTopSlider {
-        clientPhoto {
-          ${image}
-        }
-        link {
-          ${link}
+      sliders {
+        _key
+        clientsList {
+          _key
+          clientPhoto {
+            ${image}
+          }
+          link {
+            ${link}
+          }
         }
       }
     }

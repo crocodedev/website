@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
@@ -8,49 +8,22 @@ import ListFourImage from "@/components/ListFour/ListFourImage";
 import ListFourItem from "@/components/ListFour/ListFourItem";
 import ListFourStack from "@/components/ListFour/ListFourStack";
 
-const dataPage = {
-  title: "Our Engagement Models",
-  text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  items: [
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-    },
-  ],
-};
-
-const ListFour = ({ data = dataPage }) => (
+const ListFour = ({ title, text, items }) => (
   <SectionWrapper bgColor="paper">
     <Container>
-      <SectionHeading title={data.title} text={data.text} />
+      <SectionHeading title={title} text={text} />
       <ListFourStack>
-        {data.items.map(({ src, title, text }) => (
-          <ListFourItem key={title}>
+        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
+          <ListFourItem key={_key}>
             <ListFourImage>
-              <ImageStatic src={src} />
+              <Image {...imageWithAltText} />
             </ListFourImage>
             <Text fontWeight="semiBold" textAlign="center" fontSize="subtitle" lineHeight="sm">
-              {title}
+              {itemTitle}
             </Text>
             <Text lineHeight="md" textAlign="center">
               {" "}
-              {text}
+              {itemText}
             </Text>
           </ListFourItem>
         ))}
@@ -60,17 +33,16 @@ const ListFour = ({ data = dataPage }) => (
 );
 
 ListFour.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    text: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        src: PropTypes.string,
-        title: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      text: PropTypes.string,
+      title: PropTypes.string,
+      imageWithAltText: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default ListFour;

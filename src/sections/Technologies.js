@@ -11,248 +11,29 @@ import TechnologiesSlideText from "@/components/Technologies/TechnologiesSlideTe
 import React from "react";
 import TechnologyCard from "@/components/TechnologyCard";
 
-const pageData = {
-  title: "Software Development Technologies",
-  categories: [
-    {
-      id: 1,
-      name: "LBS",
-    },
-    {
-      id: 2,
-      name: "Front-end",
-    },
-    {
-      id: 3,
-      name: "Back-end",
-    },
-    {
-      id: 4,
-      name: "Mobile",
-    },
-    {
-      id: 5,
-      name: "Cloud",
-    },
-  ],
-  items: [
-    {
-      category: "LBS",
-      cards: [
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-      ],
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    },
-    {
-      category: "Front-end",
-      cards: [
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-      ],
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    },
-    {
-      category: "Back-end",
-      cards: [
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-      ],
-      text: "Amet  amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    },
-    {
-      category: "Mobile",
-      cards: [
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-      ],
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    },
-    {
-      category: "Cloud",
-      cards: [
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/our-team-person-1.jpg",
-          title: "Google Maps",
-        },
-        {
-          src: "/uploads/technologies.png",
-          title: "Google Maps",
-        },
-      ],
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    },
-  ],
-};
-
-const Technologies = ({ data = pageData }) => {
-  const { title, categories, items } = data;
-  const [currSlide, setCurrSlide] = React.useState("LBS");
+const Technologies = ({ title, subtitle, categories }) => {
+  const [currSlide, setCurrSlide] = React.useState(categories[0]._key);
   const handlerSetCurrSlide = (slide) => setCurrSlide(slide);
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading title={title} />
+        <SectionHeading title={title} text={subtitle} />
         <TechnologiesWrapper>
           <TechnologiesStack>
-            {categories.map(({ id, name }) => (
+            {categories.map(({ title: categoryTitle, _key }) => (
               <TechnologiesStackItem
-                active={name === currSlide}
-                key={id}
-                text={name}
-                handler={() => handlerSetCurrSlide(name)}
+                active={_key === currSlide}
+                key={_key}
+                text={categoryTitle}
+                handler={() => handlerSetCurrSlide(_key)}
               />
             ))}
           </TechnologiesStack>
-          {items.map(({ cards, text, category }) => (
-            <TechnologiesSlide key={cards} active={category === currSlide}>
+          {categories.map(({ text, _key, technologiesList }) => (
+            <TechnologiesSlide key={_key} active={_key === currSlide}>
               <TechnologiesSlideStack>
-                {cards.map(({ id, ...props }) => (
-                  <TechnologyCard key={id} {...props} />
+                {technologiesList.map(({ title: itemTitle, _key: itemKey, technologyImage }) => (
+                  <TechnologyCard key={itemKey} title={itemTitle} image={technologyImage} />
                 ))}
               </TechnologiesSlideStack>
               <TechnologiesSlideText
@@ -272,26 +53,22 @@ const Technologies = ({ data = pageData }) => {
 };
 
 Technologies.propTypes = {
-  data: PropTypes.exact({
-    categories: PropTypes.arrayOf(
-      PropTypes.exact({
-        id: PropTypes.number,
-        name: PropTypes.string,
-      }),
-    ),
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        cards: PropTypes.arrayOf(
-          PropTypes.exact({
-            src: PropTypes.string,
-            title: PropTypes.string,
-          }),
-        ),
-        text: PropTypes.string,
-      }),
-    ),
-    title: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string,
+      text: PropTypes.string,
+      _key: PropTypes.string,
+      technologiesList: PropTypes.arrayOf(
+        PropTypes.exact({
+          title: PropTypes.string,
+          _key: PropTypes.string,
+          technologyImage: PropTypes.object,
+        }),
+      ),
+    }),
+  ).isRequired,
 };
 
 export default Technologies;

@@ -4,7 +4,7 @@ import { Link as GatsbyLink } from "gatsby";
 const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
   if (linkInternal) {
     return (
-      <GatsbyLink to={`${baseUrl}${linkInternal.reference.slug.current}` || "/"} {...props}>
+      <GatsbyLink to={`${baseUrl}${linkInternal?.reference?.slug?.current}` || "/"} {...props}>
         {children}
       </GatsbyLink>
     );

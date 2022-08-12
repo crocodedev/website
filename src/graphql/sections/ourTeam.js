@@ -12,6 +12,7 @@ module.exports.ourTeam = `
         ${link}
       }
       items {
+        _key
         title
         subtitle
         teamMemberPhoto{

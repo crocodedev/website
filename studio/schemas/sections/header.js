@@ -46,6 +46,11 @@ export default {
       type: "headerLinks",
     },
     {
+      title: "Header button",
+      name: "headerButton",
+      type: "link",
+    },
+    {
       title: "Link with icon",
       name: "linkWithIcon",
       type: "array",

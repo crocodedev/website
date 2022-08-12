@@ -7,54 +7,18 @@ import ListSixStack from "@/components/ListSix/ListSixStack";
 import ListSixStackItem from "@/components/ListSix/ListSixStackItem";
 import ListSixStackItemText from "@/components/ListSix/ListSixStackItemText";
 
-const dataPage = {
-  title: "Our Team of Dedicated Software Developers & Engineers",
-  items: [
-    {
-      title: "Some engineers1",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      title: "Some engineers2",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      title: "Some engineers3",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      title: "Some engineers4",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      title: "Some engineers5",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-    {
-      title: "Some engineers6",
-      text: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    },
-  ],
-};
-
-const ListSix = ({ data = dataPage }) => (
+const ListSix = ({ title, items }) => (
   <SectionWrapper>
     <Container>
-      <SectionHeading title={data.title} />
+      <SectionHeading title={title} />
       <ListSixStack>
-        {data.items.map(({ title, text }) => (
-          <ListSixStackItem key={title}>
+        {items.map(({ _key, title: itemTitle, text: itemText }) => (
+          <ListSixStackItem key={_key}>
             <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6}>
-              {title}
+              {itemTitle}
             </Text>
             <ListSixStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
-              {text}
+              {itemText}
             </ListSixStackItemText>
           </ListSixStackItem>
         ))}
@@ -64,15 +28,14 @@ const ListSix = ({ data = dataPage }) => (
 );
 
 ListSix.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        title: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      text: PropTypes.string,
+      title: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default ListSix;

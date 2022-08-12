@@ -1,3 +1,5 @@
+const { image } = require("../objects/image");
+
 module.exports.sliderSteps = `
     ... on SanitySliderSteps {
       id
@@ -5,15 +7,13 @@ module.exports.sliderSteps = `
       component
       subtitle
       title
-      itemsStepsImage {
-       asset {
-          gatsbyImageData(placeholder: BLURRED)
-          altText
-        }
-      }
       itemsSteps {
+        _key
         title
         text
+        image {
+          ${image}
+        }
       }
     }
 `;

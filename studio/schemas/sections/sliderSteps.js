@@ -43,11 +43,6 @@ export default {
       type: "text",
     },
     {
-      title: "Items steps image",
-      name: "itemsStepsImage",
-      type: "itemsSteps",
-    },
-    {
       title: "Items steps",
       name: "itemsSteps",
       type: "array",

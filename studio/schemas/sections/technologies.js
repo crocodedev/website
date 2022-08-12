@@ -43,31 +43,12 @@ export default {
       type: "text",
     },
     {
-      title: "Text",
-      name: "text",
-      type: "text",
-    },
-    {
-      title: "Technologies titles",
-      name: "technologiesTitles",
+      title: "Categories",
+      name: "categories",
       type: "array",
-
       of: [
         {
-          title: "Technology title",
-          name: "technologyTitle",
-          type: "string",
-        },
-      ],
-    },
-    {
-      title: "Technologies items",
-      name: "technologiesItems",
-      type: "array",
-
-      of: [
-        {
-          type: "technologiesItem",
+          type: "technologyCategory",
         },
       ],
     },

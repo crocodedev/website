@@ -43,24 +43,13 @@ export default {
       type: "text",
     },
     {
-      title: "Items top slider",
-      name: "itemsTopSlider",
+      title: "Sliders",
+      name: "sliders",
       type: "array",
 
       of: [
         {
-          type: "ourClientsItem",
-        },
-      ],
-    },
-    {
-      title: "Items bottom slider",
-      name: "itemsBottomSlider",
-      type: "array",
-
-      of: [
-        {
-          type: "ourClientsItem",
+          type: "ourClientsSlider",
         },
       ],
     },

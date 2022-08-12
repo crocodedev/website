@@ -6,6 +6,10 @@ module.exports.heroMain = `
       id
       position
       component
+      items {
+        text
+        _key
+      }
       link {
         ${link}
       }
@@ -14,9 +18,6 @@ module.exports.heroMain = `
       }
       bgImage {
         ${image}
-      }
-      breadcrumbs {
-        ${link}
       }
     }
 `;

@@ -95,7 +95,7 @@ const ContactUs = ({
       .typeError("error message")
       .required("required message"),
   });
-  console.log(agreementText);
+
   return (
     <ContactsUsBgImageWrapper>
       <ContactsUsWrapper>

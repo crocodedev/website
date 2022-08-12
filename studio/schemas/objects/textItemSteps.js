@@ -19,5 +19,10 @@ export default {
       name: "text",
       type: "text",
     },
+    {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+    },
   ],
 };
