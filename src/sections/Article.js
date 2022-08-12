@@ -13,6 +13,8 @@ import ArticleBottom from "@/components/Article/ArticleBottom";
 import ArticleBottomList from "@/components/Article/ArticleBottomList";
 import ArticleBottomListItem from "@/components/Article/ArticleBottomListItem";
 import Link from "@/components/Link";
+import BackUpButton from "@/components/BackUpButton";
+import CtaForm from "./CtaForm";
 
 const dataPage = {
   title: "Break is an important part of work",
@@ -96,6 +98,7 @@ const Article = ({ data = dataPage }) => {
               <Text mobileMultiplier={0.875}>{text3}</Text>
               <Text mobileMultiplier={0.875}>{text4}</Text>
             </ArticleContentItem>
+            <CtaForm />
             <ArticleContentItem>
               <Text mobileMultiplier={0.875}>{text5}</Text>
               <Text mobileMultiplier={0.875}>{text6}</Text>
@@ -125,6 +128,7 @@ const Article = ({ data = dataPage }) => {
           </ArticleContent>
         </ArticleContentWrapper>
       </Container>
+      <BackUpButton />
     </ArticleWrapper>
   );
 };

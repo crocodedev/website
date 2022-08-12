@@ -2,7 +2,11 @@ import styled from "@emotion/styled";
 import HeaderContentItem from "./HeaderContentItem";
 
 const HeaderContentItemShopify = styled(HeaderContentItem)`
-  ${({ theme }) => theme.breakpoints.down("xl")} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    display: none;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     order: 1;
     gap: 10px;
   }

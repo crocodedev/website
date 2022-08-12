@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -11,80 +11,30 @@ import ListTwoItemHeadingImage from "@/components/ListTwo/ListTwoItemHeadingImag
 import ListTwoItemHeading from "@/components/ListTwo/ListTwoItemHeading";
 import ListTwoItemContent from "@/components/ListTwo/ListTwoItemContent";
 
-const dataPage = {
-  title: "Services",
-  text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  items: [
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: " Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-      link: {
-        title: "Show more",
-        url: "/#",
-      },
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: " Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-      link: {
-        title: "Show more",
-        url: "/#",
-      },
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: " Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-      link: {
-        title: "Show more",
-        url: "/#",
-      },
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: " Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-      link: {
-        title: "Show more",
-        url: "/#",
-      },
-    },
-    {
-      src: "uploads/services.png",
-      title: "MVP development",
-      text: " Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-      link: {
-        title: "Show more",
-        url: "/#",
-      },
-    },
-  ],
-};
-
-const ListTwo = ({ data = dataPage }) => (
+const ListTwo = ({ title, text, items, baseUrl }) => (
   <SectionWrapper>
     <Container>
-      <SectionHeading title={data.title} text={data.text} />
+      <SectionHeading title={title} text={text} />
 
       <ListTwoStack>
-        {data.items.map(({ src, title, text, link }) => (
-          <ListTwoItem key={title}>
+        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
+          <ListTwoItem key={_key}>
             <ListTwoItemHeading>
               <ListTwoItemHeadingImage>
-                <ImageStatic src={src} />
+                <Image {...imageWithAltText} />
               </ListTwoItemHeadingImage>
 
               <Text fontSize="subtitle" lineHeight="sm" fontWeight="bold">
-                {title}
+                {itemTitle}
               </Text>
             </ListTwoItemHeading>
             <ListTwoItemContent>
-              <Text>{text}</Text>
-              <Button to={link.url} variant="text">
-                {link.title}
-              </Button>
+              {itemText && <Text>{itemText}</Text>}
+              {link && (
+                <Button link={link} baseUrl={baseUrl} variant="text">
+                  {link.title}
+                </Button>
+              )}
             </ListTwoItemContent>
           </ListTwoItem>
         ))}
@@ -94,21 +44,18 @@ const ListTwo = ({ data = dataPage }) => (
 );
 
 ListTwo.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    text: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        src: PropTypes.string,
-        title: PropTypes.string,
-        text: PropTypes.string,
-        link: PropTypes.exact({
-          title: PropTypes.string,
-          url: PropTypes.string,
-        }),
-      }),
-    ),
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      text: PropTypes.string,
+      title: PropTypes.string,
+      imageWithAltText: PropTypes.object,
+      link: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default ListTwo;

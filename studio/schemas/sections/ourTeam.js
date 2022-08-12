@@ -1,0 +1,61 @@
+export default {
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
+
+  title: "Our team",
+  name: "ourTeam",
+  type: "document",
+  i18n: true,
+  fields: [
+    {
+      title: "Section Title",
+      name: "sectionTitle",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Position",
+      name: "position",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Component",
+      name: "component",
+      type: "string",
+      initialValue: "OurTeam",
+      readOnly: true,
+      hidden: true,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Title",
+      name: "title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Subtitle",
+      name: "subtitle",
+      type: "text",
+    },
+    {
+      name: "link",
+      type: "link",
+    },
+    {
+      title: "Items",
+      name: "items",
+      type: "array",
+
+      of: [
+        {
+          type: "ourTeamItem",
+        },
+      ],
+    },
+  ],
+};

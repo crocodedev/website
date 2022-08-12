@@ -5,47 +5,43 @@ import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroWrapper from "@/components/Hero/HeroWrapper";
 import HeroImage from "@/components/Hero/HeroImage";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
 import Text from "@/components/Text";
 
-const pageData = {
-  title: "Technologies",
-  image: "/uploads/hero-bg-image.jpg",
-  desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  links: ["Home", "Technologies"],
-};
-
-const Hero = ({ data = pageData }) => {
-  const { title, image, desc, links } = data;
-
+const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb links={links} />
+          <Breadcrumb baseUrl={baseUrl} color={color} links={breadcrumbs} />
           <SectionHeading title={title} />
           <HeroContent>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>
-              {desc}
+              {subtitle}
             </Text>
           </HeroContent>
         </Container>
       </SectionWrapper>
       <HeroImage>
-        <ImageStatic src={image} />
+        <Image {...imageWithAltText} />
       </HeroImage>
     </HeroWrapper>
   );
 };
 
 Hero.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    image: PropTypes.string,
-    desc: PropTypes.string,
-    links: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  imageWithAltText: PropTypes.object.isRequired,
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.exact({
+      link: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default Hero;

@@ -100,6 +100,46 @@ const dynamicStyle = ({ theme, variant, active }) => css`
     }
   `
     : ""}
+  ${variant === "backUp"
+    ? `
+    position: fixed;
+    z-index: 2;
+
+
+    background-color: ${theme.palette.primary.main};
+    border-radius: ${theme.borderRadius.small};
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: ${theme.palette.secondary.dark};
+    }
+
+    ${theme.breakpoints.down("md")} {
+      padding: 10px;
+      bottom: 25px;
+      right: 25px;
+    }
+
+    ${theme.breakpoints.up("md")} {
+      padding: 20px;
+      bottom: 50px;
+      right: 50px;
+    }
+
+    & picture img {
+
+      ${theme.breakpoints.down("md")} {
+        width: 18px;
+        height: 18px;
+      }
+
+      ${theme.breakpoints.up("md")} {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  `
+    : ""}
 `;
 
 const StyledButton = styled.button`
@@ -113,12 +153,12 @@ const StyledButton = styled.button`
   ${dynamicStyle}
 `;
 
-const Button = ({ variant, handler, to, active, children, ...props }) =>
-  to ? (
-    <Link to={to} {...props}>
-      <StyledButton as="a" active={active} variant={variant}>
+const Button = ({ variant, handler, link, baseUrl, active, children, ...props }) =>
+  link ? (
+    <Link baseUrl={baseUrl} {...link} {...props}>
+      <StyledButton as="span" active={active} variant={variant}>
         {children}
-        {variant === "text" && <span />}
+        {variant === ("text" || "backUp") && <span />}
       </StyledButton>
     </Link>
   ) : (
@@ -130,15 +170,16 @@ const Button = ({ variant, handler, to, active, children, ...props }) =>
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
   active: PropTypes.bool,
   handler: PropTypes.func,
-  to: PropTypes.string,
+  link: PropTypes.object,
 };
 
 Button.defaultProps = {
   handler: null,
   active: false,
-  to: null,
+  link: null,
 };
 
 export default Button;

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import Text from "@/components/Text";
@@ -10,56 +10,22 @@ import ListFiveItemImage from "@/components/ListFive/ListFiveItemImage";
 import ListFiveItem from "@/components/ListFive/ListFiveItem";
 import ListFiveItemContent from "@/components/ListFive/ListFiveItemContent";
 
-const dataPage = {
-  title: "High-End Full Stack Consulting",
-  text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  items: [
-    {
-      src: "uploads/technologies.png",
-      title: "Some Consulting",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-      link: {
-        title: "Learn More",
-        src: "/#",
-      },
-    },
-    {
-      src: "uploads/technologies.png",
-      title: "Some Consulting",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-      link: {
-        title: "Learn More",
-        src: "/#",
-      },
-    },
-    {
-      src: "uploads/technologies.png",
-      title: "Some Consulting",
-      text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-      link: {
-        title: "Learn More",
-        src: "/#",
-      },
-    },
-  ],
-};
-
-const ListFive = ({ data = dataPage }) => (
+const ListFive = ({ title, text, items }) => (
   <SectionWrapper bgColor="paper">
     <Container>
-      <SectionHeading title={data.title} text={data.text} />
+      <SectionHeading title={title} text={text} />
       <ListFiveStack>
-        {data.items.map(({ src, title, text, link }) => (
-          <ListFiveItem key={title}>
+        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
+          <ListFiveItem key={_key}>
             <ListFiveItemImage>
-              <ImageStatic src={src} />
+              <Image {...imageWithAltText} />
             </ListFiveItemImage>
             <ListFiveItemContent>
               <Text fontWeight="semiBold" fontSize="subtitle" lineHeight="sm">
-                {title}
+                {itemTitle}
               </Text>
-              <Text>{text}</Text>
-              <Button variant="text" to={link.url}>
+              <Text>{itemText}</Text>
+              <Button variant="text" link={link} baseUrl="baseUrl">
                 {link.title}
               </Button>
             </ListFiveItemContent>
@@ -71,21 +37,16 @@ const ListFive = ({ data = dataPage }) => (
 );
 
 ListFive.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    text: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        src: PropTypes.string,
-        title: PropTypes.string,
-        text: PropTypes.string,
-        link: PropTypes.exact({
-          title: PropTypes.string,
-          src: PropTypes.string,
-        }),
-      }),
-    ),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      text: PropTypes.string,
+      title: PropTypes.string,
+      imageWithAltText: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default ListFive;

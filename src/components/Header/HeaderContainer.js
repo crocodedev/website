@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const HeaderContainer = styled.div`
   position: relative;
   display: flex;
+  align-items: center;
 
   & input {
     display: none;
@@ -19,7 +20,7 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.down("xl")} {
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
 
     & input:checked {
@@ -34,6 +35,7 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("2xl")} {
+    justify-content: space-between;
     gap: 170px;
   }
 `;

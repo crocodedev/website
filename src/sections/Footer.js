@@ -13,89 +13,9 @@ import FooterCompanyInfo from "@/components/Footer/FooterCompanyInfo";
 import FooterSocialLink from "@/components/Footer/FooterSocialLink";
 import FooterLink from "@/components/Footer/FooterLink";
 import Text from "@/components/Text";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 
-const dataPage = {
-  logo: "uploads/footer-logo.svg",
-
-  socials: [
-    { logo: "uploads/footer-facebook.svg", src: "https://www.facebook.com" },
-    { logo: "uploads/footer-linkedin.svg", src: "https://www.linkedin.com" },
-  ],
-
-  links: [
-    {
-      title: "Services",
-      src: "/#",
-
-      links: [
-        {
-          title: "Dedicated Teams",
-          src: "/#",
-        },
-        {
-          title: "MVP Development",
-          src: "/#",
-        },
-        {
-          title: "Custom Software",
-          src: "/#",
-        },
-        {
-          title: "Consulting",
-          src: "/#",
-        },
-        {
-          title: "Location Based Services",
-          src: "/#",
-        },
-      ],
-    },
-
-    {
-      title: "Technologies",
-      src: "/#",
-      links: [
-        {
-          title: "Location-based",
-          src: "/#",
-        },
-        {
-          title: "Front-end",
-          src: "/#",
-        },
-        {
-          title: "Back-end",
-          src: "/#",
-        },
-        {
-          title: "Mobile",
-          src: "/#",
-        },
-        {
-          title: "Cloud",
-          src: "/#",
-        },
-      ],
-    },
-    {
-      title: "About us",
-      src: "/#",
-      links: [
-        {
-          title: "Blog",
-          src: "/#",
-        },
-        {
-          title: "Contacts",
-          src: "/#",
-        },
-      ],
-    },
-  ],
-};
-
-const Footer = ({ data = dataPage }) => {
+const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, baseUrl }) => {
   const theme = useTheme();
   return (
     <FooterWrapper>
@@ -103,25 +23,25 @@ const Footer = ({ data = dataPage }) => {
         <FooterTop>
           <FooterCompanyInfo>
             <FooterLogo>
-              <ImageStatic src={data.logo} />
+              <Image {...logoImage} />
             </FooterLogo>
             <FooterSocials>
-              {data.socials.map(({ logo, src }) => (
-                <FooterSocialLink key={src} to={src}>
-                  <ImageStatic src={logo} />
+              {socialIcons.map(({ iconImage, _key }) => (
+                <FooterSocialLink key={_key} baseUrl={baseUrl}>
+                  <Image {...iconImage} />
                 </FooterSocialLink>
               ))}
             </FooterSocials>
           </FooterCompanyInfo>
           <FooterTopStack>
-            {data.links.map(({ title, src, links }) => (
-              <FooterTopColumn key={title}>
-                <FooterLink isHeading to={src}>
+            {column.map(({ title, _key, items }) => (
+              <FooterTopColumn key={_key}>
+                <FooterLink isHeading baseUrl={baseUrl}>
                   {title}
                 </FooterLink>
-                {links.map(({ title: innerTitle, src: innerSrc }) => (
-                  <FooterLink key={innerTitle} to={innerSrc}>
-                    {innerTitle}
+                {items.map(({ _key: id, link }) => (
+                  <FooterLink key={id} link={link} baseUrl={baseUrl}>
+                    {link.title}
                   </FooterLink>
                 ))}
               </FooterTopColumn>
@@ -129,11 +49,13 @@ const Footer = ({ data = dataPage }) => {
           </FooterTopStack>
         </FooterTop>
         <FooterBottom>
-          <Text color={theme.palette.tertiary.contrastText}>
-            2020 CODE DOT, LLC. All Rights Reserved
-          </Text>
+          <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <FooterBottomStack>
-            <FooterLink isHeading>Privacy policy</FooterLink>
+            {bottomLinks.map((link) => (
+              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
+                {link.title}
+              </FooterLink>
+            ))}
           </FooterBottomStack>
         </FooterBottom>
       </Container>
@@ -142,27 +64,28 @@ const Footer = ({ data = dataPage }) => {
 };
 
 Footer.propTypes = {
-  data: PropTypes.exact({
-    logo: PropTypes.string,
-    socials: PropTypes.arrayOf(
-      PropTypes.exact({
-        logo: PropTypes.string,
-        src: PropTypes.string,
-      }),
-    ),
-    links: PropTypes.arrayOf(
-      PropTypes.exact({
-        title: PropTypes.string,
-        src: PropTypes.string,
-        links: PropTypes.arrayOf(
-          PropTypes.exact({
-            title: PropTypes.string,
-            src: PropTypes.string,
-          }),
-        ),
-      }),
-    ),
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  copyrightText: PropTypes.string.isRequired,
+  logoImage: PropTypes.object.isRequired,
+  socialIcons: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      iconImage: PropTypes.object,
+      link: PropTypes.object,
+    }),
+  ).isRequired,
+  column: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string,
+      _key: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.exact({
+          link: PropTypes.object,
+        }),
+      ),
+    }),
+  ).isRequired,
+  bottomLinks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Footer;

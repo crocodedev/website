@@ -7,41 +7,33 @@ import Text from "@/components/Text";
 import CtaTextCaption from "@/components/CtaText/CtaTextCaption";
 import CtaTextWrapper from "@/components/CtaText/CtaTextWrapper";
 
-const dataPage = {
-  title: "Can't find yours?",
-  description: "No a problem - we will find solution for you!",
-  buttonText: "Start project",
-};
-
-const CtaText = ({ data = dataPage }) => {
+const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper bgColor={data.bgColor}>
+    <SectionWrapper bgColor={bgColor}>
       <Container>
         <CtaTextWrapper>
           <Text
             fontSize="title2"
             color={
-              data.bgColor === "dark"
-                ? theme.palette.tertiary.contrastText
-                : theme.palette.text.primary
+              bgColor === "dark" ? theme.palette.tertiary.contrastText : theme.palette.text.primary
             }
             fontWeight="bold"
             mobileMultiplier={0.7}
           >
-            {data.title}
+            {title}
           </Text>
           <CtaTextCaption
             color={
-              data.bgColor === "dark"
-                ? theme.palette.tertiary.contrastText
-                : theme.palette.text.primary
+              bgColor === "dark" ? theme.palette.tertiary.contrastText : theme.palette.text.primary
             }
             textAlign="center"
           >
-            {data.description}
+            {subtitle}
           </CtaTextCaption>
-          <Button variant="contained">{data.buttonText}</Button>
+          <Button variant="contained" baseUrl={baseUrl}>
+            {link.title}
+          </Button>
         </CtaTextWrapper>
       </Container>
     </SectionWrapper>
@@ -49,11 +41,11 @@ const CtaText = ({ data = dataPage }) => {
 };
 
 CtaText.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    buttonText: PropTypes.string,
-  }).isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
 };
 
 export default CtaText;

@@ -5,19 +5,19 @@ import BreadcrumbWrapper from "./Breadcrumb/BreadcrumbWrapper";
 import Link from "./Link";
 import Text from "./Text";
 
-const Breadcrumb = ({ links, color, disablePaddingBottom }) => {
-  const lastLink = links.pop();
-
+const Breadcrumb = ({ links, color, disablePaddingBottom, baseUrl }) => {
   return (
     <BreadcrumbWrapper disablePaddingBottom={disablePaddingBottom}>
       <BreadcrumbList>
         {links.map((item) => (
-          <BreadcrumbListItem color={color} key={item}>
-            <Link to={`/${item}`}>{item}</Link>
+          <BreadcrumbListItem color={color} key={item._key}>
+            <Link baseUrl={baseUrl} {...item}>
+              {item.title}
+            </Link>
           </BreadcrumbListItem>
         ))}
         <BreadcrumbListItem>
-          <Text>{lastLink}</Text>
+          <Text>123</Text>
         </BreadcrumbListItem>
       </BreadcrumbList>
     </BreadcrumbWrapper>
@@ -25,6 +25,7 @@ const Breadcrumb = ({ links, color, disablePaddingBottom }) => {
 };
 
 Breadcrumb.propTypes = {
+  baseUrl: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.string).isRequired,
   color: PropTypes.string,
   disablePaddingBottom: PropTypes.bool,

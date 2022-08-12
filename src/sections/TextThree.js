@@ -6,27 +6,11 @@ import TextThreeWrapper from "@/components/TextThree/TextThreeWrapper";
 import TextThreeContent from "@/components/TextThree/TextThreeContent";
 import Text from "@/components/Text";
 import TextThreeImage from "@/components/TextThree/TextThreeImage";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import TextThreeList from "@/components/TextThree/TextThreeList";
 import TextThreeListItem from "@/components/TextThree/TextThreeListItem";
 
-const pageData = {
-  title: "Result",
-  image: "/uploads/text-three-variant1.jpg",
-  desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  listItem1: "Amet minim mollit non deserunt ullamco",
-  listItem2: "Amet minim mollit non deserunt ullamco amet minim mollit non deserunt ullamco",
-};
-//   title: "Solution",
-//   image: "/uploads/text-three-variant2.jpg",
-//   desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-//   listItem1: "Amet minim mollit non deserunt ullamco",
-//   listItem2: "Amet minim mollit non deserunt ullamco amet minim mollit non deserunt ullamco",
-// };
-
-const TextThree = ({ data = pageData }) => {
-  const { title, image, desc, listItem1, listItem2 } = data;
-
+const TextThree = ({ title, subtitle, text, image }) => {
   return (
     <SectionWrapper>
       <Container>
@@ -34,23 +18,23 @@ const TextThree = ({ data = pageData }) => {
         <TextThreeWrapper>
           <TextThreeContent>
             <Text mobileMultiplier={0.7} fontSize="subtitle">
-              {desc}
+              {subtitle}
             </Text>
             <TextThreeList>
               <TextThreeListItem>
                 <Text mobileMultiplier={0.7} fontSize="subtitle">
-                  {listItem1}
+                  {text}
                 </Text>
               </TextThreeListItem>
               <TextThreeListItem>
                 <Text mobileMultiplier={0.7} fontSize="subtitle">
-                  {listItem2}
+                  {text}
                 </Text>
               </TextThreeListItem>
             </TextThreeList>
           </TextThreeContent>
           <TextThreeImage>
-            <ImageStatic src={image} />
+            <Image {...image} />
           </TextThreeImage>
         </TextThreeWrapper>
       </Container>
@@ -59,13 +43,10 @@ const TextThree = ({ data = pageData }) => {
 };
 
 TextThree.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    image: PropTypes.string,
-    desc: PropTypes.string,
-    listItem1: PropTypes.string,
-    listItem2: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
 };
 
 export default TextThree;

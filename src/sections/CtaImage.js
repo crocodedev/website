@@ -2,29 +2,21 @@ import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
 import Text from "@/components/Text";
 import Container from "@/components/Container";
-import ImageStatic from "@/components/Image";
+import Image from "@/components/Image";
 import CtaImageImgWrapper from "@/components/CtaImage/CtaImageImgWrapper";
 import CtaImageTextWrapper from "@/components/CtaImage/CtaImageTextWrapper";
 import CtaImageSectionWrapper from "@/components/CtaImage/CtaImageSectionWrapper";
 import CtaImageLink from "@/components/CtaImage/CtaImageLink";
 import CtaImageInfoWrapper from "@/components/CtaImage/CtaImageInfoWrapper";
 
-const dataPage = {
-  bgColor: "dark",
-  src: "/uploads/cta-image.png",
-  title: "Let's talk!",
-  subtitle: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-  buttonText: "Schedule a Call",
-};
-
-const CtaImage = ({ data = dataPage }) => {
+const CtaImage = ({ title, subtitle, bgColor, link, image, baseUrl }) => {
   const theme = useTheme();
 
   return (
-    <CtaImageSectionWrapper disablePaddings={true} bgColor={data.bgColor}>
+    <CtaImageSectionWrapper disablePaddings={true} bgColor={bgColor}>
       <Container>
         <CtaImageImgWrapper>
-          <ImageStatic src={data.src} />
+          <Image {...image} />
         </CtaImageImgWrapper>
         <CtaImageInfoWrapper>
           <CtaImageTextWrapper>
@@ -34,21 +26,23 @@ const CtaImage = ({ data = dataPage }) => {
               color={theme.palette.primary.main}
               fontWeight="bold"
             >
-              {data.title}
+              {title}
             </Text>
             <Text
               color={
-                data.bgColor === "dark"
+                bgColor === "dark"
                   ? theme.palette.tertiary.contrastText
                   : theme.palette.text.primary
               }
               fontSize="subtitle"
               mobileMultiplier={0.7}
             >
-              {data.subtitle}
+              {subtitle}
             </Text>
           </CtaImageTextWrapper>
-          <CtaImageLink variant="text">{data.buttonText}</CtaImageLink>
+          <CtaImageLink variant="text" baseUrl={baseUrl}>
+            {link.title}
+          </CtaImageLink>
         </CtaImageInfoWrapper>
       </Container>
     </CtaImageSectionWrapper>
@@ -56,11 +50,12 @@ const CtaImage = ({ data = dataPage }) => {
 };
 
 CtaImage.propTypes = {
-  data: PropTypes.exact({
-    bgColor: PropTypes.string,
-    src: PropTypes.string,
-    title: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
+  image: PropTypes.object.isRequired,
+  baseUrl: PropTypes.string.isRequired,
 };
 
 export default CtaImage;
