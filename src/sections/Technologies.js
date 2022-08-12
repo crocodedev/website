@@ -245,7 +245,7 @@ const Technologies = ({ data = pageData }) => {
                 active={name === currSlide}
                 key={id}
                 text={name}
-                handler={(e) => handlerSetCurrSlide(name)}
+                handler={() => handlerSetCurrSlide(name)}
               />
             ))}
           </TechnologiesStack>
