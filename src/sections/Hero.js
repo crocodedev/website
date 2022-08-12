@@ -34,6 +34,7 @@ Hero.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   sectionTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   imageWithAltText: PropTypes.object.isRequired,
   breadcrumbs: PropTypes.arrayOf(
