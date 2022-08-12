@@ -9,13 +9,6 @@ const theme = {
       "3xl": 1920,
     },
 
-    //   xs: 0,
-    //   sm: 480px,
-    //   md: 768px,
-    //   lg: 992px,
-    //   xl: 1280px,
-    //   xxl: 1536px,
-
     up(key) {
       return `@media (min-width: ${this.values[key]}px)`;
     },

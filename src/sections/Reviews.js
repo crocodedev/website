@@ -30,7 +30,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
       <Container>
         <SectionHeading title={title} />
         <ReviewsContent>
-          <ReviewsButton dir="left" className="reviews__prev-el" />
+          <ReviewsButton aria-label="left" dir="left" className="reviews__prev-el" />
 
           <ReviewsSwiperWrapper>
             <Swiper
@@ -85,7 +85,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
             </Swiper>
             <ReviewsPagination className="reviews-pagination" />
           </ReviewsSwiperWrapper>
-          <ReviewsButton dir="right" className="reviews__next-el" />
+          <ReviewsButton aria-label="right" dir="right" className="reviews__next-el" />
         </ReviewsContent>
       </Container>
     </SectionWrapper>

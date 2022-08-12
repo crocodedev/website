@@ -63,7 +63,7 @@ const RelatedArticles = ({ data = dataPage }) => {
           {data.articles.map(({ src, heading, date, text }) => (
             <RelatedArticlesItem key={text}>
               <RelatedArticlesImageWrapper>
-                <ImageStatic src={src} />
+                <ImageStatic loading="lazy" src={src} />
               </RelatedArticlesImageWrapper>
               <RelatedArticlesItemHeading>
                 <RelatedArticlesItemHeadingTitle fontSize="subtitle" fontWeight="bold">

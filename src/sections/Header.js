@@ -64,7 +64,7 @@ const Header = ({ data = pageData }) => {
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
-          <Image src={logo} />
+          <Image loading="lazy" src={logo} />
         </HeaderLogo>
         <HeaderContentItemShopify to={shopifyIcon.link}>
           <Image src={shopifyIcon.icon} />
@@ -83,14 +83,14 @@ const Header = ({ data = pageData }) => {
           </HeaderContentBtnWrapper>
           <HeaderLangWrapper>
             <HeaderLang>
-              <Image src={langFlag} />
+              <Image loading="lazy" src={langFlag} />
               <HeaderLangMenu>
                 <HeaderLangMenuItem>
-                  <Image src={langFlag} />
+                  <Image loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
                 <HeaderLangMenuItem>
-                  <Image src={langFlag} />
+                  <Image loading="lazy" src={langFlag} />
                   <Text>usa</Text>
                 </HeaderLangMenuItem>
               </HeaderLangMenu>

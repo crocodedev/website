@@ -51,6 +51,7 @@ const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subt
           </MapStackInfo>
           <MapWrapper>
             <Map
+              reuseMaps
               {...viewState.mapCords}
               mapStyle={styleLink || "mapbox://styles/mitsuruyano/cl4wd54w2003m16pr1sflxk9x"}
               interactive={false}

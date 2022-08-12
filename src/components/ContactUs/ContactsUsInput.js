@@ -35,7 +35,6 @@ const dynamicStyle = ({ theme, variant }) => css`
 
       &:checked {
           &:before {
-            content: "";
             background-color: ${theme.palette.primary.main};
             background-image: url(/uploads/custom-checkbox.svg);
             background-repeat:  no-repeat;

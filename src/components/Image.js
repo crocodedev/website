@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const ImageStatic = ({ src }) => {
+const ImageStatic = ({ src, ...props }) => {
   if (!src) return null;
   return (
     <picture>
-      <img src={src} alt="alt text" />
+      <img {...props} src={src} alt="alt text" />
     </picture>
   );
 };

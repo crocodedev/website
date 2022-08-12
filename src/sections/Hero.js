@@ -9,12 +9,12 @@ import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
 import Text from "@/components/Text";
 
-const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl }) => {
+const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} />
+          <Breadcrumb baseUrl={baseUrl} color={color} links={breadcrumbs} />
           <SectionHeading title={title} />
           <HeroContent>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>

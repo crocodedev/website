@@ -218,6 +218,7 @@ const ContactUs = ({
                               variant="file"
                               type="file"
                               name="file"
+                              placeholder="file"
                               onBlur={handleBlur}
                               defaultValue={file}
                               onChange={(event) => {
