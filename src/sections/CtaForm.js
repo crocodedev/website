@@ -10,7 +10,7 @@ import CtaFormTitle from "@/components/CtaForm/CtaFormTitle";
 const CtaForm = ({ title, messagePlaceholder, buttonText, bgColor, baseUrl }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper bgColor={bgColor}>
+    <SectionWrapper as="div" bgColor={bgColor}>
       <Container>
         <CtaFormWrapper>
           <CtaFormTitle

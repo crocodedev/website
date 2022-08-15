@@ -5,7 +5,7 @@ const CardImage = styled.div`
   height: 0;
   padding-bottom: 59%;
 
-  picture {
+  & div {
     position: absolute;
     width: 100%;
     height: 100%;

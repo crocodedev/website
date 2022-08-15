@@ -10,7 +10,7 @@ const TextThreeWrapper = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    gap: 20px;
+    gap: 40px;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
