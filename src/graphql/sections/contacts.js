@@ -1,4 +1,5 @@
 const { image } = require("../objects/image");
+const { link } = require("../objects/link");
 
 module.exports.contacts = `
     ... on SanityContacts {
@@ -7,6 +8,9 @@ module.exports.contacts = `
       component
       title
       subtitle
+      image {
+        ${image}
+      }
       popUpText
       styleLink
       accessToken
@@ -15,6 +19,9 @@ module.exports.contacts = `
         title
         contactIcon {
           ${image}
+        }
+        itemLink {
+          ${link}
         }
       }
     }

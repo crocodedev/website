@@ -257,7 +257,6 @@ const ContactUs = ({
                       <ContactsUsLink baseUrl={baseUrl} {...agreementText.link}>
                         {agreementText.title || agreementText.link.title}
                       </ContactsUsLink>
-                      .
                     </Text>
                     <Button
                       type="submit"

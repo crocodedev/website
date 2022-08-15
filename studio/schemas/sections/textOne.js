@@ -48,6 +48,11 @@ export default {
       type: "text",
     },
     {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+    },
+    {
       title: "Image for mobile",
       name: "mobileImage",
       type: "imageWithAlt",

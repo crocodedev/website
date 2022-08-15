@@ -14,9 +14,17 @@ import MapMarkerIcon from "@/components/Map/MapMarkerIcon";
 import MapWrapper from "@/components/Map/MapWrapper";
 
 import "mapbox-gl/dist/mapbox-gl.css";
-import { link } from "@/graphql/objects/link";
 
-const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subtitle }) => {
+const Contacts = ({
+  accessToken,
+  contactItems,
+  popUpText,
+  styleLink,
+  title,
+  subtitle,
+  image,
+  baseUrl,
+}) => {
   const mapCoordinates = useMedia(
     ["(max-width: 768px)", "(max-width: 991px)", "(min-width: 992px)"],
 
@@ -40,14 +48,15 @@ const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subt
         <SectionHeading title={title} subtitle={subtitle} />
         <MapStack>
           <MapStackInfo>
-            {contactItems.map(({ title: infoTitle, contactIcon, _key, baseUrl }) => (
-              <MapStackInfoItem key={_key}>
-                <Image objectFit="scale-down" {...contactIcon} />
-                <MapStackLink {...link} baseUrl={baseUrl}>
-                  {infoTitle}
-                </MapStackLink>
-              </MapStackInfoItem>
-            ))}
+            {contactItems &&
+              contactItems.map(({ title: infoTitle, contactIcon, _key, itemLink }) => (
+                <MapStackInfoItem key={_key}>
+                  <Image objectFit="scale-down" {...contactIcon} />
+                  <MapStackLink {...itemLink} baseUrl={baseUrl}>
+                    {infoTitle}
+                  </MapStackLink>
+                </MapStackInfoItem>
+              ))}
           </MapStackInfo>
           <MapWrapper>
             <Map
@@ -62,7 +71,7 @@ const Contacts = ({ accessToken, contactItems, popUpText, styleLink, title, subt
             >
               <Marker longitude={22} latitude={50.06} anchor="bottom">
                 <MapMarkerIcon>
-                  <Image src="/uploads/map-marker-icon.png" />
+                  <Image {...image} />
                 </MapMarkerIcon>
               </Marker>
               <Popup
@@ -87,13 +96,15 @@ Contacts.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   popUpText: PropTypes.string.isRequired,
   accessToken: PropTypes.string.isRequired,
   styleLink: PropTypes.string.isRequired,
   contactItems: PropTypes.arrayOf(
     PropTypes.exact({
       title: PropTypes.string,
-      link: PropTypes.object,
+      itemLink: PropTypes.object,
+      contactIcon: PropTypes.object,
       _key: PropTypes.string,
     }),
   ).isRequired,

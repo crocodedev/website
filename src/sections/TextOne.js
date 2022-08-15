@@ -9,7 +9,7 @@ import TextOneContent from "@/components/TextOne/TextOneContent";
 import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
 import useMedia from "@/hooks/use-media";
 
-const TextOne = ({ title, subtitle, text, tabletImage, mobileImage, desktopImage }) => {
+const TextOne = ({ title, subtitle, text, image, tabletImage, mobileImage, desktopImage }) => {
   const bgImages = useMedia(
     ["(max-width: 767px)", "(max-width: 991px)", "(min-width: 991px)"],
     [mobileImage, tabletImage, desktopImage],
@@ -29,6 +29,9 @@ const TextOne = ({ title, subtitle, text, tabletImage, mobileImage, desktopImage
       <TextOneBgImage>
         <Image {...bgImages} />
       </TextOneBgImage>
+      <div>
+        <Image {...image} />
+      </div>
     </TextOneWrapper>
   );
 };
@@ -37,6 +40,7 @@ TextOne.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   tabletImage: PropTypes.object.isRequired,
   mobileImage: PropTypes.object.isRequired,
   desktopImage: PropTypes.object.isRequired,

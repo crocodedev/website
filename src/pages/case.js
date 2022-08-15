@@ -8,7 +8,6 @@ import fontMontserrat from "@/styles/fontMontserrat";
 
 import Header from "@/sections/Header";
 import Case from "@/sections/Case";
-import Challenge from "@/sections/Challenge";
 import TextThree from "@/sections/TextThree";
 import TechnologyStack from "@/sections/TechnologyStack";
 import Reviews from "@/sections/Reviews";
@@ -26,7 +25,7 @@ const CasePage = () => (
     <Global styles={[reboot, fontMontserrat]} />
     <Header />
     <Case />
-    <Challenge />
+    {/* Challenge */}
     <TextThree />
     <TechnologyStack />
     <TextThree />
