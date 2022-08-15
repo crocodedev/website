@@ -4,12 +4,11 @@ const HeroMainImage = styled.div`
   position: absolute;
   z-index: -1;
   top: 0;
+  left: 0;
   overflow: hidden;
-  display: flex;
   width: 100%;
-  justify-content: center;
 
-  & picture img {
+  & div img {
     width: 100%;
     object-fit: cover;
 
