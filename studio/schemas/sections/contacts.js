@@ -43,6 +43,11 @@ export default {
       type: "text",
     },
     {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+    },
+    {
       title: "Pop up text",
       name: "popUpText",
       type: "string",
