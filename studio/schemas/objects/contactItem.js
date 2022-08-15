@@ -19,5 +19,10 @@ export default {
       name: "contactIcon",
       type: "imageWithAlt",
     },
+    {
+      title: "Link",
+      name: "itemLink",
+      type: "link",
+    },
   ],
 };

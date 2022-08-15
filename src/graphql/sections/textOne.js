@@ -8,6 +8,9 @@ module.exports.textOne = `
       title
       subtitle
       text
+      image{
+        ${image}
+      }
       tabletImage {
         ${image}
       }
