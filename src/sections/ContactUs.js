@@ -29,7 +29,6 @@ import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
 import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
 
 import "react-phone-input-2/lib/style.css";
-import Title from "@/components/Title";
 
 const ContactUs = ({
   title,
