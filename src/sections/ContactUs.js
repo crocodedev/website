@@ -248,7 +248,9 @@ const ContactUs = ({
                         value={accept}
                         checked={check}
                         onChange={() => setCheck(!check)}
+                        id="inputCheck"
                       />
+                      <span />
                       {agreementText.text}{" "}
                       <ContactsUsLink baseUrl={baseUrl} {...agreementText.link}>
                         {agreementText.title || agreementText.link.title}

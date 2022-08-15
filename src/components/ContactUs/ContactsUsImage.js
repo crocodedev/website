@@ -7,7 +7,7 @@ const ContactsUsImage = styled.div`
   max-width: 100%;
   align-items: flex-end;
 
-  picture img {
+  & div img {
     height: 100%;
     object-fit: cover;
 

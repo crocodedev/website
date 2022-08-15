@@ -6,6 +6,7 @@ const ContactsUsFormBottom = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   padding-bottom: 20px;
+  position: relative;
 
   button {
     white-space: nowrap;
