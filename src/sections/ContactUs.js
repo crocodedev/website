@@ -37,6 +37,7 @@ const ContactUs = ({
   namePlaceholder,
   messagePlaceholder,
   messageText,
+  messageIcon,
   phoneText,
   emailText,
   emailPlaceholder,
@@ -227,7 +228,7 @@ const ContactUs = ({
                             />
                           )}
                         </Field>
-                        <Image altText="file icon" image="/uploads/contact-us-file-icon.svg" />
+                        <Image {...messageIcon} />
                       </Text>
                     </ContactsUsInputFile>
                     {fileUpload ? (
@@ -308,6 +309,7 @@ ContactUs.propTypes = {
   namePlaceholder: PropTypes.string.isRequired,
   messagePlaceholder: PropTypes.string.isRequired,
   messageText: PropTypes.string.isRequired,
+  messageIcon: PropTypes.object.isRequired,
   phoneText: PropTypes.string.isRequired,
   emailText: PropTypes.string.isRequired,
   emailPlaceholder: PropTypes.string.isRequired,

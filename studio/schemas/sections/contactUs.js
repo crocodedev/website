@@ -85,6 +85,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Message icon",
+      name: "messageIcon",
+      type: "imageWithAlt",
+    },
+    {
       title: "Background image",
       name: "backgroundImage",
       type: "imageWithAlt",
