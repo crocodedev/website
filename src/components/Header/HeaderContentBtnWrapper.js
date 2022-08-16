@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const HeaderContentBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-self: center;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     margin-top: 46px;

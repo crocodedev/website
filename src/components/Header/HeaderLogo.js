@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const HeaderLogo = styled.div`
-  ${({ theme }) => theme.breakpoints.down("md")} {
+  ${({ theme }) => theme.breakpoints.down("xl")} {
     padding-top: 9px;
     padding-bottom: 9px;
   }
@@ -10,15 +10,12 @@ const HeaderLogo = styled.div`
     align-self: center;
   }
 
-  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-  }
-
   ${({ theme }) => theme.breakpoints.up("xl")} {
     padding-top: 14px;
     padding-bottom: 14px;
   }
 
-  & picture img {
+  & img {
     ${({ theme }) => theme.breakpoints.down("md")} {
       width: 101px;
       height: 26px;
