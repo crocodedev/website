@@ -14,17 +14,20 @@ import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
 import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
 import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
 import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
-import HeaderMenuIconWrapper from "@/components/Header/HeaderMenuIconWrapper";
+import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
+import Link from "@/components/Link";
+import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 
 const pageData = {
-  logo: "/uploads/header-logo-desktop.svg",
+  logo: "/uploads/header-logo.svg",
   shopifyIcon: {
-    icon: "/uploads/header-shopify-icon.svg",
+    icon: "/uploads/shopify-icon.svg",
     name: "Shopify dev",
     link: "",
   },
+
   items: [
     {
       name: "Home",
@@ -57,6 +60,7 @@ const pageData = {
 
 const Header = ({ data = pageData }) => {
   const theme = useTheme();
+  const [active, setActive] = React.useState("");
 
   const { logo, shopifyIcon, items, btnText, langFlag } = data;
 
@@ -64,18 +68,20 @@ const Header = ({ data = pageData }) => {
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
+          <img src={logo} alt="logo" />
           <Image loading="lazy" src={logo} />
         </HeaderLogo>
-        <HeaderContentItemShopify to={shopifyIcon.link}>
-          <Image src={shopifyIcon.icon} />
-          <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-            {shopifyIcon.name}
-          </Text>
-        </HeaderContentItemShopify>
-        <HeaderContent>
+        <HeaderContent variant={active}>
+          <HeaderContentItemShopify to={shopifyIcon.link}>
+            <img src={shopifyIcon.icon} alt="shopify" />
+            <Image src={shopifyIcon.icon} />
+            <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
+              {shopifyIcon.name}
+            </Text>
+          </HeaderContentItemShopify>
           {items.map(({ name, link }) => (
-            <HeaderContentItem to={link} key={name}>
-              <Text>{name}</Text>
+            <HeaderContentItem key={name}>
+              <Link to={link}>{name}</Link>
             </HeaderContentItem>
           ))}
           <HeaderContentBtnWrapper>
@@ -97,9 +103,11 @@ const Header = ({ data = pageData }) => {
             </HeaderLang>
           </HeaderLangWrapper>
         </HeaderContent>
-        <HeaderMenuIconWrapper>
-          <HeaderMenuIcon />
-        </HeaderMenuIconWrapper>
+        <HeaderMenuWrapper>
+          <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
+            <HeaderMenuIcon variant={active} />
+          </HeaderMenuButton>
+        </HeaderMenuWrapper>
       </HeaderContainer>
     </HeaderWrapper>
   );

@@ -9,7 +9,7 @@ const HeroImage = styled.div`
   width: 100%;
   justify-content: center;
 
-  & picture img {
+  & div img {
     width: 100%;
     object-fit: cover;
 

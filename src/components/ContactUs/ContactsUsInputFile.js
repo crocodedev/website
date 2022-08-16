@@ -30,17 +30,17 @@ const ContactsUsInputFile = styled.div`
     cursor: pointer;
     padding: 11px 27px 11px 15px;
 
-    &:after {
-      width: 19px;
-      height: 19px;
-      content: "";
-      background-image: url(/uploads/contacts-us-file-icon.svg);
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      cursor: pointer;
-      background-repeat: no-repeat;
-    }
+    // &:after {
+    //   width: 19px;
+    //   height: 19px;
+    //   content: "";
+    //   background-image: url(/uploads/contacts-us-file-icon.svg);
+    //   position: absolute;
+    //   top: 14px;
+    //   right: 18px;
+    //   cursor: pointer;
+    //   background-repeat: no-repeat;
+    // }
   }
 `;
 

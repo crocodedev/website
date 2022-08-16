@@ -17,7 +17,7 @@ const TextOne = ({ title, subtitle, text, image, tabletImage, mobileImage, deskt
   );
 
   return (
-    <TextOneWrapper as="div">
+    <TextOneWrapper>
       <TextOneContainer>
         <SectionHeading title={title} text={subtitle} />
         <TextOneContent>

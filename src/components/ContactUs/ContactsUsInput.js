@@ -18,34 +18,50 @@ const dynamicStyle = ({ theme, variant }) => css`
       position: relative;
       margin-right: 21px;
 
-      &:before {
-        cursor: pointer;
+      & ~ span {
+        position: absolute;
         content: "";
         display: block;
+        cursor: pointer;
         width: 24px;
         height: 24px;
         background-color: ${theme.palette.primary.contrastText};
         border: 1px solid ${theme.palette.primary.main};
         border-radius: 3px;
-        position: absolute;
         transition: background 0.1s linear, border 0.1s linear;
-        top: -7px;
+        top: 0px;
         left: 0px;
       }
 
       &:checked {
-          &:before {
-            background-color: ${theme.palette.primary.main};
-            background-image: url(/uploads/custom-checkbox.svg);
-            background-repeat:  no-repeat;
-            background-size: 21px 23px;
-
-            svg path {
-              fill: ${theme.palette.primary.contrastText};
-            }
-          }
+        & ~ span {
+        background-color: ${theme.palette.primary.main}
         }
-      }
+
+        & ~ span:before,
+        & ~ span:after {
+          content: "";
+          position: absolute;
+          background-color: ${theme.palette.primary.contrastText};
+          border-radius: 10px;
+        }
+
+        & ~ span:before {
+          width: 16px;
+          height: 3px;
+          transform: rotate(-45deg);
+          transform: rotate(-54deg);
+          top: 9px;
+          left: 6px;
+        }
+
+        & ~ span:after {
+          width: 10px;
+          height: 3px;
+          transform: rotate(50deg);
+          top: 12px;
+          left: 2px;
+        }
   `
     : ""}
 

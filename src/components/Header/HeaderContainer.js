@@ -20,7 +20,7 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.down("xl")} {
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
 
     & input:checked {

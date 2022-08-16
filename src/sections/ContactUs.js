@@ -227,6 +227,7 @@ const ContactUs = ({
                             />
                           )}
                         </Field>
+                        <Image altText="file icon" image="/uploads/contact-us-file-icon.svg" />
                       </Text>
                     </ContactsUsInputFile>
                     {fileUpload ? (
@@ -248,7 +249,9 @@ const ContactUs = ({
                         value={accept}
                         checked={check}
                         onChange={() => setCheck(!check)}
+                        id="inputCheck"
                       />
+                      <span />
                       {agreementText.text}{" "}
                       <ContactsUsLink baseUrl={baseUrl} {...agreementText.link}>
                         {agreementText.title || agreementText.link.title}
