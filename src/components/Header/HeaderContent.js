@@ -21,8 +21,6 @@ const dynamicStyle = ({ variant, theme }) => css`
 `;
 
 const HeaderContent = styled.div`
-  display: flex;
-  align-items: center;
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
   height: 100%;
 

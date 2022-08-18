@@ -9,6 +9,15 @@ const HeroMainImage = styled.div`
   justify-content: center;
   display: flex;
 
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    bottom: 0;
+  }
+
   & div {
     width: 100%;
     max-width: 1920px;
