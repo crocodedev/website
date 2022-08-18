@@ -13,7 +13,7 @@ const TextOneWrapper = styled.section`
     z-index: 2;
   }
 
-  ${({ theme }) => theme.breakpoints.between("sm", "md")} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
     &:after {
       height: 15%;
     }
