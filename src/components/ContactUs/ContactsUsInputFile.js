@@ -41,6 +41,17 @@ const ContactsUsInputFile = styled.div`
     //   cursor: pointer;
     //   background-repeat: no-repeat;
     // }
+    position: relative;
+
+    & div img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 24px;
+      height: 24px;
+    }
   }
 `;
 

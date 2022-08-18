@@ -5,6 +5,7 @@ import HeroMainWrapper from "@/components/HeroMain/HeroMainWrapper";
 import Image from "@/components/Image";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroMainContent from "@/components/HeroMain/HeroMainContent";
+import HeroMainLogo from "@/components/HeroMain/HeroMainLogo";
 import HeroMainList from "@/components/HeroMain/HeroMainList";
 import HeroMainListItem from "@/components/HeroMain/HeroMainListItem";
 import Text from "@/components/Text";
@@ -16,7 +17,9 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl }) => {
       <SectionWrapper as="div">
         <Container>
           <HeroMainContent>
-            <Image {...logoImage} />
+            <HeroMainLogo>
+              <Image {...logoImage} />
+            </HeroMainLogo>
             <HeroMainList>
               {items.map(({ text, _key }) => (
                 <HeroMainListItem key={_key}>
