@@ -1,8 +1,29 @@
 import styled from "@emotion/styled";
-import SectionWrapper from "../SectionWrapper";
 
-const TextOneWrapper = styled(SectionWrapper)`
+const TextOneWrapper = styled.section`
   position: relative;
+  background-color: ${({ theme }) => theme.palette.background.paper};
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    bottom: 0;
+    z-index: 2;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    &:after {
+      height: 15%;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    &:after {
+      height: 20%;
+    }
+  }
 `;
 
 export default TextOneWrapper;
