@@ -11,13 +11,7 @@ import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
 import TextOneBgImagePerson from "@/components/TextOne/TextOneBgImagePerson";
 import SectionWrapper from "@/components/SectionWrapper";
 
-const TextOne = ({ title, subtitle, text, image, tabletImage, mobileImage, desktopImage }) => {
-  // const bgImages = useMedia(
-  //   ["(max-width: 767px)", "(max-width: 991px)", "(min-width: 991px)"],
-  //   [mobileImage, tabletImage, desktopImage],
-  //   mobileImage,
-  // );
-
+const TextOne = ({ title, subtitle, text, image, desktopImage }) => {
   return (
     <TextOneWrapper>
       <SectionWrapper>
