@@ -53,20 +53,7 @@ export default {
     {
       title: "Link with icon",
       name: "linkWithIcon",
-      type: "object",
-
-      fields: [
-        {
-          title: "Image",
-          name: "image",
-          type: "imageWithAlt",
-        },
-        {
-          title: "Link",
-          name: "link",
-          type: "link",
-        },
-      ],
+      type: "iconLink",
     },
   ],
 };

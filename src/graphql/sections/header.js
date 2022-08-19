@@ -24,11 +24,6 @@ module.exports.header = `
         _key
         ${link}
       }
-      
-      langFlag {
-        _key
-        ${image}
-      }
     
       headerButton {
         ${link}

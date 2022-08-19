@@ -20,32 +20,30 @@ import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopi
 import Link from "@/components/Link";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 
-const Header = ({}) => {
+const Header = () => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
 
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <HeaderLogo>
-          <Image loading="lazy" src={logo} />
-        </HeaderLogo>
+        <HeaderLogo>{/* <Image loading="lazy" src={logo} /> */}</HeaderLogo>
         <HeaderContent variant={active}>
-          <HeaderContentItemShopify to={shopifyIcon.link}>
+          {/* <HeaderContentItemShopify to={shopifyIcon.link}>
             <Image src={shopifyIcon.icon} />
             <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
               {shopifyIcon.name}
             </Text>
-          </HeaderContentItemShopify>
-          {items?.map(({ name, link }) => (
+          </HeaderContentItemShopify> */}
+          {/* {items?.map(({ name, link }) => (
             <HeaderContentItem key={name}>
               <Link to={link}>{name}</Link>
             </HeaderContentItem>
-          ))}
+          ))} */}
           <HeaderContentBtnWrapper>
-            <Button variant="contained">{btnText}</Button>
+            {/* <Button variant="contained">{btnText}</Button> */}
           </HeaderContentBtnWrapper>
-          <HeaderLangWrapper>
+          {/* <HeaderLangWrapper>
             <HeaderLang>
               <Image loading="lazy" src={langFlag} />
               <HeaderLangMenu>
@@ -59,7 +57,7 @@ const Header = ({}) => {
                 </HeaderLangMenuItem>
               </HeaderLangMenu>
             </HeaderLang>
-          </HeaderLangWrapper>
+          </HeaderLangWrapper> */}
         </HeaderContent>
         <HeaderMenuWrapper>
           <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
