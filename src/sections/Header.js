@@ -20,60 +20,18 @@ import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopi
 import Link from "@/components/Link";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 
-const pageData = {
-  logo: "/uploads/header-logo.svg",
-  shopifyIcon: {
-    icon: "/uploads/shopify-icon.svg",
-    name: "Shopify dev",
-    link: "",
-  },
-
-  items: [
-    {
-      name: "Home",
-      link: "",
-    },
-    {
-      name: "Services",
-      link: "",
-    },
-    {
-      name: "Portfolio",
-      link: "",
-    },
-    {
-      name: "Technologies",
-      link: "",
-    },
-    {
-      name: "About us",
-      link: "",
-    },
-    {
-      name: "Blog",
-      link: "",
-    },
-  ],
-  btnText: "Contact us",
-  langFlag: "/uploads/header-flag-usa.svg",
-};
-
-const Header = ({ data = pageData }) => {
+const Header = ({}) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
-
-  const { logo, shopifyIcon, items, btnText, langFlag } = data;
 
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
-          <img src={logo} alt="logo" />
           <Image loading="lazy" src={logo} />
         </HeaderLogo>
         <HeaderContent variant={active}>
           <HeaderContentItemShopify to={shopifyIcon.link}>
-            <img src={shopifyIcon.icon} alt="shopify" />
             <Image src={shopifyIcon.icon} />
             <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
               {shopifyIcon.name}
@@ -113,19 +71,6 @@ const Header = ({ data = pageData }) => {
   );
 };
 
-Header.propTypes = {
-  data: PropTypes.exact({
-    logo: PropTypes.string,
-    shopifyIcon: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        name: PropTypes.string,
-        link: PropTypes.string,
-      }),
-    ),
-    btnText: PropTypes.string,
-    langFlag: PropTypes.string,
-  }).isRequired,
-};
+Header.propTypes = {};
 
 export default Header;

@@ -48,6 +48,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
             ))}
           </FooterTopStack>
         </FooterTop>
+
         <FooterBottom>
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <FooterBottomStack>
