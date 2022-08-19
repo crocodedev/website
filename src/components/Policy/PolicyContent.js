@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
-const PrivacyPolicyContent = styled.div`
+const PolicyContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export default PrivacyPolicyContent;
+export default PolicyContent;

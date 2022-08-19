@@ -3,9 +3,9 @@ import { useTheme } from "@emotion/react";
 
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
-import PolicyItem from "@/components/PolicyItem";
-import PrivacyPolicyContent from "@/components/PrivacyPolicy/PrivacyPolicyContent";
+import PolicyItem from "@/components/Policy/PolicyItem";
 import Container from "@/components/Container";
+import PolicyContent from "@/components/Policy/PolicyContent";
 
 const pageData = {
   title: "Privacy Policy",
@@ -127,7 +127,7 @@ const PrivacyPolicy = ({ data = pageData }) => {
     <SectionWrapper color={theme.palette.background.paper}>
       <Container>
         <SectionHeading title={title} />
-        <PrivacyPolicyContent>
+        <PolicyContent>
           <PolicyItem textWithLink={textWithLink} />
           <PolicyItem {...usOffice} />
           <PolicyItem {...consent} />
@@ -141,7 +141,7 @@ const PrivacyPolicy = ({ data = pageData }) => {
           <PolicyItem {...list4} />
           <PolicyItem {...text1} />
           <PolicyItem {...list5} />
-        </PrivacyPolicyContent>
+        </PolicyContent>
       </Container>
     </SectionWrapper>
   );

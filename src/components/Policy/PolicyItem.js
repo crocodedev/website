@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
 import React from "react";
-import Text from "./Text";
-import Link from "./Link";
+import Text from "../Text";
+import Link from "../Link";
 
 const StyledPolicyItem = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ const PolicyItem = ({ title, list, text, texts, link, textWithLink }) => {
         ""
       )}
       {textWithLink ? (
-        <Text>
+        <Text lineHeight="sm" fontSize="link">
           {textWithLink.textBeforeLink}
           <Link to={textWithLink.link}>{textWithLink.link}</Link>
           {textWithLink.textAfterLink}
