@@ -13,7 +13,7 @@ const ListSeven = ({ title, items, baseUrl }) => (
     <Container>
       <SectionHeading title={title} />
       <ListSevenStack>
-        {items.map(({ _key, title: itemTitle, text: itemText, link }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText, link }) => (
           <ListSevenStackItem key={_key}>
             <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6669}>
               {itemTitle}

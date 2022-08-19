@@ -116,7 +116,7 @@ const Article = ({ data = dataPage }) => {
             <ArticleBottom>
               <Text mobileMultiplier={0.875}>{bottomText}</Text>
               <ArticleBottomList>
-                {social.map(({ src, link }) => (
+                {social?.map(({ src, link }) => (
                   <ArticleBottomListItem key={link}>
                     <Link to={link}>
                       <ImageStatic src={src} />

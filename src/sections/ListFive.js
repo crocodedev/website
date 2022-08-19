@@ -15,7 +15,7 @@ const ListFive = ({ title, text, items }) => (
     <Container>
       <SectionHeading title={title} text={text} />
       <ListFiveStack>
-        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
           <ListFiveItem key={_key}>
             <ListFiveItemImage>
               <Image {...imageWithAltText} />

@@ -81,20 +81,19 @@ const BlogList = ({ data = dataPage }) => {
     <SectionWrapper>
       <Container>
         <BlogListNavigationStack>
-          {data.categories.map(({ title, link }) => (
+          {data?.categories?.map(({ title, link }) => (
             <Button active={title === "Latest"} variant="outlined" to={link} key={title}>
               {title}
             </Button>
           ))}
         </BlogListNavigationStack>
         <BlogListStack>
-          {data.articles.map(({ id, image, heading, date, desc, linkText }) => (
+          {data?.articles?.map(({ id, image, heading, date, desc, linkText }) => (
             <BlogListItem key={id}>
               <BlogListItemImage>
                 <ImageStatic src={image} />
               </BlogListItemImage>
               <BlogListItemContent>
-                {/* letter-spacing */}
                 <BlogListItemContentTop>
                   <Text
                     mobileMultiplier={0.6}
@@ -120,7 +119,6 @@ const BlogList = ({ data = dataPage }) => {
                 >
                   {desc}
                 </BlogListItemDesc>
-                {/*  Цвет кнопки text */}
                 <BlogListItemButton>
                   <Button variant="text">{linkText}</Button>
                 </BlogListItemButton>

@@ -12,7 +12,7 @@ const ListSix = ({ title, items }) => (
     <Container>
       <SectionHeading title={title} />
       <ListSixStack>
-        {items.map(({ _key, title: itemTitle, text: itemText }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText }) => (
           <ListSixStackItem key={_key}>
             <Text fontSize="title3" fontWeight="bold" mobileMultiplier={0.6}>
               {itemTitle}

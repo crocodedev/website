@@ -17,7 +17,7 @@ const ListTwo = ({ title, text, items, baseUrl }) => (
       <SectionHeading title={title} text={text} />
 
       <ListTwoStack>
-        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText, imageWithAltText, link }) => (
           <ListTwoItem key={_key}>
             <ListTwoItemHeading>
               <ListTwoItemHeadingImage>

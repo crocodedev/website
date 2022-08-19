@@ -5,10 +5,6 @@ const DevelopmentContainer = styled(Container)`
   ${({ theme }) => theme.breakpoints.down("lg")} {
     gap: 40px;
   }
-
-  // ${({ theme }) => theme.breakpoints.up("lg")} {
-  //   gap: 60px;
-  // }
 `;
 
 export default DevelopmentContainer;

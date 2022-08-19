@@ -34,25 +34,6 @@ const HeaderContentItem = styled(Link)`
       padding: 20px;
     }
   }
-
-  // &:nth-child(2) {
-  //   ${({ theme }) => theme.breakpoints.down("xl")} {
-  //     order: 1;
-  //     gap: 10px;
-  //   }
-
-  //   ${({ theme }) => theme.breakpoints.up("2xl")} {
-  //     gap: 5px;
-  //   }
-
-  //   ${({ theme }) => theme.breakpoints.up("2xl")} {
-  //     margin-right: 44px;
-  //   }
-  //   &:hover {
-  //     border-bottom: none;
-  //     padding: 0px;
-  //   }
-  // }
 `;
 
 export default HeaderContentItem;

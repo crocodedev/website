@@ -16,7 +16,7 @@ const Benefits = ({ title, subtitle, itemsLeft, itemsRight }) => (
     <Container>
       <BenefitsWrapper>
         <BenefitsList>
-          {itemsLeft.map(({ title: itemTitle, text, _key }) => (
+          {itemsLeft?.map(({ title: itemTitle, text, _key }) => (
             <BenefitsListItem key={_key} align="left">
               <BenefitsListItemTitle
                 fontSize="title3"
@@ -50,7 +50,7 @@ const Benefits = ({ title, subtitle, itemsLeft, itemsRight }) => (
         </BenefitsDescription>
 
         <BenefitsList>
-          {itemsRight.map(({ title: itemTitle, text, _key }) => (
+          {itemsRight?.map(({ title: itemTitle, text, _key }) => (
             <BenefitsListItem key={_key} align="right">
               <BenefitsListItemTitle
                 fontSize="title3"

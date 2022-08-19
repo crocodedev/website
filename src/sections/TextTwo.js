@@ -27,7 +27,7 @@ const TextTwo = ({ title, text, image, items }) => {
             </Text>
             <TextTwoInfoValues>
               {items &&
-                items.map(({ _key, title: itemTitle, text: itemText }) => (
+                items?.map(({ _key, title: itemTitle, text: itemText }) => (
                   <TextTwoInfoItem key={_key}>
                     <Text
                       fontSize="title0"

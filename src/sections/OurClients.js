@@ -18,7 +18,7 @@ const OurClients = ({ title, subtitle, sliders, baseUrl }) => (
     </Container>
 
     <OurClientsContent>
-      {sliders.map(({ _key, clientsList }) => (
+      {sliders?.map(({ _key, clientsList }) => (
         <Swiper
           slidesPerView="auto"
           centeredSlides={true}
@@ -31,7 +31,7 @@ const OurClients = ({ title, subtitle, sliders, baseUrl }) => (
           }}
           key={_key}
         >
-          {clientsList.map(({ _key: itemId, clientPhoto, link }) => (
+          {clientsList?.map(({ _key: itemId, clientPhoto, link }) => (
             <SwiperSlide key={itemId}>
               <OurClientsImageWrapper as={link ? Link : "div"} {...link} baseUrl={baseUrl}>
                 <Image {...clientPhoto} />

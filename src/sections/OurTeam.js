@@ -15,7 +15,7 @@ const OurTeam = ({ title, link, baseUrl, items }) => (
     <Container>
       <SectionHeading title={title} />
       <OurTeamStack>
-        {items.map(({ title: itemTitle, subtitle, teamMemberPhoto, _key }) => (
+        {items?.map(({ title: itemTitle, subtitle, teamMemberPhoto, _key }) => (
           <OurTeamItem key={_key}>
             <OurTeamImage>
               <Image {...teamMemberPhoto} />

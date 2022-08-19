@@ -21,7 +21,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl }) => {
               <Image {...logoImage} />
             </HeroMainLogo>
             <HeroMainList>
-              {items.map(({ text, _key }) => (
+              {items?.map(({ text, _key }) => (
                 <HeroMainListItem key={_key}>
                   <Text fontSize="title3" fontWeight="semiBold" mobileMultiplier={0.666}>
                     {text}

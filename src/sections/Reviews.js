@@ -42,7 +42,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                 prevEl: ".reviews__prev-el",
               }}
             >
-              {items.map(
+              {items?.map(
                 ({
                   _key,
                   title: itemTitle,
