@@ -16,7 +16,7 @@ const Development = ({ subtitle, title, items, baseUrl }) => {
       <DevelopmentContainer>
         <SectionHeading title={title} text={subtitle} />
         <DevelopmentStack>
-          {items.map(({ _key, title: itemTitle, text, link, image }) => (
+          {items?.map(({ _key, title: itemTitle, text, link, image }) => (
             <DevelopmentItem key={_key}>
               <DevelopmentItemImage>
                 <Image {...image} />

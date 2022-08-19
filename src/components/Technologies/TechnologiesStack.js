@@ -31,7 +31,6 @@ const TechnologiesStack = styled.div`
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     width: calc(100% + 20px);
-    // margin-right: -20px;
     overflow-x: auto;
 
     &::-webkit-scrollbar {

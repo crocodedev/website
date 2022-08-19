@@ -5,7 +5,6 @@ import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import ListThreeStack from "@/components/ListThree/ListThreeStack";
 import ListThreeStackItem from "@/components/ListThree/ListThreeStackItem";
-import ListThreeStackItemImage from "@/components/ListThree/ListThreeStackItemImage";
 import ImageStatic from "@/components/Image";
 
 const ListThree = ({ title, text, items }) => (
@@ -15,11 +14,11 @@ const ListThree = ({ title, text, items }) => (
     </Container>
     <Container disablePaddings={true}>
       <ListThreeStack>
-        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
           <ListThreeStackItem key={_key} title={itemTitle}>
-            <ListThreeStackItemImage>
+            <div>
               <ImageStatic {...imageWithAltText} />
-            </ListThreeStackItemImage>
+            </div>
             <Text fontSize="subtitle" textAlign="center" mobileMultiplier={0.7}>
               {itemText}
             </Text>

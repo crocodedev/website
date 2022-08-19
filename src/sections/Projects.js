@@ -208,11 +208,11 @@ const Projects = ({ data = dataPage }) => {
     <SectionWrapper>
       <Container>
         <ProjectsNavStack>
-          {data.categories.map(({ title, items }) => (
+          {data?.categories?.map(({ title, items }) => (
             <ProjectsNavRow key={title}>
               <Text fontSize="captionText">{title}</Text>
               <ProjectsNavRowWrapper>
-                {items.map(({ title: itemTitle, link }) => (
+                {items?.map(({ title: itemTitle, link }) => (
                   <Button
                     active={itemTitle === "Latest"}
                     variant="outlined"
@@ -226,13 +226,11 @@ const Projects = ({ data = dataPage }) => {
             </ProjectsNavRow>
           ))}
         </ProjectsNavStack>
-        {/* gap: 40px */}
         <ProjectsStack>
-          {data.articles.map(({ id, ...props }) => (
+          {data?.articles?.map(({ id, ...props }) => (
             <Card key={id} {...props} />
           ))}
         </ProjectsStack>
-        {/* gap: 100px */}
         <Pagination
           pageCount={data.pages.length}
           currentPage={currPage}

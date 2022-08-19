@@ -37,7 +37,7 @@ const Header = ({}) => {
               {shopifyIcon.name}
             </Text>
           </HeaderContentItemShopify>
-          {items.map(({ name, link }) => (
+          {items?.map(({ name, link }) => (
             <HeaderContentItem key={name}>
               <Link to={link}>{name}</Link>
             </HeaderContentItem>

@@ -6,12 +6,19 @@ const ContactsUsTextarea = styled.textarea`
   resize: none;
   padding: 16px 0px 15px 15px;
   max-height: 150px;
-  // border-radius: ${({ theme }) => theme.borderRadius.small};
   border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
   border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: pre;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+
+  &::placeholder {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
 
   &::-webkit-scrollbar {
     width: 0px;

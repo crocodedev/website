@@ -6,7 +6,6 @@ const theme = {
       lg: 992,
       xl: 1280,
       "2xl": 1692,
-      "3xl": 1920,
     },
 
     up(key) {

@@ -49,7 +49,7 @@ const Contacts = ({
         <MapStack>
           <MapStackInfo>
             {contactItems &&
-              contactItems.map(({ title: infoTitle, contactIcon, _key, itemLink }) => (
+              contactItems?.map(({ title: infoTitle, contactIcon, _key, itemLink }) => (
                 <MapStackInfoItem key={_key}>
                   <Image objectFit="scale-down" {...contactIcon} />
                   <MapStackLink {...itemLink} baseUrl={baseUrl}>

@@ -3,11 +3,9 @@ import { useTheme } from "@emotion/react";
 import Container from "@/components/Container";
 import FooterWrapper from "@/components/Footer/FooterWrapper";
 import FooterTopStack from "@/components/Footer/FooterTopStack";
-import FooterBottomStack from "@/components/Footer/FooterBottomStack";
 import FooterTop from "@/components/Footer/FooterTop";
 import FooterBottom from "@/components/Footer/FooterBottom";
 import FooterTopColumn from "@/components/Footer/FooterTopColumn";
-import FooterLogo from "@/components/Footer/FooterLogo";
 import FooterSocials from "@/components/Footer/FooterSocials";
 import FooterCompanyInfo from "@/components/Footer/FooterCompanyInfo";
 import FooterSocialLink from "@/components/Footer/FooterSocialLink";
@@ -22,11 +20,11 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
       <Container>
         <FooterTop>
           <FooterCompanyInfo>
-            <FooterLogo>
+            <div>
               <Image {...logoImage} />
-            </FooterLogo>
+            </div>
             <FooterSocials>
-              {socialIcons.map(({ iconImage, _key }) => (
+              {socialIcons?.map(({ iconImage, _key }) => (
                 <FooterSocialLink key={_key} baseUrl={baseUrl}>
                   <Image {...iconImage} />
                 </FooterSocialLink>
@@ -34,12 +32,12 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
             </FooterSocials>
           </FooterCompanyInfo>
           <FooterTopStack>
-            {column.map(({ title, _key, items }) => (
+            {column?.map(({ title, _key, items }) => (
               <FooterTopColumn key={_key}>
                 <FooterLink isHeading baseUrl={baseUrl}>
                   {title}
                 </FooterLink>
-                {items.map(({ _key: id, link }) => (
+                {items?.map(({ _key: id, link }) => (
                   <FooterLink key={id} link={link} baseUrl={baseUrl}>
                     {link.title}
                   </FooterLink>
@@ -51,13 +49,13 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
 
         <FooterBottom>
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
-          <FooterBottomStack>
-            {bottomLinks.map((link) => (
+          <div>
+            {bottomLinks?.map((link) => (
               <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
                 {link.title}
               </FooterLink>
             ))}
-          </FooterBottomStack>
+          </div>
         </FooterBottom>
       </Container>
     </FooterWrapper>
