@@ -12,12 +12,12 @@ const FAQ = ({ subtitle, title, items }) => (
       <SectionHeading title={title} subtitle={subtitle} />
       <FAQStack>
         <FAQColumn>
-          {items.slice(0, items.length / 2).map(({ title: itemTitle, text, _key }) => (
+          {items.slice(0, items.length / 2)?.map(({ title: itemTitle, text, _key }) => (
             <FAQItem key={_key} title={itemTitle} text={text} />
           ))}
         </FAQColumn>
         <FAQColumn>
-          {items.slice(items.length / 2).map(({ title: itemTitle, text, _key }) => (
+          {items.slice(items.length / 2)?.map(({ title: itemTitle, text, _key }) => (
             <FAQItem key={_key} title={itemTitle} text={text} />
           ))}
         </FAQColumn>

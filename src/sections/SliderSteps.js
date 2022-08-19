@@ -45,7 +45,7 @@ const SliderSteps = ({ subtitle, title, itemsSteps }) => {
                 prevEl: ".sliderSteps__prev-el",
               }}
             >
-              {itemsSteps.map(({ _key, title: itemTitle, text }) => (
+              {itemsSteps?.map(({ _key, title: itemTitle, text }) => (
                 <SwiperSlide key={_key}>
                   <SliderStepsItem>
                     <SliderStepsItemInfo>
@@ -94,7 +94,7 @@ const SliderSteps = ({ subtitle, title, itemsSteps }) => {
               modules={[Pagination, Controller, EffectCreative]}
               pagination={{ el: ".sliderSteps-pagination" }}
             >
-              {itemsSteps.map(({ _key, image }) => (
+              {itemsSteps?.map(({ _key, image }) => (
                 <SwiperSlide key={_key}>
                   <SliderStepsItemImage>
                     <Image {...image} />

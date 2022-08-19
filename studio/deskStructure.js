@@ -7,7 +7,6 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "heroMain",
   "heroProject",
   "list",
-  "page",
   "benefits",
   "contacts",
   "ctaImage",

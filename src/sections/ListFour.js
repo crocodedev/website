@@ -13,7 +13,7 @@ const ListFour = ({ title, text, items }) => (
     <Container>
       <SectionHeading title={title} text={text} />
       <ListFourStack>
-        {items.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
+        {items?.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
           <ListFourItem key={_key}>
             <ListFourImage>
               <Image {...imageWithAltText} />

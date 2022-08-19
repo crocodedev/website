@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import PropTypes from "prop-types";
 import * as yup from "yup";
 import { Formik } from "formik";
@@ -59,11 +58,7 @@ const ContactUsModal = ({ data = dataPage }) => {
               email: "",
             }}
             validateOnBlur
-            onSubmit={({ name, email }, { resetForm }) => {
-              console.log(
-                `\n name: ${name};
-              \n email: ${email}`,
-              );
+            onSubmit={({ resetForm }) => {
               resetForm({
                 name: "",
                 email: "",
@@ -145,6 +140,7 @@ const ContactUsModal = ({ data = dataPage }) => {
 ContactUsModal.propTypes = {
   data: PropTypes.exact({
     title: PropTypes.string,
+    desc: PropTypes.string,
   }).isRequired,
 };
 

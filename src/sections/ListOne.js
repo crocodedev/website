@@ -15,7 +15,7 @@ const ListOne = ({ title, items, baseUrl }) => (
     <Container>
       <SectionHeading title={title} />
       <ListOneStack>
-        {items.map(({ _key, title: itemTitle, text, imageWithAltText, link }) => (
+        {items?.map(({ _key, title: itemTitle, text, imageWithAltText, link }) => (
           <ListOneStackItem key={_key}>
             <ListOneStackItemTitle>
               <Image {...imageWithAltText} />
