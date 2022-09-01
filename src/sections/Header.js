@@ -17,47 +17,76 @@ import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
 import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
-import Link from "@/components/Link";
+import Link from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 
-const Header = () => {
+const Header = ({
+  locales,
+  logoImage,
+  linkWithIcon,
+  headerLinks,
+  headerButton,
+  baseUrl,
+  currentLocale,
+  defaultLocale,
+}) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
-
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <HeaderLogo>{/* <Image loading="lazy" src={logo} /> */}</HeaderLogo>
+        <HeaderLogo>
+          <Image loading="lazy" {...logoImage} />
+        </HeaderLogo>
         <HeaderContent variant={active}>
-          {/* <HeaderContentItemShopify to={shopifyIcon.link}>
-            <Image src={shopifyIcon.icon} />
-            <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-              {shopifyIcon.name}
-            </Text>
-          </HeaderContentItemShopify> */}
-          {/* {items?.map(({ name, link }) => (
-            <HeaderContentItem key={name}>
-              <Link to={link}>{name}</Link>
+          {linkWithIcon && (
+            <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
+              <Image {...linkWithIcon.icon} />
+              <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
+                {linkWithIcon.link.title}
+              </Text>
+            </HeaderContentItemShopify>
+          )}
+          {headerLinks?.map((link) => (
+            <HeaderContentItem baseUrl={baseUrl} {...link} key={link._key}>
+              {link?.title}
             </HeaderContentItem>
-          ))} */}
-          <HeaderContentBtnWrapper>
-            {/* <Button variant="contained">{btnText}</Button> */}
-          </HeaderContentBtnWrapper>
-          {/* <HeaderLangWrapper>
-            <HeaderLang>
-              <Image loading="lazy" src={langFlag} />
-              <HeaderLangMenu>
-                <HeaderLangMenuItem>
-                  <Image loading="lazy" src={langFlag} />
-                  <Text>usa</Text>
-                </HeaderLangMenuItem>
-                <HeaderLangMenuItem>
-                  <Image loading="lazy" src={langFlag} />
-                  <Text>usa</Text>
-                </HeaderLangMenuItem>
-              </HeaderLangMenu>
-            </HeaderLang>
-          </HeaderLangWrapper> */}
+          ))}
+          {headerButton && (
+            <HeaderContentBtnWrapper>
+              <Button variant="contained" link={headerButton} baseUrl={baseUrl}>
+                {headerButton.title}
+              </Button>
+            </HeaderContentBtnWrapper>
+          )}
+          {locales && (
+            <HeaderLangWrapper>
+              <HeaderLang>
+                <Image
+                  loading="lazy"
+                  {...locales?.find((locale) => locale.index === currentLocale).icon}
+                />
+                <HeaderLangMenu>
+                  {locales?.map(({ icon, _key, title, index }) => {
+                    return index !== currentLocale ? (
+                      <HeaderLangMenuItem
+                        as={Link}
+                        to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
+                          .replace(`/${currentLocale}`, "")
+                          .split("/")
+                          .filter((el) => el)
+                          .join("/")}`}
+                        key={_key}
+                      >
+                        <Image loading="lazy" {...icon} />
+                        <Text>{title}</Text>
+                      </HeaderLangMenuItem>
+                    ) : null;
+                  })}
+                </HeaderLangMenu>
+              </HeaderLang>
+            </HeaderLangWrapper>
+          )}
         </HeaderContent>
         <HeaderMenuWrapper>
           <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
@@ -69,6 +98,25 @@ const Header = () => {
   );
 };
 
-Header.propTypes = {};
+Header.propTypes = {
+  locales: PropTypes.array.isRequired,
+  logoImage: PropTypes.object.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  headerButton: PropTypes.object.isRequired,
+  currentLocale: PropTypes.object.isRequired,
+  defaultLocale: PropTypes.object.isRequired,
+  linkWithIcon: PropTypes.exact({
+    icon: PropTypes.object,
+    link: PropTypes.exact({
+      title: PropTypes.string,
+    }),
+  }).isRequired,
+  headerLinks: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      link: PropTypes.object,
+    }),
+  ).isRequired,
+};
 
 export default Header;

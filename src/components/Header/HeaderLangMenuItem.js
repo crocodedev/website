@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import Button from "../Button";
+import { Link } from "gatsby";
 
-const HeaderLangMenuItem = styled(Button)`
+const HeaderLangMenuItem = styled(Link)`
   display: flex;
   gap: 10px;
   align-items: center;
