@@ -10,7 +10,9 @@ import fontMontserrat from "@/styles/fontMontserrat";
 
 import "destyle.css/destyle.css";
 
-const Template = ({ pageContext: { baseUrl, seo, sections } }) => {
+const Template = ({
+  pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
@@ -19,6 +21,18 @@ const Template = ({ pageContext: { baseUrl, seo, sections } }) => {
       {sections.map(({ id, component, ...props }) => {
         const Component = Sections[component];
         if (!Component) return null;
+        if (component === "Header") {
+          return (
+            <Component
+              key={id}
+              baseUrl={baseUrl}
+              locales={locales}
+              currentLocale={currentLocale}
+              defaultLocale={defaultLocale}
+              {...props}
+            />
+          );
+        }
         return <Component key={id} baseUrl={baseUrl} {...props} />;
       })}
     </ThemeProvider>
@@ -30,7 +44,10 @@ Template.propTypes = {
     baseUrl: PropTypes.string,
     seo: PropTypes.object,
     cookieConsent: PropTypes.object,
+    locales: PropTypes.array,
     recaptchaKey: PropTypes.string,
+    currentLocale: PropTypes.object,
+    defaultLocale: PropTypes.string,
     sections: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
