@@ -40,6 +40,26 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const { data, errors } = await graphql(`
   {
+      allSanityArticlesItem {
+    nodes {
+      sectionTitle
+      position
+      title
+      component
+      categoryReference {
+        _id
+      }
+    }
+  }
+  allSanityBlogCategory {
+    nodes {
+      sectionTitle
+      position
+      component
+      numberOfPosts
+      title
+    }
+  }
     allSanityPage {
     nodes {
         title
