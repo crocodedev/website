@@ -53,13 +53,7 @@ export default {
     {
       title: "Link with icon",
       name: "linkWithIcon",
-      type: "array",
-
-      of: [
-        {
-          type: "iconLink",
-        },
-      ],
+      type: "iconLink",
     },
   ],
 };

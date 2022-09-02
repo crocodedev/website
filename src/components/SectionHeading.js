@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styled from "@emotion/styled";
 import Title from "./Title";
 import Text from "./Text";
@@ -22,8 +24,6 @@ const SectionHeadingText = styled(Text)`
   }
 `;
 
-// TODO: prop-types
-// eslint-disable-next-line react/prop-types
 const SectionHeading = ({ title, text }) => (
   <Component>
     {title && <Title>{title}</Title>}
@@ -39,5 +39,15 @@ const SectionHeading = ({ title, text }) => (
     )}
   </Component>
 );
+
+SectionHeading.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+};
+
+SectionHeading.defaultProps = {
+  title: "",
+  text: "",
+};
 
 export default SectionHeading;

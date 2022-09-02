@@ -7,7 +7,6 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "heroMain",
   "heroProject",
   "list",
-  "page",
   "benefits",
   "contacts",
   "ctaImage",
@@ -34,17 +33,18 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
 
 export default () => {
   // prettier-ignore
-  return (
-    S.list()
-      .title('Content')
-      .items([
-        pages,
-        S.divider(),
-        sections,
-        S.divider(),
-        S.divider(),
-        // Automatically add new document types to the root pane
-        ...S.documentTypeListItems().filter(listItem => !DOCUMENT_TYPES_IN_STRUCTURE.includes(listItem.getId()))
-      ])
-  )
+  return S.list()
+    .title("Content")
+    .items([
+      pages,
+      S.divider(),
+      sections,
+      S.divider(),
+      S.documentListItem().id("global-config").schemaType("settings").title("Settings"),
+      S.divider(),
+      // Automatically add new document types to the root pane
+      ...S.documentTypeListItems().filter(
+        (listItem) => !DOCUMENT_TYPES_IN_STRUCTURE.includes(listItem.getId()),
+      ),
+    ]);
 };

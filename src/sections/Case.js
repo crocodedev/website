@@ -122,7 +122,7 @@ const Case = ({ data = pageData }) => {
             speed={1500}
             initialSlide={1}
           >
-            {items.map(({ id, image }) => (
+            {items?.map(({ id, image }) => (
               <SwiperSlide key={id}>
                 <CaseImage>
                   <ImageStatic src={image} />
@@ -141,9 +141,9 @@ const Case = ({ data = pageData }) => {
             speed={1500}
             initialSlide={1}
           >
-            {items.map(({ id, info }) => (
+            {items?.map(({ id, info }) => (
               <SwiperSlide key={id}>
-                {info.map(({ heading, desc }) => (
+                {info?.map(({ heading, desc }) => (
                   <CaseBottomItem key={heading}>
                     <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
                       {heading}

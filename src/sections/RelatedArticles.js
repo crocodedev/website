@@ -60,7 +60,7 @@ const RelatedArticles = ({ data = dataPage }) => {
       <Container>
         <SectionHeading title={data.title} />
         <RelatedArticlesStack>
-          {data.articles.map(({ src, heading, date, text }) => (
+          {data?.articles?.map(({ src, heading, date, text }) => (
             <RelatedArticlesItem key={text}>
               <RelatedArticlesImageWrapper>
                 <ImageStatic loading="lazy" src={src} />

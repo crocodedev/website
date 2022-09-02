@@ -11,6 +11,9 @@ module.exports.contactUs = `
     component
     namePlaceholder
     messagePlaceholder
+    messageIcon {
+      ${image}
+    }
     messageText
     phoneText
     emailText
@@ -32,5 +35,5 @@ module.exports.contactUs = `
       }
     }
 }
-    
+
 `;

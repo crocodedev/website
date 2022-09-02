@@ -5,36 +5,47 @@ const HeroMainImage = styled.div`
   z-index: -1;
   top: 0;
   overflow: hidden;
-  display: flex;
   width: 100%;
   justify-content: center;
+  display: flex;
 
-  & picture img {
+  &:after {
+    content: "";
+    position: absolute;
     width: 100%;
-    object-fit: cover;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    bottom: 0;
+  }
 
-    ${({ theme }) => theme.breakpoints.down("sm")} {
-      height: 480px;
-    }
+  & div {
+    width: 100%;
+    max-width: 1920px;
 
-    ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-      height: 500px;
-    }
+    & img {
+      ${({ theme }) => theme.breakpoints.down("sm")} {
+        height: 435px;
+      }
 
-    ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-      height: 650px;
-    }
+      ${({ theme }) => theme.breakpoints.between("sm", "md")} {
+        height: 445px;
+      }
 
-    ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-      height: 840px;
-    }
+      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+        height: 575px;
+      }
 
-    ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-      height: 1120px;
-    }
+      ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+        height: 740px;
+      }
 
-    ${({ theme }) => theme.breakpoints.up("2xl")} {
-      height: 1270px;
+      ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
+        height: 990px;
+      }
+
+      ${({ theme }) => theme.breakpoints.up("2xl")} {
+        height: 1130px;
+      }
     }
   }
 `;

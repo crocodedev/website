@@ -1,18 +1,29 @@
 import styled from "@emotion/styled";
-import HeaderContentItem from "./HeaderContentItem";
+import Link from "../Link";
 
-const HeaderContentItemShopify = styled(HeaderContentItem)`
+const HeaderContentItemShopify = styled(Link)`
+  display: flex;
+  align-items: center;
+  align-self: center;
+  height: 100%;
+  white-space: nowrap;
+
   ${({ theme }) => theme.breakpoints.down("md")} {
-    display: none;
+    padding: 16px;
+    order: 1;
+    gap: 10px;
+    align-self: flex-start;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     order: 1;
     gap: 10px;
+    padding: 20px;
+    align-self: flex-start;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    margin-right: 44px;
+    margin-right: 64px;
     gap: 5px;
   }
 

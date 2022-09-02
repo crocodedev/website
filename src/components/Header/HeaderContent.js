@@ -1,7 +1,28 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+
+const dynamicStyle = ({ variant, theme }) => css`
+  ${variant === "active"
+    ? `
+    ${theme.breakpoints.down("xl")} {
+      display: flex;
+      padding-top: 78px;
+    }
+    & ~ div {
+      width: 300px;
+      height: 100%;
+
+      & button {
+        justify-content: flex-end;
+      }
+    }
+  `
+    : `display: none`}
+`;
 
 const HeaderContent = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
+  height: 100%;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     top: 0;
@@ -11,26 +32,27 @@ const HeaderContent = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     top: 12px;
-    right: 70px;
+    right: 74px;
     min-width: 300px;
   }
 
   ${({ theme }) => theme.breakpoints.down("xl")} {
     position: absolute;
     z-index: 2;
-    display: none;
     flex-direction: column;
     height: max-content;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     display: flex;
-    gap: 35px;
+    gap: 40px;
   }
 
   & button {
     align-self: center;
   }
+
+  ${dynamicStyle}
 `;
 
 export default HeaderContent;

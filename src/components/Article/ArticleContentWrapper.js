@@ -5,7 +5,6 @@ const ArticleContentWrapper = styled.div`
   width: 100%;
   align-items: center;
   flex-direction: column;
-  // padding-top: 15px;
   gap: 60px;
   padding-bottom: 80px;
 `;

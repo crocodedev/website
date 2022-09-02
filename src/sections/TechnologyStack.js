@@ -11,7 +11,7 @@ const TechnologyStack = ({ title, items }) => {
       <Container>
         <SectionHeading title={title} />
         <TechnologyStackContent>
-          {items.map(({ _key, title: itemTitle, itemimage }) => (
+          {items?.map(({ _key, title: itemTitle, itemimage }) => (
             <TechnologyCard key={_key} image={itemimage} title={itemTitle} />
           ))}
         </TechnologyStackContent>

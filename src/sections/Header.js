@@ -14,110 +14,109 @@ import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
 import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
 import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
 import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
-import HeaderMenuIconWrapper from "@/components/Header/HeaderMenuIconWrapper";
+import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
+import Link from "gatsby";
+import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 
-const pageData = {
-  logo: "/uploads/header-logo-desktop.svg",
-  shopifyIcon: {
-    icon: "/uploads/header-shopify-icon.svg",
-    name: "Shopify dev",
-    link: "",
-  },
-  items: [
-    {
-      name: "Home",
-      link: "",
-    },
-    {
-      name: "Services",
-      link: "",
-    },
-    {
-      name: "Portfolio",
-      link: "",
-    },
-    {
-      name: "Technologies",
-      link: "",
-    },
-    {
-      name: "About us",
-      link: "",
-    },
-    {
-      name: "Blog",
-      link: "",
-    },
-  ],
-  btnText: "Contact us",
-  langFlag: "/uploads/header-flag-usa.svg",
-};
-
-const Header = ({ data = pageData }) => {
+const Header = ({
+  locales,
+  logoImage,
+  linkWithIcon,
+  headerLinks,
+  headerButton,
+  baseUrl,
+  currentLocale,
+  defaultLocale,
+}) => {
   const theme = useTheme();
-
-  const { logo, shopifyIcon, items, btnText, langFlag } = data;
-
+  const [active, setActive] = React.useState("");
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo>
-          <Image loading="lazy" src={logo} />
+          <Image loading="lazy" {...logoImage} />
         </HeaderLogo>
-        <HeaderContentItemShopify to={shopifyIcon.link}>
-          <Image src={shopifyIcon.icon} />
-          <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-            {shopifyIcon.name}
-          </Text>
-        </HeaderContentItemShopify>
-        <HeaderContent>
-          {items.map(({ name, link }) => (
-            <HeaderContentItem to={link} key={name}>
-              <Text>{name}</Text>
+        <HeaderContent variant={active}>
+          {linkWithIcon && (
+            <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
+              <Image {...linkWithIcon.icon} />
+              <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
+                {linkWithIcon.link.title}
+              </Text>
+            </HeaderContentItemShopify>
+          )}
+          {headerLinks?.map((link) => (
+            <HeaderContentItem baseUrl={baseUrl} {...link} key={link._key}>
+              {link?.title}
             </HeaderContentItem>
           ))}
-          <HeaderContentBtnWrapper>
-            <Button variant="contained">{btnText}</Button>
-          </HeaderContentBtnWrapper>
-          <HeaderLangWrapper>
-            <HeaderLang>
-              <Image loading="lazy" src={langFlag} />
-              <HeaderLangMenu>
-                <HeaderLangMenuItem>
-                  <Image loading="lazy" src={langFlag} />
-                  <Text>usa</Text>
-                </HeaderLangMenuItem>
-                <HeaderLangMenuItem>
-                  <Image loading="lazy" src={langFlag} />
-                  <Text>usa</Text>
-                </HeaderLangMenuItem>
-              </HeaderLangMenu>
-            </HeaderLang>
-          </HeaderLangWrapper>
+          {headerButton && (
+            <HeaderContentBtnWrapper>
+              <Button variant="contained" link={headerButton} baseUrl={baseUrl}>
+                {headerButton.title}
+              </Button>
+            </HeaderContentBtnWrapper>
+          )}
+          {locales && (
+            <HeaderLangWrapper>
+              <HeaderLang>
+                <Image
+                  loading="lazy"
+                  {...locales?.find((locale) => locale.index === currentLocale).icon}
+                />
+                <HeaderLangMenu>
+                  {locales?.map(({ icon, _key, title, index }) => {
+                    return index !== currentLocale ? (
+                      <HeaderLangMenuItem
+                        as={Link}
+                        to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
+                          .replace(`/${currentLocale}`, "")
+                          .split("/")
+                          .filter((el) => el)
+                          .join("/")}`}
+                        key={_key}
+                      >
+                        <Image loading="lazy" {...icon} />
+                        <Text>{title}</Text>
+                      </HeaderLangMenuItem>
+                    ) : null;
+                  })}
+                </HeaderLangMenu>
+              </HeaderLang>
+            </HeaderLangWrapper>
+          )}
         </HeaderContent>
-        <HeaderMenuIconWrapper>
-          <HeaderMenuIcon />
-        </HeaderMenuIconWrapper>
+        <HeaderMenuWrapper>
+          <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
+            <HeaderMenuIcon variant={active} />
+          </HeaderMenuButton>
+        </HeaderMenuWrapper>
       </HeaderContainer>
     </HeaderWrapper>
   );
 };
 
 Header.propTypes = {
-  data: PropTypes.exact({
-    logo: PropTypes.string,
-    shopifyIcon: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.exact({
-        name: PropTypes.string,
-        link: PropTypes.string,
-      }),
-    ),
-    btnText: PropTypes.string,
-    langFlag: PropTypes.string,
+  locales: PropTypes.array.isRequired,
+  logoImage: PropTypes.object.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  headerButton: PropTypes.object.isRequired,
+  currentLocale: PropTypes.object.isRequired,
+  defaultLocale: PropTypes.object.isRequired,
+  linkWithIcon: PropTypes.exact({
+    icon: PropTypes.object,
+    link: PropTypes.exact({
+      title: PropTypes.string,
+    }),
   }).isRequired,
+  headerLinks: PropTypes.arrayOf(
+    PropTypes.exact({
+      _key: PropTypes.string,
+      link: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 export default Header;

@@ -20,19 +20,19 @@ const Technologies = ({ title, subtitle, categories }) => {
         <SectionHeading title={title} text={subtitle} />
         <TechnologiesWrapper>
           <TechnologiesStack>
-            {categories.map(({ title: categoryTitle, _key }) => (
+            {categories?.map(({ title: categoryTitle, _key }) => (
               <TechnologiesStackItem
-                active={_key === currSlide}
+                active={categoryTitle === currSlide}
                 key={_key}
                 text={categoryTitle}
-                handler={() => handlerSetCurrSlide(_key)}
+                handler={() => handlerSetCurrSlide(categoryTitle)}
               />
             ))}
           </TechnologiesStack>
-          {categories.map(({ text, _key, technologiesList }) => (
+          {categories?.map(({ text, _key, technologiesList }) => (
             <TechnologiesSlide key={_key} active={_key === currSlide}>
               <TechnologiesSlideStack>
-                {technologiesList.map(({ title: itemTitle, _key: itemKey, technologyImage }) => (
+                {technologiesList?.map(({ title: itemTitle, _key: itemKey, technologyImage }) => (
                   <TechnologyCard key={itemKey} title={itemTitle} image={technologyImage} />
                 ))}
               </TechnologiesSlideStack>

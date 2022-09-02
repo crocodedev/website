@@ -2,31 +2,46 @@ import styled from "@emotion/styled";
 
 const TechnologyCardItem = styled.div`
   display: flex;
-  align-items: c center;
+  align-items: center;
   flex-direction: column;
   white-space: nowrap;
   gap: 10px;
-  picture {
+
+  & div {
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+    background-color: ${({ theme }) => theme.palette.secondary.main};
+
     ${({ theme }) => theme.breakpoints.up("xl")} {
-      max-width: 110px;
-      max-height: 110px;
+      min-width: 110px;
+      min-height: 110px;
     }
 
     ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-      max-width: 90px;
-      max-height: 90px;
+      min-width: 90px;
+      min-height: 90px;
     }
 
     ${({ theme }) => theme.breakpoints.down("md")} {
-      max-width: 86px;
-      max-height: 86px;
+      min-width: 86px;
+      min-height: 86px;
     }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: ${({ theme }) => theme.borderRadius.small};
+
+      ${({ theme }) => theme.breakpoints.up("xl")} {
+        padding: 25px;
+      }
+
+      ${({ theme }) => theme.breakpoints.between("md", "xl")} {
+        padding: 22px;
+      }
+
+      ${({ theme }) => theme.breakpoints.down("md")} {
+        padding: 20px;
+      }
     }
   }
 `;

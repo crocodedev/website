@@ -28,18 +28,12 @@ const ContactsUsInputFile = styled.div`
 
   & label {
     cursor: pointer;
-    padding: 11px 27px 11px 15px;
+    padding: 11px 15px 11px 15px;
+    position: relative;
 
-    &:after {
-      width: 19px;
-      height: 19px;
-      content: "";
-      background-image: url(/uploads/contacts-us-file-icon.svg);
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      cursor: pointer;
-      background-repeat: no-repeat;
+    & div {
+      width: 24px;
+      height: 24px;
     }
   }
 `;

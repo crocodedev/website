@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-/* eslint-disable react/prop-types */
+
 import Image from "@/components/Image";
 import SectionHeading from "@/components/SectionHeading";
 import Text from "@/components/Text";
@@ -7,31 +7,28 @@ import TextOneBgImage from "@/components/TextOne/TextOneBgImage";
 import TextOneContainer from "@/components/TextOne/TextOneContainer";
 import TextOneContent from "@/components/TextOne/TextOneContent";
 import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
-import useMedia from "@/hooks/use-media";
+import TextOneBgImagePerson from "@/components/TextOne/TextOneBgImagePerson";
+import SectionWrapper from "@/components/SectionWrapper";
 
-const TextOne = ({ title, subtitle, text, image, tabletImage, mobileImage, desktopImage }) => {
-  const bgImages = useMedia(
-    ["(max-width: 767px)", "(max-width: 991px)", "(min-width: 991px)"],
-    [mobileImage, tabletImage, desktopImage],
-    mobileImage,
-  );
-
+const TextOne = ({ title, subtitle, text, image, desktopImage }) => {
   return (
-    <TextOneWrapper as="div">
-      <TextOneContainer>
-        <SectionHeading title={title} text={subtitle} />
-        <TextOneContent>
-          <Text mobileMultiplier={0.7} fontSize="subtitle" lineHeight="md">
-            {text}
-          </Text>
-        </TextOneContent>
-      </TextOneContainer>
+    <TextOneWrapper>
+      <SectionWrapper>
+        <TextOneContainer>
+          <SectionHeading title={title} text={subtitle} />
+          <TextOneContent>
+            <Text mobileMultiplier={0.7} fontSize="subtitle" lineHeight="md">
+              {text}
+            </Text>
+          </TextOneContent>
+        </TextOneContainer>
+      </SectionWrapper>
+      <TextOneBgImagePerson>
+        <Image {...desktopImage} />
+      </TextOneBgImagePerson>
       <TextOneBgImage>
-        <Image {...bgImages} />
-      </TextOneBgImage>
-      <div>
         <Image {...image} />
-      </div>
+      </TextOneBgImage>
     </TextOneWrapper>
   );
 };

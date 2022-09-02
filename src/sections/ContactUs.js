@@ -37,6 +37,7 @@ const ContactUs = ({
   namePlaceholder,
   messagePlaceholder,
   messageText,
+  messageIcon,
   phoneText,
   emailText,
   emailPlaceholder,
@@ -227,6 +228,7 @@ const ContactUs = ({
                             />
                           )}
                         </Field>
+                        <Image {...messageIcon} />
                       </Text>
                     </ContactsUsInputFile>
                     {fileUpload ? (
@@ -248,7 +250,9 @@ const ContactUs = ({
                         value={accept}
                         checked={check}
                         onChange={() => setCheck(!check)}
+                        id="inputCheck"
                       />
+                      <span />
                       {agreementText.text}{" "}
                       <ContactsUsLink baseUrl={baseUrl} {...agreementText.link}>
                         {agreementText.title || agreementText.link.title}
@@ -305,6 +309,7 @@ ContactUs.propTypes = {
   namePlaceholder: PropTypes.string.isRequired,
   messagePlaceholder: PropTypes.string.isRequired,
   messageText: PropTypes.string.isRequired,
+  messageIcon: PropTypes.object.isRequired,
   phoneText: PropTypes.string.isRequired,
   emailText: PropTypes.string.isRequired,
   emailPlaceholder: PropTypes.string.isRequired,
