@@ -3,7 +3,7 @@ import { MasterDetailIcon } from "@sanity/icons";
 export default {
   preview: {
     select: {
-      title: "articlesItemTitle",
+      title: "title",
     },
   },
 
@@ -63,6 +63,12 @@ export default {
       },
     },
     {
+      title: "Category reference",
+      name: "categoryReference",
+      type: "reference",
+      to: [{ type: "blogCategory" }],
+    },
+    {
       title: "Position",
       name: "position",
       type: "string",
@@ -101,14 +107,18 @@ export default {
     {
       title: "Sections",
       name: "sections",
-      type: "reference",
-      to: [{ type: "footer" }, { type: "header" }],
+      type: "blogContent",
     },
     {
       title: "Content",
       name: "content",
       type: "array",
       of: [{ type: "block" }, { type: "imageWithAlt" }],
+    },
+    {
+      title: "Cover image",
+      name: "image",
+      type: "imageWithAlt",
     },
     {
       name: "seo",

@@ -72,6 +72,8 @@ import imageWithAlt from "./blocks/imageWithAlt";
 import imageArray from "./blocks/imageArray";
 import itemsSteps from "./blocks/itemsSteps";
 import headerLinks from "./blocks/headerLinks";
+import blogContent from "./blocks/blogContent";
+import blogSections from "./blocks/blogSections";
 
 export default createSchema({
   name: "default",
@@ -148,5 +150,7 @@ export default createSchema({
     imageArray,
     itemsSteps,
     headerLinks,
+    blogSections,
+    blogContent,
   ]),
 });
