@@ -6,6 +6,7 @@ const CardContent = styled.div`
   ${({ theme }) => theme.breakpoints.down("xl")} {
     gap: 10px;
   }
+  
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     gap: 20px;
