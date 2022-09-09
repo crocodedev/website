@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import Link from "../Link";
 
-const HeaderContentItemShopify = styled.div`
+const HeaderContentItemShopify = styled(Link)`
   display: flex;
   align-items: center;
   align-self: center;

@@ -4,6 +4,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // documents
 import page from "./documents/page";
 import blogCategory from "./documents/blogCategory";
+import settings from "./documents/settings";
 
 // sections
 import hero from "./sections/hero";
@@ -64,6 +65,7 @@ import ourClientsArray from "./objects/ourClientsArray";
 import ourClientsSlider from "./objects/ourClientsSlider";
 import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
+import locale from "./objects/locale";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -81,6 +83,8 @@ export default createSchema({
     page,
     blogCategory,
     articlesItem,
+    locale,
+    settings,
 
     // sections
     hero,

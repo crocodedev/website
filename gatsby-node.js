@@ -1,5 +1,4 @@
 const path = require("path");
-const { config } = require("process");
 
 const { benefits } = require("./src/graphql/sections/benefits");
 const { caseStudies } = require("./src/graphql/sections/caseStudies");
@@ -27,55 +26,65 @@ const { technologyStack } = require("./src/graphql/sections/technologyStack");
 const { textOne } = require("./src/graphql/sections/textOne");
 const { textTwo } = require("./src/graphql/sections/textTwo");
 const { textThree } = require("./src/graphql/sections/textThree");
-
-const {
-  DEFAULT_LOCALE: defaultLocale = "",
-  SITE_URL: siteUrl = "",
-  SITE_NAME: name = "",
-  GATSBY_RECAPTCHA_KEY: recaptchaKey = "",
-} = process.env;
+const { image } = require("./src/graphql/objects/image");
 
 exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => {
   const template = path.resolve("./src/templates/template.js");
 
   const { data, errors } = await graphql(`
   {
-    allSanityPage {
+  allSanitySettings {
     nodes {
+      siteUrl
+      recaptchaKey
+      name
+      defaultLocale
+      locales {
+        _key
         title
-        slug {
-          current
-        }
-        i18n_lang
-        content {
-            ${benefits}
-            ${caseStudies}
-            ${challenge}
-            ${contacts}
-            ${contactUs}
-            ${ctaForm}
-            ${ctaImage}
-            ${ctaText}
-            ${development}
-            ${faq}
-            ${footer}
-            ${header}
-            ${hero}
-            ${heroMain}
-            ${heroProject}
-            ${list}
-            ${notFound}
-            ${ourClients}
-            ${ourTeam}
-            ${reviews}
-            ${sliderSteps}
-            ${technologies}
-            ${technologyStack}
-            ${textOne}
-            ${textTwo}
-            ${textThree}
+        index
+        icon {
+          ${image}
         }
       }
+    }
+  }
+  allSanityPage {
+  nodes {
+      title
+      slug {
+        current
+      }
+      i18n_lang
+      content {
+          ${benefits}
+          ${caseStudies}
+          ${challenge}
+          ${contacts}
+          ${contactUs}
+          ${ctaForm}
+          ${ctaImage}
+          ${ctaText}
+          ${development}
+          ${faq}
+          ${footer}
+          ${header}
+          ${hero}
+          ${heroMain}
+          ${heroProject}
+          ${list}
+          ${notFound}
+          ${ourClients}
+          ${ourTeam}
+          ${reviews}
+          ${sliderSteps}
+          ${technologies}
+          ${technologyStack}
+          ${textOne}
+          ${textTwo}
+          ${textThree}
+      }
+    }
   }}
   `);
 
@@ -85,18 +94,19 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
 
   const pages = data.allSanityPage.nodes;
+  const { siteUrl, recaptchaKey, name, defaultLocale, locales } = data.allSanitySettings.nodes[0];
+
   if (pages.length > 0) {
     pages.forEach((page) => {
-      const url =
-        defaultLocale === page.i18n_lang
-          ? `/${page.slug.current !== "/" ? page.slug.current : ""}`
-          : `/${page.i18n_lang}/${page.slug.current}`;
-
+      const url = page.slug.current;
       createPage({
         path: url,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales: locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale: defaultLocale,
           recaptchaKey,
           seo: {
             ...(page.seo || {}),
