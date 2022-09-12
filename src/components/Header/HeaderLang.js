@@ -25,7 +25,7 @@ const HeaderLang = styled.div`
     border-top: 2px solid ${({ theme }) => theme.palette.text.primary};
     border-right: 2px solid ${({ theme }) => theme.palette.text.primary};
     border-radius: 2px;
-    margin-top: 6px;
+    margin-top: 2px;
     transition-duration: 0.2s;
   }
 
@@ -35,7 +35,7 @@ const HeaderLang = styled.div`
     }
     &:after {
       transform: rotate(-45deg);
-      margin-top: 9px;
+      margin-top: 5px;
       transition-duration: 0.2s;
     }
   }

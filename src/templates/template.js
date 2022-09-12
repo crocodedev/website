@@ -9,6 +9,7 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import "destyle.css/destyle.css";
+import BackUpButton from "@/components/BackUpButton";
 
 const Template = ({
   pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
@@ -23,6 +24,7 @@ const Template = ({
         if (!Component) return null;
         if (component === "Header") {
           return (
+            <>
             <Component
               key={id}
               baseUrl={baseUrl}
@@ -31,6 +33,8 @@ const Template = ({
               defaultLocale={defaultLocale}
               {...props}
             />
+            <BackUpButton />
+            </>
           );
         }
         return <Component key={id} baseUrl={baseUrl} {...props} />;
