@@ -66,6 +66,7 @@ import ourClientsSlider from "./objects/ourClientsSlider";
 import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
+import contentItem from "./objects/contentItem";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -146,6 +147,7 @@ export default createSchema({
     ourClientsSlider,
     technologyCategory,
     technologiesArray,
+    contentItem,
 
     // blocks
     pageSection,

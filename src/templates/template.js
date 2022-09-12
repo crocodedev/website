@@ -18,6 +18,7 @@ const Template = ({
       <Seo {...seo} />
       <Helmet defer={false} title="HomePage" />
       <Global styles={[reboot, fontMontserrat]} />
+
       {sections.map(({ id, component, ...props }) => {
         const Component = Sections[component];
         if (!Component) return null;

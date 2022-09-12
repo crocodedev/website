@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import Link from "../Link";
+import { Link } from "gatsby";
 
 const dynamicStyles = ({ theme, align, disabled }) => css`
   &::after {

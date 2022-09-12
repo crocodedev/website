@@ -27,6 +27,7 @@ const { textOne } = require("./src/graphql/sections/textOne");
 const { textTwo } = require("./src/graphql/sections/textTwo");
 const { textThree } = require("./src/graphql/sections/textThree");
 const { image } = require("./src/graphql/objects/image");
+const { link } = require("./src/graphql/objects/link");
 
 exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => {
   const template = path.resolve("./src/templates/template.js");
@@ -49,24 +50,84 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       }
     }
   }
-      allSanityArticlesItem {
+  allSanityArticlesItem {
     nodes {
-      sectionTitle
-      position
+      id
+      date
       title
+      i18n_lang
+      position
       component
+      author
+      desc
+      buttonTitle
+      slug {
+        current
+      }
+      breadcrumbs {
+        ${link}
+      }
       categoryReference {
         _id
+      }
+      coverImage {
+        ${image}
+      }
+      sections {
+        ${footer}
+        ${header}
+        ${ctaForm}
+        ${contactUs}
+      }
+      articleSeparator {
+        position
+        sectionTitle
+        title
+        component
+        bgColor
+        buttonText
+        id
+        messagePlaceholder
+      }
+      content {
+        text
+        title
+        component
+        contentImage {
+        ${image}
+        }
       }
     }
   }
   allSanityBlogCategory {
     nodes {
-      sectionTitle
+      _id
+      id
+      title
       position
       component
       numberOfPosts
-      title
+      i18n_lang
+      sections {
+        ${footer}
+        ${header}
+        ${ctaForm}
+        ${contactUs}
+      }
+      slug {
+        current
+      }
+      breadcrumbs {
+        ${link}
+      }
+      articleSeparator {
+        bgColor
+        buttonText
+        component
+        title
+        position
+        messagePlaceholder
+      }
     }
   }
   allSanityPage {
@@ -115,6 +176,95 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const pages = data.allSanityPage.nodes;
   const { siteUrl, recaptchaKey, name, defaultLocale, locales } = data.allSanitySettings.nodes[0];
+
+  const blogPages = data.allSanityBlogCategory.nodes;
+  const articles = data.allSanityArticlesItem.nodes;
+
+  if (articles.length > 0) {
+    articles.forEach((page) => {
+      const url = page.slug.current;
+      createPage({
+        path: url,
+        component: template,
+        context: {
+          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales: locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale: defaultLocale,
+          recaptchaKey,
+          seo: {
+            ...(page.seo || {}),
+            lang: page.i18n_lang,
+            siteUrl,
+            url,
+            name,
+          },
+          /* 
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+          sections: ([...page.sections, { ...page }] || [])
+            .filter(({ id }) => id)
+            .sort((a, b) => +a.position - +b.position),
+        },
+      });
+    });
+  }
+
+  if (blogPages.length > 0) {
+    blogPages.forEach((page) => {
+      const categoryArticles =
+        page.slug.current === "/blog"
+          ? articles
+          : [...articles].filter((el) => page._id === el.categoryReference._id);
+
+      const pageCount = Math.ceil(categoryArticles.length / page.numberOfPosts);
+
+      for (let currentPage = 0; currentPage < pageCount; currentPage += 1) {
+        const url = page.slug.current + (currentPage === 0 ? "" : `/${1 + currentPage}`);
+
+        const postItems = categoryArticles.slice(
+          page.numberOfPosts * currentPage,
+          page.numberOfPosts * (currentPage + 1),
+        );
+
+        createPage({
+          path: url,
+          component: template,
+          context: {
+            baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+            locales: locales,
+            currentLocale: page.i18n_lang,
+            defaultLocale: defaultLocale,
+            recaptchaKey,
+            seo: {
+              ...(page.seo || {}),
+              lang: page.i18n_lang,
+              siteUrl,
+              url,
+              name,
+            },
+            /* 
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+            sections: (
+              [
+                ...page.sections,
+                { ...page, articles: postItems, categories: blogPages, pageCount },
+              ] || []
+            )
+              .filter(({ id }) => id)
+              .sort((a, b) => +a.position - +b.position),
+          },
+        });
+      }
+    });
+  }
 
   if (pages.length > 0) {
     pages.forEach((page) => {

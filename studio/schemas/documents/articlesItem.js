@@ -77,9 +77,9 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "articlesItem",
-      readOnly: true,
+      initialValue: "ArticlesItem",
       hidden: true,
+      readOnly: true,
       validation: (Rule) => Rule.required(),
     },
     {
@@ -113,12 +113,35 @@ export default {
       title: "Content",
       name: "content",
       type: "array",
-      of: [{ type: "block" }, { type: "imageWithAlt" }],
+      of: [{ type: "contentItem" }],
     },
     {
       title: "Cover image",
-      name: "image",
+      name: "coverImage",
       type: "imageWithAlt",
+    },
+    {
+      title: "Date",
+      name: "date",
+      type: "date",
+      options: {
+        dateFormat: "DD-MMM-YYYY",
+      },
+    },
+    {
+      title: "Author name",
+      name: "author",
+      type: "string",
+    },
+    {
+      title: "Button title",
+      name: "buttonTitle",
+      type: "string",
+    },
+    {
+      title: "Description",
+      name: "desc",
+      type: "text",
     },
     {
       name: "seo",

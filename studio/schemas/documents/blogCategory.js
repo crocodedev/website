@@ -92,7 +92,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "blogCategory",
+      initialValue: "BlogList",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),

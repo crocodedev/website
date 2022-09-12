@@ -1,4 +1,4 @@
-import Article from "./Article";
+import ArticlesItem from "./ArticlesItem";
 import Benefits from "./Benefits";
 import BlogList from "./BlogList";
 import Case from "./Case";
@@ -35,7 +35,7 @@ import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
 
 export {
-  Article,
+  ArticlesItem,
   Benefits,
   BlogList,
   Case,
