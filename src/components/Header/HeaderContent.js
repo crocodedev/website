@@ -4,14 +4,19 @@ import styled from "@emotion/styled";
 const dynamicStyle = ({ variant, theme }) => css`
   ${variant === "active"
     ? `
+
+    ${theme.breakpoints.down("sm")} {
+      width: 100%;
+      height: 100vh;
+
+    }
+
     ${theme.breakpoints.down("xl")} {
       display: flex;
       padding-top: 78px;
     }
-    & ~ div {
-      width: 300px;
-      height: 100%;
 
+    & ~ div {
       & button {
         justify-content: flex-end;
       }
@@ -32,7 +37,8 @@ const HeaderContent = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     top: 12px;
-    right: 74px;
+    // right: 74px;
+    right: 0;
     min-width: 300px;
   }
 
