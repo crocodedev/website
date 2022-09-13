@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTheme } from "@emotion/react";
 import PropTypes from "prop-types";
 import HeaderContainer from "@/components/Header/HeaderContainer";
@@ -63,13 +63,33 @@ const Header = ({
           )}
           {locales && (
             <HeaderLangWrapper>
-              <input type="checkbox" id="lang" />
-              <HeaderLang htmlFor="lang">
+              <HeaderLang>
                 <Image
                   loading="lazy"
                   {...locales?.find((locale) => locale.index === currentLocale).icon}
                 />
               </HeaderLang>
+                <HeaderLangMenu>
+                  {locales?.map(({ icon, _key, title, index }) => {
+                    return index !== currentLocale ? (
+                      <HeaderLangMenuItem
+                        as={Link}
+                        to={`${index !== defaultLocale ? `/${index}` : ""}/${
+                          typeof window !== "undefined" &&
+                          window.location.pathname
+                            .replace(`/${currentLocale}`, "")
+                            .split("/")
+                            .filter((el) => el)
+                            .join("/")
+                        }`}
+                        key={_key}
+                      >
+                        <Image loading="lazy" {...icon} />
+                        <Text>{title}</Text>
+                      </HeaderLangMenuItem>
+                    ) : null;
+                  })}
+                </HeaderLangMenu>
               <HeaderLangMenu>
                 {locales?.map(({ icon, _key, title, index }) => {
                   return index !== currentLocale ? (

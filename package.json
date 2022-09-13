@@ -19,6 +19,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@portabletext/react": "^1.0.6",
     "clsx": "^1.2.0",
     "destyle.css": "^3.0.2",
     "eslint-webpack-plugin": "^3.2.0",

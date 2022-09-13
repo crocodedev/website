@@ -9,17 +9,20 @@ const Breadcrumb = ({ links, color, disablePaddingBottom, baseUrl }) => {
   return (
     <BreadcrumbWrapper disablePaddingBottom={disablePaddingBottom}>
       <BreadcrumbList>
-        {links?.map((item) => (
-          <BreadcrumbListItem color={color} key={item._key}>
-            <Link baseUrl={baseUrl} {...item}>
-              {item.title}
-            </Link>
-            <span />
-          </BreadcrumbListItem>
-        ))}
-        <BreadcrumbListItem>
-          <Text>123</Text>
-        </BreadcrumbListItem>
+        {links?.map((item, idx) =>
+          idx + 1 !== links.length ? (
+            <BreadcrumbListItem color={color} key={item._key}>
+              <Link baseUrl={baseUrl} {...item}>
+                {item.title}
+              </Link>
+              <span />
+            </BreadcrumbListItem>
+          ) : (
+            <BreadcrumbListItem key={item._key}>
+              <Text> {item.title}</Text>
+            </BreadcrumbListItem>
+          ),
+        )}
       </BreadcrumbList>
     </BreadcrumbWrapper>
   );

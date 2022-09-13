@@ -35,6 +35,7 @@ const dynamicStyle = ({ theme, bgColor, sectionGap, disablePaddings }) => css`
 `;
 
 const SectionWrapper = styled.section`
+  width: 100%;
   ${dynamicStyle}
 `;
 

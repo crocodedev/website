@@ -24,15 +24,15 @@ const SectionHeadingText = styled(Text)`
   }
 `;
 
-const SectionHeading = ({ title, text }) => (
+const SectionHeading = ({ title, text, isArticle }) => (
   <Component>
     {title && <Title>{title}</Title>}
     {text && (
       <SectionHeadingText
-        fontSize="subtitle"
-        lineHeight="lg"
+        fontSize={isArticle ? "captionText" : "subtitle"}
+        lineHeight={isArticle ? "xsm" : "lg"}
         textAlign="center"
-        mobileMultiplier={0.7}
+        mobileMultiplier={isArticle ? 0.85 : 0.7}
       >
         {text}
       </SectionHeadingText>
@@ -43,11 +43,13 @@ const SectionHeading = ({ title, text }) => (
 SectionHeading.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
+  isArticle: PropTypes.bool,
 };
 
 SectionHeading.defaultProps = {
   title: "",
   text: "",
+  isArticle: false,
 };
 
 export default SectionHeading;

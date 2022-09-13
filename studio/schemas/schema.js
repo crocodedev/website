@@ -66,6 +66,7 @@ import ourClientsSlider from "./objects/ourClientsSlider";
 import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
+import contentItem from "./objects/contentItem";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -74,6 +75,8 @@ import imageWithAlt from "./blocks/imageWithAlt";
 import imageArray from "./blocks/imageArray";
 import itemsSteps from "./blocks/itemsSteps";
 import headerLinks from "./blocks/headerLinks";
+import blogContent from "./blocks/blogContent";
+import blogSections from "./blocks/blogSections";
 
 export default createSchema({
   name: "default",
@@ -144,6 +147,7 @@ export default createSchema({
     ourClientsSlider,
     technologyCategory,
     technologiesArray,
+    contentItem,
 
     // blocks
     pageSection,
@@ -152,5 +156,7 @@ export default createSchema({
     imageArray,
     itemsSteps,
     headerLinks,
+    blogSections,
+    blogContent,
   ]),
 });
