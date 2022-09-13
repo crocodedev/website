@@ -9,8 +9,16 @@ module.exports.link = `
     linkInternal {
       label
       reference {
-        slug {
-          current
+        ... on SanityBlogCategory {
+          slug {
+            current
+          }
+        }
+        
+        ... on SanityPage {
+          slug {
+            current
+          }
         }
       }
     }

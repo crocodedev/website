@@ -71,11 +71,14 @@ const Header = ({
                     return index !== currentLocale ? (
                       <HeaderLangMenuItem
                         as={Link}
-                        to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
-                          .replace(`/${currentLocale}`, "")
-                          .split("/")
-                          .filter((el) => el)
-                          .join("/")}`}
+                        to={`${index !== defaultLocale ? `/${index}` : ""}/${
+                          typeof window !== "undefined" &&
+                          window.location.pathname
+                            .replace(`/${currentLocale}`, "")
+                            .split("/")
+                            .filter((el) => el)
+                            .join("/")
+                        }`}
                         key={_key}
                       >
                         <Image loading="lazy" {...icon} />

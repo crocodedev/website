@@ -62,11 +62,6 @@ export default {
       type: "string",
     },
     {
-      title: "Link",
-      name: "link",
-      type: "link",
-    },
-    {
       title: "Breadcrumbs",
       name: "breadcrumbs",
       type: "array",
@@ -97,7 +92,7 @@ export default {
       title: "Component",
       name: "component",
       type: "string",
-      initialValue: "blogCategory",
+      initialValue: "BlogList",
       readOnly: true,
       hidden: true,
       validation: (Rule) => Rule.required(),
@@ -105,8 +100,7 @@ export default {
     {
       title: "Sections",
       name: "sections",
-      type: "reference",
-      to: [{ type: "footer" }, { type: "header" }, { type: "contactUs" }],
+      type: "blogContent",
     },
     {
       name: "seo",

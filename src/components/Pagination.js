@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import Link from "./Link";
+import { Link } from "gatsby";
 import PaginationWrapper from "./Pagination/PaginationWrapper";
 import PaginationArrowLink from "./Pagination/PaginationArrowLink";
 import PaginationStack from "./Pagination/PaginationStack";
@@ -52,7 +52,7 @@ const StyledPaginationItem = styled(Link)`
   ${dynamicStyle}
 `;
 
-const Pagination = ({ pageCount, currentPage, handler }) => {
+const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
   const [arrOfCurrButtons, setArrOfCurrButtons] = React.useState([]);
   const arrayOfPages = [];
 
@@ -90,28 +90,40 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, pageCount]);
 
+  const isBrowser = typeof window !== "undefined";
+
   return (
     <PaginationWrapper>
       <PaginationArrowLink
+        as={isDynamic ? "button" : Link}
         aria-label="left"
         align="left"
         disabled={+currentPage === 1}
-        onClick={() => handler(currentPage - 1)}
+        onClick={() => (isDynamic ? handler(currentPage - 1) : {})}
+        to={isBrowser && (+currentPage === 2 ? link : `${link}/${currentPage - 1}`)}
       />
       <PaginationStack>
         {arrOfCurrButtons.map((el, idx) => {
           return (
-            <StyledPaginationItem active={currentPage === el} onClick={() => handler(el)} key={idx}>
+            <StyledPaginationItem
+              as={isDynamic ? "button" : Link}
+              active={currentPage === el}
+              onClick={() => (isDynamic ? handler(el) : {})}
+              key={idx}
+              to={isBrowser && el === 1 ? link : `${link}/${el}`}
+            >
               {el}
             </StyledPaginationItem>
           );
         })}
       </PaginationStack>
       <PaginationArrowLink
+        as={isDynamic ? "button" : Link}
         aria-label="right"
         align="right"
         disabled={+currentPage === +pageCount - 1}
-        onClick={() => handler(currentPage + 1)}
+        onClick={() => (isDynamic ? handler(currentPage + 1) : {})}
+        to={isBrowser && `${link}/${currentPage + 1}`}
       />
     </PaginationWrapper>
   );
@@ -120,7 +132,14 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
 Pagination.propTypes = {
   pageCount: PropTypes.string.isRequired,
   currentPage: PropTypes.string.isRequired,
-  handler: PropTypes.func.isRequired,
+  handler: PropTypes.func,
+  isDynamic: PropTypes.bool,
+  link: PropTypes.string.isRequired,
+};
+
+Pagination.defaultProps = {
+  handler: () => {},
+  isDynamic: false,
 };
 
 export default Pagination;
