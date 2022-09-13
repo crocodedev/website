@@ -1,12 +1,10 @@
 import styled from "@emotion/styled";
 
-const HeaderLang = styled.div`
+const HeaderLang = styled.label`
   display: flex;
   gap: 5px;
-  align-self: center;
   position: relative;
   padding: 30px 10px;
-  cursor: pointer;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     padding: 20px 16px;
@@ -14,6 +12,11 @@ const HeaderLang = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     padding: 20px;
+  }
+
+
+  ${({theme}) => theme.breakpoints.down("xl")} {
+    align-self: flex-start;
   }
 
   &:after {
@@ -27,17 +30,6 @@ const HeaderLang = styled.div`
     border-radius: 2px;
     margin-top: 2px;
     transition-duration: 0.2s;
-  }
-
-  &:hover {
-    & div {
-      display: flex;
-    }
-    &:after {
-      transform: rotate(-45deg);
-      margin-top: 5px;
-      transition-duration: 0.2s;
-    }
   }
 `;
 

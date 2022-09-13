@@ -7,14 +7,14 @@ const HeaderLangMenu = styled.div`
   overflow: hidden;
   flex-direction: column;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.palette.primary.contrastText};
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  background-color: ${({theme}) => theme.palette.primary.contrastText};
+  box-shadow: ${({theme}) => theme.shadows.card};
 
-  ${({ theme }) => theme.breakpoints.down("xl")} {
+  ${({theme}) => theme.breakpoints.down("xl")} {
     left: 15px;
   }
 
-  ${({ theme }) => theme.breakpoints.up("xl")} {
+  ${({theme}) => theme.breakpoints.up("xl")} {
     right: 0;
   }
 `;

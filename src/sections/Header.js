@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTheme } from "@emotion/react";
 import PropTypes from "prop-types";
 import HeaderContainer from "@/components/Header/HeaderContainer";
@@ -32,6 +32,7 @@ const Header = ({
 }) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
+  const [openLang, setOpenLang] = React.useState("");
 
   return (
     <HeaderWrapper>
@@ -62,30 +63,31 @@ const Header = ({
           )}
           {locales && (
             <HeaderLangWrapper>
-              <HeaderLang>
+              <input type="checkbox" id="lang" />
+              <HeaderLang htmlFor="lang">
                 <Image
                   loading="lazy"
                   {...locales?.find((locale) => locale.index === currentLocale).icon}
                 />
-                <HeaderLangMenu>
-                  {locales?.map(({ icon, _key, title, index }) => {
-                    return index !== currentLocale ? (
-                      <HeaderLangMenuItem
-                        as={Link}
-                        to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
-                          .replace(`/${currentLocale}`, "")
-                          .split("/")
-                          .filter((el) => el)
-                          .join("/")}`}
-                        key={_key}
-                      >
-                        <Image loading="lazy" {...icon} />
-                        <Text>{title}</Text>
-                      </HeaderLangMenuItem>
-                    ) : null;
-                  })}
-                </HeaderLangMenu>
               </HeaderLang>
+              <HeaderLangMenu>
+                {locales?.map(({ icon, _key, title, index }) => {
+                  return index !== currentLocale ? (
+                    <HeaderLangMenuItem
+                      as={Link}
+                      to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
+                        .replace(`/${currentLocale}`, "")
+                        .split("/")
+                        .filter((el) => el)
+                        .join("/")}`}
+                      key={_key}
+                    >
+                      <Image loading="lazy" {...icon} />
+                      <Text>{title}</Text>
+                    </HeaderLangMenuItem>
+                  ) : null;
+                })}
+              </HeaderLangMenu>
             </HeaderLangWrapper>
           )}
         </HeaderContent>

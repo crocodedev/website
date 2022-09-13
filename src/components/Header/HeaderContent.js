@@ -8,7 +8,6 @@ const dynamicStyle = ({ variant, theme }) => css`
     ${theme.breakpoints.down("sm")} {
       width: 100%;
       height: 100vh;
-
     }
 
     ${theme.breakpoints.down("xl")} {
@@ -37,7 +36,6 @@ const HeaderContent = styled.div`
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     top: 12px;
-    // right: 74px;
     right: 0;
     min-width: 300px;
   }
