@@ -1,18 +1,18 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-const dynamicStyle = ({ color }) => css`
+const dynamicStyle = ({ color, theme }) => css`
   ${color === "gray"
     ? `
     & a {
-      color: #989898;
+      color: ${theme.palette.text.disabled}
     }
 
     span {
-      background-color: #989898;
+      background-color: ${theme.palette.text.disabled};
 
       &::after {
-        border: 1px solid #989898;
+        border: 1px solid ${theme.palette.text.disabled};
         border-bottom: none;
         border-left: none;
       }

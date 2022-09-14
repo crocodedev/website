@@ -9,7 +9,9 @@ const HeaderLangMenuItem = styled(Link)`
   padding: 10px 15px;
 
   &:hover {
-    background-color:
+    p {
+      color: ${({theme}) => theme.palette.primary.main};
+    }
   }
 
   & div {

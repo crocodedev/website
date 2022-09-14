@@ -11,6 +11,7 @@ const dynamicStyle = ({ theme, variant, active }) => css`
         ? `
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
+    border: 1px solid ${theme.palette.primary.main};
     pointer-events: none;
     `
         : `

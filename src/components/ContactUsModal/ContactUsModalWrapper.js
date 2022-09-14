@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
+// theme
+
 const dynamicStyle = ({ variant }) => css`
   ${variant === "none"
     ? ""

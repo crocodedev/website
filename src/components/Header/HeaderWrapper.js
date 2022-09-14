@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
   z-index: 4;
   display: flex;
   box-shadow: ${({ theme }) => theme.shadows.header};
-  background-color: white;
+  background-color: ${({theme}) => theme.palette.primary.contrastText};
   transition: 1s;
 
   ${({ theme }) => theme.breakpoints.down("md")} {

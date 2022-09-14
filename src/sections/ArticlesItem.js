@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { useTheme } from "@emotion/react";
+
 import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -9,10 +11,10 @@ import ArticleWrapper from "@/components/Article/ArticleWrapper";
 import ArticleImage from "@/components/Article/ArticleImage";
 import Image from "@/components/Image";
 import ArticleContentItem from "@/components/Article/ArticleContentItem";
-import ArticleBottom from "@/components/Article/ArticleBottom";
-import ArticleBottomList from "@/components/Article/ArticleBottomList";
-import ArticleBottomListItem from "@/components/Article/ArticleBottomListItem";
-import Link from "@/components/Link";
+// import ArticleBottom from "@/components/Article/ArticleBottom";
+// import ArticleBottomList from "@/components/Article/ArticleBottomList";
+// import ArticleBottomListItem from "@/components/Article/ArticleBottomListItem";
+// import Link from "@/components/Link";
 import BackUpButton from "@/components/BackUpButton";
 import dateToIntlFormat from "@/helpers/IntlDate";
 import CtaForm from "./CtaForm";
@@ -28,6 +30,8 @@ const ArticlesItem = ({
   date,
   i18n_lang: i18nLang,
 }) => {
+  const theme = useTheme()
+
   return (
     <ArticleWrapper disablePaddings>
       <Container>
@@ -62,7 +66,7 @@ const ArticlesItem = ({
                       return (
                         <ArticleImage>
                           <Image {...contentImage} />
-                          <Text mobileMultiplier={0.75} color="#A6A6A6">
+                          <Text mobileMultiplier={0.75} color={theme.palette.text.disabled}>
                             {contentImage.altText}
                           </Text>
                         </ArticleImage>
@@ -91,7 +95,7 @@ const ArticlesItem = ({
                       return (
                         <ArticleImage>
                           <Image {...contentImage} />
-                          <Text mobileMultiplier={0.75} color="#A6A6A6">
+                          <Text mobileMultiplier={0.75} color={theme.palette.text.disabled}>
                             {contentImage.altText}
                           </Text>
                         </ArticleImage>

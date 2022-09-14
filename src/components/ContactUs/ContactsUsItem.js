@@ -39,13 +39,13 @@ const ContactsUsItem = styled.div`
       height: 100%;
       border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
       border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
-      border-color: white;
+      border-color: ${({theme}) => theme.palette.primary.contrastText};
     }
 
     .selected-flag {
       border-bottom-left-radius: ${({ theme }) => theme.borderRadius.small};
       border-top-left-radius: ${({ theme }) => theme.borderRadius.small};
-      background-color: white;
+      background-color: ${({theme}) => theme.palette.primary.contrastText};
 
       .arrow {
         display: none;

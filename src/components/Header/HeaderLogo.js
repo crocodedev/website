@@ -4,6 +4,7 @@ const HeaderLogo = styled.div`
   z-index: 5;
 
   ${({theme}) => theme.breakpoints.down("sm")} {
+    background-color: ${({theme}) => theme.palette.primary.contrastText};
   }
 
   ${({ theme }) => theme.breakpoints.down("xl")} {

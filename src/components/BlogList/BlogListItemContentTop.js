@@ -4,6 +4,10 @@ const BlogListItemContentTop = styled.div`
   display: flex;
   overflow: hidden;
 
+  p {
+    padding-bottom: 3px;
+  }
+
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 10px;
     flex-direction: row-reverse;

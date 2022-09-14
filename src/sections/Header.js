@@ -43,7 +43,7 @@ const Header = ({
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [active])
+  }, [active]);
 
   return (
     <HeaderWrapper variant={`${isScrollingUp ? 'sticky' : ""}`}>
@@ -62,7 +62,7 @@ const Header = ({
             </HeaderContentItemShopify>
           )}
           {headerLinks?.map((link) => (
-            <HeaderContentItem baseUrl={baseUrl} {...link} key={link._key}>
+            <HeaderContentItem active={typeof window !== "undefined" && `${link.linkInternal.reference.slug.current}` === window.location.pathname} baseUrl={baseUrl} {...link} key={link._key}>
               {link?.title}
             </HeaderContentItem>
           ))}
