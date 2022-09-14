@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 const HeaderLogo = styled.div`
+  z-index: 5;
 
   ${({theme}) => theme.breakpoints.down("sm")} {
-    z-index: 3;
   }
 
   ${({ theme }) => theme.breakpoints.down("xl")} {

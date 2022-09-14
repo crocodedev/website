@@ -19,6 +19,8 @@ import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
 import Link from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
+import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
+import useScrollingUp from "@/hooks/use-scrollingUp";
 
 const Header = ({
   locales,
@@ -32,14 +34,24 @@ const Header = ({
 }) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
-  const [openLang, setOpenLang] = React.useState("");
+
+  const isScrollingUp = useScrollingUp();
+
+  React.useEffect(() => {
+    if(active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [active])
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper variant={`${isScrollingUp ? 'sticky' : ""}`}>
       <HeaderContainer>
         <HeaderLogo>
           <Image loading="lazy" {...logoImage} />
         </HeaderLogo>
+        <HeaderContentWrapper variant={active} onClick={() => setActive("")} />
         <HeaderContent variant={active}>
           {linkWithIcon && (
             <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
@@ -90,24 +102,6 @@ const Header = ({
                     ) : null;
                   })}
                 </HeaderLangMenu>
-              <HeaderLangMenu>
-                {locales?.map(({ icon, _key, title, index }) => {
-                  return index !== currentLocale ? (
-                    <HeaderLangMenuItem
-                      as={Link}
-                      to={`${index !== defaultLocale ? `/${index}` : ""}/${location.pathname
-                        .replace(`/${currentLocale}`, "")
-                        .split("/")
-                        .filter((el) => el)
-                        .join("/")}`}
-                      key={_key}
-                    >
-                      <Image loading="lazy" {...icon} />
-                      <Text>{title}</Text>
-                    </HeaderLangMenuItem>
-                  ) : null;
-                })}
-              </HeaderLangMenu>
             </HeaderLangWrapper>
           )}
         </HeaderContent>

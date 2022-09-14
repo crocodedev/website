@@ -15,6 +15,14 @@ const reboot = (theme) => css`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    ${theme.breakpoints.down("md")} {
+      margin-top: 70px;
+    }
+
+    ${theme.breakpoints.up("md")} {
+      margin-top: 90px;
+    }
   }
 
   .content {

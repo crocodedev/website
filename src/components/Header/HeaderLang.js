@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 
-const HeaderLang = styled.label`
+const HeaderLang = styled.div`
   display: flex;
   gap: 5px;
   position: relative;
   padding: 30px 10px;
+  cursor: pointer;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     padding: 20px 16px;

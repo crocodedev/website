@@ -4,7 +4,6 @@ import Link from "../Link";
 const HeaderContentItem = styled(Link)`
   display: flex;
   align-items: center;
-  height: 100%;
   text-decoration: none;
   color: ${({ theme }) => theme.palette.text.primary};
 
@@ -18,6 +17,7 @@ const HeaderContentItem = styled(Link)`
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     align-self: center;
+    height: 100%;
   }
 
   &:hover {
