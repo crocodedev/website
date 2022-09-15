@@ -23,7 +23,13 @@ const HeaderContentItemShopify = styled(Link)`
     width: 100%;
   }
 
-  ${({ theme }) => theme.breakpoints.up("xl")} {
+  ${({theme}) => theme.breakpoints.between("xl", "2xl")} {
+    margin-right: 30px;
+    height: 100%;
+    gap: 5px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("2xl")} {
     margin-right: 64px;
     gap: 5px;
     height: 100%;

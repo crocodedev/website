@@ -31,8 +31,9 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-    //gap: 80px;
-    gap: 60px;
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.up("2xl")} {
