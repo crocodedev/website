@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
@@ -8,7 +9,6 @@ import TechnologiesStackItem from "@/components/Technologies/TechnologiesStackIt
 import TechnologiesSlide from "@/components/Technologies/TechnologiesSlide";
 import TechnologiesSlideStack from "@/components/Technologies/TechnologiesSlideStack";
 import TechnologiesSlideText from "@/components/Technologies/TechnologiesSlideText";
-import React from "react";
 import TechnologyCard from "@/components/TechnologyCard";
 
 const Technologies = ({ title, subtitle, categories }) => {

@@ -34,6 +34,90 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const { data, errors } = await graphql(`
   {
+  allSanityCasesItem {
+    nodes {
+      id
+      i18n_lang
+      sectionTitle
+      title
+      slug {
+        current
+      }
+      technologies
+      country {
+        _id
+      }
+      text
+      marker
+      link {
+        ${link}
+      }
+      casesItemImage {
+        ${image}
+      }
+      content {
+        ${benefits}
+        ${caseStudies}
+        ${challenge}
+        ${contacts}
+        ${contactUs}
+        ${ctaForm}
+        ${ctaImage}
+        ${ctaText}
+        ${development}
+        ${faq}
+        ${footer}
+        ${header}
+        ${hero}
+        ${heroMain}
+        ${heroProject}
+        ${list}
+        ${notFound}
+        ${ourClients}
+        ${ourTeam}
+        ${reviews}
+        ${sliderSteps}
+        ${technologies}
+        ${technologyStack}
+        ${textOne}
+        ${textTwo}
+        ${textThree}
+      }
+    }
+  }
+  allSanityCasesCountry {
+    nodes {
+      id
+      i18n_lang
+      sectionTitle
+      numberOfPosts
+      title
+      component
+      position
+      slug {
+        current
+      }
+      breadcrumbs {
+        ${link}
+      }
+      articleSeparator {
+        position
+        sectionTitle
+        title
+        component
+        bgColor
+        buttonText
+        id
+        messagePlaceholder
+      }
+      sections {
+        ${footer}
+        ${header}
+        ${ctaForm}
+        ${contactUs}
+      }
+    }
+  }
   allSanitySettings {
     nodes {
       siteUrl
@@ -94,7 +178,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         title
         component
         contentImage {
-        ${image}
+          ${image}
         }
       }
     }
@@ -179,6 +263,93 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const blogPages = data.allSanityBlogCategory.nodes;
   const articles = data.allSanityArticlesItem.nodes;
+  const casesCountry = data.allSanityCasesCountry.nodes;
+  const casesItem = data.allSanityCasesItem.nodes;
+
+  if (casesCountry.length > 0) {
+    casesCountry.forEach((page) => {
+      const url = page.slug.current;
+      const casesCountryItem =
+        page.slug.current === "/cases"
+          ? casesItem
+          : [...casesItem].filter((el) => page._id === el.country._id);
+
+      const technologyFilter = [
+        ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies), [])),
+      ];
+
+      createPage({
+        path: url,
+        component: template,
+        context: {
+          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale,
+          recaptchaKey,
+          seo: {
+            ...(page.seo || {}),
+            lang: page.i18n_lang,
+            siteUrl,
+            url,
+            name,
+          },
+          /* 
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+          sections: (
+            [
+              ...page.sections,
+              {
+                ...page,
+                casesItems: casesCountryItem,
+                countryFilter: casesCountry,
+                technologyFilter,
+              },
+            ] || []
+          )
+            .filter(({ id }) => id)
+            .sort((a, b) => +a.position - +b.position),
+        },
+      });
+    });
+  }
+
+  if (casesItem.length > 0) {
+    casesItem.forEach((page) => {
+      const url = page.slug.current;
+      createPage({
+        path: url,
+        component: template,
+        context: {
+          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale,
+          recaptchaKey,
+          seo: {
+            ...(page.seo || {}),
+            lang: page.i18n_lang,
+            siteUrl,
+            url,
+            name,
+          },
+          /* 
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+          sections: ([...page.content, { ...page }] || [])
+            .filter(({ id }) => id)
+            .sort((a, b) => +a.position - +b.position),
+        },
+      });
+    });
+  }
 
   if (articles.length > 0) {
     articles.forEach((page) => {
@@ -188,9 +359,9 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
-          locales: locales,
+          locales,
           currentLocale: page.i18n_lang,
-          defaultLocale: defaultLocale,
+          defaultLocale,
           recaptchaKey,
           seo: {
             ...(page.seo || {}),
@@ -235,9 +406,9 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
           component: template,
           context: {
             baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
-            locales: locales,
+            locales,
             currentLocale: page.i18n_lang,
-            defaultLocale: defaultLocale,
+            defaultLocale,
             recaptchaKey,
             seo: {
               ...(page.seo || {}),
@@ -274,9 +445,9 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
-          locales: locales,
+          locales,
           currentLocale: page.i18n_lang,
-          defaultLocale: defaultLocale,
+          defaultLocale,
           recaptchaKey,
           seo: {
             ...(page.seo || {}),

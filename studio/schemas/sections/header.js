@@ -20,6 +20,7 @@ export default {
       title: "Position",
       name: "position",
       type: "number",
+      readOnly: true,
       validation: (Rule) => Rule.required(),
     },
     {

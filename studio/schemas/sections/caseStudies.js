@@ -49,7 +49,8 @@ export default {
 
       of: [
         {
-          type: "casesItem",
+          type: "reference",
+          to: [{ type: "casesItem" }],
         },
       ],
     },

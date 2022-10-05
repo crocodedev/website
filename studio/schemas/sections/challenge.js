@@ -49,24 +49,14 @@ export default {
 
       of: [
         {
-          title: "Modal text",
-          name: "modalText",
-          type: "text",
+          type: "modalWindow",
         },
       ],
     },
     {
       title: "Images item",
       name: "imagesItem",
-      type: "array",
-
-      of: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-        },
-      ],
+      type: "imageWithAlt",
     },
   ],
 };

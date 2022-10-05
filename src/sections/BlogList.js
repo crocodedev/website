@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import Breadcrumb from "@/components/Breadcrumb";
 import BlogListItem from "@/components/BlogList/BlogListItem";
 import BlogListNavigationStack from "@/components/BlogList/BlogListNavigationStack";
 import BlogListStack from "@/components/BlogList/BlogListStack";
@@ -13,12 +14,10 @@ const BlogList = ({
   slug,
   articles,
   categories,
-  numberOfPosts,
-  title,
   articleSeparator,
   breadcrumbs,
-  baseUrl,
   i18n_lang: i18nLang,
+  baseUrl,
   pageCount,
 }) => {
   const pageUrl = (typeof window !== "undefined" && window.location.pathname.split("/")) || "";
@@ -27,6 +26,7 @@ const BlogList = ({
   return (
     <SectionWrapper>
       <Container>
+        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
         <BlogListNavigationStack>
           {categories.map(({ title: categoryTitle, slug: categorySlug, id }) => (
             <Button
