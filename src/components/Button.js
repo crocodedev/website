@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Link from "./Link";
 
-const dynamicStyle = ({ theme, variant, active }) => css`
+const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
   ${variant === "outlined"
     ? `
     ${
@@ -11,17 +11,17 @@ const dynamicStyle = ({ theme, variant, active }) => css`
         ? `
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
-    pointer-events: none;
+    ${!disablePointerEvents ? "pointer-events: none" : ""};
     `
         : `
     color: ${theme.palette.primary.main};
-    border: 1px solid ${theme.palette.primary.main};
     `
     }
     font-weight: ${theme.typography.fontWeight.bold};
     padding: 12px 25px;
     display: block;
-
+    border: 1px solid ${theme.palette.primary.main};
+    
     &:hover {
         color: ${theme.palette.primary.contrastText};
         background-color: ${theme.palette.primary.main};
@@ -149,20 +149,41 @@ const StyledButton = styled.button`
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  outline: none;
 
   ${dynamicStyle}
 `;
 
-const Button = ({ variant, handler, link, baseUrl, active, children, ...props }) =>
+const Button = ({
+  variant,
+  handler,
+  link,
+  baseUrl,
+  active,
+  disablePointerEvents,
+  children,
+  ...props
+}) =>
   link ? (
     <Link baseUrl={baseUrl} {...link} {...props}>
-      <StyledButton as="span" active={active} variant={variant}>
+      <StyledButton
+        as="span"
+        disablePointerEvents={disablePointerEvents}
+        active={active}
+        variant={variant}
+      >
         {children}
         {variant === ("text" || "backUp") && <span />}
       </StyledButton>
     </Link>
   ) : (
-    <StyledButton variant={variant} active={active} onClick={handler} {...props}>
+    <StyledButton
+      variant={variant}
+      disablePointerEvents={disablePointerEvents}
+      active={active}
+      onClick={handler}
+      {...props}
+    >
       {children}
       {variant === "text" && <span />}
     </StyledButton>
@@ -174,12 +195,14 @@ Button.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   active: PropTypes.bool,
   handler: PropTypes.func,
+  disablePointerEvents: PropTypes.bool,
   link: PropTypes.object,
 };
 
 Button.defaultProps = {
   handler: null,
   active: false,
+  disablePointerEvents: false,
   link: null,
 };
 

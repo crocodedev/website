@@ -5,6 +5,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import page from "./documents/page";
 import blogCategory from "./documents/blogCategory";
 import settings from "./documents/settings";
+import casesItem from "./documents/casesItem";
+import casesCountry from "./documents/casesCountry";
 
 // sections
 import hero from "./sections/hero";
@@ -51,7 +53,6 @@ import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
 import projectFeature from "./objects/projectFeature";
-import casesItem from "./objects/casesItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
@@ -67,6 +68,7 @@ import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
+import modalWindow from "./objects/modalWindow";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -88,6 +90,8 @@ export default createSchema({
     articlesItem,
     locale,
     settings,
+    casesItem,
+    casesCountry,
 
     // sections
     hero,
@@ -134,7 +138,6 @@ export default createSchema({
     reviewItem,
     technologyStackItem,
     projectFeature,
-    casesItem,
     technologiesItem,
     socialIconItem,
     columnLinksItem,
@@ -148,6 +151,7 @@ export default createSchema({
     technologyCategory,
     technologiesArray,
     contentItem,
+    modalWindow,
 
     // blocks
     pageSection,

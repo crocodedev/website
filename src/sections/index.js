@@ -8,6 +8,7 @@ import ContactUs from "./ContactUs";
 import CtaForm from "./CtaForm";
 import CtaImage from "./CtaImage";
 import CtaText from "./CtaText";
+import Challenge from "./Challenge";
 import Development from "./Development";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
@@ -33,6 +34,7 @@ import TechnologyStack from "./TechnologyStack";
 import TextOne from "./TextOne";
 import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
+import CasesList from "./CasesList";
 
 export {
   ArticlesItem,
@@ -45,6 +47,7 @@ export {
   CtaForm,
   CtaImage,
   CtaText,
+  Challenge,
   Development,
   FAQ,
   Footer,
@@ -70,4 +73,5 @@ export {
   TextOne,
   TextTwo,
   TextThree,
+  CasesList,
 };

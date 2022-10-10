@@ -96,7 +96,7 @@ const dynamicStyles = ({ theme, align, disabled }) => css`
   `}
 `;
 
-const PaginationArrowLink = styled(Link)`
+const PaginationArrowLink = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
