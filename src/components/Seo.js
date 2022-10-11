@@ -2,19 +2,19 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 const Seo = ({
-  siteUrl,
-  url,
-  name,
-  defaultLocale,
-  titleTemplate,
-  title,
-  image,
-  description,
-  lang,
-  keywords,
-  ogtype,
-  twittercard,
-}) => (
+               siteUrl,
+               url,
+               name,
+               defaultLocale,
+               titleTemplate,
+               title,
+               image,
+               description,
+               lang,
+               keywords,
+               ogtype,
+               twittercard,
+             }) => (
   <Helmet
     defer={false}
     htmlAttributes={{
@@ -37,51 +37,51 @@ const Seo = ({
       },
       ...(image
         ? [
-            {
-              property: "og:image",
-              content: image.file.url,
-            },
-            {
-              property: "og:image:width",
-              content: image.file.details.image.width,
-            },
-            {
-              property: "og:image:height",
-              content: image.file.details.image.height,
-            },
-            {
-              property: "og:url",
-              content: `${siteUrl}${url}`,
-            },
-            {
-              name: "twitter:image:src",
-              content: image.file.url,
-            },
-          ]
+          {
+            property: "og:image",
+            content: image.image.asset.url,
+          },
+          {
+            property: "og:image:width",
+            content: image.image.asset.width,
+          },
+          {
+            property: "og:image:height",
+            content: image.image.asset.height,
+          },
+          {
+            property: "og:url",
+            content: `${siteUrl}${url}`,
+          },
+          {
+            name: "twitter:image:src",
+            content: image.image.asset.url,
+          },
+        ]
         : []),
       ...(keywords
         ? [
-            {
-              name: `keywords`,
-              content: keywords,
-            },
-          ]
+          {
+            name: `keywords`,
+            content: keywords,
+          },
+        ]
         : []),
       ...(ogtype
         ? [
-            {
-              property: `og:type`,
-              content: ogtype,
-            },
-          ]
+          {
+            property: `og:type`,
+            content: ogtype,
+          },
+        ]
         : []),
       ...(twittercard
         ? [
-            {
-              name: `twitter:card`,
-              content: twittercard,
-            },
-          ]
+          {
+            name: `twitter:card`,
+            content: twittercard,
+          },
+        ]
         : []),
     ]}
   >
@@ -95,15 +95,13 @@ Seo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.exact({
-    file: PropTypes.exact({
-      details: PropTypes.exact({
-        image: PropTypes.exact({
-          height: PropTypes.number,
-          width: PropTypes.number,
-        }),
-      }),
-      url: PropTypes.string,
-    }),
+    altText: PropTypes.string,
+    image: PropTypes.exact({
+      asset: PropTypes.exact({
+        url: PropTypes.string,
+        height: PropTypes.number,
+        width: PropTypes.number,
+      }),})
   }).isRequired,
   siteUrl: PropTypes.string,
   lang: PropTypes.string,
