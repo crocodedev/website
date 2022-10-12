@@ -19,19 +19,26 @@ import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
 import Link from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
+import ContactUsModal from "@/sections/ContactUsModal";
 
 const Header = ({
-  locales,
-  logoImage,
-  linkWithIcon,
-  headerLinks,
-  headerButton,
-  baseUrl,
-  currentLocale,
-  defaultLocale,
-}) => {
+                  locales,
+                  logoImage,
+                  linkWithIcon,
+                  headerLinks,
+                  headerButton,
+                  baseUrl,
+                  currentLocale,
+                  defaultLocale,
+                }) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
+
+  const [closeModal, setCloseModal] = React.useState(false);
+  const changeModalContactUs = () => {
+    setCloseModal(!closeModal);
+  };
+
   return (
     <HeaderWrapper>
       <HeaderContainer>
@@ -54,9 +61,10 @@ const Header = ({
           ))}
           {headerButton && (
             <HeaderContentBtnWrapper>
-              <Button variant="contained" link={headerButton} baseUrl={baseUrl}>
+              <Button handler={changeModalContactUs} variant="contained">
                 {headerButton.title}
               </Button>
+              <ContactUsModal handler={changeModalContactUs} subscribeModal={closeModal} />
             </HeaderContentBtnWrapper>
           )}
           {locales && (
