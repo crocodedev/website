@@ -16,13 +16,23 @@ import ContactsUsInput from "@/components/ContactUs/ContactsUsInput";
 import Button from "@/components/Button";
 import ContactUsModalContentInner from "@/components/ContactUsModal/ContactUsModalContentInner";
 
-const dataPage = {
-  title: "Get in touch with us",
-  desc: "Leave your details and we will contact you",
-};
+const ContactUsModal = ({
+                          subscribeModal,
+                          handler,
+                          touchUsModal,
+                        }) => {
+  const {
+    buttonText,
+    emailPlaceholder,
+    title,
+    subtitle,
+    namePlaceholder,
+    yourEmail,
+    yourName,
+    agreementText,
+  } = touchUsModal;
 
-const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
-  const { title, desc } = data;
+  const { text, link: { linkInternal: { label } } } = agreementText;
 
   const schema = yup.object().shape({
     name: yup
@@ -51,7 +61,7 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
           </ContactUsModalCloseBtn>
           <ContactUsModalContentInner>
             <Title>{title}</Title>
-            <Text>{desc}</Text>
+            <Text>{subtitle}</Text>
             <Formik
               initialValues={{
                 name: "",
@@ -82,7 +92,7 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
                 <ContactsUsForm>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Your name
+                      {yourName}
                     </Text>
                     <ContactsUsInput
                       className={errors.name ? "invalid" : "valid"}
@@ -92,13 +102,13 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
                       value={name}
                       variant="text"
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder={namePlaceholder}
                     />
                     {touched.name && errors.name && <Text color="red">{errors.name}</Text>}
                   </ContactsUsItem>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
-                      Corporate E-mail
+                      {yourEmail}
                     </Text>
                     <ContactsUsInput
                       name="email"
@@ -108,14 +118,14 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
                       value={email}
                       variant="text"
                       type="email"
-                      placeholder="Enter E-mail"
+                      placeholder={emailPlaceholder}
                     />
                     {touched.email && errors.email && <Text color="red">{errors.email}</Text>}
                   </ContactsUsItem>
                   <ContactsUsItem>
                     <Text fontSize="captionText">
-                      By leaving your data you agree to the{" "}
-                      <ContactUsModalLink>Privacy Policy.</ContactUsModalLink>
+                      {text}
+                      <ContactUsModalLink>{label}</ContactUsModalLink>
                     </Text>
                   </ContactsUsItem>
                   <ContactsUsItem>
@@ -125,7 +135,7 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
                       handler={handleSubmit}
                       variant="contained"
                     >
-                      Send form
+                      {buttonText}
                     </Button>
                   </ContactsUsItem>
                 </ContactsUsForm>
@@ -139,6 +149,7 @@ const ContactUsModal = ({ data = dataPage, subscribeModal, handler }) => {
 };
 
 ContactUsModal.propTypes = {
+  touchUsModal: PropTypes.object.isRequired,
   handler: PropTypes.func.isRequired,
   subscribeModal: PropTypes.bool.isRequired,
   data: PropTypes.exact({

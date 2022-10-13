@@ -294,7 +294,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -337,7 +337,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -370,7 +370,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -417,7 +417,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
               url,
               name,
             },
-            /* 
+            /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -456,7 +456,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,

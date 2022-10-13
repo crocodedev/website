@@ -2,8 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 
 const ContactUsModalCloseBtn = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  margin-left: auto;
 
   & span {
     position: relative;

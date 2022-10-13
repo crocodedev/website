@@ -30,6 +30,7 @@ const Header = ({
                   baseUrl,
                   currentLocale,
                   defaultLocale,
+                  touchUsModal,
                 }) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
@@ -64,7 +65,8 @@ const Header = ({
               <Button handler={changeModalContactUs} variant="contained">
                 {headerButton.title}
               </Button>
-              <ContactUsModal handler={changeModalContactUs} subscribeModal={closeModal} />
+              <ContactUsModal touchUsModal={touchUsModal} handler={changeModalContactUs}
+                              subscribeModal={closeModal} />
             </HeaderContentBtnWrapper>
           )}
           {locales && (
@@ -110,6 +112,7 @@ const Header = ({
 };
 
 Header.propTypes = {
+  touchUsModal: PropTypes.object.isRequired,
   locales: PropTypes.array.isRequired,
   logoImage: PropTypes.object.isRequired,
   baseUrl: PropTypes.string.isRequired,
