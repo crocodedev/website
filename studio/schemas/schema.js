@@ -69,6 +69,8 @@ import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
 import modalWindow from "./objects/modalWindow";
+import cookies from "./objects/cookies";
+import cookiesItem from "./objects/cookiesItem";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -152,6 +154,8 @@ export default createSchema({
     technologiesArray,
     contentItem,
     modalWindow,
+    cookies,
+    cookiesItem,
 
     // blocks
     pageSection,

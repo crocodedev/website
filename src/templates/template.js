@@ -9,15 +9,25 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import "destyle.css/destyle.css";
+import CookiesPopup from "@/components/CookiesPopup";
 
 const Template = ({
-  pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
-}) => {
+                    pageContext: {
+                      cookieConsent,
+                      baseUrl,
+                      seo,
+                      sections,
+                      locales,
+                      currentLocale,
+                      defaultLocale,
+                    },
+                  }) => {
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
       <Helmet defer={false} title="HomePage" />
       <Global styles={[reboot, fontMontserrat]} />
+      <CookiesPopup {...cookieConsent} />
 
       {sections.map(({ id, component, ...props }) => {
         const Component = Sections[component];
@@ -42,6 +52,7 @@ const Template = ({
 
 Template.propTypes = {
   pageContext: PropTypes.exact({
+    cookies: PropTypes.object.isRequired,
     baseUrl: PropTypes.string,
     seo: PropTypes.object,
     cookieConsent: PropTypes.object,
