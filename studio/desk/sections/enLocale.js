@@ -25,6 +25,7 @@ import { header } from "./enLocale/header";
 import { contactUs } from "./enLocale/contactUs";
 import { ctaForm } from "./enLocale/ctaForm";
 import { challenge } from "./enLocale/challenge";
+import { policy } from "./enLocale/policy";
 
 export const enLocale = S.listItem()
   .title("EN Sections")
@@ -58,5 +59,6 @@ export const enLocale = S.listItem()
         contactUs,
         ctaForm,
         challenge,
+        policy,
       ]),
   );
