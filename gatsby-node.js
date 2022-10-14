@@ -34,6 +34,34 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const { data, errors } = await graphql(`
   {
+  allSanityPolicy {
+    nodes {
+      policyCookies {
+        policyWith {
+          link
+          textAfter
+          textBefore
+        }
+        text1 {
+          text
+          titleText
+        }
+        text2 {
+          text
+          titleText
+        }
+        text3 {
+          titleText
+          text
+        }
+        textList1 {
+          text
+          titleText
+        }
+        titleCookies
+      }
+    }
+  }
   allSanityCasesItem {
     nodes {
       id
@@ -294,7 +322,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -337,7 +365,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -370,7 +398,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -417,7 +445,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
               url,
               name,
             },
-            /* 
+            /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -456,7 +484,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,

@@ -9,15 +9,19 @@ import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
 import "destyle.css/destyle.css";
+import PrivacyPolicy from "@/sections/PrivacyPolicy";
+import CookiesPolicy from "@/sections/CookiesPolicy";
 
 const Template = ({
-  pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
-}) => {
+                    pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
+                  }) => {
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
       <Helmet defer={false} title="HomePage" />
       <Global styles={[reboot, fontMontserrat]} />
+      <PrivacyPolicy />
+      <CookiesPolicy />
 
       {sections.map(({ id, component, ...props }) => {
         const Component = Sections[component];

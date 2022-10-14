@@ -36,6 +36,8 @@ import contactUs from "./sections/contactUs";
 import ctaForm from "./sections/ctaForm";
 import challenge from "./sections/challenge";
 import policy from "./sections/policy/policy";
+import policyCookies from "./sections/policy/policyCookies";
+import policyPrivacy from "./sections/policy/policyPrivacy";
 
 // objects
 import link from "./objects/link";
@@ -70,8 +72,8 @@ import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
 import modalWindow from "./objects/modalWindow";
-import policyHeading from "./objects/policy/policyHeading";
 import policyWith from "./objects/policy/policyWith";
+import policyText from "./objects/policy/policyText";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -124,6 +126,8 @@ export default createSchema({
     ctaForm,
     challenge,
     policy,
+    policyCookies,
+    policyPrivacy,
 
     // objects
     link,
@@ -156,8 +160,8 @@ export default createSchema({
     technologiesArray,
     contentItem,
     modalWindow,
-    policyHeading,
     policyWith,
+    policyText,
 
     // blocks
     pageSection,
