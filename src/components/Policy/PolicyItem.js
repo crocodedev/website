@@ -57,7 +57,7 @@ const prettifyLinks = (text, links) => {
     const regExp = /<(\d)>/;
     const matches = regExp.exec(el);
     if (!matches) {
-      if (el === "." || el === "," || el === "!") return `${el} `;
+      if (el.match(/[!?.,]/g)) return `${el} `;
       return ` ${el} `;
     }
     return prettyLinks[matches[1]];
