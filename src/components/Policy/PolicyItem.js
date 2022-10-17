@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
+import React from "react";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
-import React from "react";
 import Text from "../Text";
-import Link from "../Link";
 
 const StyledPolicyItem = styled.div`
   display: flex;
@@ -25,46 +25,68 @@ const StyledPolicyItem = styled.div`
   }
 `;
 
-const PolicyItem = ({ title, list, text, texts, link, textWithLink }) => {
+const selectLink = (link, match) => link[0] === "/" ?
+  <Link to={link}>
+    {match[1]}
+  </Link>
+  :
+  <a
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {match[1]}
+  </a>;
+
+const prettifyLinks = (text, links) => {
+  let tempString = text;
+
+  const prettyLinks = links.map((el, idx) => {
+      const pattern = () => `<${idx}>([^)]+)</${idx}>`;
+      const regExp = new RegExp(pattern(idx), "g");
+
+      const matches = regExp.exec(tempString);
+      tempString = tempString.replace(regExp, `<${idx}>`);
+      if (!matches) return null;
+
+      return selectLink(el, matches);
+    },
+  );
+
+  return tempString.split(" ").map((el) => {
+    const regExp = /<(\d)>/;
+    const matches = regExp.exec(el);
+    if (!matches) {
+      if (el === "." || el === "," || el === "!") return `${el} `;
+      return ` ${el} `;
+    }
+    return prettyLinks[matches[1]];
+  });
+};
+
+const PolicyItem = ({ title, text, list, links }) => {
   return (
     <StyledPolicyItem>
       {title ? (
         <Text lineHeight="sm" fontSize="link" fontWeight="bold">
-          {title}
+          {prettifyLinks(title, links)}
         </Text>
       ) : (
         ""
       )}
-      {text ? (
-        <Text lineHeight="sm" fontSize="link">
-          {text}
-        </Text>
-      ) : (
-        ""
-      )}
-      {textWithLink ? (
-        <Text lineHeight="sm" fontSize="link">
-          {textWithLink.textBeforeLink}
-          <Link to={textWithLink.link}>{textWithLink.link}</Link>
-          {textWithLink.textAfterLink}
-        </Text>
-      ) : (
-        ""
-      )}
-      {texts
-        ? texts.map((item) => (
-            <Text fontSize="link" lineHeight="sm" key={item}>
-              {item}
-            </Text>
-          ))
+      {text
+        ? text.map((item) => (
+          <Text fontSize="link" lineHeight="sm" key={item}>
+            {prettifyLinks(item, links)}
+          </Text>
+        ))
         : ""}
-      {link ? <Link to={link}>{link}</Link> : ""}
       {list ? (
         <ol>
           {list.map((item) => (
             <li key={item}>
               <Text lineHeight="sm" fontSize="link">
-                {item}
+                {prettifyLinks(item, links)}
               </Text>
             </li>
           ))}
@@ -79,22 +101,15 @@ const PolicyItem = ({ title, list, text, texts, link, textWithLink }) => {
 PolicyItem.propTypes = {
   title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.string),
-  text: PropTypes.string.isRequired,
-  texts: PropTypes.arrayOf(PropTypes.string),
-  link: PropTypes.string,
-  textWithLink: PropTypes.exact({
-    textBeforeLink: PropTypes.string,
-    link: PropTypes.string,
-    textAfterLink: PropTypes.string,
-  }),
+  text: PropTypes.string,
+  links: PropTypes.string,
 };
 
 PolicyItem.defaultProps = {
   title: "",
+  text: null,
   list: null,
-  texts: null,
-  link: null,
-  textWithLink: null,
+  links: null,
 };
 
 export default PolicyItem;

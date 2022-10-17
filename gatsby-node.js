@@ -26,6 +26,7 @@ const { technologyStack } = require("./src/graphql/sections/technologyStack");
 const { textOne } = require("./src/graphql/sections/textOne");
 const { textTwo } = require("./src/graphql/sections/textTwo");
 const { textThree } = require("./src/graphql/sections/textThree");
+const { blockText } = require("./src/graphql/sections/blockText");
 const { image } = require("./src/graphql/objects/image");
 const { link } = require("./src/graphql/objects/link");
 
@@ -34,34 +35,6 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
   const { data, errors } = await graphql(`
   {
-  allSanityPolicy {
-    nodes {
-      policyCookies {
-        policyWith {
-          link
-          textAfter
-          textBefore
-        }
-        text1 {
-          text
-          titleText
-        }
-        text2 {
-          text
-          titleText
-        }
-        text3 {
-          titleText
-          text
-        }
-        textList1 {
-          text
-          titleText
-        }
-        titleCookies
-      }
-    }
-  }
   allSanityCasesItem {
     nodes {
       id
@@ -110,6 +83,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         ${textOne}
         ${textTwo}
         ${textThree}
+        ${blockText}
       }
     }
   }
@@ -276,6 +250,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
           ${textOne}
           ${textTwo}
           ${textThree}
+          ${blockText}
       }
     }
   }}

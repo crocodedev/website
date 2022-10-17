@@ -9,6 +9,7 @@ import CtaForm from "./CtaForm";
 import CtaImage from "./CtaImage";
 import CtaText from "./CtaText";
 import Challenge from "./Challenge";
+import BlockText from "./BlockText";
 import Development from "./Development";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
@@ -40,6 +41,7 @@ export {
   ArticlesItem,
   Benefits,
   BlogList,
+  BlockText,
   Case,
   CaseStudies,
   Contacts,

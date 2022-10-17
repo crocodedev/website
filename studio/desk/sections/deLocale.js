@@ -25,7 +25,7 @@ import { header } from "./deLocale/header";
 import { contactUs } from "./deLocale/contactUs";
 import { ctaForm } from "./deLocale/ctaForm";
 import { challenge } from "./deLocale/challenge";
-import { policy } from "./deLocale/policy";
+import { blockText } from "./deLocale/blockText";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
@@ -33,32 +33,32 @@ export const deLocale = S.listItem()
     S.list()
       .title("DE Sections")
       .items([
+        blockText,
+        benefits,
+        caseStudies,
+        ctaForm,
+        ctaText,
+        contacts,
+        ctaImage,
+        challenge,
+        contactUs,
+        development,
+        faq,
+        footer,
+        header,
         hero,
         heroMain,
         heroProject,
         list,
+        notFound,
+        ourClients,
+        ourTeam,
+        reviews,
+        sliderSteps,
+        technologyStack,
+        technologies,
         textOne,
         textTwo,
         textThree,
-        ctaText,
-        notFound,
-        benefits,
-        contacts,
-        development,
-        ourTeam,
-        ctaImage,
-        faq,
-        sliderSteps,
-        ourClients,
-        reviews,
-        technologyStack,
-        caseStudies,
-        technologies,
-        footer,
-        header,
-        contactUs,
-        ctaForm,
-        challenge,
-        policy,
       ]),
   );
