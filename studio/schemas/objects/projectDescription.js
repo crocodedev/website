@@ -5,8 +5,8 @@ export default {
     },
   },
 
-  title: "Project feature container",
-  name: "projectFeatureContainer",
+  title: "Project Description",
+  name: "projectDescription",
   type: "object",
   fields: [
     {
@@ -15,8 +15,9 @@ export default {
       type: "string",
     },
     {
-      name: "projectFeatureInner",
-      type: "projectFeatureInner",
+      title: "Subtitle",
+      name: "subtitle",
+      type: "string",
     },
   ],
 };

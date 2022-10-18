@@ -10,7 +10,7 @@ export default {
   type: "array",
   of: [
     {
-      type: "projectFeatureString",
+      type: "projectDescription",
     },
   ],
 };

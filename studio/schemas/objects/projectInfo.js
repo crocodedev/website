@@ -6,7 +6,7 @@ export default {
   },
 
   title: "Feature container",
-  name: "projectFeatureInner",
+  name: "projectInfo",
   type: "object",
   fields: [
     {

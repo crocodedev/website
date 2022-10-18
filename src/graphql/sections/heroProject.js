@@ -11,7 +11,7 @@ module.exports.heroProject = `
         ${link}
       }
       projectFeatures{
-        projectFeatureInner {
+        projectInfo {
           featureImage {
             ${image}
           }

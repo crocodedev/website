@@ -49,7 +49,7 @@ export default {
 
       of: [
         {
-          type: "projectFeatureContainer",
+          type: "projectItem",
         },
       ],
     },

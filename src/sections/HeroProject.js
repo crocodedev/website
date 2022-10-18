@@ -39,7 +39,7 @@ const HeroProject = ({
             speed={1500}
             initialSlide={1}
           >
-            {projectFeatures?.map(({ projectFeatureInner: { featureImage } }) => (
+            {projectFeatures?.map(({ projectInfo: { featureImage } }) => (
               <SwiperSlide key={featureImage.alt}>
                 <HeroProjectImage>
                   <Image altText={featureImage.alt} image={featureImage.image} />
@@ -58,7 +58,7 @@ const HeroProject = ({
             speed={1500}
             initialSlide={1}
           >
-            {projectFeatures?.map(({ projectFeatureInner: { projectFeature } }) => (
+            {projectFeatures?.map(({ projectInfo: { projectFeature } }) => (
               <SwiperSlide key="test">
                 {projectFeature?.map(el => (
                   <HeroProjectBottomItem key={el.title}>
