@@ -19,5 +19,10 @@ export default {
       name: "subtitle",
       type: "string",
     },
+    {
+      title: "Image",
+      name: "image",
+      type: "imageWithAlt",
+    },
   ],
 };

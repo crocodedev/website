@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Title from "../Title";
 
-const CaseTitle = styled(Title)`
+const HeroProjectTitle = styled(Title)`
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   color: ${({ theme }) => theme.palette.text.primary};
   text-align: center;
@@ -32,4 +32,4 @@ const CaseTitle = styled(Title)`
   }
 `;
 
-export default CaseTitle;
+export default HeroProjectTitle;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const CaseBottom = styled.ul`
+const HeroProjectBottom = styled.ul`
   display: flex;
   width: 100%;
 
@@ -33,4 +33,4 @@ const CaseBottom = styled.ul`
   }
 `;
 
-export default CaseBottom;
+export default HeroProjectBottom;

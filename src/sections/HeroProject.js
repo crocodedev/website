@@ -6,14 +6,14 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionWrapper from "@/components/SectionWrapper";
-import CaseTitle from "@/components/Case/CaseTitle";
-import CaseContent from "@/components/Case/CaseContent";
-import CaseBottom from "@/components/Case/CaseBottom";
-import CaseBottomItem from "@/components/Case/CaseBottomItem";
+import HeroProjectTitle from "@/components/HeroProject/HeroProjectTitle";
+import HeroProjectContent from "@/components/HeroProject/HeroProjectContent";
+import HeroProjectBottom from "@/components/HeroProject/HeroProjectBottom";
+import HeroProjectBottomItem from "@/components/HeroProject/HeroProjectBottomItem";
 import Text from "@/components/Text";
 import ImageStatic from "@/components/Image";
 
-import CaseImage from "@/components/Case/CaseImage";
+import HeroProjectImage from "@/components/HeroProject/HeroProjectImage";
 
 import "swiper/css";
 
@@ -101,8 +101,9 @@ const pageData = {
   ],
 };
 
-const Case = ({ data = pageData }) => {
-  const { title, items } = data;
+const HeroProject = (props) => {
+  console.log(props);
+  const { title, items } = pageData;
 
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
@@ -110,8 +111,8 @@ const Case = ({ data = pageData }) => {
   return (
     <SectionWrapper>
       <Container>
-        <CaseTitle>{title}</CaseTitle>
-        <CaseContent>
+        <HeroProjectTitle>{title}</HeroProjectTitle>
+        <HeroProjectContent>
           <Swiper
             modules={[Controller]}
             onSwiper={setFirstSwiper}
@@ -124,14 +125,14 @@ const Case = ({ data = pageData }) => {
           >
             {items?.map(({ id, image }) => (
               <SwiperSlide key={id}>
-                <CaseImage>
+                <HeroProjectImage>
                   <ImageStatic src={image} />
-                </CaseImage>
+                </HeroProjectImage>
               </SwiperSlide>
             ))}
           </Swiper>
-        </CaseContent>
-        <CaseBottom>
+        </HeroProjectContent>
+        <HeroProjectBottom>
           <Swiper
             modules={[Controller]}
             onSwiper={setSecondSwiper}
@@ -144,23 +145,23 @@ const Case = ({ data = pageData }) => {
             {items?.map(({ id, info }) => (
               <SwiperSlide key={id}>
                 {info?.map(({ heading, desc }) => (
-                  <CaseBottomItem key={heading}>
+                  <HeroProjectBottomItem key={heading}>
                     <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
                       {heading}
                     </Text>
                     <Text mobileMultiplier={0.875}>{desc}</Text>
-                  </CaseBottomItem>
+                  </HeroProjectBottomItem>
                 ))}
               </SwiperSlide>
             ))}
           </Swiper>
-        </CaseBottom>
+        </HeroProjectBottom>
       </Container>
     </SectionWrapper>
   );
 };
 
-Case.propTypes = {
+HeroProject.propTypes = {
   data: PropTypes.exact({
     title: PropTypes.string,
     items: PropTypes.arrayOf(
@@ -178,4 +179,4 @@ Case.propTypes = {
   }).isRequired,
 };
 
-export default Case;
+export default HeroProject;
