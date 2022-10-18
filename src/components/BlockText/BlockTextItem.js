@@ -1,8 +1,8 @@
 import PropTypes, { func } from "prop-types";
 import React from "react";
-import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
+import prettifyLinks from "@/helpers/prettifyLinks";
 import Text from "../Text";
 
 const StyledPolicyItem = styled.div`
@@ -25,46 +25,7 @@ const StyledPolicyItem = styled.div`
   }
 `;
 
-const selectLink = (link, match) => link[0] === "/" ?
-  <Link to={link}>
-    {match[1]}
-  </Link>
-  :
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {match[1]}
-  </a>;
-
-const prettifyLinks = (text, links) => {
-  let tempString = text;
-
-  const prettyLinks = links.map((el, idx) => {
-      const pattern = () => `<${idx}>([^)]+)</${idx}>`;
-      const regExp = new RegExp(pattern(idx), "g");
-
-      const matches = regExp.exec(tempString);
-      tempString = tempString.replace(regExp, `<${idx}>`);
-      if (!matches) return null;
-
-      return selectLink(el, matches);
-    },
-  );
-
-  return tempString.split(" ").map((el) => {
-    const regExp = /<(\d)>/;
-    const matches = regExp.exec(el);
-    if (!matches) {
-      if (el.match(/[!?.,]/g)) return `${el} `;
-      return ` ${el} `;
-    }
-    return prettyLinks[matches[1]];
-  });
-};
-
-const PolicyItem = ({ title, text, list, links }) => {
+const BlockTextItem = ({ title, text, list, links }) => {
   return (
     <StyledPolicyItem>
       {title ? (
@@ -98,18 +59,18 @@ const PolicyItem = ({ title, text, list, links }) => {
   );
 };
 
-PolicyItem.propTypes = {
+BlockTextItem.propTypes = {
   title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.string),
   text: PropTypes.string,
   links: PropTypes.string,
 };
 
-PolicyItem.defaultProps = {
+BlockTextItem.defaultProps = {
   title: "",
   text: null,
   list: null,
   links: null,
 };
 
-export default PolicyItem;
+export default BlockTextItem;

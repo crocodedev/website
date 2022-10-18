@@ -3,9 +3,9 @@ import { useTheme } from "@emotion/react";
 
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
-import PolicyItem from "@/components/Policy/PolicyItem";
+import BlockTextItem from "@/components/BlockText/BlockTextItem";
 import Container from "@/components/Container";
-import PolicyContent from "@/components/Policy/PolicyContent";
+import BlockTextContent from "@/components/BlockText/BlockTextContent";
 
 
 const BlockText = ({ baseUrl, content, title, subtitle }) => {
@@ -13,12 +13,12 @@ const BlockText = ({ baseUrl, content, title, subtitle }) => {
   return (
     <SectionWrapper color={theme.palette.background.paper}>
       <Container>
-        <PolicyContent>
+        <BlockTextContent>
           <SectionHeading title={title} text={subtitle} />
           {content.map((el) => (
-            <PolicyItem key={el._key} {...el} />
+            <BlockTextItem key={el._key} {...el} />
           ))}
-        </PolicyContent>
+        </BlockTextContent>
       </Container>
     </SectionWrapper>
   );
