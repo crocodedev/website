@@ -69,6 +69,9 @@ import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
 import modalWindow from "./objects/modalWindow";
+import projectFeatureContainer from "./objects/projectFeatureContainer";
+import projectFeatureString from "./objects/projectFeatureString";
+import projectFeatureInner from "./objects/projectFeatureInner";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -152,6 +155,9 @@ export default createSchema({
     technologiesArray,
     contentItem,
     modalWindow,
+    projectFeatureContainer,
+    projectFeatureString,
+    projectFeatureInner,
 
     // blocks
     pageSection,
