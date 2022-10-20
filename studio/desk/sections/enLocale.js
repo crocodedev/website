@@ -25,6 +25,7 @@ import { header } from "./enLocale/header";
 import { contactUs } from "./enLocale/contactUs";
 import { ctaForm } from "./enLocale/ctaForm";
 import { challenge } from "./enLocale/challenge";
+import { blockText } from "./enLocale/blockText";
 
 export const enLocale = S.listItem()
   .title("EN Sections")
@@ -32,31 +33,32 @@ export const enLocale = S.listItem()
     S.list()
       .title("EN Sections")
       .items([
+        blockText,
+        benefits,
+        caseStudies,
+        ctaForm,
+        ctaText,
+        contacts,
+        ctaImage,
+        challenge,
+        contactUs,
+        development,
+        faq,
+        footer,
+        header,
         hero,
         heroMain,
         heroProject,
         list,
+        notFound,
+        ourClients,
+        ourTeam,
+        reviews,
+        sliderSteps,
+        technologyStack,
+        technologies,
         textOne,
         textTwo,
         textThree,
-        ctaText,
-        notFound,
-        benefits,
-        contacts,
-        development,
-        ourTeam,
-        ctaImage,
-        faq,
-        sliderSteps,
-        ourClients,
-        reviews,
-        technologyStack,
-        caseStudies,
-        technologies,
-        footer,
-        header,
-        contactUs,
-        ctaForm,
-        challenge,
       ]),
   );
