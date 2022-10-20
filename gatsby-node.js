@@ -26,6 +26,7 @@ const { technologyStack } = require("./src/graphql/sections/technologyStack");
 const { textOne } = require("./src/graphql/sections/textOne");
 const { textTwo } = require("./src/graphql/sections/textTwo");
 const { textThree } = require("./src/graphql/sections/textThree");
+const { blockText } = require("./src/graphql/sections/blockText");
 const { image } = require("./src/graphql/objects/image");
 const { link } = require("./src/graphql/objects/link");
 
@@ -82,6 +83,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         ${textOne}
         ${textTwo}
         ${textThree}
+        ${blockText}
       }
     }
   }
@@ -138,6 +140,29 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanitySettings {
     nodes {
+      cookies {
+        de {
+          title
+          text
+          cookiesName
+          clickHere
+          buttonText
+        }
+        en {
+          title
+          text
+          cookiesName
+          clickHere
+          buttonText
+        }
+        pl {
+          title
+          text
+          cookiesName
+          clickHere
+          buttonText
+        }
+      }
       siteUrl
       recaptchaKey
       name
@@ -320,6 +345,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
           ${textOne}
           ${textTwo}
           ${textThree}
+          ${blockText}
       }
     }
   }}
@@ -331,7 +357,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
 
   const pages = data.allSanityPage.nodes;
-  const { siteUrl, recaptchaKey, name, defaultLocale, locales } = data.allSanitySettings.nodes[0];
+  const { cookies, siteUrl, recaptchaKey, name, defaultLocale, locales } =
+    data.allSanitySettings.nodes[0];
 
   const blogPages = data.allSanityBlogCategory.nodes;
   const articles = data.allSanityArticlesItem.nodes;
@@ -528,12 +555,11 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /*
+
           cookieConsent: {
-            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
-            cookieName: config.googleAnalytics.cookieName,
+            ...cookies[page.i18n_lang],
+            /*cookieName: config.googleAnalytics.cookieName,*/
           },
-          */
           sections: (page.content || [])
             .filter(({ id }) => id)
             .sort((a, b) => +a.position - +b.position),

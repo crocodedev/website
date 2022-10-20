@@ -40,6 +40,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "casesCountry",
   "page",
   "settings",
+  "policy",
 ];
 
 export default () => {

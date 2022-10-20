@@ -35,6 +35,7 @@ import header from "./sections/header";
 import contactUs from "./sections/contactUs";
 import ctaForm from "./sections/ctaForm";
 import challenge from "./sections/challenge";
+import blockText from "./sections/blockText";
 
 // objects
 import link from "./objects/link";
@@ -68,10 +69,8 @@ import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
+import blockTextItem from "./objects/blockTextItem";
 import modalWindow from "./objects/modalWindow";
-import projectItem from "./objects/projectItem";
-import projectDescription from "./objects/projectDescription";
-import projectInfo from "./objects/projectInfo";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -124,6 +123,7 @@ export default createSchema({
     contactUs,
     ctaForm,
     challenge,
+    blockText,
 
     // objects
     link,
@@ -156,9 +156,7 @@ export default createSchema({
     technologiesArray,
     contentItem,
     modalWindow,
-    projectItem,
-    projectDescription,
-    projectInfo,
+    blockTextItem,
 
     // blocks
     pageSection,
