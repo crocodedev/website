@@ -12,16 +12,8 @@ import "destyle.css/destyle.css";
 import CookiesPopup from "@/components/CookiesPopup";
 
 const Template = ({
-                    pageContext: {
-                      cookieConsent,
-                      baseUrl,
-                      seo,
-                      sections,
-                      locales,
-                      currentLocale,
-                      defaultLocale,
-                    },
-                  }) => {
+  pageContext: { cookieConsent, baseUrl, seo, sections, locales, currentLocale, defaultLocale },
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />

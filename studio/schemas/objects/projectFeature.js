@@ -7,17 +7,10 @@ export default {
 
   title: "Project feature",
   name: "projectFeature",
-  type: "object",
-  fields: [
+  type: "array",
+  of: [
     {
-      title: "Title",
-      name: "title",
-      type: "string",
-    },
-    {
-      title: "Subitle",
-      name: "subtitle",
-      type: "string",
+      type: "projectDescription",
     },
   ],
 };

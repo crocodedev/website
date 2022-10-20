@@ -87,6 +87,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityCasesCountry {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       i18n_lang
       sectionTitle
@@ -159,6 +177,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityArticlesItem {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       date
       title
@@ -203,11 +239,29 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         contentImage {
           ${image}
         }
-      }
+    }
     }
   }
   allSanityBlogCategory {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       _id
       id
       title
@@ -239,6 +293,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityPage {
   nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       title
       slug {
         current
@@ -282,14 +354,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
 
   const pages = data.allSanityPage.nodes;
-  const {
-    cookies,
-    siteUrl,
-    recaptchaKey,
-    name,
-    defaultLocale,
-    locales,
-  } = data.allSanitySettings.nodes[0];
+  const { cookies, siteUrl, recaptchaKey, name, defaultLocale, locales } =
+    data.allSanitySettings.nodes[0];
 
   const blogPages = data.allSanityBlogCategory.nodes;
   const articles = data.allSanityArticlesItem.nodes;
@@ -486,6 +552,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
+
           cookieConsent: {
             ...cookies[page.i18n_lang],
             /*cookieName: config.googleAnalytics.cookieName,*/
