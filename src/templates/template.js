@@ -21,8 +21,6 @@ const Template = ({
                     },
                   }) => {
 
-  console.log(seo);
-
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
