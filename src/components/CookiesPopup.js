@@ -6,16 +6,13 @@ import Text from "./Text";
 import CookiesPopupText from "./CookiesPopup/CookiesPopupText";
 import CookiesPopupLink from "./CookiesPopup/CookiesPopupLink";
 
-const pageData = {
-  title: "Our website uses cookies",
-  desc: "This site uses cookies for analytics, personalization and advertising. By continuing to browse it, you agree to our use of cookies. To find out more or change your cookie settings, ",
-  btnText: "Accept",
-};
-
-const CookiesPopup = ({ data = pageData }) => {
+const CookiesPopup = ({
+                        title,
+                        text,
+                        clickHere,
+                        buttonText,
+                      }) => {
   const [showContent, setShowContent] = React.useState(false);
-
-  const { title, desc, btnText } = data;
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -90,7 +87,7 @@ const CookiesPopup = ({ data = pageData }) => {
               location="none"
               disableStyles={true}
               disableButtonStyles={true}
-              buttonText={btnText}
+              buttonText={buttonText}
               containerClasses={containerClasses}
               buttonClasses={buttonClasses}
               buttonWrapperClasses={buttonWrapperClasses}
@@ -100,8 +97,8 @@ const CookiesPopup = ({ data = pageData }) => {
                   {title}
                 </Text>
                 <Text>
-                  {desc}
-                  <CookiesPopupLink>click here.</CookiesPopupLink>
+                  {text}
+                  <CookiesPopupLink>{clickHere}</CookiesPopupLink>
                 </Text>
               </CookiesPopupText>
             </ReactCookieConsent>
@@ -113,11 +110,10 @@ const CookiesPopup = ({ data = pageData }) => {
 };
 
 CookiesPopup.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    desc: PropTypes.string,
-    btnText: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  clickHere: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
 };
 
 export default CookiesPopup;

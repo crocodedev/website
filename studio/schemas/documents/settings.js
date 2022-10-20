@@ -53,5 +53,10 @@ export default {
         },
       ],
     },
+    {
+      title: "Cookies",
+      name: "cookies",
+      type: "cookies",
+    },
   ],
 };
