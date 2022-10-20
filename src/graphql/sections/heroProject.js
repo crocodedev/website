@@ -10,9 +10,16 @@ module.exports.heroProject = `
       breadcrumbs {
         ${link}
       }
-      projectFeatures {
-        title
-        subtitle
+      projectFeatures{
+        projectInfo {
+          featureImage {
+            ${image}
+          }
+          projectFeature {
+            subtitle
+            title
+          }
+        }
       }
       projectImage {
         ${image}
