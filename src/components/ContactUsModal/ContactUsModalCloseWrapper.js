@@ -11,15 +11,10 @@ const dynamicStyle = ({ variant }) => css`
 
 const ContactUsModalCloseWrapper = styled.div`
   position: relative;
-  padding: 40px 63px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
   box-shadow: ${({ theme }) => theme.shadows.popup};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
-
-  ${dynamicStyle}
 `;
 
 export default ContactUsModalCloseWrapper;

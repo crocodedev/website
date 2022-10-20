@@ -21,7 +21,7 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     padding: 12px 25px;
     display: block;
     border: 1px solid ${theme.palette.primary.main};
-    
+
     &:hover {
         color: ${theme.palette.primary.contrastText};
         background-color: ${theme.palette.primary.main};
@@ -148,22 +148,22 @@ const StyledButton = styled.button`
   line-height: 20px;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color .3s;
   outline: none;
 
   ${dynamicStyle}
 `;
 
 const Button = ({
-  variant,
-  handler,
-  link,
-  baseUrl,
-  active,
-  disablePointerEvents,
-  children,
-  ...props
-}) =>
+                  variant,
+                  handler,
+                  link,
+                  baseUrl,
+                  active,
+                  disablePointerEvents,
+                  children,
+                  ...props
+                }) =>
   link ? (
     <Link baseUrl={baseUrl} {...link} {...props}>
       <StyledButton
@@ -192,7 +192,7 @@ const Button = ({
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
-  baseUrl: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string,
   active: PropTypes.bool,
   handler: PropTypes.func,
   disablePointerEvents: PropTypes.bool,
@@ -202,6 +202,7 @@ Button.propTypes = {
 Button.defaultProps = {
   handler: null,
   active: false,
+  baseUrl: null,
   disablePointerEvents: false,
   link: null,
 };

@@ -56,5 +56,10 @@ export default {
       name: "linkWithIcon",
       type: "iconLink",
     },
+    {
+      title: "Touch Us",
+      name: "touchUsModal",
+      type: "touchUs",
+    },
   ],
 };
