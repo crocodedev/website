@@ -5,7 +5,6 @@ const HeaderContentItemShopify = styled(Link)`
   display: flex;
   align-items: center;
   align-self: center;
-  height: 100%;
   white-space: nowrap;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
@@ -13,6 +12,7 @@ const HeaderContentItemShopify = styled(Link)`
     order: 1;
     gap: 10px;
     align-self: flex-start;
+    width: 100%;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
@@ -20,11 +20,19 @@ const HeaderContentItemShopify = styled(Link)`
     gap: 10px;
     padding: 20px;
     align-self: flex-start;
+    width: 100%;
   }
 
-  ${({ theme }) => theme.breakpoints.up("xl")} {
+  ${({theme}) => theme.breakpoints.between("xl", "2xl")} {
+    margin-right: 30px;
+    height: 100%;
+    gap: 5px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("2xl")} {
     margin-right: 64px;
     gap: 5px;
+    height: 100%;
   }
 
   &:hover {
@@ -39,7 +47,7 @@ const HeaderContentItemShopify = styled(Link)`
     }
 
     ${({ theme }) => theme.breakpoints.up("xl")} {
-      padding: 0px;
+      padding: 0;
     }
   }
 `;

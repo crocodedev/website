@@ -5,6 +5,7 @@ const HeaderMenuWrapper = styled.div`
   display: flex;
   width: 44px;
   height: 100%;
+  justify-content: flex-end;
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     display: none;

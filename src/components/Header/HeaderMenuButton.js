@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
 
 const HeaderMenuButton = styled.button`
-  position: absolute;
-  z-index: 2;
+  // position: absolute;
+  z-index: 4;
   align-items: center;
   cursor: pointer;
   display: flex;
   padding: 10px;
-  width: 100%;
   height: 100%;
 `;
 

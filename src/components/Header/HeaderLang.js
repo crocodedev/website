@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 const HeaderLang = styled.div`
   display: flex;
   gap: 5px;
-  align-self: center;
   position: relative;
   padding: 30px 10px;
   cursor: pointer;
@@ -16,6 +15,11 @@ const HeaderLang = styled.div`
     padding: 20px;
   }
 
+
+  ${({theme}) => theme.breakpoints.down("xl")} {
+    align-self: flex-start;
+  }
+
   &:after {
     display: block;
     width: 9px;
@@ -25,19 +29,8 @@ const HeaderLang = styled.div`
     border-top: 2px solid ${({ theme }) => theme.palette.text.primary};
     border-right: 2px solid ${({ theme }) => theme.palette.text.primary};
     border-radius: 2px;
-    margin-top: 6px;
+    margin-top: 2px;
     transition-duration: 0.2s;
-  }
-
-  &:hover {
-    & div {
-      display: flex;
-    }
-    &:after {
-      transform: rotate(-45deg);
-      margin-top: 9px;
-      transition-duration: 0.2s;
-    }
   }
 `;
 

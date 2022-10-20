@@ -3,7 +3,7 @@ import Container from "../Container";
 
 const TextOneContainer = styled(Container)`
   position: relative;
-  z-index: 3;
+  z-index: 2;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 40px;

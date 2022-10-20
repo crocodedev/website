@@ -42,6 +42,7 @@ const Contacts = ({
   React.useEffect(() => {
     setViewState(mapCoordinates);
   }, [mapCoordinates]);
+
   return (
     <SectionWrapper>
       <Container>

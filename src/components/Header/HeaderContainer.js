@@ -15,10 +15,10 @@ const HeaderContainer = styled.div`
   ${({ theme }) => theme.breakpoints.down("md")} {
     height: 70px;
     padding: 13px 6px 14px 16px;
+
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    padding-right: 75px;
     padding-left: 75px;
   }
 
@@ -34,7 +34,9 @@ const HeaderContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-    gap: 80px;
+    gap: 50px;
+    // padding-left: 20px;
+    // padding-right: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.up("2xl")} {

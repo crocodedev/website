@@ -11,6 +11,8 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
         ? `
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
+    border: 1px solid ${theme.palette.primary.main};
+    pointer-events: none;
     ${!disablePointerEvents ? "pointer-events: none" : ""};
     `
         : `
@@ -96,46 +98,6 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
         border-left: 2px solid ${theme.palette.primary.main};
         border-top: 2px solid ${theme.palette.primary.main};
         border-radius: 2px;
-      }
-    }
-  `
-    : ""}
-  ${variant === "backUp"
-    ? `
-    position: fixed;
-    z-index: 2;
-
-
-    background-color: ${theme.palette.primary.main};
-    border-radius: ${theme.borderRadius.small};
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-    &:hover {
-      background-color: ${theme.palette.secondary.dark};
-    }
-
-    ${theme.breakpoints.down("md")} {
-      padding: 10px;
-      bottom: 25px;
-      right: 25px;
-    }
-
-    ${theme.breakpoints.up("md")} {
-      padding: 20px;
-      bottom: 50px;
-      right: 50px;
-    }
-
-    & picture img {
-
-      ${theme.breakpoints.down("md")} {
-        width: 18px;
-        height: 18px;
-      }
-
-      ${theme.breakpoints.up("md")} {
-        width: 24px;
-        height: 24px;
       }
     }
   `

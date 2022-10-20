@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
+
 const dynamicStyle = ({ subscribeModal }) => css`
   ${subscribeModal
     ? `z-index: 2;

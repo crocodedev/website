@@ -14,8 +14,11 @@ const BlogList = ({
   slug,
   articles,
   categories,
+  /* numberOfPosts, */
+  /* title, */
   articleSeparator,
   breadcrumbs,
+  /* baseUrl, */
   i18n_lang: i18nLang,
   baseUrl,
   pageCount,

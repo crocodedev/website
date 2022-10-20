@@ -1,15 +1,13 @@
 import * as React from "react";
-import BackUpButtonWrapper from "./BackUpButton/BackUpButtonWrapper";
-import Button from "./Button";
-import ImageStatic from "./Image";
+import BackUpButtonContent from "./BackUpButton/BackUpButtonContent";
 
 const BackUpButton = () => {
   const [visibleButton, setVisibleButton] = React.useState("");
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > "2000") {
-        setVisibleButton("backUp");
+      if (window.pageYOffset > "1000") {
+        setVisibleButton("on");
       } else {
         setVisibleButton(null);
       }
@@ -24,11 +22,7 @@ const BackUpButton = () => {
   };
 
   return (
-    <BackUpButtonWrapper>
-      <Button handler={backUp} variant={visibleButton}>
-        <ImageStatic src="/uploads/back-up-button.svg" />
-      </Button>
-    </BackUpButtonWrapper>
+    <BackUpButtonContent onClick={backUp} variant={visibleButton} />
   );
 };
 

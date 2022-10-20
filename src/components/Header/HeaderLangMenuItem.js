@@ -7,6 +7,22 @@ const HeaderLangMenuItem = styled(Link)`
   align-items: center;
   flex-direction: row;
   padding: 10px 15px;
+
+  &:hover {
+    p {
+      color: ${({theme}) => theme.palette.primary.main};
+    }
+  }
+
+  & div {
+    min-width: 24px;
+    min-height: 16px;
+
+    & >img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 export default HeaderLangMenuItem;

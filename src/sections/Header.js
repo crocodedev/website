@@ -19,6 +19,8 @@ import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
 import Link from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
+import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
+import useScrollingUp from "@/hooks/use-scrollingUp";
 import ContactUsModal from "@/sections/ContactUsModal";
 
 const Header = ({
@@ -35,17 +37,27 @@ const Header = ({
   const theme = useTheme();
   const [active, setActive] = React.useState("");
 
+  const isScrollingUp = useScrollingUp();
+
+  React.useEffect(() => {
+    if(active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [active]);
   const [closeModal, setCloseModal] = React.useState(false);
   const changeModalContactUs = () => {
     setCloseModal(!closeModal);
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper variant={`${isScrollingUp ? 'sticky' : ""}`}>
       <HeaderContainer>
         <HeaderLogo>
           <Image loading="lazy" {...logoImage} />
         </HeaderLogo>
+        <HeaderContentWrapper variant={active} onClick={() => setActive("")} />
         <HeaderContent variant={active}>
           {linkWithIcon && (
             <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
@@ -56,7 +68,7 @@ const Header = ({
             </HeaderContentItemShopify>
           )}
           {headerLinks?.map((link) => (
-            <HeaderContentItem baseUrl={baseUrl} {...link} key={link._key}>
+            <HeaderContentItem active={typeof window !== "undefined" && `${link.linkInternal.reference.slug.current}` === window.location.pathname} baseUrl={baseUrl} {...link} key={link._key}>
               {link?.title}
             </HeaderContentItem>
           ))}
@@ -76,6 +88,7 @@ const Header = ({
                   loading="lazy"
                   {...locales?.find((locale) => locale.index === currentLocale).icon}
                 />
+              </HeaderLang>
                 <HeaderLangMenu>
                   {locales?.map(({ icon, _key, title, index }) => {
                     return index !== currentLocale ? (
@@ -97,7 +110,6 @@ const Header = ({
                     ) : null;
                   })}
                 </HeaderLangMenu>
-              </HeaderLang>
             </HeaderLangWrapper>
           )}
         </HeaderContent>
