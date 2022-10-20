@@ -87,6 +87,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityCasesCountry {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       i18n_lang
       sectionTitle
@@ -136,6 +154,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityArticlesItem {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       date
       title
@@ -180,11 +216,29 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         contentImage {
           ${image}
         }
-      }
+    }
     }
   }
   allSanityBlogCategory {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       _id
       id
       title
@@ -216,6 +270,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityPage {
   nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       title
       slug {
         current
@@ -294,7 +366,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -337,7 +409,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -370,7 +442,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -417,7 +489,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
               url,
               name,
             },
-            /* 
+            /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
@@ -456,7 +528,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
             url,
             name,
           },
-          /* 
+          /*
           cookieConsent: {
             ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
             cookieName: config.googleAnalytics.cookieName,
