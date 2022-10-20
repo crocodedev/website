@@ -1,13 +1,15 @@
 import ArticlesItem from "./ArticlesItem";
 import Benefits from "./Benefits";
 import BlogList from "./BlogList";
-import Case from "./Case";
+import HeroProject from "./HeroProject";
 import CaseStudies from "./CaseStudies";
 import Contacts from "./Contacts";
 import ContactUs from "./ContactUs";
 import CtaForm from "./CtaForm";
 import CtaImage from "./CtaImage";
 import CtaText from "./CtaText";
+import Challenge from "./Challenge";
+import BlockText from "./BlockText";
 import Development from "./Development";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
@@ -33,18 +35,21 @@ import TechnologyStack from "./TechnologyStack";
 import TextOne from "./TextOne";
 import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
+import CasesList from "./CasesList";
 
 export {
   ArticlesItem,
   Benefits,
   BlogList,
-  Case,
+  BlockText,
+  HeroProject,
   CaseStudies,
   Contacts,
   ContactUs,
   CtaForm,
   CtaImage,
   CtaText,
+  Challenge,
   Development,
   FAQ,
   Footer,
@@ -70,4 +75,5 @@ export {
   TextOne,
   TextTwo,
   TextThree,
+  CasesList,
 };

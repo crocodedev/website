@@ -1,6 +1,11 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { sections } from "./desk/sections";
 import { pages } from "./desk/pages";
+import { cases } from "./desk/cases";
+import { articles } from "./desk/articles";
+import { blogCategory } from "./desk/blogCategory";
+import { casesCountry } from "./desk/casesCountry";
+import { debug } from "./desk/debug";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
@@ -29,6 +34,13 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "contactUs",
   "ctaForm",
   "challenge",
+  "articlesItem",
+  "casesItem",
+  "blogCategory",
+  "casesCountry",
+  "page",
+  "settings",
+  "policy",
 ];
 
 export default () => {
@@ -37,10 +49,16 @@ export default () => {
     .title("Content")
     .items([
       pages,
-      S.divider(),
       sections,
       S.divider(),
+      casesCountry,
+      cases,
+      S.divider(),
+      blogCategory,
+      articles,
+      S.divider(),
       S.documentListItem().id("global-config").schemaType("settings").title("Settings"),
+      debug,
       S.divider(),
       // Automatically add new document types to the root pane
       ...S.documentTypeListItems().filter(

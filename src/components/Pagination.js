@@ -18,7 +18,7 @@ const dynamicStyle = ({ theme, active }) => css`
     : ""}
 `;
 
-const StyledPaginationItem = styled(Link)`
+const StyledPaginationItem = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
   const [arrOfCurrButtons, setArrOfCurrButtons] = React.useState([]);
   const arrayOfPages = [];
 
-  for (let i = 1; i < pageCount; i += 1) {
+  for (let i = 1; i <= pageCount; i += 1) {
     arrayOfPages.push(i);
   }
   React.useEffect(() => {
@@ -121,7 +121,7 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
         as={isDynamic ? "button" : Link}
         aria-label="right"
         align="right"
-        disabled={+currentPage === +pageCount - 1}
+        disabled={+currentPage === +pageCount}
         onClick={() => (isDynamic ? handler(currentPage + 1) : {})}
         to={isBrowser && `${link}/${currentPage + 1}`}
       />

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
+import React from "react";
 import styled from "@emotion/styled";
 
-import React from "react";
+import prettifyLinks from "@/helpers/prettifyLinks";
 import Text from "../Text";
-import Link from "../Link";
 
 const StyledPolicyItem = styled.div`
   display: flex;
@@ -25,46 +25,29 @@ const StyledPolicyItem = styled.div`
   }
 `;
 
-const PolicyItem = ({ title, list, text, texts, link, textWithLink }) => {
+const BlockTextItem = ({ title, text, list, links }) => {
   return (
     <StyledPolicyItem>
       {title ? (
         <Text lineHeight="sm" fontSize="link" fontWeight="bold">
-          {title}
+          {prettifyLinks(title, links)}
         </Text>
       ) : (
         ""
       )}
-      {text ? (
-        <Text lineHeight="sm" fontSize="link">
-          {text}
-        </Text>
-      ) : (
-        ""
-      )}
-      {textWithLink ? (
-        <Text lineHeight="sm" fontSize="link">
-          {textWithLink.textBeforeLink}
-          <Link to={textWithLink.link}>{textWithLink.link}</Link>
-          {textWithLink.textAfterLink}
-        </Text>
-      ) : (
-        ""
-      )}
-      {texts
-        ? texts.map((item) => (
-            <Text fontSize="link" lineHeight="sm" key={item}>
-              {item}
-            </Text>
-          ))
+      {text
+        ? text.map((item) => (
+          <Text fontSize="link" lineHeight="sm" key={item}>
+            {prettifyLinks(item, links)}
+          </Text>
+        ))
         : ""}
-      {link ? <Link to={link}>{link}</Link> : ""}
       {list ? (
         <ol>
           {list.map((item) => (
             <li key={item}>
               <Text lineHeight="sm" fontSize="link">
-                {item}
+                {prettifyLinks(item, links)}
               </Text>
             </li>
           ))}
@@ -76,25 +59,18 @@ const PolicyItem = ({ title, list, text, texts, link, textWithLink }) => {
   );
 };
 
-PolicyItem.propTypes = {
+BlockTextItem.propTypes = {
   title: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.string),
-  text: PropTypes.string.isRequired,
-  texts: PropTypes.arrayOf(PropTypes.string),
-  link: PropTypes.string,
-  textWithLink: PropTypes.exact({
-    textBeforeLink: PropTypes.string,
-    link: PropTypes.string,
-    textAfterLink: PropTypes.string,
-  }),
+  text: PropTypes.string,
+  links: PropTypes.string,
 };
 
-PolicyItem.defaultProps = {
+BlockTextItem.defaultProps = {
   title: "",
+  text: null,
   list: null,
-  texts: null,
-  link: null,
-  textWithLink: null,
+  links: null,
 };
 
-export default PolicyItem;
+export default BlockTextItem;

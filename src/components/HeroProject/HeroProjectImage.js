@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const CaseImage = styled.div`
+const HeroProjectImage = styled.div`
   width: 100%;
   overflow: hidden;
 
@@ -11,4 +11,4 @@ const CaseImage = styled.div`
   }
 `;
 
-export default CaseImage;
+export default HeroProjectImage;

@@ -5,6 +5,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import page from "./documents/page";
 import blogCategory from "./documents/blogCategory";
 import settings from "./documents/settings";
+import casesItem from "./documents/casesItem";
+import casesCountry from "./documents/casesCountry";
 
 // sections
 import hero from "./sections/hero";
@@ -33,6 +35,7 @@ import header from "./sections/header";
 import contactUs from "./sections/contactUs";
 import ctaForm from "./sections/ctaForm";
 import challenge from "./sections/challenge";
+import blockText from "./sections/blockText";
 
 // objects
 import link from "./objects/link";
@@ -51,7 +54,6 @@ import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
 import projectFeature from "./objects/projectFeature";
-import casesItem from "./objects/casesItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
@@ -67,6 +69,8 @@ import technologyCategory from "./objects/technologyCategory";
 import technologiesArray from "./objects/technologiesArray";
 import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
+import blockTextItem from "./objects/blockTextItem";
+import modalWindow from "./objects/modalWindow";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -77,6 +81,7 @@ import itemsSteps from "./blocks/itemsSteps";
 import headerLinks from "./blocks/headerLinks";
 import blogContent from "./blocks/blogContent";
 import blogSections from "./blocks/blogSections";
+import touchUs from "./blocks/touchUs";
 
 export default createSchema({
   name: "default",
@@ -88,6 +93,8 @@ export default createSchema({
     articlesItem,
     locale,
     settings,
+    casesItem,
+    casesCountry,
 
     // sections
     hero,
@@ -116,6 +123,7 @@ export default createSchema({
     contactUs,
     ctaForm,
     challenge,
+    blockText,
 
     // objects
     link,
@@ -134,7 +142,6 @@ export default createSchema({
     reviewItem,
     technologyStackItem,
     projectFeature,
-    casesItem,
     technologiesItem,
     socialIconItem,
     columnLinksItem,
@@ -148,6 +155,8 @@ export default createSchema({
     technologyCategory,
     technologiesArray,
     contentItem,
+    modalWindow,
+    blockTextItem,
 
     // blocks
     pageSection,
@@ -158,5 +167,6 @@ export default createSchema({
     headerLinks,
     blogSections,
     blogContent,
+    touchUs,
   ]),
 });

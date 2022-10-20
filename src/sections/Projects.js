@@ -192,7 +192,6 @@ const dataPage = {
       id: 8,
       title: "blog",
     },
-
     {
       id: 8,
       title: "blog",

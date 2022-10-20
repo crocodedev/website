@@ -25,6 +25,7 @@ import { header } from "./plLocale/header";
 import { contactUs } from "./plLocale/contactUs";
 import { ctaForm } from "./plLocale/ctaForm";
 import { challenge } from "./plLocale/challenge";
+import { blockText } from "./plLocale/blockText";
 
 export const plLocale = S.listItem()
   .title("PL Sections")
@@ -32,31 +33,32 @@ export const plLocale = S.listItem()
     S.list()
       .title("PL Sections")
       .items([
+        blockText,
+        benefits,
+        caseStudies,
+        ctaForm,
+        ctaText,
+        contacts,
+        ctaImage,
+        challenge,
+        contactUs,
+        development,
+        faq,
+        footer,
+        header,
         hero,
         heroMain,
         heroProject,
         list,
+        notFound,
+        ourClients,
+        ourTeam,
+        reviews,
+        sliderSteps,
+        technologyStack,
+        technologies,
         textOne,
         textTwo,
         textThree,
-        ctaText,
-        notFound,
-        benefits,
-        contacts,
-        development,
-        ourTeam,
-        ctaImage,
-        faq,
-        sliderSteps,
-        ourClients,
-        reviews,
-        technologyStack,
-        caseStudies,
-        technologies,
-        footer,
-        header,
-        contactUs,
-        ctaForm,
-        challenge,
       ]),
   );

@@ -17,7 +17,7 @@ export default {
     {
       name: "i18n_lang",
       type: "string",
-      hidden: true,
+      // hidden: true,
     },
     {
       name: "i18n_base",

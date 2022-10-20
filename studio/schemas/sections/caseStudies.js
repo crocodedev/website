@@ -5,7 +5,7 @@ export default {
     },
   },
 
-  title: "Case studies",
+  title: "HeroProject studies",
   name: "caseStudies",
   type: "document",
   i18n: true,
@@ -49,7 +49,8 @@ export default {
 
       of: [
         {
-          type: "casesItem",
+          type: "reference",
+          to: [{ type: "casesItem" }],
         },
       ],
     },

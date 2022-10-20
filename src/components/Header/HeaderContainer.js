@@ -5,9 +5,12 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
 
+  /*
+  Коммент для отображения input  в модалке contactsUs
   & input {
-    display: none;
-  }
+     display: none;
+   }
+   */
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     height: 70px;

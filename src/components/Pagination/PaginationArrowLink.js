@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { Link } from "gatsby";
 
 const dynamicStyles = ({ theme, align, disabled }) => css`
   &::after {
@@ -96,7 +95,7 @@ const dynamicStyles = ({ theme, align, disabled }) => css`
   `}
 `;
 
-const PaginationArrowLink = styled(Link)`
+const PaginationArrowLink = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

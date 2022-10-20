@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const CaseContent = styled.div`
+const HeroProjectContent = styled.div`
   width: 100%;
 
   & .swiper {
@@ -63,4 +63,4 @@ const CaseContent = styled.div`
   }
 `;
 
-export default CaseContent;
+export default HeroProjectContent;

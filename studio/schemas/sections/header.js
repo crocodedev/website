@@ -20,6 +20,7 @@ export default {
       title: "Position",
       name: "position",
       type: "number",
+      readOnly: true,
       validation: (Rule) => Rule.required(),
     },
     {
@@ -54,6 +55,11 @@ export default {
       title: "Link with icon",
       name: "linkWithIcon",
       type: "iconLink",
+    },
+    {
+      title: "Touch Us",
+      name: "touchUsModal",
+      type: "touchUs",
     },
   ],
 };
