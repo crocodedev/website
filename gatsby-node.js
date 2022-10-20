@@ -89,6 +89,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityCasesCountry {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       i18n_lang
       sectionTitle
@@ -138,6 +156,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityArticlesItem {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       date
       title
@@ -182,11 +218,29 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         contentImage {
           ${image}
         }
-      }
+    }
     }
   }
   allSanityBlogCategory {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       _id
       id
       title
@@ -218,6 +272,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   }
   allSanityPage {
   nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       title
       slug {
         current

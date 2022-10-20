@@ -1,7 +1,7 @@
 import ArticlesItem from "./ArticlesItem";
 import Benefits from "./Benefits";
 import BlogList from "./BlogList";
-import Case from "./Case";
+import HeroProject from "./HeroProject";
 import CaseStudies from "./CaseStudies";
 import Contacts from "./Contacts";
 import ContactUs from "./ContactUs";
@@ -42,7 +42,7 @@ export {
   Benefits,
   BlogList,
   BlockText,
-  Case,
+  HeroProject,
   CaseStudies,
   Contacts,
   ContactUs,

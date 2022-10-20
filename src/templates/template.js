@@ -11,13 +11,14 @@ import fontMontserrat from "@/styles/fontMontserrat";
 import "destyle.css/destyle.css";
 
 const Template = ({
-                    pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
-                  }) => {
+  pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
       <Helmet defer={false} title="HomePage" />
       <Global styles={[reboot, fontMontserrat]} />
+
       {sections.map(({ id, component, ...props }) => {
         const Component = Sections[component];
         if (!Component) return null;
