@@ -71,6 +71,11 @@ import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
 import blockTextItem from "./objects/blockTextItem";
 import modalWindow from "./objects/modalWindow";
+import projectItem from "./objects/projectItem";
+import projectInfo from "./objects/projectInfo";
+import projectDescription from "./objects/projectDescription";
+import cookies from "./objects/cookies";
+import cookiesItem from "./objects/cookiesItem";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -157,6 +162,11 @@ export default createSchema({
     contentItem,
     modalWindow,
     blockTextItem,
+    projectItem,
+    projectInfo,
+    projectDescription,
+    cookies,
+    cookiesItem,
 
     // blocks
     pageSection,

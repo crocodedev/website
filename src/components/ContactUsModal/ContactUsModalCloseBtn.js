@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import React from "react";
 
 const ContactUsModalCloseBtn = styled.div`
   margin-left: auto;
@@ -12,7 +11,8 @@ const ContactUsModalCloseBtn = styled.div`
     height: 48px;
     cursor: pointer;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       left: 15px;
       content: "";

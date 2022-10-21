@@ -7,8 +7,7 @@ import BlockTextItem from "@/components/BlockText/BlockTextItem";
 import Container from "@/components/Container";
 import BlockTextContent from "@/components/BlockText/BlockTextContent";
 
-
-const BlockText = ({ baseUrl, content, title, subtitle }) => {
+const BlockText = ({ content, title, subtitle }) => {
   const theme = useTheme();
   return (
     <SectionWrapper color={theme.palette.background.paper}>
@@ -25,7 +24,6 @@ const BlockText = ({ baseUrl, content, title, subtitle }) => {
 };
 
 BlockText.propTypes = {
-  baseUrl: PropTypes.string.isRequired,
   content: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,

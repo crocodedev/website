@@ -16,11 +16,7 @@ import ContactsUsInput from "@/components/ContactUs/ContactsUsInput";
 import Button from "@/components/Button";
 import ContactUsModalContentInner from "@/components/ContactUsModal/ContactUsModalContentInner";
 
-const ContactUsModal = ({
-                          subscribeModal,
-                          handler,
-                          touchUsModal,
-                        }) => {
+const ContactUsModal = ({ subscribeModal, handler, touchUsModal }) => {
   const {
     buttonText,
     emailPlaceholder,
@@ -32,7 +28,12 @@ const ContactUsModal = ({
     agreementText,
   } = touchUsModal;
 
-  const { text, link: { linkInternal: { label } } } = agreementText;
+  const {
+    text,
+    link: {
+      linkInternal: { label },
+    },
+  } = agreementText;
 
   const schema = yup.object().shape({
     name: yup
@@ -80,15 +81,15 @@ const ContactUsModal = ({
               validationSchema={schema}
             >
               {({
-                  values: { name, email },
-                  errors,
-                  touched,
-                  handleChange,
-                  handleBlur,
-                  handleSubmit,
-                  isValid,
-                  dirty,
-                }) => (
+                values: { name, email },
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isValid,
+                dirty,
+              }) => (
                 <ContactsUsForm>
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">

@@ -13,7 +13,7 @@ import BackUpButton from "@/components/BackUpButton";
 import CookiesPopup from "@/components/CookiesPopup";
 
 const Template = ({
-  pageContext: { baseUrl, seo, sections, locales, currentLocale, defaultLocale },
+  pageContext: { cookieConsent, baseUrl, seo, sections, locales, currentLocale, defaultLocale },
 }) => {
   return (
     <ThemeProvider theme={theme}>
@@ -28,15 +28,15 @@ const Template = ({
         if (component === "Header") {
           return (
             <>
-            <Component
-              key={id}
-              baseUrl={baseUrl}
-              locales={locales}
-              currentLocale={currentLocale}
-              defaultLocale={defaultLocale}
-              {...props}
-            />
-            <BackUpButton />
+              <Component
+                key={id}
+                baseUrl={baseUrl}
+                locales={locales}
+                currentLocale={currentLocale}
+                defaultLocale={defaultLocale}
+                {...props}
+              />
+              <BackUpButton />
             </>
           );
         }

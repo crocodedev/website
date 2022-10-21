@@ -1,13 +1,4 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-
-const dynamicStyle = ({ variant }) => css`
-  ${variant === "none"
-    ? `
-  display: none;
-  `
-    : ""}
-`;
 
 const ContactUsModalCloseWrapper = styled.div`
   position: relative;

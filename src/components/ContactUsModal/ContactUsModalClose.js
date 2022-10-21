@@ -5,7 +5,7 @@ const ContactUsModalClose = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   cursor: pointer;
   background-color: rgb(73 73 73 / 50%);
 `;

@@ -14,13 +14,7 @@ import Text from "@/components/Text";
 import HeroProjectImage from "@/components/HeroProject/HeroProjectImage";
 import Image from "@/components/Image";
 
-const HeroProject = ({
-                       breadcrumbs,
-                       projectFeatures,
-                       projectImage,
-                       title,
-                     }) => {
-
+const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title }) => {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
@@ -60,7 +54,7 @@ const HeroProject = ({
           >
             {projectFeatures?.map(({ projectInfo: { projectFeature } }) => (
               <SwiperSlide key="test">
-                {projectFeature?.map(el => (
+                {projectFeature?.map((el) => (
                   <HeroProjectBottomItem key={el.title}>
                     <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
                       {el.title}

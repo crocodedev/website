@@ -28,7 +28,7 @@ const CasesList = ({
   const [currentPage, setCurrentPage] = useState(+location.search.split("=")[1] || 1);
   const [showingCasesItems, setShowingCasesItems] = useState(casesItems);
   const pageCount = Math.ceil(showingCasesItems.length / numberOfPosts);
-  console.log(pageCount);
+
   const handleSetCurrentPage = (page) => {
     navigate(`?page=${page}`);
     setCurrentPage(page);

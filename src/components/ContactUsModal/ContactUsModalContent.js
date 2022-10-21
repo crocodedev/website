@@ -4,7 +4,7 @@ const ContactUsModalContent = styled.div`
   text-align: center;
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 50vh;
   transform: translate(-50%, -50%);
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
