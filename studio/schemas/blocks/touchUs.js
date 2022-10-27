@@ -1,4 +1,5 @@
 export default {
+  title: "Touch us",
   name: "touchUs",
   type: "object",
   fields: [

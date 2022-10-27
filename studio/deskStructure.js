@@ -9,6 +9,7 @@ import { debug } from "./desk/debug";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
+  "blockText",
   "heroMain",
   "heroProject",
   "list",
@@ -40,7 +41,6 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "casesCountry",
   "page",
   "settings",
-  "policy",
 ];
 
 export default () => {

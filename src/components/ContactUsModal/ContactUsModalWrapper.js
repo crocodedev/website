@@ -1,20 +1,19 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-
-const dynamicStyle = ({ subscribeModal }) => css`
-  ${subscribeModal
-    ? `z-index: 2;
+const dynamicStyle = ({ isOpen }) => css`
+  ${isOpen
+    ? `z-index: 5;
     pointer-events: auto;
     opacity: 1;`
     : `
     @keyframes zIndex {
       0% {
-        z-index: 2;
+        z-index: 5;
       }
 
       99% {
-        z-index: 2;
+        z-index: 5;
       }
 
       100% {
@@ -28,9 +27,9 @@ const dynamicStyle = ({ subscribeModal }) => css`
 
 const ContactUsModalWrapper = styled.div`
   animation-name: zIndex;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   position: fixed;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   width: 100%;
   height: 100%;
   top: 0;

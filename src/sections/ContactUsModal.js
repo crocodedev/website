@@ -16,7 +16,7 @@ import ContactsUsInput from "@/components/ContactUs/ContactsUsInput";
 import Button from "@/components/Button";
 import ContactUsModalContentInner from "@/components/ContactUsModal/ContactUsModalContentInner";
 
-const ContactUsModal = ({ subscribeModal, handler, touchUsModal }) => {
+const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
   const {
     buttonText,
     emailPlaceholder,
@@ -53,7 +53,7 @@ const ContactUsModal = ({ subscribeModal, handler, touchUsModal }) => {
   });
 
   return (
-    <ContactUsModalWrapper subscribeModal={subscribeModal}>
+    <ContactUsModalWrapper isOpen={isOpen}>
       <ContactUsModalClose onClick={handler} />
       <ContactUsModalContent>
         <ContactUsModalCloseWrapper>
@@ -152,7 +152,7 @@ const ContactUsModal = ({ subscribeModal, handler, touchUsModal }) => {
 ContactUsModal.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
   handler: PropTypes.func.isRequired,
-  subscribeModal: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
   data: PropTypes.exact({
     title: PropTypes.string,
     desc: PropTypes.string,

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "@emotion/react";
+import { useTheme, Global, css } from "@emotion/react";
 import PropTypes from "prop-types";
 import HeaderContainer from "@/components/Header/HeaderContainer";
 import HeaderLogo from "@/components/Header/HeaderLogo";
@@ -22,25 +22,26 @@ import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
 import useScrollingUp from "@/hooks/use-scrollingUp";
 import ContactUsModal from "@/sections/ContactUsModal";
+import useMedia from "@/hooks/use-media";
 
 const Header = ({
-                  locales,
-                  logoImage,
-                  linkWithIcon,
-                  headerLinks,
-                  headerButton,
-                  baseUrl,
-                  currentLocale,
-                  defaultLocale,
-                  touchUsModal,
-                }) => {
+  locales,
+  logoImage,
+  linkWithIcon,
+  headerLinks,
+  headerButton,
+  baseUrl,
+  currentLocale,
+  defaultLocale,
+  touchUsModal,
+}) => {
   const theme = useTheme();
   const [active, setActive] = React.useState("");
-
-  const isScrollingUp = useScrollingUp();
+  const offset = useMedia(["(max-width: 768px)"], [70], 90);
+  const isScrollingUp = useScrollingUp(offset);
 
   React.useEffect(() => {
-    if(active) {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -52,43 +53,59 @@ const Header = ({
   };
 
   return (
-    <HeaderWrapper variant={`${isScrollingUp ? 'sticky' : ""}`}>
-      <HeaderContainer>
-        <HeaderLogo>
-          <Image loading="lazy" {...logoImage} />
-        </HeaderLogo>
-        <HeaderContentWrapper variant={active} onClick={() => setActive("")} />
-        <HeaderContent variant={active}>
-          {linkWithIcon && (
-            <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
-              <Image {...linkWithIcon.icon} />
-              <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
-                {linkWithIcon.link.title}
-              </Text>
-            </HeaderContentItemShopify>
-          )}
-          {headerLinks?.map((link) => (
-            <HeaderContentItem active={typeof window !== "undefined" && `${link.linkInternal.reference.slug.current}` === window.location.pathname} baseUrl={baseUrl} {...link} key={link._key}>
-              {link?.title}
-            </HeaderContentItem>
-          ))}
-          {headerButton && (
-            <HeaderContentBtnWrapper>
-              <Button handler={changeModalContactUs} variant="contained">
-                {headerButton.title}
-              </Button>
-              <ContactUsModal touchUsModal={touchUsModal} handler={changeModalContactUs}
-                              subscribeModal={closeModal} />
-            </HeaderContentBtnWrapper>
-          )}
-          {locales && (
-            <HeaderLangWrapper>
-              <HeaderLang>
-                <Image
-                  loading="lazy"
-                  {...locales?.find((locale) => locale.index === currentLocale).icon}
-                />
-              </HeaderLang>
+    <>
+      {closeModal && (
+        <Global
+          styles={css`
+            body {
+              overflow: hidden !important;
+            }
+          `}
+        />
+      )}
+      <HeaderWrapper variant={`${isScrollingUp ? "sticky" : ""}`}>
+        <HeaderContainer>
+          <HeaderLogo>
+            <Image loading="lazy" {...logoImage} />
+          </HeaderLogo>
+          <HeaderContentWrapper variant={active} onClick={() => setActive("")} />
+          <HeaderContent variant={active}>
+            {linkWithIcon && (
+              <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
+                <Image {...linkWithIcon.icon} />
+                <Text color={theme.palette.text.primary} lineHeight="sm" fontWeight="medium">
+                  {linkWithIcon.link.title}
+                </Text>
+              </HeaderContentItemShopify>
+            )}
+            {headerLinks?.map((link) => (
+              <HeaderContentItem
+                active={
+                  typeof window !== "undefined" &&
+                  `${link.linkInternal.reference.slug.current}` === window.location.pathname
+                }
+                baseUrl={baseUrl}
+                {...link}
+                key={link._key}
+              >
+                {link?.title}
+              </HeaderContentItem>
+            ))}
+            {headerButton && (
+              <HeaderContentBtnWrapper>
+                <Button handler={changeModalContactUs} variant="contained">
+                  {headerButton.title}
+                </Button>
+              </HeaderContentBtnWrapper>
+            )}
+            {locales && (
+              <HeaderLangWrapper>
+                <HeaderLang>
+                  <Image
+                    loading="lazy"
+                    {...locales?.find((locale) => locale.index === currentLocale).icon}
+                  />
+                </HeaderLang>
                 <HeaderLangMenu>
                   {locales?.map(({ icon, _key, title, index }) => {
                     return index !== currentLocale ? (
@@ -110,16 +127,22 @@ const Header = ({
                     ) : null;
                   })}
                 </HeaderLangMenu>
-            </HeaderLangWrapper>
-          )}
-        </HeaderContent>
-        <HeaderMenuWrapper>
-          <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
-            <HeaderMenuIcon variant={active} />
-          </HeaderMenuButton>
-        </HeaderMenuWrapper>
-      </HeaderContainer>
-    </HeaderWrapper>
+              </HeaderLangWrapper>
+            )}
+          </HeaderContent>
+          <HeaderMenuWrapper>
+            <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
+              <HeaderMenuIcon variant={active} />
+            </HeaderMenuButton>
+          </HeaderMenuWrapper>
+        </HeaderContainer>
+      </HeaderWrapper>
+      <ContactUsModal
+        touchUsModal={touchUsModal}
+        handler={changeModalContactUs}
+        isOpen={closeModal}
+      />
+    </>
   );
 };
 

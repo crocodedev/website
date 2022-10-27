@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const dynamicStyle = ({variant}) => css`
-  ${variant === "sticky" ? `
+const dynamicStyle = ({ variant }) => css`
+  ${variant === "sticky"
+    ? `
     transform: translateY(0)
-  ` : `
+  `
+    : `
     transform: translateY(-90px)
   `}
-`
+`;
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -16,8 +18,8 @@ const HeaderWrapper = styled.header`
   z-index: 4;
   display: flex;
   box-shadow: ${({ theme }) => theme.shadows.header};
-  background-color: ${({theme}) => theme.palette.primary.contrastText};
-  transition: 1s;
+  background-color: ${({ theme }) => theme.palette.primary.contrastText};
+  transition: 0.5s;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     height: 70px;
