@@ -8,7 +8,7 @@ const HeroProjectTitle = styled(Title)`
   text-transform: uppercase;
   display: grid;
   gap: 10px;
-  line-height: 150px;
+  line-height: ${({ theme }) => theme.typography.lineHeight.sm};
 
   &:after,
   &:after {

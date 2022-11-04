@@ -1,4 +1,5 @@
 module.exports.image = `
+    _key
     altText
     image {
       asset {

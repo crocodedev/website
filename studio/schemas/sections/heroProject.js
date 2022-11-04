@@ -40,7 +40,13 @@ export default {
     {
       title: "Project image",
       name: "projectImage",
-      type: "imageWithAlt",
+      type: "array",
+
+      of: [
+        {
+          type: "imageWithAlt",
+        },
+      ],
     },
     {
       title: "Project features",
@@ -49,7 +55,7 @@ export default {
 
       of: [
         {
-          type: "projectItem",
+          type: "heroProjectInfo",
         },
       ],
     },

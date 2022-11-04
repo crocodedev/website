@@ -13,58 +13,46 @@ import HeroProjectBottomItem from "@/components/HeroProject/HeroProjectBottomIte
 import Text from "@/components/Text";
 import HeroProjectImage from "@/components/HeroProject/HeroProjectImage";
 import Image from "@/components/Image";
+import Breadcrumb from "@/components/Breadcrumb";
 
-const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title }) => {
+const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUrl, color }) => {
   const [firstSwiper, setFirstSwiper] = useState(null);
-  const [secondSwiper, setSecondSwiper] = useState(null);
 
   return (
     <SectionWrapper>
       <Container>
+        <Breadcrumb baseUrl={baseUrl} color={color} links={breadcrumbs} />
         <HeroProjectTitle>{title}</HeroProjectTitle>
         <HeroProjectContent>
           <Swiper
             modules={[Controller]}
             onSwiper={setFirstSwiper}
-            controller={{ control: secondSwiper }}
+            controller={{ control: firstSwiper }}
             centeredSlides={true}
             slidesPerView={3}
             slideToClickedSlide={true}
-            speed={1500}
+            speed={800}
+            loop={true}
             initialSlide={1}
           >
-            {projectFeatures?.map(({ projectInfo: { featureImage } }) => (
-              <SwiperSlide key={featureImage.alt}>
+            {projectImage.map((img) => (
+              <SwiperSlide key={img._key}>
                 <HeroProjectImage>
-                  <Image altText={featureImage.alt} image={featureImage.image} />
+                  <Image altText={img.alt} image={img.image} />
                 </HeroProjectImage>
               </SwiperSlide>
             ))}
           </Swiper>
         </HeroProjectContent>
         <HeroProjectBottom>
-          <Swiper
-            modules={[Controller]}
-            onSwiper={setSecondSwiper}
-            controller={{ control: firstSwiper }}
-            centeredSlides={true}
-            slidesPerView="auto"
-            speed={1500}
-            initialSlide={1}
-          >
-            {projectFeatures?.map(({ projectInfo: { projectFeature } }) => (
-              <SwiperSlide key="test">
-                {projectFeature?.map((el) => (
-                  <HeroProjectBottomItem key={el.title}>
-                    <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
-                      {el.title}
-                    </Text>
-                    <Text mobileMultiplier={0.875}>{el.subtitle}</Text>
-                  </HeroProjectBottomItem>
-                ))}
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {projectFeatures.map((el) => (
+            <HeroProjectBottomItem key={el._key}>
+              <Text mobileMultiplier={0.875} fontWeight="semiBold" lineHeight="sm">
+                {el.title}
+              </Text>
+              <Text mobileMultiplier={0.875}>{el.text}</Text>
+            </HeroProjectBottomItem>
+          ))}
         </HeroProjectBottom>
       </Container>
     </SectionWrapper>
@@ -73,9 +61,11 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title }) => {
 
 HeroProject.propTypes = {
   breadcrumbs: PropTypes.object.isRequired,
-  projectFeatures: PropTypes.array.isRequired,
-  projectImage: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  projectFeatures: PropTypes.array.isRequired,
+  projectImage: PropTypes.array.isRequired,
 };
 
 export default HeroProject;
