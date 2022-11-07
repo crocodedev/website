@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller } from "swiper";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
@@ -16,8 +15,6 @@ import Image from "@/components/Image";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUrl, color }) => {
-  const [firstSwiper, setFirstSwiper] = useState(null);
-
   return (
     <SectionWrapper>
       <Container>
@@ -25,9 +22,6 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUr
         <HeroProjectTitle>{title}</HeroProjectTitle>
         <HeroProjectContent>
           <Swiper
-            modules={[Controller]}
-            onSwiper={setFirstSwiper}
-            controller={{ control: firstSwiper }}
             centeredSlides={true}
             slidesPerView={3}
             slideToClickedSlide={true}
@@ -37,9 +31,7 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUr
           >
             {projectImage.map((img) => (
               <SwiperSlide key={img._key}>
-                <HeroProjectImage>
-                  <Image altText={img.alt} image={img.image} />
-                </HeroProjectImage>
+                <HeroProjectImage altText={img.alt} image={img.image} />
               </SwiperSlide>
             ))}
           </Swiper>

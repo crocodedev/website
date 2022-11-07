@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const HeroProjectBottom = styled.ul`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
   justify-content: center;
 

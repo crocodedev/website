@@ -29,35 +29,44 @@ const HeroProjectContent = styled.div`
 
     & .swiper-slide {
       transition: transform 1.5s;
-    }
+      height: unset;
 
-    & .swiper-slide-active {
-      z-index: 1;
+      &:not(.swiper-slide-active) {
+        height: unset;
 
-      ${({ theme }) => theme.breakpoints.down("md")} {
-        height: 100%;
-        width: 100%;
-        transform: scale(1.9);
+        & div {
+          max-height: 80%;
+        }
       }
 
-      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-        height: 180px;
-        transform: scale(1.3);
-      }
+      &-active {
+        z-index: 1;
 
-      ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-        height: 250px;
-        transform: scale(1.35);
-      }
+        & div {
+          transition: transform 1.5s;
+          height: 80%;
 
-      ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-        height: 350px;
-        transform: scale(1.4);
-      }
+          ${({ theme }) => theme.breakpoints.down("md")} {
+            width: 100%;
+            transform: scale(1.9);
+          }
 
-      ${({ theme }) => theme.breakpoints.up("2xl")} {
-        height: 415px;
-        transform: scale(1.45);
+          ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+            transform: scale(1.3);
+          }
+
+          ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+            transform: scale(1.35);
+          }
+
+          ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
+            transform: scale(1.4);
+          }
+
+          ${({ theme }) => theme.breakpoints.up("2xl")} {
+            transform: scale(1.45);
+          }
+        }
       }
     }
   }
