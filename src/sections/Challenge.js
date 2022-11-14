@@ -9,7 +9,6 @@ import ChallengeText from "@/components/Challenge/ChallengeText";
 import ChallengeContainer from "@/components/Challenge/ChallengeContainer";
 import ChallengeDot from "@/components/Challenge/ChallengeDot";
 import ChallengeModal from "@/components/Challenge/ChallengeModal";
-import ChallengeModalWrapper from "@/components/Challenge/ChallengeModalWrapper";
 
 const Challenge = ({ title, subtitle, modalContent, imagesItem }) => {
   return (
@@ -25,14 +24,12 @@ const Challenge = ({ title, subtitle, modalContent, imagesItem }) => {
           <ChallengeImage>
             {modalContent?.map(({ _key, title: itemTitle, text }) => (
               <ChallengeDot align="left" key={_key}>
-                <ChallengeModalWrapper>
-                  <ChallengeModal>
-                    <Text fontWeight="bold" mobileMultiplier={0.8}>
-                      {itemTitle}
-                    </Text>
-                    <Text mobileMultiplier={0.8}>{text}</Text>
-                  </ChallengeModal>
-                </ChallengeModalWrapper>
+                <ChallengeModal>
+                  <Text fontWeight="bold" mobileMultiplier={0.8}>
+                    {itemTitle}
+                  </Text>
+                  <Text mobileMultiplier={0.8}>{text}</Text>
+                </ChallengeModal>
               </ChallengeDot>
             ))}
             <Image {...imagesItem} />

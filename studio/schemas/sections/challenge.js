@@ -46,6 +46,7 @@ export default {
       title: "Modal content",
       name: "modalContent",
       type: "array",
+      validation: (Rule) => Rule.required().max(3),
 
       of: [
         {

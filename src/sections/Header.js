@@ -78,19 +78,22 @@ const Header = ({
                 </Text>
               </HeaderContentItemShopify>
             )}
-            {headerLinks?.map((link) => (
-              <HeaderContentItem
-                active={
-                  typeof window !== "undefined" &&
-                  `${link.linkInternal.reference.slug.current}` === window.location.pathname
-                }
-                baseUrl={baseUrl}
-                {...link}
-                key={link._key}
-              >
-                {link?.title}
-              </HeaderContentItem>
-            ))}
+            {headerLinks?.map((link) => {
+              return (
+                <HeaderContentItem
+                  active={
+                    typeof window !== "undefined" &&
+                    link.linkInternal.reference.slug.current.split("/")[1] ===
+                      window.location.pathname.split("/")[1]
+                  }
+                  baseUrl={baseUrl}
+                  {...link}
+                  key={link._key}
+                >
+                  {link?.title}
+                </HeaderContentItem>
+              );
+            })}
             {headerButton && (
               <HeaderContentBtnWrapper>
                 <Button handler={changeModalContactUs} variant="contained">
