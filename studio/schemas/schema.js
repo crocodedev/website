@@ -53,7 +53,6 @@ import textItemSteps from "./objects/textItemSteps";
 import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
-import projectFeature from "./objects/projectFeature";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
@@ -71,11 +70,9 @@ import locale from "./objects/locale";
 import contentItem from "./objects/contentItem";
 import blockTextItem from "./objects/blockTextItem";
 import modalWindow from "./objects/modalWindow";
-import projectItem from "./objects/projectItem";
-import projectInfo from "./objects/projectInfo";
-import projectDescription from "./objects/projectDescription";
 import cookies from "./objects/cookies";
 import cookiesItem from "./objects/cookiesItem";
+import heroProjectInfo from "./objects/heroProjectInfo";
 
 // blocks
 import pageSection from "./blocks/pageSection";
@@ -146,7 +143,6 @@ export default createSchema({
     ourClientsItem,
     reviewItem,
     technologyStackItem,
-    projectFeature,
     technologiesItem,
     socialIconItem,
     columnLinksItem,
@@ -162,9 +158,7 @@ export default createSchema({
     contentItem,
     modalWindow,
     blockTextItem,
-    projectItem,
-    projectInfo,
-    projectDescription,
+    heroProjectInfo,
     cookies,
     cookiesItem,
 

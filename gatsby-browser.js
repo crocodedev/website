@@ -3,6 +3,8 @@ exports.onServiceWorkerUpdateReady = () => {
 };
 
 exports.shouldUpdateScroll = () => {
-  document.querySelector("#gatsby-focus-wrapper").scrollTop = 0;
+  window.scrollTo({
+    top: 0,
+  });
   return false;
 };

@@ -15,6 +15,11 @@ export default {
       type: "string",
     },
     {
+      title: "Link",
+      name: "link",
+      type: "link",
+    },
+    {
       title: "Items",
       name: "items",
       type: "array",

@@ -15,6 +15,9 @@ const useScrollingUp = (offset = 0) => {
       const isScrolled = isBrowser && prevScroll > currScroll;
       setScrollingUp(isScrolled);
     }
+    if (currScroll < offset && !scrollingUp) {
+      setScrollingUp(true);
+    }
     prevScroll = currScroll;
   };
 

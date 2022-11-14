@@ -22,6 +22,9 @@ module.exports.footer = `
       column {
         title
         _key
+        link {
+            ${link}
+          }
         items {
           _key
           link {

@@ -24,26 +24,29 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
               <Image {...logoImage} />
             </div>
             <FooterSocials>
-              {socialIcons?.map(({ iconImage, _key }) => (
-                <FooterSocialLink key={_key} baseUrl={baseUrl}>
+              {socialIcons?.map(({ iconImage, _key, link }) => (
+                <FooterSocialLink key={_key} baseUrl={baseUrl} {...link}>
                   <Image {...iconImage} />
                 </FooterSocialLink>
               ))}
             </FooterSocials>
           </FooterCompanyInfo>
           <FooterTopStack>
-            {column?.map(({ title, _key, items }) => (
-              <FooterTopColumn key={_key}>
-                <FooterLink isHeading baseUrl={baseUrl}>
-                  {title}
-                </FooterLink>
-                {items?.map(({ _key: id, link }) => (
-                  <FooterLink key={id} link={link} baseUrl={baseUrl}>
-                    {link.title}
+            {column?.map(({ title, _key, items, link: topLink }) => {
+              console.log(topLink);
+              return (
+                <FooterTopColumn key={_key}>
+                  <FooterLink isHeading baseUrl={baseUrl} {...topLink}>
+                    {title}
                   </FooterLink>
-                ))}
-              </FooterTopColumn>
-            ))}
+                  {items?.map(({ _key: id, link }) => (
+                    <FooterLink key={id} {...link} baseUrl={baseUrl}>
+                      {link.title}
+                    </FooterLink>
+                  ))}
+                </FooterTopColumn>
+              );
+            })}
           </FooterTopStack>
         </FooterTop>
 
