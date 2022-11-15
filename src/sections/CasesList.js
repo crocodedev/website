@@ -25,7 +25,9 @@ const CasesList = ({
   numberOfPosts,
 }) => {
   const [activeTechnologyFilters, setActiveTechnologyFilters] = useState([]);
-  const [currentPage, setCurrentPage] = useState(+location.search.split("=")[1] || 1);
+  const [currentPage, setCurrentPage] = useState(
+    (typeof window !== "undefined" && +location.search.split("=")[1]) || 1,
+  );
   const [showingCasesItems, setShowingCasesItems] = useState(casesItems);
   const pageCount = Math.ceil(showingCasesItems.length / numberOfPosts);
 
@@ -89,7 +91,7 @@ const CasesList = ({
                   as={GatsbyLink}
                   to={el.slug.current}
                   variant="outlined"
-                  active={location.pathname === el.slug.current}
+                  active={typeof window !== "undefined" && location.pathname === el.slug.current}
                 >
                   {el.title}
                 </Button>

@@ -4,6 +4,7 @@ const MapWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 0;
+  max-width: 1088px;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     padding-bottom: 120%;

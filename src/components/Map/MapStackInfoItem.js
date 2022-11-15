@@ -8,6 +8,7 @@ const MapStackInfoItem = styled.div`
   justify-content: center;
   box-shadow: ${({ theme }) => theme.shadows.card};
   border-radius: ${({ theme }) => theme.borderRadius.small};
+  position: relative;
 
   img {
     ${({ theme }) => theme.breakpoints.down("md")} {
@@ -39,7 +40,7 @@ const MapStackInfoItem = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("2xl")} {
-    padding: 127px 134px;
+    padding: 127px 63px;
   }
 `;
 

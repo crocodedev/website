@@ -6,6 +6,15 @@ const MapStackLink = styled(Link)`
   line-height: ${({ theme }) => theme.typography.lineHeight.sm};
   font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
 
+  &::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     font-size: ${({ theme }) => theme.typography.fontSize.link}px;
   }

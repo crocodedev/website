@@ -32,21 +32,18 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
             </FooterSocials>
           </FooterCompanyInfo>
           <FooterTopStack>
-            {column?.map(({ title, _key, items, link: topLink }) => {
-              console.log(topLink);
-              return (
-                <FooterTopColumn key={_key}>
-                  <FooterLink isHeading baseUrl={baseUrl} {...topLink}>
-                    {title}
+            {column?.map(({ title, _key, items, link: topLink }) => (
+              <FooterTopColumn key={_key}>
+                <FooterLink isHeading baseUrl={baseUrl} {...topLink}>
+                  {title}
+                </FooterLink>
+                {items?.map(({ _key: id, link }) => (
+                  <FooterLink key={id} {...link} baseUrl={baseUrl}>
+                    {link.title}
                   </FooterLink>
-                  {items?.map(({ _key: id, link }) => (
-                    <FooterLink key={id} {...link} baseUrl={baseUrl}>
-                      {link.title}
-                    </FooterLink>
-                  ))}
-                </FooterTopColumn>
-              );
-            })}
+                ))}
+              </FooterTopColumn>
+            ))}
           </FooterTopStack>
         </FooterTop>
 

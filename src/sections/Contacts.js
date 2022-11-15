@@ -12,7 +12,6 @@ import Image from "@/components/Image";
 import MapStackLink from "@/components/Map/MapStackLink";
 import MapMarkerIcon from "@/components/Map/MapMarkerIcon";
 import MapWrapper from "@/components/Map/MapWrapper";
-
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const Contacts = ({
@@ -42,7 +41,7 @@ const Contacts = ({
   React.useEffect(() => {
     setViewState(mapCoordinates);
   }, [mapCoordinates]);
-
+  console.log(accessToken);
   return (
     <SectionWrapper>
       <Container>
