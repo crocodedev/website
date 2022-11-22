@@ -21,7 +21,7 @@ const ListSeven = ({ title, items, baseUrl }) => (
             <ListSevenStackItemText fontSize="subtitle" mobileMultiplier={0.7}>
               {itemText}
             </ListSevenStackItemText>
-            <Button variant="text" link={link} baseUrl={baseUrl}>
+            <Button aria-label="Learn detailed" variant="text" link={link} baseUrl={baseUrl}>
               {link.title}
             </Button>
           </ListSevenStackItem>

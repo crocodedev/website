@@ -23,7 +23,7 @@ const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
         )}
       </ProjectsStack>
       {link && (
-        <Button baseUrl={baseUrl} link={link} variant="outlined">
+        <Button aria-label="Show all case studies" baseUrl={baseUrl} link={link} variant="outlined">
           {link.title}
         </Button>
       )}

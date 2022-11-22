@@ -29,7 +29,7 @@ const Development = ({ subtitle, title, items, baseUrl }) => {
                   {text}
                 </Text>
                 {link && (
-                  <Button baseUrl={baseUrl} link={link} variant="text">
+                  <Button aria-label="Show more" baseUrl={baseUrl} link={link} variant="text">
                     {link.title}
                   </Button>
                 )}

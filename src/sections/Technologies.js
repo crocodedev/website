@@ -22,10 +22,10 @@ const Technologies = ({ title, subtitle, categories }) => {
           <TechnologiesStack>
             {categories?.map(({ title: categoryTitle, _key }) => (
               <TechnologiesStackItem
-                active={categoryTitle === currSlide}
+                active={_key === currSlide}
                 key={_key}
                 text={categoryTitle}
-                handler={() => handlerSetCurrSlide(categoryTitle)}
+                handler={() => handlerSetCurrSlide(_key)}
               />
             ))}
           </TechnologiesStack>

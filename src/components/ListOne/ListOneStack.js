@@ -22,6 +22,11 @@ const ListOneStack = styled.div`
   ${({ theme }) => theme.breakpoints.up("lg")} {
     gap: 55px;
   }
+
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export default ListOneStack;

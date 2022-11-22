@@ -1,7 +1,7 @@
 export default {
   preview: {
     select: {
-      title: "title",
+      title: "sectionTitle",
     },
   },
 

@@ -26,7 +26,7 @@ const CtaForm = ({ title, messagePlaceholder, buttonText, bgColor, baseUrl }) =>
             {title}
           </CtaFormTitle>
           <CtaFormInput placeholder={messagePlaceholder} />
-          <Button variant="outlined" baseUrl={baseUrl}>
+          <Button aria-label="Subscribe" variant="outlined" baseUrl={baseUrl}>
             {buttonText}
           </Button>
         </CtaFormWrapper>

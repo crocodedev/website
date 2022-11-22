@@ -7,6 +7,7 @@ const ListThreeStack = styled.div`
   overflow-x: scroll;
   scrollbar-width: none;
   gap: 20px;
+  align-items: flex-start;
 
   &::-webkit-scrollbar {
     display: none;
@@ -21,6 +22,8 @@ const ListThreeStack = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 

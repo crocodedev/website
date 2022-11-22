@@ -25,7 +25,7 @@ const ListFive = ({ title, text, items }) => (
                 {itemTitle}
               </Text>
               <Text>{itemText}</Text>
-              <Button variant="text" link={link} baseUrl="baseUrl">
+              <Button aria-label="Learn detailed" variant="text" link={link} baseUrl="baseUrl">
                 {link.title}
               </Button>
             </ListFiveItemContent>

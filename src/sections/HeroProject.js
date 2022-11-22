@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -11,7 +10,6 @@ import HeroProjectBottom from "@/components/HeroProject/HeroProjectBottom";
 import HeroProjectBottomItem from "@/components/HeroProject/HeroProjectBottomItem";
 import Text from "@/components/Text";
 import HeroProjectImage from "@/components/HeroProject/HeroProjectImage";
-import Image from "@/components/Image";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUrl, color }) => {

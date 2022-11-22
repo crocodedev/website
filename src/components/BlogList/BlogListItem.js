@@ -68,7 +68,7 @@ const BlogListItem = ({
           {desc}
         </BlogListItemDesc>
         <BlogListItemButton>
-          <Button as={Link} variant="text" to={slug.current}>
+          <Button as={Link} aria-label="Category" variant="text" to={slug.current}>
             {buttonTitle}
           </Button>
         </BlogListItemButton>

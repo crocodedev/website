@@ -80,7 +80,9 @@ const RelatedArticles = ({ data = dataPage }) => {
           ))}
         </RelatedArticlesStack>
 
-        <Button variant="outlined">Show more</Button>
+        <Button aria-label="Show all articles" variant="outlined">
+          Show more
+        </Button>
       </Container>
     </SectionWrapper>
   );

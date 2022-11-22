@@ -31,7 +31,7 @@ const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
           >
             {subtitle}
           </CtaTextCaption>
-          <Button variant="contained" baseUrl={baseUrl}>
+          <Button aria-label="Start project" variant="contained" baseUrl={baseUrl}>
             {link.title}
           </Button>
         </CtaTextWrapper>

@@ -36,7 +36,7 @@ const Template = ({
                 defaultLocale={defaultLocale}
                 {...props}
               />
-              <BackUpButton />
+              <BackUpButton aria-label="Back to top" />
             </>
           );
         }

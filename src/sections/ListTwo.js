@@ -31,7 +31,7 @@ const ListTwo = ({ title, text, items, baseUrl }) => (
             <ListTwoItemContent>
               {itemText && <Text>{itemText}</Text>}
               {link && (
-                <Button link={link} baseUrl={baseUrl} variant="text">
+                <Button aria-label="Learn detailed" link={link} baseUrl={baseUrl} variant="text">
                   {link.title}
                 </Button>
               )}

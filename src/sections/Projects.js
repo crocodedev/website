@@ -213,6 +213,7 @@ const Projects = ({ data = dataPage }) => {
               <ProjectsNavRowWrapper>
                 {items?.map(({ title: itemTitle, link }) => (
                   <Button
+                    aria-label="Show all projects"
                     active={itemTitle === "Latest"}
                     variant="outlined"
                     to={link}

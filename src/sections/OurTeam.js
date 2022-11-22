@@ -27,7 +27,7 @@ const OurTeam = ({ title, link, baseUrl, items }) => (
           </OurTeamItem>
         ))}
       </OurTeamStack>
-      <Button variant="outlined" link={link} baseUrl={baseUrl}>
+      <Button aria-label="Show all team members" variant="outlined" link={link} baseUrl={baseUrl}>
         {link.title}
       </Button>
     </Container>

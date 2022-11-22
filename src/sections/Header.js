@@ -96,7 +96,7 @@ const Header = ({
             })}
             {headerButton && (
               <HeaderContentBtnWrapper>
-                <Button handler={changeModalContactUs} variant="contained">
+                <Button aria-label="Contact us" handler={changeModalContactUs} variant="contained">
                   {headerButton.title}
                 </Button>
               </HeaderContentBtnWrapper>
@@ -134,7 +134,10 @@ const Header = ({
             )}
           </HeaderContent>
           <HeaderMenuWrapper>
-            <HeaderMenuButton onClick={() => (active ? setActive("") : setActive("active"))}>
+            <HeaderMenuButton
+              aria-label="Menu"
+              onClick={() => (active ? setActive("") : setActive("active"))}
+            >
               <HeaderMenuIcon variant={active} />
             </HeaderMenuButton>
           </HeaderMenuWrapper>

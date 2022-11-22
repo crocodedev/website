@@ -29,7 +29,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl }) => {
                 </HeroMainListItem>
               ))}
             </HeroMainList>
-            <Button variant="contained" link={link} baseUrl={baseUrl}>
+            <Button aria-label="Order a project" variant="contained" link={link} baseUrl={baseUrl}>
               {link.title}
             </Button>
           </HeroMainContent>

@@ -72,6 +72,7 @@ const CasesList = ({
               {technologyFilter.map((el) => (
                 <Button
                   key={el}
+                  aria-label="Technology"
                   variant="outlined"
                   disablePointerEvents={true}
                   handler={() => handleTechnologyFilter(el)}
@@ -87,6 +88,7 @@ const CasesList = ({
             <ProjectsNavRow>
               {countryFilter.map((el) => (
                 <Button
+                  aria-label="Country"
                   key={el.id}
                   as={GatsbyLink}
                   to={el.slug.current}

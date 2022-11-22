@@ -14,11 +14,8 @@ const BlogList = ({
   slug,
   articles,
   categories,
-  /* numberOfPosts, */
-  /* title, */
   articleSeparator,
   breadcrumbs,
-  /* baseUrl, */
   i18n_lang: i18nLang,
   baseUrl,
   pageCount,
@@ -33,6 +30,7 @@ const BlogList = ({
         <BlogListNavigationStack>
           {categories.map(({ title: categoryTitle, slug: categorySlug, id }) => (
             <Button
+              aria-label="Category"
               as={Link}
               active={
                 isNaN(pageUrl[pageUrl.length - 1])

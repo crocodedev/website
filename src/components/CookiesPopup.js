@@ -6,12 +6,7 @@ import Text from "./Text";
 import CookiesPopupText from "./CookiesPopup/CookiesPopupText";
 import CookiesPopupLink from "./CookiesPopup/CookiesPopupLink";
 
-const CookiesPopup = ({
-                        title,
-                        text,
-                        clickHere,
-                        buttonText,
-                      }) => {
+const CookiesPopup = ({ title, text, clickHere, buttonText }) => {
   const [showContent, setShowContent] = React.useState(false);
 
   React.useEffect(() => {

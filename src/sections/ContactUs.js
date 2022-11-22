@@ -259,6 +259,7 @@ const ContactUs = ({
                       </ContactsUsLink>
                     </Text>
                     <Button
+                      aria-label="Send form"
                       type="submit"
                       disabled={!(isValid && dirty && check)}
                       handler={handleSubmit}

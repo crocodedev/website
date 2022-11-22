@@ -25,7 +25,7 @@ const NotFound = ({ subtitle, image, text, link, baseUrl }) => (
               {text}
             </Text>
           </NotFoundPageCaptionText>
-          <Button variant="contained" link={link} baseUrl={baseUrl}>
+          <Button aria-label="Back to homepage" variant="contained" link={link} baseUrl={baseUrl}>
             {link.title}
           </Button>
         </NotFoundPageCaption>
