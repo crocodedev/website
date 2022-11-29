@@ -10,9 +10,9 @@ import Image from "@/components/Image";
 import TextThreeList from "@/components/TextThree/TextThreeList";
 import TextThreeListItem from "@/components/TextThree/TextThreeListItem";
 
-const TextThree = ({ title, subtitle, text, image }) => {
+const TextThree = ({ title, subtitle, text, image, bgColor }) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper bgColor={bgColor}>
       <Container>
         <SectionHeading title={title} />
         <TextThreeWrapper>
@@ -45,6 +45,7 @@ const TextThree = ({ title, subtitle, text, image }) => {
 TextThree.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
 };

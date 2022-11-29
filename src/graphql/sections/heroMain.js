@@ -6,6 +6,7 @@ module.exports.heroMain = `
       id
       position
       component
+      fadeColor
       items {
         text
         _key

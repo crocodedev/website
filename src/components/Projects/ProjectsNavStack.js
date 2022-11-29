@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 
 const ProjectsNavStack = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100%;
+  flex-direction: column;
 
   ${({ theme }) => theme.breakpoints.up("md")} {
     gap: 40px;

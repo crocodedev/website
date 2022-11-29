@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const dynamicStyle = ({ variant, theme }) => css`
-  ${variant === "active"
+  ${variant
     ? `
     ${theme.breakpoints.down("sm")} {
       height: 100vh;
@@ -28,7 +28,7 @@ const dynamicStyle = ({ variant, theme }) => css`
 const HeaderContent = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
 
-  ${({theme}) => theme.breakpoints.down("sm")} {
+  ${({ theme }) => theme.breakpoints.down("sm")} {
     width: 100%;
     padding-top: 70px;
     transform: translateX(480px);

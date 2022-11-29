@@ -8,8 +8,8 @@ import ListFourImage from "@/components/ListFour/ListFourImage";
 import ListFourItem from "@/components/ListFour/ListFourItem";
 import ListFourStack from "@/components/ListFour/ListFourStack";
 
-const ListFour = ({ title, text, items }) => (
-  <SectionWrapper bgColor="paper">
+const ListFour = ({ title, text, items, bgColor }) => (
+  <SectionWrapper bgColor={bgColor}>
     <Container>
       <SectionHeading title={title} text={text} />
       <ListFourStack>
@@ -35,6 +35,7 @@ const ListFour = ({ title, text, items }) => (
 ListFour.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

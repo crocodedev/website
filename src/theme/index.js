@@ -50,6 +50,10 @@ const theme = {
     button: "100px",
     circle: "100%",
   },
+  linearGradient: {
+    light: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%)",
+    paper: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f8f8f8 100%)",
+  },
   shadows: {
     header: "0 0 2px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.1)",
     card: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.05)",

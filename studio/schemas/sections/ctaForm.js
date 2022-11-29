@@ -1,3 +1,5 @@
+import bgColors from "../objects/bgColors";
+
 export default {
   preview: {
     select: {
@@ -44,22 +46,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Button text",
-      name: "buttonText",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: "Background color",
       name: "bgColor",
       type: "string",
       options: {
-        color: [
-          { title: "dark", value: "dark" },
-          { title: "light", value: "light" },
-          { title: "paper", value: "paper" },
-        ],
+        color: [...bgColors],
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Button text",
+      name: "buttonText",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
   ],

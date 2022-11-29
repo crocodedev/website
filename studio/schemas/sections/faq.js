@@ -1,3 +1,5 @@
+import bgColors from "../objects/bgColors";
+
 export default {
   preview: {
     select: {
@@ -52,6 +54,15 @@ export default {
           type: "faqItem",
         },
       ],
+    },
+    {
+      title: "Background color",
+      name: "bgColor",
+      type: "string",
+      options: {
+        color: [...bgColors],
+      },
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

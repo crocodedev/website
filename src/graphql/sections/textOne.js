@@ -8,6 +8,8 @@ module.exports.textOne = `
       title
       subtitle
       text
+      bgColor
+      fadeColor
       image{
         ${image}
       }

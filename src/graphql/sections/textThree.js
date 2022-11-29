@@ -8,6 +8,7 @@ module.exports.textThree = `
       title
       subtitle
       text
+      bgColor
       image{
         ${image}
       }

@@ -21,9 +21,7 @@ const BackUpButton = () => {
     });
   };
 
-  return (
-    <BackUpButtonContent onClick={backUp} variant={visibleButton} />
-  );
+  return <BackUpButtonContent aria-label="Back to top" onClick={backUp} variant={visibleButton} />;
 };
 
 export default BackUpButton;

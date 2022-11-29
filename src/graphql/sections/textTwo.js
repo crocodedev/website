@@ -8,6 +8,7 @@ module.exports.textTwo = `
       title
       subtitle
       text
+      bgColor
       image {
         ${image}
       }

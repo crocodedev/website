@@ -1,3 +1,5 @@
+import fadeColors from "../objects/fadeColors";
+
 export default {
   preview: {
     select: {
@@ -46,6 +48,15 @@ export default {
     {
       name: "link",
       type: "link",
+    },
+    {
+      title: "Fade color",
+      name: "fadeColor",
+      type: "string",
+      options: {
+        list: [...fadeColors],
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Items",

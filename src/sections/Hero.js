@@ -9,7 +9,7 @@ import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
 import Text from "@/components/Text";
 
-const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }) => {
+const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color, fadeColor }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
@@ -24,7 +24,7 @@ const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }
         </Container>
       </SectionWrapper>
       <HeroImage>
-        <Image {...imageWithAltText} />
+        <Image {...imageWithAltText} fadeColor={fadeColor} />
       </HeroImage>
     </HeroWrapper>
   );
@@ -37,6 +37,7 @@ Hero.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   imageWithAltText: PropTypes.object.isRequired,
+  fadeColor: PropTypes.string.isRequired,
   breadcrumbs: PropTypes.arrayOf(
     PropTypes.exact({
       link: PropTypes.object,

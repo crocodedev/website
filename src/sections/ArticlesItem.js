@@ -30,7 +30,7 @@ const ArticlesItem = ({
   date,
   i18n_lang: i18nLang,
 }) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <ArticleWrapper disablePaddings>
@@ -41,7 +41,6 @@ const ArticlesItem = ({
           title={title}
           text={`${author}, ${dateToIntlFormat(date, i18nLang)}`}
         />
-
         <ArticleContentWrapper>
           <ArticleContent>
             <Text mobileMultiplier={0.875} fontWeight="bold">

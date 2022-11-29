@@ -8,7 +8,7 @@ const ContactsUsWrapper = styled.div`
   ${({ theme }) => theme.breakpoints.between("md", "lg")} {
     padding-top: 80px;
 
-    & div:first-child {
+    & div:first-of-type {
       max-width: 100%;
     }
   }

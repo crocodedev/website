@@ -12,7 +12,6 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
     border: 1px solid ${theme.palette.primary.main};
-    pointer-events: none;
     ${!disablePointerEvents ? "pointer-events: none" : ""};
     `
         : `
@@ -110,22 +109,22 @@ const StyledButton = styled.button`
   line-height: 20px;
   text-align: center;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   outline: none;
 
   ${dynamicStyle}
 `;
 
 const Button = ({
-                  variant,
-                  handler,
-                  link,
-                  baseUrl,
-                  active,
-                  disablePointerEvents,
-                  children,
-                  ...props
-                }) =>
+  variant,
+  handler,
+  link,
+  baseUrl,
+  active,
+  disablePointerEvents,
+  children,
+  ...props
+}) =>
   link ? (
     <Link baseUrl={baseUrl} {...link} {...props}>
       <StyledButton

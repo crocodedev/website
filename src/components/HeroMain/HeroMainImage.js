@@ -1,4 +1,10 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
+const dynamicStyle = ({ theme, fadeColor }) => css`
+  background: ${fadeColor === "light" ? theme.linearGradient.light : ""}
+    ${fadeColor === "paper" ? theme.linearGradient.paper : ""};
+`;
 
 const HeroMainImage = styled.div`
   position: absolute;
@@ -14,8 +20,8 @@ const HeroMainImage = styled.div`
     position: absolute;
     width: 100%;
     height: 35%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
     bottom: 0;
+    ${dynamicStyle}
   }
 
   & div {

@@ -26,7 +26,6 @@ import ListTwo from "./ListTwo";
 import NotFound from "./NotFound";
 import OurClients from "./OurClients";
 import OurTeam from "./OurTeam";
-import Projects from "./Projects";
 import RelatedArticles from "./RelatedArticles";
 import Reviews from "./Reviews";
 import SliderSteps from "./SliderSteps";
@@ -66,7 +65,6 @@ export {
   NotFound,
   OurClients,
   OurTeam,
-  Projects,
   RelatedArticles,
   Reviews,
   SliderSteps,

@@ -8,6 +8,7 @@ module.exports.hero = `
           component
           title
           subtitle
+          fadeColor
           imageWithAltText {
             ${image}
           }

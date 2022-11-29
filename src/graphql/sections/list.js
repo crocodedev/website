@@ -8,6 +8,7 @@ module.exports.list = `
       component
       title
       text
+      bgColor
       items {
         _key
         text

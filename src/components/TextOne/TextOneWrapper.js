@@ -8,7 +8,7 @@ const TextOneWrapper = styled.section`
     content: "";
     position: absolute;
     width: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f8f8f8 100%);
     bottom: 0;
     z-index: 2;
   }

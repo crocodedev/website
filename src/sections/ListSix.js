@@ -7,8 +7,8 @@ import ListSixStack from "@/components/ListSix/ListSixStack";
 import ListSixStackItem from "@/components/ListSix/ListSixStackItem";
 import ListSixStackItemText from "@/components/ListSix/ListSixStackItemText";
 
-const ListSix = ({ title, items }) => (
-  <SectionWrapper>
+const ListSix = ({ title, items, bgColor }) => (
+  <SectionWrapper bgColor={bgColor}>
     <Container>
       <SectionHeading title={title} />
       <ListSixStack>
@@ -29,6 +29,7 @@ const ListSix = ({ title, items }) => (
 
 ListSix.propTypes = {
   title: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

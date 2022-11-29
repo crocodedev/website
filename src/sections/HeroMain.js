@@ -11,7 +11,8 @@ import HeroMainListItem from "@/components/HeroMain/HeroMainListItem";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
 
-const HeroMain = ({ link, logoImage, bgImage, items, baseUrl }) => {
+const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
+  console.log(fadeColor);
   return (
     <HeroMainWrapper>
       <SectionWrapper as="div">
@@ -35,7 +36,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl }) => {
           </HeroMainContent>
         </Container>
       </SectionWrapper>
-      <HeroMainImage>
+      <HeroMainImage fadeColor={fadeColor}>
         <Image {...bgImage} />
       </HeroMainImage>
     </HeroMainWrapper>
@@ -53,6 +54,7 @@ HeroMain.propTypes = {
   link: PropTypes.object.isRequired,
   logoImage: PropTypes.object.isRequired,
   bgImage: PropTypes.object.isRequired,
+  fadeColor: PropTypes.string.isRequired,
 };
 
 export default HeroMain;

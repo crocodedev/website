@@ -1,3 +1,6 @@
+import bgColors from "../objects/bgColors";
+import fadeColors from "../objects/fadeColors";
+
 export default {
   preview: {
     select: {
@@ -66,6 +69,24 @@ export default {
       title: "Image for desktop",
       name: "desktopImage",
       type: "imageWithAlt",
+    },
+    {
+      title: "Fade color",
+      name: "fadeColor",
+      type: "string",
+      options: {
+        list: [...fadeColors],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Background color",
+      name: "bgColor",
+      type: "string",
+      options: {
+        list: [...bgColors],
+      },
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

@@ -36,7 +36,7 @@ const Template = ({
                 defaultLocale={defaultLocale}
                 {...props}
               />
-              <BackUpButton aria-label="Back to top" />
+              <BackUpButton />
             </>
           );
         }
@@ -48,7 +48,7 @@ const Template = ({
 
 Template.propTypes = {
   pageContext: PropTypes.exact({
-    cookies: PropTypes.object.isRequired,
+    cookies: PropTypes.object,
     baseUrl: PropTypes.string,
     seo: PropTypes.object,
     cookieConsent: PropTypes.object,

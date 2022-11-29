@@ -15,7 +15,7 @@ export default {
       title: "Reference",
       name: "reference",
       type: "reference",
-      to: [{ type: "page" }, { type: "blogCategory" }],
+      to: [{ type: "page" }, { type: "blogCategory" }, { type: "casesCountry" }],
       options: {
         disableNew: true,
       },

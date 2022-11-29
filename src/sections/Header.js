@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useTheme, Global, css } from "@emotion/react";
 import PropTypes from "prop-types";
 import HeaderContainer from "@/components/Header/HeaderContainer";
@@ -36,7 +36,7 @@ const Header = ({
   touchUsModal,
 }) => {
   const theme = useTheme();
-  const [active, setActive] = React.useState("");
+  const [active, setActive] = React.useState(false);
   const offset = useMedia(["(max-width: 768px)"], [70], 90);
   const isScrollingUp = useScrollingUp(offset);
 
@@ -51,6 +51,10 @@ const Header = ({
   const changeModalContactUs = () => {
     setCloseModal(!closeModal);
   };
+
+  const handleSetActive = useCallback(() => {
+    setActive(!active);
+  }, [active]);
 
   return (
     <>
@@ -68,7 +72,7 @@ const Header = ({
           <HeaderLogo>
             <Image loading="lazy" {...logoImage} />
           </HeaderLogo>
-          <HeaderContentWrapper variant={active} onClick={() => setActive("")} />
+          <HeaderContentWrapper variant={active} onClick={handleSetActive} />
           <HeaderContent variant={active}>
             {linkWithIcon && (
               <HeaderContentItemShopify {...linkWithIcon.link} baseUrl={baseUrl}>
@@ -134,10 +138,7 @@ const Header = ({
             )}
           </HeaderContent>
           <HeaderMenuWrapper>
-            <HeaderMenuButton
-              aria-label="Menu"
-              onClick={() => (active ? setActive("") : setActive("active"))}
-            >
+            <HeaderMenuButton aria-label="Menu" onClick={handleSetActive}>
               <HeaderMenuIcon variant={active} />
             </HeaderMenuButton>
           </HeaderMenuWrapper>

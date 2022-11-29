@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const dynamicStyle = ({ variant }) => css`
-  ${variant === "active"
+  ${variant
     ? `
       background-color: transparent;
       transition: 0.4s;

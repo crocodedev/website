@@ -11,8 +11,8 @@ import ListTwoItemHeadingImage from "@/components/ListTwo/ListTwoItemHeadingImag
 import ListTwoItemHeading from "@/components/ListTwo/ListTwoItemHeading";
 import ListTwoItemContent from "@/components/ListTwo/ListTwoItemContent";
 
-const ListTwo = ({ title, text, items, baseUrl }) => (
-  <SectionWrapper>
+const ListTwo = ({ title, text, items, baseUrl, bgColor }) => (
+  <SectionWrapper bgColor={bgColor}>
     <Container>
       <SectionHeading title={title} text={text} />
 
@@ -47,6 +47,7 @@ ListTwo.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

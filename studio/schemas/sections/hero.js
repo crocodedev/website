@@ -1,3 +1,5 @@
+import fadeColors from "../objects/fadeColors";
+
 export default {
   preview: {
     select: {
@@ -46,6 +48,15 @@ export default {
       title: "Image With Alt Text",
       name: "imageWithAltText",
       type: "imageWithAlt",
+    },
+    {
+      title: "Fade color",
+      name: "fadeColor",
+      type: "string",
+      options: {
+        list: [...fadeColors],
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Breadcrumbs",

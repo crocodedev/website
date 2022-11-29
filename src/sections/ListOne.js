@@ -10,8 +10,8 @@ import ListOneStackItem from "@/components/ListOne/ListOneStackItem";
 import ListOneStackItemTitle from "@/components/ListOne/ListOneStackItemTitle";
 import ListOneStackItemText from "@/components/ListOne/ListOneStackItemText";
 
-const ListOne = ({ title, items, baseUrl }) => (
-  <SectionWrapper bgColor="paper">
+const ListOne = ({ title, items, baseUrl, bgColor }) => (
+  <SectionWrapper bgColor={bgColor}>
     <Container>
       <SectionHeading title={title} />
       <ListOneStack>
@@ -40,6 +40,7 @@ ListOne.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

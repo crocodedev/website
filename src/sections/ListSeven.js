@@ -8,8 +8,8 @@ import ListSevenStack from "@/components/ListSeven/ListSevenStack";
 import ListSevenStackItem from "@/components/ListSeven/ListSevenStackItem";
 import ListSevenStackItemText from "@/components/ListSeven/ListSevenStackItemText";
 
-const ListSeven = ({ title, items, baseUrl }) => (
-  <SectionWrapper>
+const ListSeven = ({ title, items, baseUrl, bgColor }) => (
+  <SectionWrapper bgColor={bgColor}>
     <Container>
       <SectionHeading title={title} />
       <ListSevenStack>
@@ -34,6 +34,7 @@ const ListSeven = ({ title, items, baseUrl }) => (
 ListSeven.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

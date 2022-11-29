@@ -11,10 +11,10 @@ import TextTwoInfoValues from "@/components/TextTwo/TextTwoInfoValues";
 import TextTwoInfoItem from "@/components/TextTwo/TextTwoInfoItem";
 import Text from "@/components/Text";
 
-const TextTwo = ({ title, text, image, items }) => {
+const TextTwo = ({ title, text, image, items, bgColor }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper>
+    <SectionWrapper bgColor={bgColor}>
       <Container>
         <SectionHeading title={title} />
         <TextTwoContentWrapper>
@@ -56,6 +56,7 @@ TextTwo.propTypes = {
   subtitle: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

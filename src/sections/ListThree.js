@@ -7,8 +7,8 @@ import ListThreeStack from "@/components/ListThree/ListThreeStack";
 import ListThreeStackItem from "@/components/ListThree/ListThreeStackItem";
 import ImageStatic from "@/components/Image";
 
-const ListThree = ({ title, text, items }) => (
-  <SectionWrapper bgColor="paper" sectionGap={true}>
+const ListThree = ({ title, text, items, bgColor }) => (
+  <SectionWrapper bgColor={bgColor} sectionGap={true}>
     <Container>
       <SectionHeading title={title} text={text} />
     </Container>
@@ -33,6 +33,7 @@ ListThree.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

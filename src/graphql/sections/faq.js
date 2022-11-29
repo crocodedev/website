@@ -5,6 +5,7 @@ module.exports.faq = `
       position
       subtitle
       title
+      bgColor
       items {
         _key
         text

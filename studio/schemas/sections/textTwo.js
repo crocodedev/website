@@ -1,3 +1,5 @@
+import bgColors from "../objects/bgColors";
+
 export default {
   preview: {
     select: {
@@ -62,6 +64,15 @@ export default {
           type: "textTwoItem",
         },
       ],
+    },
+    {
+      title: "Background color",
+      name: "bgColor",
+      type: "string",
+      options: {
+        list: [...bgColors],
+      },
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

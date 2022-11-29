@@ -6,7 +6,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Pagination from "@/components/Pagination";
 import Card from "@/components/Card";
 import ProjectsStack from "@/components/Projects/ProjectsStack";
-import Link from "@/components/Link";
 import ProjectsNavRowWrapper from "@/components/Projects/ProjectsNavRowWrapper";
 import ProjectsNavRow from "@/components/Projects/ProjectsNavRow";
 import Text from "@/components/Text";
@@ -105,11 +104,11 @@ const CasesList = ({
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
             .slice(0, isEven(showingCasesItems.length))
-            ?.map(({ _key, link: itemLink, ...info }) =>
-              itemLink ? (
-                <Link key={_key} baseUrl={baseUrl} {...itemLink}>
+            ?.map(({ _key, slug, ...info }) =>
+              slug.current ? (
+                <GatsbyLink key={_key} to={slug.current}>
                   <Card {...info} />
-                </Link>
+                </GatsbyLink>
               ) : (
                 <Card key={_key} {...info} />
               ),
@@ -120,11 +119,11 @@ const CasesList = ({
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
             .slice(isEven(showingCasesItems.length))
-            ?.map(({ _key, link: itemLink, ...info }) =>
-              itemLink ? (
-                <Link baseUrl={baseUrl} {...itemLink}>
-                  <Card key={_key} {...info} />
-                </Link>
+            ?.map(({ _key, slug, ...info }) =>
+              slug.current ? (
+                <GatsbyLink key={_key} to={slug.current}>
+                  <Card {...info} />
+                </GatsbyLink>
               ) : (
                 <Card key={_key} {...info} />
               ),

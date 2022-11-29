@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const dynamicStyle = ({variant, theme}) => css`
-  ${variant === "active" ? `
+const dynamicStyle = ({ variant, theme }) => css`
+  ${variant
+    ? `
     ${theme.breakpoints.down("sm")} {display: none}
 
     ${theme.breakpoints.between("sm", "xl")} {
@@ -22,7 +23,8 @@ const dynamicStyle = ({variant, theme}) => css`
     ${theme.breakpoints.up("xl")} {
       display: none;
     }
-  ` : `display: none;`}
+  `
+    : `display: none;`}
 `;
 
 const HeaderContentWrapper = styled.div`

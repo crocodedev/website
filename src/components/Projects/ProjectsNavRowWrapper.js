@@ -2,13 +2,15 @@ import styled from "@emotion/styled";
 
 const ProjectsNavRowWrapper = styled.div`
   display: flex;
-  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     max-width: 100%;
-    overflow-x: auto;
     padding: 0;
     gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 
     ::-webkit-scrollbar {
       width: 0;
@@ -17,6 +19,8 @@ const ProjectsNavRowWrapper = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {
+    flex-direction: row;
+    align-items: center;
     gap: 20px;
   }
 `;
