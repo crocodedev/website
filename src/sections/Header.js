@@ -17,7 +17,7 @@ import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
 import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
-import Link from "gatsby";
+import { Link } from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
 import useScrollingUp from "@/hooks/use-scrollingUp";

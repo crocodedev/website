@@ -22,11 +22,12 @@ const BlogList = ({
 }) => {
   const pageUrl = (typeof window !== "undefined" && window.location.pathname.split("/")) || "";
   const currentPage = isNaN(pageUrl[pageUrl.length - 1]) ? 1 : +pageUrl[pageUrl.length - 1];
-
   return (
     <SectionWrapper>
       <Container>
-        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
+        {breadcrumbs.length > 0 && (
+          <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
+        )}
         <BlogListNavigationStack>
           {categories.map(({ title: categoryTitle, slug: categorySlug, id }) => (
             <Button

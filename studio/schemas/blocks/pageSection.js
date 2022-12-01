@@ -29,7 +29,8 @@ export default {
     { type: "ctaForm" },
     { type: "contactUs" },
     { type: "challenge" },
-    {type: "blockText"}
+    { type: "blockText" },
+    { type: "relatedArticles" },
   ],
 
   options: {

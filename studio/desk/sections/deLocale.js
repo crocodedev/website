@@ -26,6 +26,7 @@ import { contactUs } from "./deLocale/contactUs";
 import { ctaForm } from "./deLocale/ctaForm";
 import { challenge } from "./deLocale/challenge";
 import { blockText } from "./deLocale/blockText";
+import { relatedArticles } from "./deLocale/relatedArticles";
 
 export const deLocale = S.listItem()
   .title("DE Sections")
@@ -60,5 +61,6 @@ export const deLocale = S.listItem()
         textOne,
         textTwo,
         textThree,
+        relatedArticles,
       ]),
   );

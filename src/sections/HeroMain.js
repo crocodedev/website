@@ -12,7 +12,6 @@ import Text from "@/components/Text";
 import Button from "@/components/Button";
 
 const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
-  console.log(fadeColor);
   return (
     <HeroMainWrapper>
       <SectionWrapper as="div">

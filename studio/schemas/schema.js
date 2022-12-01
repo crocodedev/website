@@ -36,6 +36,7 @@ import contactUs from "./sections/contactUs";
 import ctaForm from "./sections/ctaForm";
 import challenge from "./sections/challenge";
 import blockText from "./sections/blockText";
+import relatedArticles from "./sections/relatedArticles";
 
 // objects
 import link from "./objects/link";
@@ -126,6 +127,7 @@ export default createSchema({
     ctaForm,
     challenge,
     blockText,
+    relatedArticles,
 
     // objects
     link,

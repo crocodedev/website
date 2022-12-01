@@ -26,6 +26,7 @@ import { contactUs } from "./plLocale/contactUs";
 import { ctaForm } from "./plLocale/ctaForm";
 import { challenge } from "./plLocale/challenge";
 import { blockText } from "./plLocale/blockText";
+import { relatedArticles } from "./plLocale/relatedArticles";
 
 export const plLocale = S.listItem()
   .title("PL Sections")
@@ -60,5 +61,6 @@ export const plLocale = S.listItem()
         textOne,
         textTwo,
         textThree,
+        relatedArticles,
       ]),
   );

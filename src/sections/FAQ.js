@@ -7,7 +7,6 @@ import FAQColumn from "@/components/FAQ/FAQColumn";
 import FAQItem from "@/components/FAQ/FAQItem";
 
 const FAQ = ({ subtitle, title, items, bgColor }) => {
-  console.log(bgColor);
   return (
     <SectionWrapper bgColor={bgColor}>
       <Container>

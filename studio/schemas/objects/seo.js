@@ -60,7 +60,7 @@ export default {
           },
           {
             title: "Summary large image",
-            value: "summaryLargeImage",
+            value: "summary_large_image",
           },
           {
             title: "Player",

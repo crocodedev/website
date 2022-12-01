@@ -134,6 +134,11 @@ export default {
       type: "string",
     },
     {
+      title: "Share button text",
+      name: "sharedText",
+      type: "string",
+    },
+    {
       title: "Button title",
       name: "buttonTitle",
       type: "string",

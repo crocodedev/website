@@ -29,6 +29,7 @@ const { textThree } = require("./src/graphql/sections/textThree");
 const { blockText } = require("./src/graphql/sections/blockText");
 const { image } = require("./src/graphql/objects/image");
 const { link } = require("./src/graphql/objects/link");
+const { relatedArticles } = require("./src/graphql/sections/relatedArticles");
 
 exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => {
   const template = path.resolve("./src/templates/template.js");
@@ -58,6 +59,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       }
       content {
         ${benefits}
+        ${relatedArticles}
         ${caseStudies}
         ${challenge}
         ${contacts}
@@ -204,6 +206,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       position
       component
       author
+      sharedText
       desc
       buttonTitle
       slug {
@@ -346,6 +349,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
           ${textTwo}
           ${textThree}
           ${blockText}
+          ${relatedArticles}
       }
     }
   }}

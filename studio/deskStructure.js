@@ -35,6 +35,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "contactUs",
   "ctaForm",
   "challenge",
+  "relatedArticles",
   "articlesItem",
   "casesItem",
   "blogCategory",

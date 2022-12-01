@@ -12,76 +12,41 @@ import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
 import RelatedArticlesItemHeadingTitle from "@/components/RelatedArticles/RelatedArticlesItemHeadingTitle";
+import { Link } from "gatsby";
 
-const dataPage = {
-  title: "Related articles from our Blog",
-  articles: [
-    {
-      src: "/uploads/related-articles-article-image-1.jpg",
-      heading: "Break is an important part of work",
-      date: "12 Apr. 2022",
-      text: `How much tired eyes sometimes you notice, only after finishing hard work.
-        Business is business, but even a ten-minute break will help both the eyes and even the memory.
-        Rest with closed eyes has been the most obvious and accessible type of relaxation after sleep since ancient times.`,
-    },
-    {
-      src: "/uploads/related-articles-article-image-2.jpg",
-      heading: "A typical day at the office",
-      date: "10 Jan. 2022",
-      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office,
-        to tell and show how everything is arranged here.
-        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable,
-        relaxed, find quiet places to solve important tasks or creative space for inspiration and great ideas.`,
-    },
-    {
-      src: "/uploads/related-articles-article-image-1.jpg",
-      heading: "Break is an important part of work",
-      date: "12 Apr. 2022",
-      text: `How much tired eyes sometimes you notice, only after finishing hard work.
-        Business is business, but even a ten-minute break will help both the eyes and even the memory.
-        Rest with closed eyes has been the most obvious and accessible type of relaxation after sleep since ancient times.`,
-    },
-    {
-      src: "/uploads/related-articles-article-image-2.jpg",
-      heading: "A typical day at the office",
-      date: "10 Jan. 2022",
-      text: `We decided to share a part of our corporate culture, revealing some moments from the life of our office,
-        to tell and show how everything is arranged here.
-        It is no secret that IT companies strive to create interesting office spaces for their employees, so that they can feel comfortable,
-        relaxed, find quiet places to solve important tasks or creative space for inspiration and great ideas.`,
-    },
-  ],
-};
-
-const RelatedArticles = ({ data = dataPage }) => {
+const RelatedArticles = ({ title, bgColor, baseUrl, link, items }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper bgColor="paper">
+    <SectionWrapper bgColor={bgColor}>
       <Container>
-        <SectionHeading title={data.title} />
+        <SectionHeading title={title} />
         <RelatedArticlesStack>
-          {data?.articles?.map(({ src, heading, date, text }) => (
-            <RelatedArticlesItem key={text}>
+          {items.map(({ title: itemTitle, _key, desc, slug, coverImage, date }) => (
+            <RelatedArticlesItem as={Link} to={slug.current} key={_key}>
               <RelatedArticlesImageWrapper>
-                <ImageStatic loading="lazy" src={src} />
+                <ImageStatic loading="lazy" {...coverImage} />
               </RelatedArticlesImageWrapper>
               <RelatedArticlesItemHeading>
-                <RelatedArticlesItemHeadingTitle fontSize="subtitle" fontWeight="bold">
-                  {heading}
+                <RelatedArticlesItemHeadingTitle
+                  fontSize="subtitle"
+                  fontWeight="bold"
+                  itemTitle={itemTitle}
+                >
+                  {itemTitle}
                 </RelatedArticlesItemHeadingTitle>
                 <Text fontSize="captionText" color={theme.palette.text.disabled}>
                   {date}
                 </Text>
               </RelatedArticlesItemHeading>
               <RelatedArticlesItemDescription fontSize="subtitle" mobileMultiplier={0.7}>
-                {text}
+                {desc}
               </RelatedArticlesItemDescription>
             </RelatedArticlesItem>
           ))}
         </RelatedArticlesStack>
 
-        <Button aria-label="Show all articles" variant="outlined">
-          Show more
+        <Button aria-label="Show all articles" link={link} variant="outlined" baseUrl={baseUrl}>
+          {link.title}
         </Button>
       </Container>
     </SectionWrapper>
@@ -89,17 +54,11 @@ const RelatedArticles = ({ data = dataPage }) => {
 };
 
 RelatedArticles.propTypes = {
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    articles: PropTypes.arrayOf(
-      PropTypes.exact({
-        src: PropTypes.string,
-        heading: PropTypes.string,
-        date: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 export default RelatedArticles;

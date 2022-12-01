@@ -18,7 +18,7 @@ const Template = ({
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
-      <Helmet defer={false} title="HomePage" />
+      <Helmet defer={false} />
       <Global styles={[reboot, fontMontserrat]} />
       <CookiesPopup {...cookieConsent} />
 

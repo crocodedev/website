@@ -15,7 +15,7 @@ module.exports.ourTeam = `
         _key
         title
         subtitle
-        teamMemberPhoto{
+        teamMemberPhoto {
           ${image}
         }
       }

@@ -26,6 +26,7 @@ import { contactUs } from "./enLocale/contactUs";
 import { ctaForm } from "./enLocale/ctaForm";
 import { challenge } from "./enLocale/challenge";
 import { blockText } from "./enLocale/blockText";
+import { relatedArticles } from "./enLocale/relatedArticles";
 
 export const enLocale = S.listItem()
   .title("EN Sections")
@@ -60,5 +61,6 @@ export const enLocale = S.listItem()
         textOne,
         textTwo,
         textThree,
+        relatedArticles,
       ]),
   );
