@@ -28,13 +28,6 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-transformer-svg-sprites",
-            options: {
-              optimize: process.env.NODE_ENV === "production",
-              skip: "",
-            },
-          },
-          {
             resolve: "gatsby-plugin-sitemap",
             options: {
               output: "/",
@@ -49,14 +42,14 @@ module.exports = {
           },
         ]
       : []),
-    ...(trackingId
-      ? [
-          {
-            resolve: "gatsby-plugin-google-analytics",
-            options: { trackingId, head: false },
-          },
-        ]
-      : []),
+    // ...(trackingId
+    //   ? [
+    //       {
+    //         resolve: "gatsby-plugin-google-analytics",
+    //         options: { trackingId, head: false },
+    //       },
+    //     ]
+    //   : []),
     ...(pwa.enabled
       ? [
           {
