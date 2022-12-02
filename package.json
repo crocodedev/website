@@ -80,7 +80,11 @@
     "node": ">=14.18"
   },
   "browserslist": [
-   ">0.2%", "not ie 11", "not chrome < 51", "not safari < 10", "not android < 51"
+    ">0.2%",
+    "not ie 11",
+    "not chrome < 51",
+    "not safari < 10",
+    "not android < 51"
   ],
   "license": "MIT",
   "main": "n/a"
