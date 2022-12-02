@@ -14,8 +14,8 @@ const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
       <ProjectsStack>
         {items?.map(({ _key, link: itemLink, ...info }) =>
           itemLink ? (
-            <Link baseUrl={baseUrl} {...itemLink}>
-              <Card key={_key} {...info} />
+            <Link key={_key} baseUrl={baseUrl} {...itemLink}>
+              <Card {...info} />
             </Link>
           ) : (
             <Card key={_key} {...info} />
