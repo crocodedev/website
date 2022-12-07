@@ -6,7 +6,6 @@ const ProjectsNavRow = styled.div`
   align-items: center;
   width: 100%;
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
   scrollbar-width: none;
 
   p {
@@ -17,11 +16,13 @@ const ProjectsNavRow = styled.div`
     gap: 10px;
     align-items: flex-start;
     flex-wrap: nowrap;
+    overflow-x: auto;
   }
 
   ${({ theme }) => theme.breakpoints.up("md")} {
     gap: 20px;
     flex-wrap: wrap;
+    overflow-x: hidden;
   }
 `;
 
