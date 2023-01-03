@@ -56,7 +56,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                     <ReviewsItem>
                       <ReviewsItemHeading>
                         <ReviewsItemAuthor>    
-                          {userPhoto? && 
+                          {userPhoto.? && 
                             <ReviewsItemAuthorImage>
                               <Image {...userPhoto} />
                             </ReviewsItemAuthorImage>
