@@ -52,9 +52,6 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                   text,
                   userPhoto,
                 }) => (
-                  {{
-                   console.log(userPhoto);
-                  }}
                   <SwiperSlide key={_key}>
                     <ReviewsItem>
                       <ReviewsItemHeading>
