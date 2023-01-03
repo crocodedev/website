@@ -69,7 +69,7 @@ const Header = ({
       )}
       <HeaderWrapper variant={`${isScrollingUp ? "sticky" : ""}`}>
         <HeaderContainer>
-          <HeaderLogo>
+          <HeaderLogo href='/'>
             <Image loading="lazy" {...logoImage} />
           </HeaderLogo>
           <HeaderContentWrapper variant={active} onClick={handleSetActive} />
