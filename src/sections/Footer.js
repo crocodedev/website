@@ -20,9 +20,9 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
       <Container>
         <FooterTop>
           <FooterCompanyInfo>
-            <div>
+            <a href='/'>
               <Image {...logoImage} />
-            </div>
+            </a>
             <FooterSocials>
               {socialIcons?.map(({ iconImage, _key, link }) => (
                 <FooterSocialLink key={_key} baseUrl={baseUrl} {...link}>
