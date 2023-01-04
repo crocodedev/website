@@ -55,11 +55,11 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                   <SwiperSlide key={_key}>
                     <ReviewsItem>
                       <ReviewsItemHeading>
-                        <ReviewsItemAuthor>    
-                            <ReviewsItemAuthorImage>
+                        <ReviewsItemAuthor>
+                            {userPhoto?.image && <ReviewsItemAuthorImage>
                               {console.log(userPhoto)}
                               <Image {...userPhoto} />
-                            </ReviewsItemAuthorImage>
+                            </ReviewsItemAuthorImage>}
                           <ReviewsItemAuthorContent>
                             <Text fontWeight="bold" lineHeight="sm">
                               {itemTitle}
