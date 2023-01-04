@@ -57,7 +57,6 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                       <ReviewsItemHeading>
                         <ReviewsItemAuthor>
                             {userPhoto?.image && <ReviewsItemAuthorImage>
-                              {console.log(userPhoto)}
                               <Image {...userPhoto} />
                             </ReviewsItemAuthorImage>}
                           <ReviewsItemAuthorContent>
