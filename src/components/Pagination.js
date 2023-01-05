@@ -111,7 +111,7 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
               active={currentPage === el}
               onClick={() => (isDynamic ? handler(el) : {})}
               key={idx}
-              to={isBrowser && el === 1 ? link : `${link}/${el}`}
+              {el != '...' && to={isBrowser && el === 1 ? link : `${link}/${el}`}}
             >
               {el}
             </StyledPaginationItem>
