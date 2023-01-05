@@ -53,9 +53,13 @@ const BreadcrumbListItem = styled.li`
   }
 
   & p {
-    padding: 10px;
+    margin: 10px;
     display: block;
     font-size: 12px;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   ${dynamicStyle}
