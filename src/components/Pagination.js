@@ -104,6 +104,7 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
       />
       <PaginationStack>
         {arrOfCurrButtons.map((el, idx) => {
+        console.log(el,idx);
           return (
             <StyledPaginationItem
               as={isDynamic ? "button" : Link}
