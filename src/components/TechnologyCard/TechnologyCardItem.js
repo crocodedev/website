@@ -9,7 +9,7 @@ const TechnologyCardItem = styled.div`
 
   & div {
     border-radius: ${({ theme }) => theme.borderRadius.small};
-    background-color: ${({ theme }) => theme.palette.secondary.main};
+    outline: 5px solid ${({ theme }) => theme.palette.secondary.main};
 
     ${({ theme }) => theme.breakpoints.up("xl")} {
       min-width: 110px;
