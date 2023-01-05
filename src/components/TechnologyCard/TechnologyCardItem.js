@@ -44,6 +44,11 @@ const TechnologyCardItem = styled.div`
       }
     }
   }
+  
+  p {
+    white-space: break-spaces;
+    text-align: center;
+  }
 `;
 
 export default TechnologyCardItem;
