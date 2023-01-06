@@ -7,6 +7,7 @@ const TechnologyStackContent = styled.div`
     overflow-x: auto;
     width: 100%;
     gap: 20px;
+    padding: 5px;
 
     &::-webkit-scrollbar {
       width: 0;
