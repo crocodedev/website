@@ -6,10 +6,13 @@ const TechnologyCardItem = styled.div`
   flex-direction: column;
   white-space: nowrap;
   gap: 10px;
+  
+  > div {
+    outline: 5px solid ${({ theme }) => theme.palette.secondary.main};
+  }
 
   & div {
     border-radius: ${({ theme }) => theme.borderRadius.small};
-    outline: 5px solid ${({ theme }) => theme.palette.secondary.main};
 
     ${({ theme }) => theme.breakpoints.up("xl")} {
       min-width: 110px;
