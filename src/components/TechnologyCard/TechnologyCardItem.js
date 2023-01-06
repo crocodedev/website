@@ -12,24 +12,24 @@ const TechnologyCardItem = styled.div`
     background-color: ${({ theme }) => theme.palette.secondary.main};
 
     ${({ theme }) => theme.breakpoints.up("xl")} {
-      min-width: 110px;
-      min-height: 110px;
+      width: 110px;
+      height: 110px;
     }
 
     ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-      min-width: 90px;
-      min-height: 90px;
+      width: 90px;
+      height: 90px;
     }
 
     ${({ theme }) => theme.breakpoints.down("md")} {
-      min-width: 86px;
-      min-height: 86px;
+      width: 86px;
+      height: 86px;
     }
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
 
       ${({ theme }) => theme.breakpoints.up("xl")} {
         padding: 25px;
