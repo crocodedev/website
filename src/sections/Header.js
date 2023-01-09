@@ -69,7 +69,7 @@ const Header = ({
       )}
       <HeaderWrapper variant={`${isScrollingUp ? "sticky" : ""}`}>
         <HeaderContainer>
-          <HeaderLogo href='/'>
+          <HeaderLogo href="/">
             <Image loading="lazy" {...logoImage} />
           </HeaderLogo>
           <HeaderContentWrapper variant={active} onClick={handleSetActive} />
@@ -83,11 +83,12 @@ const Header = ({
               </HeaderContentItemShopify>
             )}
             {headerLinks?.map((link) => {
+              console.log(link);
               return (
                 <HeaderContentItem
                   active={
                     typeof window !== "undefined" &&
-                    link.linkInternal.reference.slug.current.split("/")[1] ===
+                    link?.linkInternal?.reference?.slug?.current?.split("/")[1] ===
                       window.location.pathname.split("/")[1]
                   }
                   baseUrl={baseUrl}
