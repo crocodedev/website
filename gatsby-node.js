@@ -110,6 +110,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         }
       }
       id
+      _id
       i18n_lang
       sectionTitle
       numberOfPosts
@@ -562,7 +563,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
           cookieConsent: {
             ...cookies[page.i18n_lang],
-            /*cookieName: config.googleAnalytics.cookieName,*/
+            /* cookieName: config.googleAnalytics.cookieName, */
           },
           sections: (page.content || [])
             .filter(({ id }) => id)
