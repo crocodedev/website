@@ -27,6 +27,7 @@ const CasesList = ({
   const [currentPage, setCurrentPage] = useState(
     (typeof window !== "undefined" && +location.search.split("=")[1]) || 1,
   );
+
   const [showingCasesItems, setShowingCasesItems] = useState(casesItems);
   const pageCount = Math.ceil(showingCasesItems.length / numberOfPosts);
 
@@ -36,7 +37,7 @@ const CasesList = ({
   };
 
   const isEven = (num) =>
-    Math.trunc(num / 2) % 2 === 0 ? Math.round(num / 2) : Math.round(num / 2);
+    Math.round(num / 2) % 2 === 0 ? Math.round(num / 2) : Math.round(num / 2) + 1;
 
   const handleTechnologyFilter = (el) => {
     if (activeTechnologyFilters.includes(el)) {
@@ -103,7 +104,7 @@ const CasesList = ({
         <ProjectsStack>
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
-            .slice(0, isEven(showingCasesItems.length))
+            .slice(0, isEven(numberOfPosts))
             ?.map(({ _key, slug, ...info }) =>
               slug.current ? (
                 <GatsbyLink key={_key} to={slug.current}>
@@ -118,7 +119,7 @@ const CasesList = ({
         <ProjectsStack>
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
-            .slice(isEven(showingCasesItems.length))
+            .slice(isEven(numberOfPosts))
             ?.map(({ _key, slug, ...info }) =>
               slug.current ? (
                 <GatsbyLink key={_key} to={slug.current}>
