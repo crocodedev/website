@@ -14,7 +14,14 @@ module.exports.link = `
             current
           }
         }
-        
+
+        ... on SanityCasesCountry {
+          id
+          slug {
+            current
+          }
+        }
+
         ... on SanityPage {
           slug {
             current
