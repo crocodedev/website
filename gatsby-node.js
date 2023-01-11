@@ -38,6 +38,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   {
   allSanityCasesItem {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       i18n_lang
       sectionTitle
