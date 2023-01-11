@@ -97,6 +97,10 @@ export default {
       name: "content",
       type: "pageContent",
     },
+    {
+      name: "seo",
+      type: "seo",
+    },
 
     //  refs for filtration
 
