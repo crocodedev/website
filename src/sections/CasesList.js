@@ -62,9 +62,9 @@ const CasesList = ({
   }, [activeTechnologyFilters, countryFilter, casesItems, setShowingCasesItems]);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper onlyBottomPadding>
       <Container>
-        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
+        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" disablePaddingBottom />
         <ProjectsNavStack>
           <ProjectsNavRowWrapper>
             <Text>Tech stack:</Text>
