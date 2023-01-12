@@ -22,6 +22,9 @@ module.exports.caseStudies = `
         casesItemImage {
           ${image}
         }
+        link {
+          ${link}
+        }
       }
 
     }
