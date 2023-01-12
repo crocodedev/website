@@ -15,12 +15,12 @@ module.exports.caseStudies = `
         _key
         text
         title
+        slug {
+          current
+        }
         marker
         casesItemImage {
           ${image}
-        }
-        link {
-          ${link}
         }
       }
 
