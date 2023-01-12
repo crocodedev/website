@@ -1,22 +1,22 @@
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import ProjectsStack from "@/components/Projects/ProjectsStack";
-// import Card from "@/components/Card";
-// import { Link } from "gatsby";
+import Card from "@/components/Card";
 
 const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={title} text={subtitle} />
       <ProjectsStack>
-        {/* {items?.map(({ _key, slug, ...info }) => (
+        {items?.map(({ _key, slug, ...info }) => (
           <Link key={_key} to={slug.current}>
             <Card {...info} />
           </Link>
-        ))} */}
+        ))}
       </ProjectsStack>
       {link && (
         <Button aria-label="Show all case studies" baseUrl={baseUrl} link={link} variant="outlined">
