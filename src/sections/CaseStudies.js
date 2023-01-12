@@ -5,22 +5,18 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import ProjectsStack from "@/components/Projects/ProjectsStack";
 import Card from "@/components/Card";
-import Link from "@/components/Link";
+import { Link } from "gatsby";
 
 const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
   <SectionWrapper>
     <Container>
       <SectionHeading title={title} text={subtitle} />
       <ProjectsStack>
-        {items?.map(({ _key, link: itemLink, ...info }) =>
-          itemLink ? (
-            <Link key={_key} baseUrl={baseUrl} {...itemLink}>
-              <Card {...info} />
-            </Link>
-          ) : (
-            <Card key={_key} {...info} />
-          ),
-        )}
+        {items?.map(({ _key, slug, ...info }) => (
+          <Link key={_key} to={slug.current}>
+            <Card {...info} />
+          </Link>
+        ))}
       </ProjectsStack>
       {link && (
         <Button aria-label="Show all case studies" baseUrl={baseUrl} link={link} variant="outlined">
