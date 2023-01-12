@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -6,6 +5,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import ProjectsStack from "@/components/Projects/ProjectsStack";
 import Card from "@/components/Card";
+import { Link } from "gatsby";
 
 const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
   <SectionWrapper>
