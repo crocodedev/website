@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
+import { Link } from "gatsby";
 import Container from "@/components/Container";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
@@ -12,7 +13,6 @@ import SectionWrapper from "@/components/SectionWrapper";
 import ImageStatic from "@/components/Image";
 import RelatedArticlesImageWrapper from "@/components/RelatedArticles/RelatedArticlesImageWrapper";
 import RelatedArticlesItemHeadingTitle from "@/components/RelatedArticles/RelatedArticlesItemHeadingTitle";
-import { Link } from "gatsby";
 
 const RelatedArticles = ({ title, bgColor, baseUrl, link, items }) => {
   const theme = useTheme();
