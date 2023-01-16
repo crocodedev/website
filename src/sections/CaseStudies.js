@@ -13,7 +13,7 @@ const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
       <SectionHeading title={title} text={subtitle} />
       <ProjectsStack>
         {items?.map(({ _key, slug, ...info }) => (
-          <Link key={_key} to={slug.current}>
+          <Link key={_key} to={slug?.current}>
             <Card {...info} />
           </Link>
         ))}
