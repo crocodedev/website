@@ -14,9 +14,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 
 const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUrl, color }) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper onlyBottomPadding>
       <Container>
-        <Breadcrumb baseUrl={baseUrl} color={color} links={breadcrumbs} />
+        <Breadcrumb disablePaddingBottom baseUrl={baseUrl} color={color} links={breadcrumbs} />
         <HeroProjectTitle>{title}</HeroProjectTitle>
         <HeroProjectContent>
           <Swiper
