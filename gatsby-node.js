@@ -384,7 +384,9 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     data.allSanitySettings.nodes[0];
 
   const blogPages = data.allSanityBlogCategory.nodes;
-  const articles = data.allSanityArticlesItem.nodes;
+  const articles = data.allSanityArticlesItem.nodes.sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
 
