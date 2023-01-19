@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import { useTheme } from "@emotion/react";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
@@ -8,6 +9,7 @@ import CtaTextCaption from "@/components/CtaText/CtaTextCaption";
 import CtaTextWrapper from "@/components/CtaText/CtaTextWrapper";
 
 const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
+  console.log("123123=>", link);
   const theme = useTheme();
   return (
     <SectionWrapper bgColor={bgColor}>
@@ -31,7 +33,14 @@ const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
           >
             {subtitle}
           </CtaTextCaption>
-          <Button aria-label="Start project" variant="contained" baseUrl={baseUrl}>
+
+          <Button
+            as={Link}
+            to={link?.linkInternal?.reference?.slug?.current}
+            aria-label="Start project"
+            variant="contained"
+            baseUrl={baseUrl}
+          >
             {link.title}
           </Button>
         </CtaTextWrapper>
