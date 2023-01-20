@@ -56,7 +56,7 @@ const Seo = ({
               },
               {
                 name: "twitter:image:src",
-                content: image.image.asset.url,
+                content: image.image?.asset.url,
               },
             ]
           : []),
