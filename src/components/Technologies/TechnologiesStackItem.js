@@ -42,11 +42,7 @@ const StyledTechnologiesStackItem = styled.button`
 `;
 
 const TechnologiesStackItem = ({ active, handler, text }) => (
-  <StyledTechnologiesStackItem
-    aria-label="Technology item"
-    onClick={handler}
-    active={active.toString()}
-  >
+  <StyledTechnologiesStackItem aria-label="Technology item" onClick={handler} active={active}>
     {text}
   </StyledTechnologiesStackItem>
 );
