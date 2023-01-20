@@ -76,7 +76,7 @@ const CasesList = ({
                   variant="outlined"
                   disablePointerEvents={true}
                   handler={() => handleTechnologyFilter(el)}
-                  active={activeTechnologyFilters.includes(el).toString()}
+                  active={activeTechnologyFilters.includes(el)}
                 >
                   {el}
                 </Button>
