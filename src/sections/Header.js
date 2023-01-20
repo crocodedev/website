@@ -83,7 +83,6 @@ const Header = ({
               </HeaderContentItemShopify>
             )}
             {headerLinks?.map((link) => {
-              console.log(link);
               return (
                 <HeaderContentItem
                   active={
@@ -156,24 +155,23 @@ const Header = ({
 
 Header.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
-  locales: PropTypes.array.isRequired,
+  locales: PropTypes.array,
   logoImage: PropTypes.object.isRequired,
   baseUrl: PropTypes.string.isRequired,
   headerButton: PropTypes.object.isRequired,
-  currentLocale: PropTypes.object.isRequired,
-  defaultLocale: PropTypes.object.isRequired,
+  currentLocale: PropTypes.string,
+  defaultLocale: PropTypes.string,
   linkWithIcon: PropTypes.exact({
     icon: PropTypes.object,
-    link: PropTypes.exact({
-      title: PropTypes.string,
-    }),
+    link: PropTypes.object.isRequired,
   }).isRequired,
-  headerLinks: PropTypes.arrayOf(
-    PropTypes.exact({
-      _key: PropTypes.string,
-      link: PropTypes.object,
-    }),
-  ).isRequired,
+  headerLinks: PropTypes.array.isRequired,
+};
+
+Header.defaultProps = {
+  locales: "",
+  currentLocale: "",
+  defaultLocale: "",
 };
 
 export default Header;

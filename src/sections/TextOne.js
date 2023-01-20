@@ -10,9 +10,9 @@ import TextOneWrapper from "@/components/TextOne/TextOneWrapper";
 import TextOneBgImagePerson from "@/components/TextOne/TextOneBgImagePerson";
 import SectionWrapper from "@/components/SectionWrapper";
 
-const TextOne = ({ title, subtitle, text, image, desktopImage, bgColor, fadeColor }) => {
+const TextOne = ({ title, subtitle, text, image, desktopImage, bgColor }) => {
   return (
-    <TextOneWrapper fadeColor={fadeColor}>
+    <TextOneWrapper>
       <SectionWrapper bgColor={bgColor}>
         <TextOneContainer>
           <SectionHeading title={title} text={subtitle} />
@@ -35,14 +35,17 @@ const TextOne = ({ title, subtitle, text, image, desktopImage, bgColor, fadeColo
 
 TextOne.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   text: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   bgColor: PropTypes.string.isRequired,
   tabletImage: PropTypes.object.isRequired,
   mobileImage: PropTypes.object.isRequired,
   desktopImage: PropTypes.object.isRequired,
-  fadeColor: PropTypes.string.isRequired,
+};
+
+TextOne.defaultProps = {
+  subtitle: "",
 };
 
 export default TextOne;

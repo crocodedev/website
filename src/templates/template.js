@@ -29,14 +29,14 @@ const Template = ({
           return (
             <>
               <Component
-                key={id}
+                key={`${id} - component`}
                 baseUrl={baseUrl}
                 locales={locales}
                 currentLocale={currentLocale}
                 defaultLocale={defaultLocale}
                 {...props}
               />
-              <BackUpButton />
+              <BackUpButton key={id} />
             </>
           );
         }
@@ -54,7 +54,7 @@ Template.propTypes = {
     cookieConsent: PropTypes.object,
     locales: PropTypes.array,
     recaptchaKey: PropTypes.string,
-    currentLocale: PropTypes.object,
+    currentLocale: PropTypes.string,
     defaultLocale: PropTypes.string,
     sections: PropTypes.arrayOf(
       PropTypes.shape({

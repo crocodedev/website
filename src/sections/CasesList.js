@@ -76,7 +76,7 @@ const CasesList = ({
                   variant="outlined"
                   disablePointerEvents={true}
                   handler={() => handleTechnologyFilter(el)}
-                  active={activeTechnologyFilters.includes(el)}
+                  active={activeTechnologyFilters.includes(el).toString()}
                 >
                   {el}
                 </Button>
@@ -145,30 +145,25 @@ const CasesList = ({
 
 CasesList.propTypes = {
   baseUrl: PropTypes.string.isRequired,
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.exact({
-      link: PropTypes.object,
-    }),
-  ).isRequired,
-  casesItems: PropTypes.object.isRequired,
+  breadcrumbs: PropTypes.array.isRequired,
+  casesItems: PropTypes.array.isRequired,
   numberOfPosts: PropTypes.number.isRequired,
   technologyFilter: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pageCount: PropTypes.number.isRequired,
+  pageCount: PropTypes.number,
   articleSeparator: PropTypes.exact({
     position: PropTypes.number,
     sectionTitle: PropTypes.string,
     title: PropTypes.string,
+    component: PropTypes.string,
     bgColor: PropTypes.string,
     buttonText: PropTypes.string,
+    id: PropTypes.string,
     messagePlaceholder: PropTypes.string,
   }).isRequired,
-  countryFilter: PropTypes.arrayOf(
-    PropTypes.exact({
-      slug: PropTypes.exact({
-        current: PropTypes.string,
-      }).isRequired,
-    }),
-  ).isRequired,
+  countryFilter: PropTypes.array.isRequired,
+};
+CasesList.defaultProps = {
+  pageCount: null,
 };
 
 export default CasesList;

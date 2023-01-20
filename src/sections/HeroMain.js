@@ -35,7 +35,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
           </HeroMainContent>
         </Container>
       </SectionWrapper>
-      <HeroMainImage fadeColor={fadeColor}>
+      <HeroMainImage fadecolor={fadeColor}>
         <Image {...bgImage} />
       </HeroMainImage>
     </HeroMainWrapper>

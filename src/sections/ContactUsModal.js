@@ -153,10 +153,6 @@ ContactUsModal.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
   handler: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    desc: PropTypes.string,
-  }).isRequired,
 };
 
 export default ContactUsModal;

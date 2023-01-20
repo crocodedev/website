@@ -83,7 +83,7 @@ BlogListItem.propTypes = {
   desc: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
   coverImage: PropTypes.object.isRequired,
-  slug: PropTypes.string.isRequired,
+  slug: PropTypes.object.isRequired,
   i18nLang: PropTypes.string.isRequired,
 };
 

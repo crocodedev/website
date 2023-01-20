@@ -56,9 +56,11 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                     <ReviewsItem>
                       <ReviewsItemHeading>
                         <ReviewsItemAuthor>
-                            {userPhoto?.image && <ReviewsItemAuthorImage>
+                          {userPhoto?.image && (
+                            <ReviewsItemAuthorImage>
                               <Image {...userPhoto} />
-                            </ReviewsItemAuthorImage>}
+                            </ReviewsItemAuthorImage>
+                          )}
                           <ReviewsItemAuthorContent>
                             <Text fontWeight="bold" lineHeight="sm">
                               {itemTitle}
@@ -94,7 +96,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
 
 Reviews.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,
@@ -107,6 +109,10 @@ Reviews.propTypes = {
     }),
   ).isRequired,
   baseUrl: PropTypes.string.isRequired,
+};
+
+Reviews.defaultProps = {
+  subtitle: "",
 };
 
 export default Reviews;

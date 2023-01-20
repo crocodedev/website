@@ -47,13 +47,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
 
   if (inNetlifyBuild)
     return (
-      <form
-        {...props}
-        name={formName}
-        onSubmit={onSubmit}
-        data-netlify="true"
-        netlify-honeypot="infoo"
-      >
+      <form {...props} name={formName} onSubmit={onSubmit} data-netlify="true">
         {children}
       </form>
     );

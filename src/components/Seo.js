@@ -93,7 +93,7 @@ const Seo = ({
 
 Seo.propTypes = {
   url: PropTypes.string.isRequired,
-  titleTemplate: PropTypes.bool.isRequired,
+  titleTemplate: PropTypes.bool,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.exact({
@@ -105,7 +105,7 @@ Seo.propTypes = {
         width: PropTypes.number,
       }),
     }),
-  }).isRequired,
+  }),
   siteUrl: PropTypes.string,
   lang: PropTypes.string,
   keywords: PropTypes.string,
@@ -118,11 +118,13 @@ Seo.propTypes = {
 Seo.defaultProps = {
   siteUrl: "",
   lang: "",
+  titleTemplate: "",
   keywords: "",
   ogtype: "",
   twitterCard: "",
   name: "",
   defaultLocale: "",
+  image: {}
 };
 
 export default Seo;

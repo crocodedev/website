@@ -104,10 +104,9 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
       />
       <PaginationStack>
         {arrOfCurrButtons.map((el, idx) => {
-        console.log(el,idx);
           return (
             <StyledPaginationItem
-              as={isDynamic || el === '...' ? "button" : Link}
+              as={isDynamic || el === "..." ? "button" : Link}
               active={currentPage === el}
               onClick={() => (isDynamic ? handler(el) : {})}
               key={idx}
@@ -131,8 +130,8 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
 };
 
 Pagination.propTypes = {
-  pageCount: PropTypes.string.isRequired,
-  currentPage: PropTypes.string.isRequired,
+  pageCount: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
   handler: PropTypes.func,
   isDynamic: PropTypes.bool,
   link: PropTypes.string.isRequired,

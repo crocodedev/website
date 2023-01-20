@@ -108,7 +108,6 @@ const ContactUs = ({
                 name: "",
                 email: "",
                 tel: "",
-                file: "",
                 text: "",
                 accept: check,
               }}
@@ -305,7 +304,7 @@ const ContactUs = ({
 ContactUs.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   nameText: PropTypes.string.isRequired,
   namePlaceholder: PropTypes.string.isRequired,
   messagePlaceholder: PropTypes.string.isRequired,
@@ -324,6 +323,10 @@ ContactUs.propTypes = {
     title: PropTypes.string,
     link: PropTypes.object,
   }).isRequired,
+};
+
+ContactUs.defaultProps = {
+  subtitle: "",
 };
 
 export default ContactUs;

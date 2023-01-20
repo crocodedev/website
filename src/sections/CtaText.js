@@ -9,7 +9,6 @@ import CtaTextCaption from "@/components/CtaText/CtaTextCaption";
 import CtaTextWrapper from "@/components/CtaText/CtaTextWrapper";
 
 const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
-  console.log("123123=>", link);
   const theme = useTheme();
   return (
     <SectionWrapper bgColor={bgColor}>
@@ -50,11 +49,15 @@ const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
 };
 
 CtaText.propTypes = {
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   link: PropTypes.object.isRequired,
   bgColor: PropTypes.string.isRequired,
   baseUrl: PropTypes.string.isRequired,
+};
+
+CtaText.defaultProps = {
+  subtitle: "",
 };
 
 export default CtaText;

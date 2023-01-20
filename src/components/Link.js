@@ -24,13 +24,14 @@ const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
 Link.propTypes = {
   linkInternal: PropTypes.object,
   linkExternal: PropTypes.object,
-  baseUrl: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 Link.defaultProps = {
   linkInternal: null,
   linkExternal: null,
+  baseUrl: null,
 };
 
 export default Link;

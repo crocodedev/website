@@ -12,7 +12,7 @@ module.exports.caseStudies = `
         ${link}
       }
       items {
-        _key
+        _id
         text
         title
         slug {

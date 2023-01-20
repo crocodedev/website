@@ -50,12 +50,16 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUr
 };
 
 HeroProject.propTypes = {
-  breadcrumbs: PropTypes.object.isRequired,
+  breadcrumbs: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   baseUrl: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   projectFeatures: PropTypes.array.isRequired,
   projectImage: PropTypes.array.isRequired,
+};
+
+HeroProject.defaultProps = {
+  color: "",
 };
 
 export default HeroProject;

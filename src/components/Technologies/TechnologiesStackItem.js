@@ -42,13 +42,17 @@ const StyledTechnologiesStackItem = styled.button`
 `;
 
 const TechnologiesStackItem = ({ active, handler, text }) => (
-  <StyledTechnologiesStackItem aria-label="Technology item" onClick={handler} active={active}>
+  <StyledTechnologiesStackItem
+    aria-label="Technology item"
+    onClick={handler}
+    active={active.toString()}
+  >
     {text}
   </StyledTechnologiesStackItem>
 );
 
 TechnologiesStackItem.propTypes = {
-  active: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
   handler: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };

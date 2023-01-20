@@ -12,8 +12,8 @@ const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
     <Container>
       <SectionHeading title={title} text={subtitle} />
       <ProjectsStack>
-        {items?.map(({ _key, slug, ...info }) => (
-          <Link key={_key} to={slug?.current}>
+        {items?.map(({ _id, slug, ...info }) => (
+          <Link key={_id} to={slug?.current}>
             <Card {...info} />
           </Link>
         ))}
@@ -30,9 +30,13 @@ const CaseStudies = ({ title, subtitle, items, link, baseUrl }) => (
 CaseStudies.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   items: PropTypes.array.isRequired,
   link: PropTypes.object.isRequired,
+};
+
+CaseStudies.defaultProps = {
+  subtitle: "",
 };
 
 export default CaseStudies;

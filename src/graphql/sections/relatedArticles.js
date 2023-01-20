@@ -12,6 +12,7 @@ module.exports.relatedArticles = `
       }
       items {
         id
+        _id
         title
         desc
         slug {
