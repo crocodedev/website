@@ -40,15 +40,15 @@ const Seo = ({
           ? [
               {
                 property: "og:image",
-                content: image.image.asset.url,
+                content: image.image?.asset.url,
               },
               {
                 property: "og:image:width",
-                content: image.image.asset.width,
+                content: image.image?.asset.width,
               },
               {
                 property: "og:image:height",
-                content: image.image.asset.height,
+                content: image.image?.asset.height,
               },
               {
                 property: "og:url",
@@ -124,7 +124,7 @@ Seo.defaultProps = {
   twitterCard: "",
   name: "",
   defaultLocale: "",
-  image: {}
+  image: {},
 };
 
 export default Seo;
