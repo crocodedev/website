@@ -9,6 +9,7 @@ const Breadcrumb = ({ links, color, disablePaddingBottom, baseUrl }) => {
   return (
     <BreadcrumbWrapper disablePaddingBottom={disablePaddingBottom}>
       <BreadcrumbList>
+        {console.log("123123123", links)}
         {links?.map((item, idx) =>
           idx + 1 !== links.length ? (
             <BreadcrumbListItem color={color} key={item._key}>

@@ -16,7 +16,7 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUr
   return (
     <SectionWrapper onlyBottomPadding>
       <Container>
-        <Breadcrumb disablePaddingBottom baseUrl={baseUrl} color={color} links={breadcrumbs} />
+        <Breadcrumb disablePaddingBottom baseUrl={baseUrl} color="gray" links={breadcrumbs} />
         <HeroProjectTitle>{title}</HeroProjectTitle>
         <HeroProjectContent>
           <Swiper

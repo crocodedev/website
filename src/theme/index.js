@@ -41,7 +41,7 @@ const theme = {
     text: {
       primary: "#222",
       secondary: "#fff",
-      disabled: "#a6a6a6",
+      disabled: "#707070",
     },
   },
   borderRadius: {

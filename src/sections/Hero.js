@@ -14,7 +14,7 @@ const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb baseUrl={baseUrl} color={color} links={breadcrumbs} />
+          <Breadcrumb baseUrl={baseUrl} color="gray" links={breadcrumbs} />
           <SectionHeading title={title} />
           <HeroContent>
             <Text fontSize="subtitle" mobileMultiplier={0.7}>
