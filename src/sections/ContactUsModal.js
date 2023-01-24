@@ -64,18 +64,99 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
           <ContactUsModalContentInner>
             <Title>{title}</Title>
             <Text>{subtitle}</Text>
-            <Formik
+            <ContactsUsForm as={NetlifyForm} formName="Contact us">
+              <ContactsUsItem>
+                <Text mobileMultiplier={0.9} as="label">
+                  {yourName}
+                </Text>
+                <ContactsUsInput
+                  // className={errors.name ? "invalid" : "valid"}
+                  name="name"
+                  // onChange={handleChange}
+                  // onBlur={handleBlur}
+                  // value={name}
+                  variant="text"
+                  type="text"
+                  placeholder={namePlaceholder}
+                />
+                {/* {touched.name && errors.name && <Text color="red">{errors.name}</Text>} */}
+              </ContactsUsItem>
+              <ContactsUsItem>
+                <Text mobileMultiplier={0.9} as="label">
+                  {yourEmail}
+                </Text>
+                <ContactsUsInput
+                  name="email"
+                  // className={errors.email ? "invalid" : "valid"}
+                  // onChange={handleChange}
+                  // onBlur={handleBlur}
+                  // value={email}
+                  variant="text"
+                  type="email"
+                  placeholder={emailPlaceholder}
+                />
+                {/* {touched.email && errors.email && <Text color="red">{errors.email}</Text>} */}
+              </ContactsUsItem>
+              <ContactsUsItem>
+                <Text fontSize="captionText">
+                  {text}
+                  <ContactUsModalLink>{label}</ContactUsModalLink>
+                </Text>
+              </ContactsUsItem>
+              <ContactsUsItem>
+                <Button
+                  type="submit"
+                  // disabled={!(isValid && dirty)}
+                  // handler={() => {
+                  //   handleSubmit();
+                  //   resetForm();
+                  // }}
+                  variant="contained"
+                >
+                  {buttonText}
+                </Button>
+              </ContactsUsItem>
+            </ContactsUsForm>
+            {/* //////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            //////////////////////
+            //////////////////////
+            ////////////////////////////////////////////
+
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+
+            //////////////////////
+            //////////////////////
+            //////////////////////
+            //////////////////////
+
+
+
+            */}
+            {/* <Formik
               initialValues={{
                 name: "",
                 email: "",
               }}
               validateOnBlur
-              onSubmit={({ resetForm }) => {
-                resetForm({
-                  name: "",
-                  email: "",
-                });
-              }}
+              onSubmit={(props) => console.log("formik sub = ", props)}
+              // onSubmit={({ resetForm }) => {
+              //   resetForm({
+              //     name: "",
+              //     email: "",
+              //   });
+              // }}
               validationSchema={schema}
             >
               {({
@@ -87,6 +168,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                 handleSubmit,
                 isValid,
                 dirty,
+                resetForm,
               }) => (
                 <NetlifyForm formName="Contact us">
                   <ContactsUsForm>
@@ -132,7 +214,10 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                       <Button
                         type="submit"
                         disabled={!(isValid && dirty)}
-                        handler={handleSubmit}
+                        handler={() => {
+                          handleSubmit();
+                          resetForm();
+                        }}
                         variant="contained"
                       >
                         {buttonText}
@@ -141,7 +226,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                   </ContactsUsForm>
                 </NetlifyForm>
               )}
-            </Formik>
+            </Formik> */}
           </ContactUsModalContentInner>
         </ContactUsModalCloseWrapper>
       </ContactUsModalContent>

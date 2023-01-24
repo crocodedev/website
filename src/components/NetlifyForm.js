@@ -34,6 +34,8 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("netlfiy send submit");
+
     if ((preSubmit && (await preSubmit())) || !preSubmit) {
       if (await handleSubmit()) {
         if (postSubmit) postSubmit();
