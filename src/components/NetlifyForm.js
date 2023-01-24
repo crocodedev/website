@@ -23,7 +23,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
         body: encodeData({
           ...formValues,
           "form-name": formName,
-          infoo: honey,
+          info: honey,
         }),
       });
     } catch (error) {
@@ -51,6 +51,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
         {children}
       </form>
     );
+
   return (
     <form {...props} onSubmit={onSubmit}>
       {children}

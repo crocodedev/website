@@ -53,99 +53,113 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
   });
 
   return (
-    <ContactUsModalWrapper isOpen={isOpen}>
-      <ContactUsModalClose onClick={handler} />
-      <ContactUsModalContent>
-        <ContactUsModalCloseWrapper>
-          <ContactUsModalCloseBtn onClick={handler}>
-            <span />
-          </ContactUsModalCloseBtn>
-          <ContactUsModalContentInner>
-            <Title>{title}</Title>
-            <Text>{subtitle}</Text>
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-              }}
-              validateOnBlur
-              onSubmit={({ resetForm }) => {
-                resetForm({
+    <>
+      <ContactUsModalWrapper isOpen={isOpen}>
+        <ContactUsModalClose onClick={handler} />
+        <ContactUsModalContent>
+          <ContactUsModalCloseWrapper>
+            <ContactUsModalCloseBtn onClick={handler}>
+              <span />
+            </ContactUsModalCloseBtn>
+            <ContactUsModalContentInner>
+              <Title>{title}</Title>
+              <Text>{subtitle}</Text>
+              <Formik
+                initialValues={{
                   name: "",
                   email: "",
-                  file: "",
-                  text: "",
-                  tel: "",
-                });
-              }}
-              validationSchema={schema}
-            >
-              {({
-                values: { name, email },
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isValid,
-                dirty,
-              }) => (
-                <ContactsUsForm>
-                  <ContactsUsItem>
-                    <Text mobileMultiplier={0.9} as="label">
-                      {yourName}
-                    </Text>
-                    <ContactsUsInput
-                      className={errors.name ? "invalid" : "valid"}
-                      name="name"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={name}
-                      variant="text"
-                      type="text"
-                      placeholder={namePlaceholder}
-                    />
-                    {touched.name && errors.name && <Text color="red">{errors.name}</Text>}
-                  </ContactsUsItem>
-                  <ContactsUsItem>
-                    <Text mobileMultiplier={0.9} as="label">
-                      {yourEmail}
-                    </Text>
-                    <ContactsUsInput
-                      name="email"
-                      className={errors.email ? "invalid" : "valid"}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={email}
-                      variant="text"
-                      type="email"
-                      placeholder={emailPlaceholder}
-                    />
-                    {touched.email && errors.email && <Text color="red">{errors.email}</Text>}
-                  </ContactsUsItem>
-                  <ContactsUsItem>
-                    <Text fontSize="captionText">
-                      {text}
-                      <ContactUsModalLink>{label}</ContactUsModalLink>
-                    </Text>
-                  </ContactsUsItem>
-                  <ContactsUsItem>
-                    <Button
-                      type="submit"
-                      disabled={!(isValid && dirty)}
-                      handler={handleSubmit}
-                      variant="contained"
-                    >
-                      {buttonText}
-                    </Button>
-                  </ContactsUsItem>
-                </ContactsUsForm>
-              )}
-            </Formik>
-          </ContactUsModalContentInner>
-        </ContactUsModalCloseWrapper>
-      </ContactUsModalContent>
-    </ContactUsModalWrapper>
+                }}
+                validateOnBlur
+                onSubmit={({ resetForm }) => {
+                  resetForm({
+                    name: "",
+                    email: "",
+                    file: "",
+                    text: "",
+                    tel: "",
+                  });
+                }}
+                validationSchema={schema}
+              >
+                {({
+                  values: { name, email },
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isValid,
+                  dirty,
+                }) => (
+                  <ContactsUsForm>
+                    <ContactsUsItem>
+                      <Text mobileMultiplier={0.9} as="label">
+                        {yourName}
+                      </Text>
+                      <ContactsUsInput
+                        className={errors.name ? "invalid" : "valid"}
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={name}
+                        variant="text"
+                        type="text"
+                        placeholder={namePlaceholder}
+                      />
+                      {touched.name && errors.name && <Text color="red">{errors.name}</Text>}
+                    </ContactsUsItem>
+                    <ContactsUsItem>
+                      <Text mobileMultiplier={0.9} as="label">
+                        {yourEmail}
+                      </Text>
+                      <ContactsUsInput
+                        name="email"
+                        className={errors.email ? "invalid" : "valid"}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={email}
+                        variant="text"
+                        type="email"
+                        placeholder={emailPlaceholder}
+                      />
+                      {touched.email && errors.email && <Text color="red">{errors.email}</Text>}
+                    </ContactsUsItem>
+                    <ContactsUsItem>
+                      <Text fontSize="captionText">
+                        {text}
+                        <ContactUsModalLink>{label}</ContactUsModalLink>
+                      </Text>
+                    </ContactsUsItem>
+                    <ContactsUsItem>
+                      <Button
+                        type="submit"
+                        disabled={!(isValid && dirty)}
+                        handler={handleSubmit}
+                        variant="contained"
+                      >
+                        {buttonText}
+                      </Button>
+                    </ContactsUsItem>
+                  </ContactsUsForm>
+                )}
+              </Formik>
+            </ContactUsModalContentInner>
+          </ContactUsModalCloseWrapper>
+        </ContactUsModalContent>
+      </ContactUsModalWrapper>
+
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          Name <input type="text" name="name" />
+        </p>
+        <p>
+          Email <input type="email" name="email" />
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    </>
   );
 };
 
