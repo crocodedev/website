@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ...props }) => {

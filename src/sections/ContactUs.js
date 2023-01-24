@@ -27,6 +27,7 @@ import ContactsUsPerson from "@/components/ContactUs/ContactsUsPerson";
 import ContactsUsPersonWrapper from "@/components/ContactUs/ContactsUsPersonWrapper";
 import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
 import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
+import NetlifyForm from "@/components/NetlifyForm";
 
 import "react-phone-input-2/lib/style.css";
 
@@ -112,17 +113,6 @@ const ContactUs = ({
                 accept: check,
               }}
               validateOnBlur
-              onSubmit={({ resetForm }) => {
-                resetForm({
-                  name: "",
-                  email: "",
-                  file: "",
-                  text: "",
-                  tel: "",
-                });
-                setFileUpload("");
-                setCheck(false);
-              }}
               validationSchema={schema}
             >
               {({
@@ -131,11 +121,16 @@ const ContactUs = ({
                 touched,
                 handleChange,
                 handleBlur,
-                handleSubmit,
                 isValid,
                 dirty,
+                resetForm,
               }) => (
-                <ContactsUsForm>
+                <ContactsUsForm
+                  as={NetlifyForm}
+                  formValues={{ name, email, tel, file, text, accept }}
+                  postSubmit={() => resetForm()}
+                  formName="TELL US ABOUT YOUR PROJECT"
+                >
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
                       {nameText}
@@ -261,7 +256,17 @@ const ContactUs = ({
                       aria-label="Send form"
                       type="submit"
                       disabled={!(isValid && dirty && check)}
-                      handler={handleSubmit}
+                      handler={() => {
+                        resetForm({
+                          name: "",
+                          email: "",
+                          file: "",
+                          text: "",
+                          tel: "",
+                        });
+                        setFileUpload("");
+                        setCheck(false);
+                      }}
                       variant="contained"
                     >
                       {buttonText}
