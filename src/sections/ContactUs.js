@@ -127,7 +127,7 @@ const ContactUs = ({
               }) => (
                 <ContactsUsForm
                   as={NetlifyForm}
-                  formValues={{ name, email, tel, file, text, accept }}
+                  formValues={{ name, email, tel, file, text }}
                   postSubmit={() => resetForm()}
                   formName="TELL US ABOUT YOUR PROJECT"
                 >
@@ -256,17 +256,6 @@ const ContactUs = ({
                       aria-label="Send form"
                       type="submit"
                       disabled={!(isValid && dirty && check)}
-                      handler={() => {
-                        resetForm({
-                          name: "",
-                          email: "",
-                          file: "",
-                          text: "",
-                          tel: "",
-                        });
-                        setFileUpload("");
-                        setCheck(false);
-                      }}
                       variant="contained"
                     >
                       {buttonText}
