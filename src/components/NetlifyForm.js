@@ -50,7 +50,16 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
 
   if (isNetlifyBuild) {
     return (
-      <form data-asd="zxc" {...props} name={formName} onSubmit={onSubmit} data-netlify="true">
+      <form
+        data-asd="zxc"
+        {...props}
+        name={formName}
+        method="POST"
+        onSubmit={onSubmit}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="bot-filed" />
         {children}
       </form>
     );
