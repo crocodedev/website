@@ -81,7 +81,11 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                 dirty,
                 resetForm,
               }) => (
-                <ContactsUsForm as={NetlifyForm} formName="Contact us">
+                <ContactsUsForm
+                  as={NetlifyForm}
+                  postSubmit={() => resetForm()}
+                  formName="Contact us"
+                >
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
                       {yourName}
@@ -121,14 +125,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                     </Text>
                   </ContactsUsItem>
                   <ContactsUsItem>
-                    <Button
-                      type="submit"
-                      disabled={!(isValid && dirty)}
-                      handler={() => {
-                        resetForm();
-                      }}
-                      variant="contained"
-                    >
+                    <Button type="submit" disabled={!(isValid && dirty)} variant="contained">
                       {buttonText}
                     </Button>
                   </ContactsUsItem>
