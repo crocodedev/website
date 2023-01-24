@@ -15,6 +15,7 @@ import React from "react";
 import ContactsUsInput from "@/components/ContactUs/ContactsUsInput";
 import Button from "@/components/Button";
 import ContactUsModalContentInner from "@/components/ContactUsModal/ContactUsModalContentInner";
+import NetlifyForm from "@/components/NetlifyForm";
 
 const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
   const {
@@ -53,44 +54,41 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
   });
 
   return (
-    <>
-      <ContactUsModalWrapper isOpen={isOpen}>
-        <ContactUsModalClose onClick={handler} />
-        <ContactUsModalContent>
-          <ContactUsModalCloseWrapper>
-            <ContactUsModalCloseBtn onClick={handler}>
-              <span />
-            </ContactUsModalCloseBtn>
-            <ContactUsModalContentInner>
-              <Title>{title}</Title>
-              <Text>{subtitle}</Text>
-              <Formik
-                initialValues={{
+    <ContactUsModalWrapper isOpen={isOpen}>
+      <ContactUsModalClose onClick={handler} />
+      <ContactUsModalContent>
+        <ContactUsModalCloseWrapper>
+          <ContactUsModalCloseBtn onClick={handler}>
+            <span />
+          </ContactUsModalCloseBtn>
+          <ContactUsModalContentInner>
+            <Title>{title}</Title>
+            <Text>{subtitle}</Text>
+            <Formik
+              initialValues={{
+                name: "",
+                email: "",
+              }}
+              validateOnBlur
+              onSubmit={({ resetForm }) => {
+                resetForm({
                   name: "",
                   email: "",
-                }}
-                validateOnBlur
-                onSubmit={({ resetForm }) => {
-                  resetForm({
-                    name: "",
-                    email: "",
-                    file: "",
-                    text: "",
-                    tel: "",
-                  });
-                }}
-                validationSchema={schema}
-              >
-                {({
-                  values: { name, email },
-                  errors,
-                  touched,
-                  handleChange,
-                  handleBlur,
-                  handleSubmit,
-                  isValid,
-                  dirty,
-                }) => (
+                });
+              }}
+              validationSchema={schema}
+            >
+              {({
+                values: { name, email },
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isValid,
+                dirty,
+              }) => (
+                <NetlifyForm formName="Contact us">
                   <ContactsUsForm>
                     <ContactsUsItem>
                       <Text mobileMultiplier={0.9} as="label">
@@ -141,25 +139,13 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                       </Button>
                     </ContactsUsItem>
                   </ContactsUsForm>
-                )}
-              </Formik>
-            </ContactUsModalContentInner>
-          </ContactUsModalCloseWrapper>
-        </ContactUsModalContent>
-      </ContactUsModalWrapper>
-
-      <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
-        <p>
-          Name <input type="text" name="name" />
-        </p>
-        <p>
-          Email <input type="email" name="email" />
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-    </>
+                </NetlifyForm>
+              )}
+            </Formik>
+          </ContactUsModalContentInner>
+        </ContactUsModalCloseWrapper>
+      </ContactUsModalContent>
+    </ContactUsModalWrapper>
   );
 };
 

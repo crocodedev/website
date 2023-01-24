@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const ContactsUsForm = styled.form`
+const ContactsUsForm = styled.div`
   display: flex;
   gap: 30px;
   flex-direction: column;

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ...props }) => {
-  const [inNetlifyBuild, setInNetlifyBuild] = useState(true);
+  const [isNetlifyBuild, setInNetlifyBuild] = useState(true);
   const [honey, setHoney] = useState("");
 
-  useEffect(() => {
-    setInNetlifyBuild(false);
-  }, []);
+  // useEffect(() => {
+  //   setInNetlifyBuild(false);
+  // }, []);
 
   const formEncodeString = (str) => encodeURIComponent(str).replace(/%20/g, "+");
   const encodeData = (obj) =>
@@ -45,12 +45,13 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     }
   };
 
-  if (inNetlifyBuild)
+  if (isNetlifyBuild) {
     return (
-      <form {...props} name={formName} onSubmit={onSubmit} data-netlify="true">
+      <form data-asd="zxc" {...props} name={formName} onSubmit={onSubmit} data-netlify="true">
         {children}
       </form>
     );
+  }
 
   return (
     <form {...props} onSubmit={onSubmit}>
