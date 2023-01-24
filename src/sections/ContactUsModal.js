@@ -83,7 +83,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
               }) => (
                 <ContactsUsForm
                   as={NetlifyForm}
-                  formValues={(name, email)}
+                  formValues={{ name, email }}
                   postSubmit={() => resetForm()}
                   formName="Contact us"
                 >

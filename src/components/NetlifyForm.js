@@ -16,6 +16,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
       .join("&");
 
   const handleSubmit = async () => {
+    console.log("formValues", formValues);
     try {
       return await fetch("/", {
         method: "POST",
