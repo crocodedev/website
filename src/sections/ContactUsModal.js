@@ -148,7 +148,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
         </ContactUsModalContent>
       </ContactUsModalWrapper>
 
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
         <p>
           Name <input type="text" name="name" />
         </p>
