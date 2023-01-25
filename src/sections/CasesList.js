@@ -52,6 +52,11 @@ const CasesList = ({
   };
 
   useEffect(() => {
+    setCurrentPage(1);
+    navigate(``);
+  }, [activeTechnologyFilters]);
+
+  useEffect(() => {
     setShowingCasesItems(
       activeTechnologyFilters.length === 0
         ? casesItems

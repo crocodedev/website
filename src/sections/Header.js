@@ -105,7 +105,7 @@ const Header = ({
                 </Button>
               </HeaderContentBtnWrapper>
             )}
-            {locales && (
+            {/* {locales && (
               <HeaderLangWrapper>
                 <HeaderLang>
                   <Image
@@ -135,7 +135,7 @@ const Header = ({
                   })}
                 </HeaderLangMenu>
               </HeaderLangWrapper>
-            )}
+            )} */}
           </HeaderContent>
           <HeaderMenuWrapper>
             <HeaderMenuButton aria-label="Menu" onClick={handleSetActive}>
