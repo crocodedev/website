@@ -6,6 +6,9 @@ const BlogListItemImage = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.small};
   overflow: hidden;
 
+  & > div {
+    width: 100%;
+  }
 
   & div ~ img {
     width: 100%;

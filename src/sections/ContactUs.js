@@ -127,12 +127,7 @@ const ContactUs = ({
               }) => (
                 <ContactsUsForm
                   as={NetlifyForm}
-                  formValues={() => {
-                    if (!file) {
-                      file = "without file";
-                    }
-                    return { name, email, tel, file, text };
-                  }}
+                  formValues={{ name, email, tel, file, text }}
                   postSubmit={() => resetForm()}
                   formName="TELL US ABOUT YOUR PROJECT"
                 >
