@@ -9,7 +9,7 @@ import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
 import Text from "@/components/Text";
 
-const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl, color }) => {
+const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
