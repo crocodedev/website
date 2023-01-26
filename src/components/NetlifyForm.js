@@ -7,15 +7,20 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
       .map((pair) => `${formEncodeString(pair[0])}=${formEncodeString(pair[1])}`)
       .join("&");
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+
     try {
       return await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeData({
-          ...formValues,
-          "form-name": formName,
-        }),
+        body: new URLSearchParams(formData).toString(),
+
+        // body: encodeData({
+        //   ...formValues,
+        //   "form-name": formName,
+        // }),
       });
     } catch (error) {
       return null;
@@ -26,7 +31,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     e.preventDefault();
 
     if ((preSubmit && (await preSubmit())) || !preSubmit) {
-      if (await handleSubmit()) {
+      if (await handleSubmit(e)) {
         if (postSubmit) postSubmit();
       } else {
         throw new Error("Error submitting to Netlify");
