@@ -268,7 +268,7 @@ const ContactUs = ({
               <ContactsUsImage>
                 <Image {...image} />
               </ContactsUsImage>
-              <ContactsUsPerson>
+              {/* <ContactsUsPerson>
                 <ContactsUsPersonInfo>
                   <Text
                     mobileMultiplier={0.8}
@@ -283,7 +283,7 @@ const ContactUs = ({
                     {imageSubtitle}
                   </Text>
                 </ContactsUsPersonInfo>
-              </ContactsUsPerson>
+              </ContactsUsPerson> */}
             </ContactsUsPersonWrapper>
           </ContactsUsContent>
         </Container>
