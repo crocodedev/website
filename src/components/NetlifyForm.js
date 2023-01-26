@@ -1,18 +1,9 @@
 import PropTypes from "prop-types";
 
 const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ...props }) => {
-  const formEncodeString = (str) => encodeURIComponent(str).replace(/%20/g, "+");
-  const encodeData = (obj) =>
-    Object.entries(obj)
-      .map((pair) => `${formEncodeString(pair[0])}=${formEncodeString(pair[1])}`)
-      .join("&");
-
   const handleSubmit = async (e) => {
     const myForm = e.target;
     const formData = new FormData(myForm);
-
-    console.log(e.target);
-    console.log(formData);
 
     try {
       return await fetch("/", {
