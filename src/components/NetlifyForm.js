@@ -18,12 +18,10 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
       return await fetch("/", {
         method: "POST",
         // headers: { "Content-Type": "multipart/form-data" },
-        body: new URLSearchParams(formData).toString(),
-
-        // body: encodeData({
-        //   ...formValues,
-        //   "form-name": formName,
-        // }),
+        body: encodeData({
+          ...formValues,
+          "form-name": formName,
+        }),
       });
     } catch (error) {
       return null;
