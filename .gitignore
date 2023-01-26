@@ -70,7 +70,8 @@ yarn-error.log
 .idea/
 
 # dotenv environment variables file
-
+.env.development
+.env.production
 
 # Local Netlify folder
 .netlify
