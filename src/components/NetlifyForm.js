@@ -46,6 +46,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
 
   return (
     <form
+      encType="multipart/form-data"
       {...props}
       name={formName}
       method="POST"
