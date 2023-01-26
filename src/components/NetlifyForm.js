@@ -17,7 +17,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     try {
       return await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "multipart/form-data" },
+        // headers: { "Content-Type": "multipart/form-data" },
         body: new URLSearchParams(formData).toString(),
 
         // body: encodeData({
@@ -46,7 +46,6 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
 
   return (
     <form
-      encType="multipart/form-data"
       {...props}
       name={formName}
       method="POST"
