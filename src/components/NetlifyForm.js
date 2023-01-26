@@ -11,6 +11,9 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     const myForm = e.target;
     const formData = new FormData(myForm);
 
+    console.log(e.target);
+    console.log(formData);
+
     try {
       return await fetch("/", {
         method: "POST",
