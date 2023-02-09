@@ -1,20 +1,20 @@
 import styled from "@emotion/styled";
 
 const MapStackInfo = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+  display: grid;
+  width: 100%;
 
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    flex-direction: column;
+  ${({ theme }) => theme.breakpoints.down("xl")} {
+    gap: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    flex-direction: column;
+    max-width: 504px;
+    gap: 40px;
   }
 `;
 

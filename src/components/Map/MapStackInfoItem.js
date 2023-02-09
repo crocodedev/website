@@ -10,37 +10,41 @@ const MapStackInfoItem = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.small};
   position: relative;
 
-  img {
-    ${({ theme }) => theme.breakpoints.down("md")} {
-      width: 24px;
-      height: 24px;
-    }
+  div {
+    flex-shrink: 0;
 
-    ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-      width: 27px;
-      height: 27px;
-    }
+    & img {
+      ${({ theme }) => theme.breakpoints.down("md")} {
+        width: 24px;
+        height: 24px;
+      }
 
-    ${({ theme }) => theme.breakpoints.up("lg")} {
-      width: 45px;
-      height: 45px;
+      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+        width: 27px;
+        height: 27px;
+      }
+
+      ${({ theme }) => theme.breakpoints.up("lg")} {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    padding: 20px 43px;
+    padding: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    padding: 40px 58px;
+    padding: 40px 20px;
   }
 
   ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-    padding: 88px 63px;
+    padding: 88px 40px;
   }
 
   ${({ theme }) => theme.breakpoints.up("2xl")} {
-    padding: 127px 63px;
+    padding: 127px 40px;
   }
 `;
 

@@ -29,6 +29,7 @@ const BenefitsListItem = styled.div`
   display: grid;
   align-items: center;
   align-content: flex-start;
+  justify-content: flex-start;
   grid-row-gap: 12px;
   grid-column-gap: 5px;
   overflow: hidden;

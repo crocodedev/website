@@ -12,6 +12,20 @@ const BenefitsList = styled.div`
     }
   }
 
+  &:first-of-type {
+    ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+      padding-top: 133px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+      padding-top: 112px;
+    }
+
+    ${({ theme }) => theme.breakpoints.up("xl")} {
+      padding-top: 255px;
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.between("md", "lg")} {
     padding-top: 155px;
   }
