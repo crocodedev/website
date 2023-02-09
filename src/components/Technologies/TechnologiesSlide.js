@@ -6,16 +6,18 @@ const dynamicStyle = ({ active }) => css`
 `;
 
 const TechnologiesSlide = styled.div`
-  align-items: center;
+  align-items: normal;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     flex-direction: column;
     gap: 20px;
     padding: 15px 5px;
   }
+
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     gap: 40px;
   }
+
   ${({ theme }) => theme.breakpoints.up("xl")} {
     gap: 100px;
   }

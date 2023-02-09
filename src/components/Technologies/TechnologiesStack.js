@@ -25,17 +25,13 @@ const TechnologiesStack = styled.div`
       ${({ theme }) => theme.borderRadius.small};
   }
 
-  ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-    width: 100%;
-  }
-
   ${({ theme }) => theme.breakpoints.down("md")} {
     width: calc(100% + 20px);
     overflow-x: auto;
 
     &::-webkit-scrollbar {
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
     }
   }
 `;

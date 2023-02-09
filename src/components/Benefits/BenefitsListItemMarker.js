@@ -34,6 +34,7 @@ const BenefitsListItemMarker = styled.span`
   position: relative;
   display: flex;
   align-items: center;
+  align-self: flex-start;
 
   &::before,
   &::after {
@@ -68,7 +69,7 @@ const BenefitsListItemMarker = styled.span`
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
     width: 80px;
-    height: 16px;
+    height: 45px;
 
     &::before {
       width: 16px;

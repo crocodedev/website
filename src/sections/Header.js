@@ -9,15 +9,14 @@ import HeaderContent from "@/components/Header/HeaderContent";
 import HeaderContentItem from "@/components/Header/HeaderContentItem";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
-import HeaderLang from "@/components/Header/HeaderLang";
-import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
-import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
-import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
+//  import HeaderLang from "@/components/Header/HeaderLang";
+//  import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
+//  import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
+//  import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
 import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
 import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
-import { Link } from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
 import useScrollingUp from "@/hooks/use-scrollingUp";
@@ -25,14 +24,14 @@ import ContactUsModal from "@/sections/ContactUsModal";
 import useMedia from "@/hooks/use-media";
 
 const Header = ({
-  locales,
+  //  locales,
   logoImage,
   linkWithIcon,
   headerLinks,
   headerButton,
   baseUrl,
-  currentLocale,
-  defaultLocale,
+  //  currentLocale,
+  //  defaultLocale,
   touchUsModal,
 }) => {
   const theme = useTheme();
@@ -155,12 +154,12 @@ const Header = ({
 
 Header.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
-  locales: PropTypes.array,
+  //  locales: PropTypes.array,
   logoImage: PropTypes.object.isRequired,
   baseUrl: PropTypes.string.isRequired,
   headerButton: PropTypes.object.isRequired,
-  currentLocale: PropTypes.string,
-  defaultLocale: PropTypes.string,
+  //  currentLocale: PropTypes.string,
+  //  defaultLocale: PropTypes.string,
   linkWithIcon: PropTypes.exact({
     icon: PropTypes.object,
     link: PropTypes.object.isRequired,
@@ -168,10 +167,10 @@ Header.propTypes = {
   headerLinks: PropTypes.array.isRequired,
 };
 
-Header.defaultProps = {
-  locales: "",
-  currentLocale: "",
-  defaultLocale: "",
-};
+//  Header.defaultProps = {
+//    locales: "",
+//    currentLocale: "",
+//    defaultLocale: "",
+//  };
 
 export default Header;

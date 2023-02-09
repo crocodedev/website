@@ -8,6 +8,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import OurClientsImageWrapper from "@/components/OurClients/OurClientsImageWrapper";
 import Image from "@/components/Image";
 import OurClientsContent from "@/components/OurClients/OurClientsContent";
+
 // eslint-disable-next-line import/no-unresolved
 import "swiper/css/bundle";
 

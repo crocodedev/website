@@ -20,7 +20,7 @@ const dynamicStyles = ({ theme, align }) => css`
   }
 
   ${theme.breakpoints.between("md", "xl")} {
-          margin-right: -40px;
+      margin-right: -40px;
     }
   `}
 `;

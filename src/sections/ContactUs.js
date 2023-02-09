@@ -23,9 +23,9 @@ import ContactsUsBgImage from "@/components/ContactUs/ContactsUsBgImage";
 import ContactsUsInputFile from "@/components/ContactUs/ContactsUsInputFile";
 import ContactsUsContent from "@/components/ContactUs/ContactsUsContent";
 import ContactsUsBgImageWrapper from "@/components/ContactUs/ContactsUsBgImageWrapper";
-import ContactsUsPerson from "@/components/ContactUs/ContactsUsPerson";
+//  import ContactsUsPerson from "@/components/ContactUs/ContactsUsPerson";
 import ContactsUsPersonWrapper from "@/components/ContactUs/ContactsUsPersonWrapper";
-import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
+//  import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
 import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
 import NetlifyForm from "@/components/NetlifyForm";
 
@@ -43,8 +43,8 @@ const ContactUs = ({
   emailText,
   emailPlaceholder,
   backgroundImage,
-  imageTitle,
-  imageSubtitle,
+  //  imageTitle,
+  //  imageSubtitle,
   buttonText,
   image,
   agreementText,
