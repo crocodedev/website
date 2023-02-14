@@ -565,7 +565,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     pages.forEach((page) => {
       const url = page.slug.current;
       createPage({
-        path: `${url}.html`,
+        path: `${url === "/" ? "index" : url}.html`,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
