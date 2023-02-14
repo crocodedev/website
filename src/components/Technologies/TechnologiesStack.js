@@ -3,11 +3,13 @@ import styled from "@emotion/styled";
 const TechnologiesStack = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   scroll-snap-type: x mandatory;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     padding: 20px;
+
     box-shadow: ${({ theme }) => theme.shadows.card};
   }
 

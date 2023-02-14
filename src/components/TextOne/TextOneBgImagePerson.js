@@ -5,10 +5,6 @@ const TextOneBgImagePerson = styled.div`
   z-index: 2;
   bottom: 0;
 
-  ${({ theme }) => theme.breakpoints.between("md")} {
-    left: -45px;
-  }
-
   ${({ theme }) => theme.breakpoints.between("md", "lg")} {
     left: -90px;
   }
@@ -26,7 +22,6 @@ const TextOneBgImagePerson = styled.div`
   }
 
   & div img {
-    object-fit: cover;
     width: 100%;
 
     ${({ theme }) => theme.breakpoints.down("sm")} {

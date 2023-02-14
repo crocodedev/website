@@ -8,6 +8,7 @@ const { robots, pwa } = require("./config/site");
 const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
 
 module.exports = {
+  trailingSlash: "always",
   ...(siteUrl
     ? {
         siteMetadata: {

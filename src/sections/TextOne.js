@@ -24,7 +24,7 @@ const TextOne = ({ title, subtitle, text, image, desktopImage, bgColor }) => {
         </TextOneContainer>
       </SectionWrapper>
       <TextOneBgImagePerson>
-        <Image {...desktopImage} />
+        <Image {...desktopImage} objectFit="contain" />
       </TextOneBgImagePerson>
       <TextOneBgImage>
         <Image {...image} />

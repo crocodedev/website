@@ -6,30 +6,34 @@ const TechnologyCardItem = styled.div`
   flex-direction: column;
   white-space: nowrap;
   gap: 10px;
-  
+
   > div {
-    outline: 5px solid ${({ theme }) => theme.palette.secondary.main};
+    border: 5px solid ${({ theme }) => theme.palette.secondary.main};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
   }
 
   & div {
-    border-radius: ${({ theme }) => theme.borderRadius.small};
-
     ${({ theme }) => theme.breakpoints.up("xl")} {
+      width: 120px;
+      height: 120px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
       width: 110px;
       height: 110px;
     }
 
-    ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-      width: 90px;
-      height: 90px;
+    ${({ theme }) => theme.breakpoints.between("sm", "md")} {
+      width: 106px;
+      height: 106px;
     }
 
-    ${({ theme }) => theme.breakpoints.down("md")} {
+    ${({ theme }) => theme.breakpoints.down("sm")} {
       width: 86px;
       height: 86px;
     }
 
-    img {
+    & img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -47,7 +51,7 @@ const TechnologyCardItem = styled.div`
       }
     }
   }
-  
+
   p {
     white-space: break-spaces;
     text-align: center;
