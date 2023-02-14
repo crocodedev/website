@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import { Global, ThemeProvider } from "@emotion/react";
 import * as Sections from "@/sections";
 import theme from "@/theme";
-import { Helmet } from "react-helmet";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
@@ -18,7 +17,6 @@ const Template = ({
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
-      <Helmet defer={false} />
       <Global styles={[reboot, fontMontserrat]} />
       <CookiesPopup {...cookieConsent} />
 
