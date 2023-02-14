@@ -403,7 +403,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       ];
 
       createPage({
-        path: `${url}.html`,
+        path: url,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
@@ -446,7 +446,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     casesItem.forEach((page) => {
       const url = page.slug.current;
       createPage({
-        path: `${url}.html`,
+        path: url,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
@@ -479,7 +479,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     articles.forEach((page) => {
       const url = page.slug.current;
       createPage({
-        path: `${url}.html`,
+        path: url,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
@@ -526,7 +526,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         );
 
         createPage({
-          path: `${url}.html`,
+          path: url,
           component: template,
           context: {
             baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
@@ -565,7 +565,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     pages.forEach((page) => {
       const url = page.slug.current;
       createPage({
-        path: `${url === "/" ? "index" : url}.html`,
+        path: url,
         component: template,
         context: {
           baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
