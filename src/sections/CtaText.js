@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import { useTheme } from "@emotion/react";
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
@@ -31,7 +32,14 @@ const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
           >
             {subtitle}
           </CtaTextCaption>
-          <Button aria-label="Start project" variant="contained" baseUrl={baseUrl}>
+
+          <Button
+            as={Link}
+            to={link?.linkInternal?.reference?.slug?.current}
+            aria-label="Start project"
+            variant="contained"
+            baseUrl={baseUrl}
+          >
             {link.title}
           </Button>
         </CtaTextWrapper>
@@ -41,11 +49,15 @@ const CtaText = ({ subtitle, title, link, bgColor, baseUrl }) => {
 };
 
 CtaText.propTypes = {
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   link: PropTypes.object.isRequired,
   bgColor: PropTypes.string.isRequired,
   baseUrl: PropTypes.string.isRequired,
+};
+
+CtaText.defaultProps = {
+  subtitle: "",
 };
 
 export default CtaText;

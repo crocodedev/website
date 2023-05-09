@@ -21,8 +21,8 @@ const StyledTechnologiesStackItem = styled.button`
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   white-space: nowrap;
-  padding: 40px;
   scroll-snap-align: start;
+  height: min-content;
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.subtitle}px;
@@ -48,7 +48,7 @@ const TechnologiesStackItem = ({ active, handler, text }) => (
 );
 
 TechnologiesStackItem.propTypes = {
-  active: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
   handler: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };

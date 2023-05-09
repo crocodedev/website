@@ -11,7 +11,6 @@ const dynamicStyles = ({ disablePaddingBottom }) => css`
 
 const BreadcrumbWrapper = styled.nav`
   width: 100%;
-  max-width: 1525px;
   display: flex;
   justify-content: flex-start;
   margin-right: auto;

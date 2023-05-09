@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Link from "./Link";
 
-const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
+const dynamicStyle = ({ theme, variant, active, disablepointerevents }) => css`
   ${variant === "outlined"
     ? `
     ${
@@ -12,7 +12,7 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
     border: 1px solid ${theme.palette.primary.main};
-    ${!disablePointerEvents ? "pointer-events: none" : ""};
+    ${!disablepointerevents ? "pointer-events: none" : ""};
     `
         : `
     color: ${theme.palette.primary.main};
@@ -53,7 +53,7 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     display: flex;
     align-items: center;
     gap: 10px;
-
+ 
     &:hover {
       color: ${theme.palette.secondary.dark};
 
@@ -129,7 +129,7 @@ const Button = ({
     <Link baseUrl={baseUrl} {...link} {...props}>
       <StyledButton
         as="span"
-        disablePointerEvents={disablePointerEvents}
+        disablepointerevents={disablePointerEvents}
         active={active}
         variant={variant}
       >
@@ -140,7 +140,7 @@ const Button = ({
   ) : (
     <StyledButton
       variant={variant}
-      disablePointerEvents={disablePointerEvents}
+      disablepointerevents={disablePointerEvents}
       active={active}
       onClick={handler}
       {...props}

@@ -110,7 +110,7 @@ const SliderSteps = ({ subtitle, title, itemsSteps }) => {
 };
 
 SliderSteps.propTypes = {
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   itemsSteps: PropTypes.arrayOf(
     PropTypes.exact({
@@ -120,6 +120,10 @@ SliderSteps.propTypes = {
       image: PropTypes.object,
     }),
   ).isRequired,
+};
+
+SliderSteps.defaultProps = {
+  subtitle: null,
 };
 
 export default SliderSteps;

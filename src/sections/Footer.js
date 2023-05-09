@@ -20,9 +20,9 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
       <Container>
         <FooterTop>
           <FooterCompanyInfo>
-            <div>
+            <a href="/">
               <Image {...logoImage} />
-            </div>
+            </a>
             <FooterSocials>
               {socialIcons?.map(({ iconImage, _key, link }) => (
                 <FooterSocialLink key={_key} baseUrl={baseUrl} {...link}>
@@ -34,7 +34,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
           <FooterTopStack>
             {column?.map(({ title, _key, items, link: topLink }) => (
               <FooterTopColumn key={_key}>
-                <FooterLink isHeading baseUrl={baseUrl} {...topLink}>
+                <FooterLink isheading baseUrl={baseUrl} {...topLink}>
                   {title}
                 </FooterLink>
                 {items?.map(({ _key: id, link }) => (
@@ -51,7 +51,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <div>
             {bottomLinks?.map((link) => (
-              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
+              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isheading>
                 {link.title}
               </FooterLink>
             ))}
@@ -73,17 +73,7 @@ Footer.propTypes = {
       link: PropTypes.object,
     }),
   ).isRequired,
-  column: PropTypes.arrayOf(
-    PropTypes.exact({
-      title: PropTypes.string,
-      _key: PropTypes.string,
-      items: PropTypes.arrayOf(
-        PropTypes.exact({
-          link: PropTypes.object,
-        }),
-      ),
-    }),
-  ).isRequired,
+  column: PropTypes.array.isRequired,
   bottomLinks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 

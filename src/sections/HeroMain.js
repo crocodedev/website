@@ -18,7 +18,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
         <Container>
           <HeroMainContent>
             <HeroMainLogo>
-              <Image {...logoImage} />
+              <Image {...logoImage} objectFit="contain" />
             </HeroMainLogo>
             <HeroMainList>
               {items?.map(({ text, _key }) => (
@@ -35,7 +35,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
           </HeroMainContent>
         </Container>
       </SectionWrapper>
-      <HeroMainImage fadeColor={fadeColor}>
+      <HeroMainImage fadecolor={fadeColor}>
         <Image {...bgImage} />
       </HeroMainImage>
     </HeroMainWrapper>

@@ -9,15 +9,14 @@ import HeaderContent from "@/components/Header/HeaderContent";
 import HeaderContentItem from "@/components/Header/HeaderContentItem";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
-import HeaderLang from "@/components/Header/HeaderLang";
-import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
-import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
-import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
+//  import HeaderLang from "@/components/Header/HeaderLang";
+//  import HeaderLangMenu from "@/components/Header/HeaderLangMenu";
+//  import HeaderLangWrapper from "@/components/Header/HeaderLangWrapper";
+//  import HeaderLangMenuItem from "@/components/Header/HeaderLangMenuItem";
 import HeaderMenuIcon from "@/components/Header/HeaderMenuIcon";
 import HeaderMenuButton from "@/components/Header/HeaderMenuButton";
 import HeaderContentBtnWrapper from "@/components/Header/HeaderContentBtnWrapper";
 import HeaderContentItemShopify from "@/components/Header/HeaderContentItemShopify";
-import { Link } from "gatsby";
 import HeaderMenuWrapper from "@/components/Header/HeaderMenuWrapper";
 import HeaderContentWrapper from "@/components/Header/HeaderContentWrapper";
 import useScrollingUp from "@/hooks/use-scrollingUp";
@@ -25,14 +24,14 @@ import ContactUsModal from "@/sections/ContactUsModal";
 import useMedia from "@/hooks/use-media";
 
 const Header = ({
-  locales,
+  //  locales,
   logoImage,
   linkWithIcon,
   headerLinks,
   headerButton,
   baseUrl,
-  currentLocale,
-  defaultLocale,
+  //  currentLocale,
+  //  defaultLocale,
   touchUsModal,
 }) => {
   const theme = useTheme();
@@ -69,7 +68,7 @@ const Header = ({
       )}
       <HeaderWrapper variant={`${isScrollingUp ? "sticky" : ""}`}>
         <HeaderContainer>
-          <HeaderLogo>
+          <HeaderLogo href="/">
             <Image loading="lazy" {...logoImage} />
           </HeaderLogo>
           <HeaderContentWrapper variant={active} onClick={handleSetActive} />
@@ -87,7 +86,7 @@ const Header = ({
                 <HeaderContentItem
                   active={
                     typeof window !== "undefined" &&
-                    link.linkInternal.reference.slug.current.split("/")[1] ===
+                    link?.linkInternal?.reference?.slug?.current?.split("/")[1] ===
                       window.location.pathname.split("/")[1]
                   }
                   baseUrl={baseUrl}
@@ -105,7 +104,7 @@ const Header = ({
                 </Button>
               </HeaderContentBtnWrapper>
             )}
-            {locales && (
+            {/* {locales && (
               <HeaderLangWrapper>
                 <HeaderLang>
                   <Image
@@ -135,7 +134,7 @@ const Header = ({
                   })}
                 </HeaderLangMenu>
               </HeaderLangWrapper>
-            )}
+            )} */}
           </HeaderContent>
           <HeaderMenuWrapper>
             <HeaderMenuButton aria-label="Menu" onClick={handleSetActive}>
@@ -155,24 +154,23 @@ const Header = ({
 
 Header.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
-  locales: PropTypes.array.isRequired,
+  //  locales: PropTypes.array,
   logoImage: PropTypes.object.isRequired,
   baseUrl: PropTypes.string.isRequired,
   headerButton: PropTypes.object.isRequired,
-  currentLocale: PropTypes.object.isRequired,
-  defaultLocale: PropTypes.object.isRequired,
+  //  currentLocale: PropTypes.string,
+  //  defaultLocale: PropTypes.string,
   linkWithIcon: PropTypes.exact({
     icon: PropTypes.object,
-    link: PropTypes.exact({
-      title: PropTypes.string,
-    }),
+    link: PropTypes.object.isRequired,
   }).isRequired,
-  headerLinks: PropTypes.arrayOf(
-    PropTypes.exact({
-      _key: PropTypes.string,
-      link: PropTypes.object,
-    }),
-  ).isRequired,
+  headerLinks: PropTypes.array.isRequired,
 };
+
+//  Header.defaultProps = {
+//    locales: "",
+//    currentLocale: "",
+//    defaultLocale: "",
+//  };
 
 export default Header;

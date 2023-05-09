@@ -7,29 +7,36 @@ const TechnologyCardItem = styled.div`
   white-space: nowrap;
   gap: 10px;
 
-  & div {
+  > div {
+    border: 5px solid ${({ theme }) => theme.palette.secondary.main};
     border-radius: ${({ theme }) => theme.borderRadius.small};
-    background-color: ${({ theme }) => theme.palette.secondary.main};
+  }
 
+  & div {
     ${({ theme }) => theme.breakpoints.up("xl")} {
-      min-width: 110px;
-      min-height: 110px;
+      width: 120px;
+      height: 120px;
     }
 
     ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-      min-width: 90px;
-      min-height: 90px;
+      width: 110px;
+      height: 110px;
     }
 
-    ${({ theme }) => theme.breakpoints.down("md")} {
-      min-width: 86px;
-      min-height: 86px;
+    ${({ theme }) => theme.breakpoints.between("sm", "md")} {
+      width: 106px;
+      height: 106px;
     }
 
-    img {
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      width: 86px;
+      height: 86px;
+    }
+
+    & img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
 
       ${({ theme }) => theme.breakpoints.up("xl")} {
         padding: 25px;
@@ -43,6 +50,11 @@ const TechnologyCardItem = styled.div`
         padding: 20px;
       }
     }
+  }
+
+  p {
+    white-space: break-spaces;
+    text-align: center;
   }
 `;
 

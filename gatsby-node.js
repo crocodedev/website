@@ -38,6 +38,24 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   {
   allSanityCasesItem {
     nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
       id
       i18n_lang
       sectionTitle
@@ -110,6 +128,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
         }
       }
       id
+      _id
       i18n_lang
       sectionTitle
       numberOfPosts
@@ -365,7 +384,9 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     data.allSanitySettings.nodes[0];
 
   const blogPages = data.allSanityBlogCategory.nodes;
-  const articles = data.allSanityArticlesItem.nodes;
+  const articles = data.allSanityArticlesItem.nodes.sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
 
@@ -562,7 +583,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
 
           cookieConsent: {
             ...cookies[page.i18n_lang],
-            /*cookieName: config.googleAnalytics.cookieName,*/
+            /* cookieName: config.googleAnalytics.cookieName, */
           },
           sections: (page.content || [])
             .filter(({ id }) => id)

@@ -18,7 +18,8 @@ ImageStatic.propTypes = {
 // Render inline SVG with fallback non-svg images
 const Image = ({ altText, image, ...props }) => {
   const gatsbyImageData = image?.asset?.gatsbyImageData;
-  if (gatsbyImageData) return <GatsbyImage image={gatsbyImageData} alt={altText} {...props} />;
+  if (gatsbyImageData)
+    return <GatsbyImage image={gatsbyImageData} alt={altText || "image"} {...props} />;
 
   return null;
 };

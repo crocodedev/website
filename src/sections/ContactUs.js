@@ -23,10 +23,11 @@ import ContactsUsBgImage from "@/components/ContactUs/ContactsUsBgImage";
 import ContactsUsInputFile from "@/components/ContactUs/ContactsUsInputFile";
 import ContactsUsContent from "@/components/ContactUs/ContactsUsContent";
 import ContactsUsBgImageWrapper from "@/components/ContactUs/ContactsUsBgImageWrapper";
-import ContactsUsPerson from "@/components/ContactUs/ContactsUsPerson";
+//  import ContactsUsPerson from "@/components/ContactUs/ContactsUsPerson";
 import ContactsUsPersonWrapper from "@/components/ContactUs/ContactsUsPersonWrapper";
-import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
+//  import ContactsUsPersonInfo from "@/components/ContactUs/ContactsUsPersonInfo";
 import ContactsUsTextarea from "@/components/ContactUs/ContactsUsTextarea";
+import NetlifyForm from "@/components/NetlifyForm";
 
 import "react-phone-input-2/lib/style.css";
 
@@ -42,8 +43,8 @@ const ContactUs = ({
   emailText,
   emailPlaceholder,
   backgroundImage,
-  imageTitle,
-  imageSubtitle,
+  //  imageTitle,
+  //  imageSubtitle,
   buttonText,
   image,
   agreementText,
@@ -108,22 +109,10 @@ const ContactUs = ({
                 name: "",
                 email: "",
                 tel: "",
-                file: "",
                 text: "",
                 accept: check,
               }}
               validateOnBlur
-              onSubmit={({ resetForm }) => {
-                resetForm({
-                  name: "",
-                  email: "",
-                  file: "",
-                  text: "",
-                  tel: "",
-                });
-                setFileUpload("");
-                setCheck(false);
-              }}
               validationSchema={schema}
             >
               {({
@@ -132,11 +121,16 @@ const ContactUs = ({
                 touched,
                 handleChange,
                 handleBlur,
-                handleSubmit,
                 isValid,
                 dirty,
+                resetForm,
               }) => (
-                <ContactsUsForm>
+                <ContactsUsForm
+                  as={NetlifyForm}
+                  formValues={{ name, email, tel, file, text }}
+                  postSubmit={() => resetForm()}
+                  formName="TELL US ABOUT YOUR PROJECT"
+                >
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
                       {nameText}
@@ -262,7 +256,6 @@ const ContactUs = ({
                       aria-label="Send form"
                       type="submit"
                       disabled={!(isValid && dirty && check)}
-                      handler={handleSubmit}
                       variant="contained"
                     >
                       {buttonText}
@@ -275,7 +268,7 @@ const ContactUs = ({
               <ContactsUsImage>
                 <Image {...image} />
               </ContactsUsImage>
-              <ContactsUsPerson>
+              {/* <ContactsUsPerson>
                 <ContactsUsPersonInfo>
                   <Text
                     mobileMultiplier={0.8}
@@ -290,7 +283,7 @@ const ContactUs = ({
                     {imageSubtitle}
                   </Text>
                 </ContactsUsPersonInfo>
-              </ContactsUsPerson>
+              </ContactsUsPerson> */}
             </ContactsUsPersonWrapper>
           </ContactsUsContent>
         </Container>
@@ -305,7 +298,7 @@ const ContactUs = ({
 ContactUs.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   nameText: PropTypes.string.isRequired,
   namePlaceholder: PropTypes.string.isRequired,
   messagePlaceholder: PropTypes.string.isRequired,
@@ -324,6 +317,10 @@ ContactUs.propTypes = {
     title: PropTypes.string,
     link: PropTypes.object,
   }).isRequired,
+};
+
+ContactUs.defaultProps = {
+  subtitle: "",
 };
 
 export default ContactUs;

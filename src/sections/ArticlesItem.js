@@ -206,7 +206,11 @@ ArticlesItem.propTypes = {
   date: PropTypes.string.isRequired,
   baseUrl: PropTypes.string.isRequired,
   i18n_lang: PropTypes.string.isRequired,
-  sharedText: PropTypes.string.isRequired,
+  sharedText: PropTypes.string,
+};
+
+ArticlesItem.defaultProps = {
+  sharedText: "",
 };
 
 export default ArticlesItem;

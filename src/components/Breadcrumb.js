@@ -29,13 +29,14 @@ const Breadcrumb = ({ links, color, disablePaddingBottom, baseUrl }) => {
 };
 
 Breadcrumb.propTypes = {
-  baseUrl: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(PropTypes.string).isRequired,
+  baseUrl: PropTypes.string,
+  links: PropTypes.array.isRequired,
   color: PropTypes.string,
   disablePaddingBottom: PropTypes.bool,
 };
 
 Breadcrumb.defaultProps = {
+  baseUrl: "",
   color: "white",
   disablePaddingBottom: false,
 };

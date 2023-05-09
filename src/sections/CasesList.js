@@ -27,6 +27,7 @@ const CasesList = ({
   const [currentPage, setCurrentPage] = useState(
     (typeof window !== "undefined" && +location.search.split("=")[1]) || 1,
   );
+
   const [showingCasesItems, setShowingCasesItems] = useState(casesItems);
   const pageCount = Math.ceil(showingCasesItems.length / numberOfPosts);
 
@@ -36,7 +37,7 @@ const CasesList = ({
   };
 
   const isEven = (num) =>
-    Math.trunc(num / 2) % 2 === 0 ? Math.round(num / 2) : Math.round(num / 2);
+    Math.round(num / 2) % 2 === 0 ? Math.round(num / 2) : Math.round(num / 2) + 1;
 
   const handleTechnologyFilter = (el) => {
     if (activeTechnologyFilters.includes(el)) {
@@ -51,6 +52,11 @@ const CasesList = ({
   };
 
   useEffect(() => {
+    setCurrentPage(1);
+    navigate(``);
+  }, [activeTechnologyFilters]);
+
+  useEffect(() => {
     setShowingCasesItems(
       activeTechnologyFilters.length === 0
         ? casesItems
@@ -61,9 +67,9 @@ const CasesList = ({
   }, [activeTechnologyFilters, countryFilter, casesItems, setShowingCasesItems]);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper onlyBottomPadding>
       <Container>
-        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
+        <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" disablePaddingBottom />
         <ProjectsNavStack>
           <ProjectsNavRowWrapper>
             <Text>Tech stack:</Text>
@@ -103,7 +109,7 @@ const CasesList = ({
         <ProjectsStack>
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
-            .slice(0, isEven(showingCasesItems.length))
+            .slice(0, isEven(numberOfPosts))
             ?.map(({ _key, slug, ...info }) =>
               slug.current ? (
                 <GatsbyLink key={_key} to={slug.current}>
@@ -118,7 +124,7 @@ const CasesList = ({
         <ProjectsStack>
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
-            .slice(isEven(showingCasesItems.length))
+            .slice(isEven(numberOfPosts))
             ?.map(({ _key, slug, ...info }) =>
               slug.current ? (
                 <GatsbyLink key={_key} to={slug.current}>
@@ -144,30 +150,25 @@ const CasesList = ({
 
 CasesList.propTypes = {
   baseUrl: PropTypes.string.isRequired,
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.exact({
-      link: PropTypes.object,
-    }),
-  ).isRequired,
-  casesItems: PropTypes.object.isRequired,
+  breadcrumbs: PropTypes.array.isRequired,
+  casesItems: PropTypes.array.isRequired,
   numberOfPosts: PropTypes.number.isRequired,
   technologyFilter: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pageCount: PropTypes.number.isRequired,
+  pageCount: PropTypes.number,
   articleSeparator: PropTypes.exact({
     position: PropTypes.number,
     sectionTitle: PropTypes.string,
     title: PropTypes.string,
+    component: PropTypes.string,
     bgColor: PropTypes.string,
     buttonText: PropTypes.string,
+    id: PropTypes.string,
     messagePlaceholder: PropTypes.string,
   }).isRequired,
-  countryFilter: PropTypes.arrayOf(
-    PropTypes.exact({
-      slug: PropTypes.exact({
-        current: PropTypes.string,
-      }).isRequired,
-    }),
-  ).isRequired,
+  countryFilter: PropTypes.array.isRequired,
+};
+CasesList.defaultProps = {
+  pageCount: null,
 };
 
 export default CasesList;

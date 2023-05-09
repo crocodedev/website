@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const dynamicStyle = ({ theme, fadeColor }) => css`
-  background: ${fadeColor === "light" ? theme.linearGradient.light : ""}
-    ${fadeColor === "paper" ? theme.linearGradient.paper : ""};
+const dynamicStyle = ({ theme, fadecolor }) => css`
+  background: ${fadecolor === "light" ? theme.linearGradient.light : ""}
+    ${fadecolor === "paper" ? theme.linearGradient.paper : ""};
 `;
 
 const HeroMainImage = styled.div`

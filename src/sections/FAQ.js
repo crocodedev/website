@@ -29,7 +29,7 @@ const FAQ = ({ subtitle, title, items, bgColor }) => {
 };
 
 FAQ.propTypes = {
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
@@ -39,6 +39,10 @@ FAQ.propTypes = {
       _key: PropTypes.string.isRequired,
     }),
   ).isRequired,
+};
+
+FAQ.defaultProps = {
+  subtitle: "",
 };
 
 export default FAQ;

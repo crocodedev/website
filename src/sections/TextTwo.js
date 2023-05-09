@@ -53,7 +53,7 @@ const TextTwo = ({ title, text, image, items, bgColor }) => {
 
 TextTwo.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   text: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   bgColor: PropTypes.string.isRequired,
@@ -64,6 +64,10 @@ TextTwo.propTypes = {
       text: PropTypes.string,
     }),
   ).isRequired,
+};
+
+TextTwo.defaultProps = {
+  subtitle: "",
 };
 
 export default TextTwo;

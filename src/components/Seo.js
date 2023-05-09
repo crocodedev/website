@@ -40,23 +40,23 @@ const Seo = ({
           ? [
               {
                 property: "og:image",
-                content: image.image.asset.url,
+                content: image.image?.asset.url,
               },
               {
                 property: "og:image:width",
-                content: image.image.asset.width,
+                content: image.image?.asset.width,
               },
               {
                 property: "og:image:height",
-                content: image.image.asset.height,
+                content: image.image?.asset.height,
               },
               {
                 property: "og:url",
-                content: `${siteUrl}${url}`,
+                content: `${siteUrl}${url}${url === "/" ? "" : "/"}`,
               },
               {
                 name: "twitter:image:src",
-                content: image.image.asset.url,
+                content: image.image?.asset.url,
               },
             ]
           : []),
@@ -86,14 +86,14 @@ const Seo = ({
           : []),
       ]}
     >
-      <link rel="canonical" href={`${siteUrl}${url}`} />
+      <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
     </Helmet>
   );
 };
 
 Seo.propTypes = {
   url: PropTypes.string.isRequired,
-  titleTemplate: PropTypes.bool.isRequired,
+  titleTemplate: PropTypes.bool,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.exact({
@@ -105,7 +105,7 @@ Seo.propTypes = {
         width: PropTypes.number,
       }),
     }),
-  }).isRequired,
+  }),
   siteUrl: PropTypes.string,
   lang: PropTypes.string,
   keywords: PropTypes.string,
@@ -118,11 +118,13 @@ Seo.propTypes = {
 Seo.defaultProps = {
   siteUrl: "",
   lang: "",
+  titleTemplate: "",
   keywords: "",
   ogtype: "",
   twitterCard: "",
   name: "",
   defaultLocale: "",
+  image: {},
 };
 
 export default Seo;

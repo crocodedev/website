@@ -3,12 +3,16 @@ import styled from "@emotion/styled";
 const MapStack = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px;
+
   width: 100%;
-  overflow: hidden;
 
   ${({ theme }) => theme.breakpoints.down("xl")} {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    gap: 40px;
   }
 
   .mapboxgl-map {

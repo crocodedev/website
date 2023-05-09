@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import { Global, ThemeProvider } from "@emotion/react";
 import * as Sections from "@/sections";
 import theme from "@/theme";
-import { Helmet } from "react-helmet";
 import reboot from "@/styles/reboot";
 import fontMontserrat from "@/styles/fontMontserrat";
 
@@ -18,7 +17,6 @@ const Template = ({
   return (
     <ThemeProvider theme={theme}>
       <Seo {...seo} />
-      <Helmet defer={false} />
       <Global styles={[reboot, fontMontserrat]} />
       <CookiesPopup {...cookieConsent} />
 
@@ -29,14 +27,14 @@ const Template = ({
           return (
             <>
               <Component
-                key={id}
+                key={`${id} - component`}
                 baseUrl={baseUrl}
                 locales={locales}
                 currentLocale={currentLocale}
                 defaultLocale={defaultLocale}
                 {...props}
               />
-              <BackUpButton />
+              <BackUpButton key={id} />
             </>
           );
         }
@@ -54,7 +52,7 @@ Template.propTypes = {
     cookieConsent: PropTypes.object,
     locales: PropTypes.array,
     recaptchaKey: PropTypes.string,
-    currentLocale: PropTypes.object,
+    currentLocale: PropTypes.string,
     defaultLocale: PropTypes.string,
     sections: PropTypes.arrayOf(
       PropTypes.shape({

@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ...props }) => {
-  const [inNetlifyBuild, setInNetlifyBuild] = useState(true);
-  const [honey, setHoney] = useState("");
+  const handleSubmit = async (e) => {
+    const myForm = e.target;
+    const formData = new FormData(myForm);
 
-  useEffect(() => {
-    setInNetlifyBuild(false);
-  }, []);
-
-  const formEncodeString = (str) => encodeURIComponent(str).replace(/%20/g, "+");
-  const encodeData = (obj) =>
-    Object.entries(obj)
-      .map((pair) => `${formEncodeString(pair[0])}=${formEncodeString(pair[1])}`)
-      .join("&");
-
-  const handleSubmit = async () => {
     try {
       return await fetch("/", {
+        body: formData,
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeData({
-          ...formValues,
-          "form-name": formName,
-          infoo: honey,
-        }),
       });
     } catch (error) {
       return null;
@@ -35,7 +19,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     e.preventDefault();
 
     if ((preSubmit && (await preSubmit())) || !preSubmit) {
-      if (await handleSubmit()) {
+      if (await handleSubmit(e)) {
         if (postSubmit) postSubmit();
       } else {
         throw new Error("Error submitting to Netlify");
@@ -45,30 +29,17 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
     }
   };
 
-  if (inNetlifyBuild)
-    return (
-      <form
-        {...props}
-        name={formName}
-        onSubmit={onSubmit}
-        data-netlify="true"
-        netlify-honeypot="infoo"
-      >
-        {children}
-      </form>
-    );
   return (
-    <form {...props} onSubmit={onSubmit}>
+    <form
+      {...props}
+      name={formName}
+      method="POST"
+      onSubmit={onSubmit}
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="bot-filed" />
       {children}
-      <p style={{ opacity: "0", position: "absolute", top: "0", left: "0" }}>
-        <input
-          style={{ width: "0", height: "0", zIndex: "-1" }}
-          name="description"
-          aria-label="description"
-          value={honey}
-          onChange={(e) => setHoney(e.target.value)}
-        />
-      </p>
     </form>
   );
 };

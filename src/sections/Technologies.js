@@ -54,7 +54,7 @@ const Technologies = ({ title, subtitle, categories }) => {
 
 Technologies.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.exact({
       title: PropTypes.string,
@@ -69,6 +69,10 @@ Technologies.propTypes = {
       ),
     }),
   ).isRequired,
+};
+
+Technologies.defaultProps = {
+  subtitle: "",
 };
 
 export default Technologies;

@@ -15,6 +15,7 @@ import React from "react";
 import ContactsUsInput from "@/components/ContactUs/ContactsUsInput";
 import Button from "@/components/Button";
 import ContactUsModalContentInner from "@/components/ContactUsModal/ContactUsModalContentInner";
+import NetlifyForm from "@/components/NetlifyForm";
 
 const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
   const {
@@ -68,29 +69,24 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                 name: "",
                 email: "",
               }}
-              validateOnBlur
-              onSubmit={({ resetForm }) => {
-                resetForm({
-                  name: "",
-                  email: "",
-                  file: "",
-                  text: "",
-                  tel: "",
-                });
-              }}
               validationSchema={schema}
             >
               {({
                 values: { name, email },
-                errors,
-                touched,
                 handleChange,
                 handleBlur,
-                handleSubmit,
+                errors,
+                touched,
                 isValid,
                 dirty,
+                resetForm,
               }) => (
-                <ContactsUsForm>
+                <ContactsUsForm
+                  as={NetlifyForm}
+                  formValues={{ name, email }}
+                  postSubmit={() => resetForm()}
+                  formName="Contact us"
+                >
                   <ContactsUsItem>
                     <Text mobileMultiplier={0.9} as="label">
                       {yourName}
@@ -130,12 +126,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                     </Text>
                   </ContactsUsItem>
                   <ContactsUsItem>
-                    <Button
-                      type="submit"
-                      disabled={!(isValid && dirty)}
-                      handler={handleSubmit}
-                      variant="contained"
-                    >
+                    <Button type="submit" disabled={!(isValid && dirty)} variant="contained">
                       {buttonText}
                     </Button>
                   </ContactsUsItem>
@@ -153,10 +144,6 @@ ContactUsModal.propTypes = {
   touchUsModal: PropTypes.object.isRequired,
   handler: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  data: PropTypes.exact({
-    title: PropTypes.string,
-    desc: PropTypes.string,
-  }).isRequired,
 };
 
 export default ContactUsModal;

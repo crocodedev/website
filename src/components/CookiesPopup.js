@@ -105,10 +105,17 @@ const CookiesPopup = ({ title, text, clickHere, buttonText }) => {
 };
 
 CookiesPopup.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  clickHere: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  clickHere: PropTypes.string,
+  buttonText: PropTypes.string,
+};
+
+CookiesPopup.defaultProps = {
+  title: "",
+  text: "",
+  clickHere: "",
+  buttonText: "",
 };
 
 export default CookiesPopup;
