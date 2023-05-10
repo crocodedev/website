@@ -89,6 +89,18 @@ module.exports = {
       : []),
     "gatsby-plugin-eslint",
     "gatsby-plugin-netlify",
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      gtagConfig: {
+        js: new Date(),
+      },
+      options: {
+        trackingIds: ["G-JRHLER8WXC"],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
   flags: {
     FAST_DEV: false, // Enable all experiments aimed at improving develop server start time
