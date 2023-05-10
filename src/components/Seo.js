@@ -29,6 +29,10 @@ const Seo = ({
           content: description,
         },
         {
+          name: "google-site-verification",
+          content: "jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo",
+        },
+        {
           property: `og:title`,
           content: `${title}${titleTemplate && name ? ` - ${name}` : ""}`,
         },
