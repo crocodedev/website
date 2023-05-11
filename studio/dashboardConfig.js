@@ -10,7 +10,7 @@ export default {
             apiId: "15b38e50-7eb6-4452-87d2-9752abb5b9c8",
             buildHookId: "63d27d651ae7af0221ff30fa",
             name: "Crocode",
-            url: "https://crocode.io",
+            url: "https://crocodelab.com",
           },
           {
             title: "Crocode develop",

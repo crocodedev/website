@@ -28,13 +28,7 @@ module.exports = {
               watchMode: true,
             },
           },
-          {
-            resolve: "gatsby-plugin-sitemap",
-            options: {
-              output: "/",
-              resolveSiteUrl: () => siteUrl,
-            },
-          },
+          `gatsby-plugin-sitemap`,
           {
             resolve: "gatsby-plugin-robots-txt",
             options: {
