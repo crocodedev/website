@@ -1,6 +1,19 @@
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
+const noIndex = () => {
+  switch (typeof window !== "undefined" && window.location.pathname) {
+    case "/webpack-runtime.js":
+    case "/polyfill.js":
+    case "/framework.js":
+    case "/commons.js":
+    case "/app.js":
+      return true;
+    default:
+      return false;
+  }
+};
+
 const Seo = ({
   siteUrl,
   url,
@@ -87,6 +100,57 @@ const Seo = ({
       ]}
     >
       <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
+      {noIndex() && <meta name="robots" content="noindex" />}
+      <script type="application/ld+json">
+        {`
+  {
+    "@context": "http://www.schema.org",
+  "@type": "Organization",
+  "name": "Crocode",
+  "url": "https://crocodelab.com/",
+  "logo":"https://cdn.sanity.io/images/kx2cy1wz/production/457f16fa257404ff288ed319abd156a11f779833-196x50.svg?w=196&h=50&auto=format",
+  "description": "Our mission is to turn ideas into impressive digital products that change the world. Our vision is that our products will be used by millions of people around the world. Our Values: C - Continuous growth, R - Reliability, O - Open-minded",
+  "address": {
+    "addressLocality": "Rzeszów,",
+    "addressCountry": " Poland"
+  },
+  "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su -",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+48728451662"
+  }
+  }
+`}
+      </script>
+      <script type="application/ld+json">
+        {`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":
+  [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "item":
+    {
+     "@id": "URL – страницы",
+     "name": "Названия страницы"
+     }
+   },
+   {
+    "@type": "ListItem",
+   "position": 2,
+   "item":
+    {
+      "@id": "URL -  страницы",
+      "name": "Названия страницы"
+    }
+   }
+  ]
+ }
+`}
+      </script>
     </Helmet>
   );
 };

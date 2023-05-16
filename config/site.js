@@ -7,7 +7,7 @@ module.exports = {
   robots: {
     env: {
       development: {
-        policy: [{ userAgent: "*", disallow: ["/"] }],
+        policy: [{ userAgent: "*", disallow: ["/*.js"] }],
       },
       production: {
         policy: [{ userAgent: "*", allow: "/" }],
@@ -24,7 +24,13 @@ module.exports = {
       display: `standalone`,
       background_color: `#fff`,
       theme_color: `#7dbe3b`,
-      icon: "src/icons/logo.inline.svg",
+      icons: [
+        {
+          src: "../src/icons/favicon.gif",
+          type: "image/gif",
+          sizes: "512x512",
+        },
+      ],
       legacy: false,
       cache_busting_mode: "none",
       // crossOrigin: `use-credentials`, // `use-credentials` or `anonymous`
