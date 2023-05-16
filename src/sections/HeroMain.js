@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import HeroMainImage from "@/components/HeroMain/HeroMainImage";
+import SectionHeading from "@/components/SectionHeading";
 import HeroMainWrapper from "@/components/HeroMain/HeroMainWrapper";
 import Image from "@/components/Image";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -18,7 +19,7 @@ const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
         <Container>
           <HeroMainContent>
             <HeroMainLogo>
-              <Image {...logoImage} objectFit="contain" />
+              <SectionHeading titleTag="h1" title="Crocode" />
             </HeroMainLogo>
             <HeroMainList>
               {items?.map(({ text, _key }) => (
