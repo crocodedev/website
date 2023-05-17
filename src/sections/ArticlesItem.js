@@ -39,6 +39,7 @@ const ArticlesItem = ({
         <SectionHeading
           isArticle
           title={title}
+          titleTag="h1"
           text={`${author}, ${dateToIntlFormat(date, i18nLang)}`}
         />
         <ArticleContentWrapper>
