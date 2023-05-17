@@ -26,10 +26,10 @@ const BlogList = ({
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading titleTag="h1" title="Blog" />
         {breadcrumbs.length > 0 && (
           <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
         )}
+        <SectionHeading titleTag="h1" title="Blog" />
         <BlogListNavigationStack>
           {categories.map(({ title: categoryTitle, slug: categorySlug, id }) => (
             <Button
