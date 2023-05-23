@@ -592,4 +592,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       });
     });
   }
+
+  // redirects.forEach((redirect) => {
+  //   createRedirect(redirect);
+  // });
 };

@@ -20,7 +20,7 @@ const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
     <a
       href={linkExternal?.href || "/"}
       target={linkExternal?.blank ? "_blank" : ""}
-      rel="noopener noreferrer"
+      rel="noopener noreferrer nofollow"
       {...props}
     >
       {children}
