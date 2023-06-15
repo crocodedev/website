@@ -31,12 +31,23 @@ const { image } = require("./src/graphql/objects/image");
 const { link } = require("./src/graphql/objects/link");
 const { relatedArticles } = require("./src/graphql/sections/relatedArticles");
 
-exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => {
+exports.createPages = async ({ graphql, actions: { createPage, createRedirect }, reporter }) => {
   const template = path.resolve("./src/templates/template.js");
 
   const { data, errors } = await graphql(`
   {
-  allSanityCasesItem {
+    allSanityRedirect {
+    nodes {
+      id
+      toPath
+      statusCode
+      redirectInBrowser
+      fromPath
+      force
+      ignoreCase
+    }
+  }
+    allSanityCasesItem {
     nodes {
       seo {
         description
@@ -379,6 +390,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
     return;
   }
 
+  const redirects = data.allSanityRedirect.nodes;
+
   const pages = data.allSanityPage.nodes;
   const { cookies, siteUrl, recaptchaKey, name, defaultLocale, locales } =
     data.allSanitySettings.nodes[0];
@@ -389,6 +402,11 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
   );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
+
+  if (redirects.length > 0) {
+    console.log(redirects);
+    redirects.forEach((redirect) => createRedirect({ ...redirect }));
+  }
 
   if (casesCountry.length > 0) {
     casesCountry.forEach((page) => {
