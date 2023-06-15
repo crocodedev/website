@@ -44,7 +44,7 @@ const Contacts = ({
   return (
     <SectionWrapper>
       <Container>
-        <SectionHeading title={title} subtitle={subtitle} />
+        <SectionHeading title={title} titleTag="h1" subtitle={subtitle} />
         <MapStack>
           <MapStackInfo>
             {contactItems &&

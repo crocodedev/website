@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
+import SectionHeading from "@/components/SectionHeading";
 import Container from "@/components/Container";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroProjectTitle from "@/components/HeroProject/HeroProjectTitle";
@@ -17,7 +18,7 @@ const HeroProject = ({ breadcrumbs, projectFeatures, projectImage, title, baseUr
     <SectionWrapper onlyBottomPadding>
       <Container>
         <Breadcrumb disablePaddingBottom baseUrl={baseUrl} color="gray" links={breadcrumbs} />
-        <HeroProjectTitle>{title}</HeroProjectTitle>
+        <SectionHeading titleTag="h1" title={title} />
         <HeroProjectContent>
           <Swiper
             centeredSlides={true}

@@ -1,25 +1,23 @@
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
 import HeroMainImage from "@/components/HeroMain/HeroMainImage";
+import SectionTitleMain from "@/components/SectionTitleMain";
 import HeroMainWrapper from "@/components/HeroMain/HeroMainWrapper";
 import Image from "@/components/Image";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroMainContent from "@/components/HeroMain/HeroMainContent";
-import HeroMainLogo from "@/components/HeroMain/HeroMainLogo";
 import HeroMainList from "@/components/HeroMain/HeroMainList";
 import HeroMainListItem from "@/components/HeroMain/HeroMainListItem";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
 
-const HeroMain = ({ link, logoImage, bgImage, items, baseUrl, fadeColor }) => {
+const HeroMain = ({ link, bgImage, items, baseUrl, fadeColor }) => {
   return (
     <HeroMainWrapper>
       <SectionWrapper as="div">
         <Container>
           <HeroMainContent>
-            <HeroMainLogo>
-              <Image {...logoImage} objectFit="contain" />
-            </HeroMainLogo>
+            <SectionTitleMain title="crocode" />
             <HeroMainList>
               {items?.map(({ text, _key }) => (
                 <HeroMainListItem key={_key}>

@@ -62,7 +62,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
             <span />
           </ContactUsModalCloseBtn>
           <ContactUsModalContentInner>
-            <Title>{title}</Title>
+            {title && <Title>{title}</Title>}
             <Text>{subtitle}</Text>
             <Formik
               initialValues={{

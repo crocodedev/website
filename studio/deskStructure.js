@@ -6,6 +6,7 @@ import { articles } from "./desk/articles";
 import { blogCategory } from "./desk/blogCategory";
 import { casesCountry } from "./desk/casesCountry";
 import { debug } from "./desk/debug";
+import { redirect } from "./desk/redirect";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
@@ -42,6 +43,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "casesCountry",
   "page",
   "settings",
+  "redirect",
 ];
 
 export default () => {
@@ -59,6 +61,7 @@ export default () => {
       articles,
       S.divider(),
       S.documentListItem().id("global-config").schemaType("settings").title("Settings"),
+      redirect,
       debug,
       S.divider(),
       // Automatically add new document types to the root pane

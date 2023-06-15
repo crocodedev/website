@@ -24,9 +24,9 @@ const SectionHeadingText = styled(Text)`
   }
 `;
 
-const SectionHeading = ({ title, text, isArticle }) => (
+const SectionHeading = ({ title, titleTag, text, isArticle }) => (
   <Component>
-    {title && <Title>{title}</Title>}
+    {title && <Title tag={titleTag}>{title}</Title>}
     {text && (
       <SectionHeadingText
         fontSize={isArticle ? "captionText" : "subtitle"}
@@ -42,12 +42,14 @@ const SectionHeading = ({ title, text, isArticle }) => (
 
 SectionHeading.propTypes = {
   title: PropTypes.string,
+  titleTag: PropTypes.string,
   text: PropTypes.string,
   isArticle: PropTypes.bool,
 };
 
 SectionHeading.defaultProps = {
   title: "",
+  titleTag: "h3",
   text: "",
   isArticle: false,
 };
