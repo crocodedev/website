@@ -8,7 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "deploy": "sanity deploy & sanity graphql deploy"
   },
   "keywords": [
     "sanity"
@@ -30,6 +31,5 @@
     "sanity-plugin-content-model-graph": "^1.1.1",
     "sanity-plugin-dashboard-widget-netlify": "^1.3.2",
     "styled-components": "^5.2.0"
-  },
-  "devDependencies": {}
+  }
 }
