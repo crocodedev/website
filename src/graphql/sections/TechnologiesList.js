@@ -1,6 +1,6 @@
 const { image } = require("../objects/image");
 
-module.exports.TechnologiesList = `
+module.exports.technologiesList = `
     ... on SanityTechnologiesList {
       id
       position
