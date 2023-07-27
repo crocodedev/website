@@ -31,6 +31,7 @@ import Reviews from "./Reviews";
 import SliderSteps from "./SliderSteps";
 import Technologies from "./Technologies";
 import TechnologyStack from "./TechnologyStack";
+import TechnologiesList from "./TechnologiesList";
 import TextOne from "./TextOne";
 import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
@@ -70,6 +71,7 @@ export {
   SliderSteps,
   Technologies,
   TechnologyStack,
+  TechnologiesList,
   TextOne,
   TextTwo,
   TextThree,

@@ -6,7 +6,7 @@ export default {
   },
 
   title: "Technologies List",
-  name: "TechnologiesList",
+  name: "technologiesList",
   type: "document",
   i18n: true,
   fields: [
