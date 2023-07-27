@@ -38,9 +38,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Subtitle",
-      name: "subtitle",
+      title: "ListTitle",
+      name: "listtitle",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Items",
