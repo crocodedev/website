@@ -23,6 +23,7 @@ const { reviews } = require("./src/graphql/sections/reviews");
 const { sliderSteps } = require("./src/graphql/sections/sliderSteps");
 const { technologies } = require("./src/graphql/sections/technologies");
 const { technologyStack } = require("./src/graphql/sections/technologyStack");
+const { TechnologiesList } = require("./src/graphql/sections/TechnologiesList");
 const { textOne } = require("./src/graphql/sections/textOne");
 const { textTwo } = require("./src/graphql/sections/textTwo");
 const { textThree } = require("./src/graphql/sections/textThree");
@@ -111,6 +112,7 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
         ${sliderSteps}
         ${technologies}
         ${technologyStack}
+        ${TechnologiesList}
         ${textOne}
         ${textTwo}
         ${textThree}
@@ -375,6 +377,7 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
           ${sliderSteps}
           ${technologies}
           ${technologyStack}
+          ${TechnologiesList}
           ${textOne}
           ${textTwo}
           ${textThree}
