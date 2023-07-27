@@ -66,7 +66,7 @@ const Header = ({
           `}
         />
       )}
-      <HeaderWrapper variant={`${isScrollingUp ? "sticky" : ""}`}>
+      <HeaderWrapper variant={isScrollingUp ? "sticky" : ""}>
         <HeaderContainer>
           <HeaderLogo href="/">
             <Image loading="lazy" {...logoImage} />
