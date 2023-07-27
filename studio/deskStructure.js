@@ -29,6 +29,7 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "ourClients",
   "reviews",
   "technologyStack",
+  "technologiesList",
   "caseStudies",
   "technologies",
   "footer",

@@ -29,7 +29,7 @@ import sliderSteps from "./sections/sliderSteps";
 import ourClients from "./sections/ourClients";
 import reviews from "./sections/reviews";
 import technologyStack from "./sections/technologyStack";
-import TechnologiesList from "./sections/TechnologiesList";
+import technologiesList from "./sections/technologiesList";
 import caseStudies from "./sections/caseStudies";
 import technologies from "./sections/technologies";
 import footer from "./sections/footer";
@@ -122,7 +122,7 @@ export default createSchema({
     ourClients,
     reviews,
     technologyStack,
-    TechnologiesList,
+    technologiesList,
     caseStudies,
     technologies,
     footer,
