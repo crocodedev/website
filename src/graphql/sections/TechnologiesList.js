@@ -6,6 +6,7 @@ module.exports.technologiesList = `
       position
       component
       title
+      listTitle
       items {
         _key
         title

@@ -26,6 +26,7 @@ const TechnologiesList = ({ title, listTitle, items }) => {
 
 TechnologiesList.propTypes = {
   title: PropTypes.string.isRequired,
+  listTitle: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

@@ -6,7 +6,7 @@ export default {
   },
 
   title: "Technologies List",
-  name: "TechnologiesList",
+  name: "technologiesList",
   type: "document",
   i18n: true,
   fields: [
@@ -38,9 +38,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Subtitle",
-      name: "subtitle",
+      title: "ListTitle",
+      name: "listtitle",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Items",
