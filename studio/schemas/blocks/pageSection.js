@@ -22,7 +22,7 @@ export default {
     { type: "ourClients" },
     { type: "reviews" },
     { type: "technologyStack" },
-    { type: "technologiesList" },
+    { type: "technologiesStackGrid" },
     { type: "caseStudies" },
     { type: "technologies" },
     { type: "footer" },

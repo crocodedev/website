@@ -29,7 +29,7 @@ import sliderSteps from "./sections/sliderSteps";
 import ourClients from "./sections/ourClients";
 import reviews from "./sections/reviews";
 import technologyStack from "./sections/technologyStack";
-import technologiesList from "./sections/technologiesList";
+import technologiesStackGrid from "./sections/technologiesStackGrid";
 import caseStudies from "./sections/caseStudies";
 import technologies from "./sections/technologies";
 import footer from "./sections/footer";
@@ -56,7 +56,7 @@ import textItemSteps from "./objects/textItemSteps";
 import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
-import technologiesListItem from "./objects/technologiesListItem";
+import technologiesStackGridItem from "./objects/technologiesStackGridItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
@@ -123,7 +123,7 @@ export default createSchema({
     ourClients,
     reviews,
     technologyStack,
-    technologiesList,
+    technologiesStackGrid,
     caseStudies,
     technologies,
     footer,
@@ -150,7 +150,7 @@ export default createSchema({
     ourClientsItem,
     reviewItem,
     technologyStackItem,
-    technologiesListItem,
+    technologiesStackGridItem,
     technologiesItem,
     socialIconItem,
     columnLinksItem,
