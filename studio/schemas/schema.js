@@ -56,6 +56,7 @@ import textItemSteps from "./objects/textItemSteps";
 import ourClientsItem from "./objects/ourClientsItem";
 import reviewItem from "./objects/reviewItem";
 import technologyStackItem from "./objects/technologyStackItem";
+import technologiesListItem from "./objects/technologiesListItem";
 import technologiesItem from "./objects/technologiesItem";
 import articlesItem from "./documents/articlesItem";
 import socialIconItem from "./objects/socialIcons";
@@ -149,6 +150,7 @@ export default createSchema({
     ourClientsItem,
     reviewItem,
     technologyStackItem,
+    technologiesListItem,
     technologiesItem,
     socialIconItem,
     columnLinksItem,
