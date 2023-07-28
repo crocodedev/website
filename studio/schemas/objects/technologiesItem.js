@@ -19,5 +19,9 @@ export default {
       name: "technologyImage",
       type: "imageWithAlt",
     },
+    {
+      name: "link",
+      type: "link",
+    },
   ],
 };
