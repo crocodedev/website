@@ -8,8 +8,10 @@ const TechnologyCardItem = styled.div`
   gap: 10px;
 
   > div {
-    border: 5px solid ${({ theme }) => theme.palette.secondary.main};
-    border-radius: ${({ theme }) => theme.borderRadius.small};
+    border: ${({ variant, theme }) =>
+      variant === "transparent" ? "none" : `5px solid ${theme.palette.secondary.main}`};
+    border-radius: ${({ theme, variant }) =>
+      variant === "transparent" ? "none" : theme.borderRadius.small};
   }
 
   & div {
@@ -55,6 +57,8 @@ const TechnologyCardItem = styled.div`
   p {
     white-space: break-spaces;
     text-align: center;
+
+    ${({ variant }) => variant === "transparent" && "text-decoration: underline;"};
   }
 `;
 

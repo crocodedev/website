@@ -2,20 +2,24 @@ import PropTypes from "prop-types";
 
 import TechnologiesGridGroup from "@/components/TechnologiesGrid/TechnologiesGridGroup";
 import TechnologiesGridGroupTitle from "@/components/TechnologiesGrid/TechnologiesGridGroupTitle";
-import TechnologiesStackGridRow from "@/components/TechnologiesGrid/TechnologiesStackGridRow";
+import TechnologiesGridRow from "@/components/TechnologiesGrid/TechnologiesGridRow";
 import TechnologyCard from "./TechnologyCard";
 
 const TechnologiesGridColumn = ({ title, items }) => {
   return (
-    <div>asd</div>
-    // <TechnologiesGridGroup>
-    //   <TechnologiesGridGroupTitle>{title}</TechnologiesGridGroupTitle>
-    //   <TechnologiesStackGridRow>
-    //     {items?.map(({ _key, title, itemimage }) => (
-    //       <TechnologyCard key={_key} image={itemimage} title={itemTitle} />
-    //     ))}
-    //   </TechnologiesStackGridRow>
-    // </TechnologiesGridGroup>
+    <TechnologiesGridGroup>
+      <TechnologiesGridGroupTitle>{title}</TechnologiesGridGroupTitle>
+      <TechnologiesGridRow>
+        {items?.map(({ _key, title: cardLabel, technologyImage }) => (
+          <TechnologyCard
+            variant="transparent"
+            key={_key}
+            image={technologyImage}
+            title={cardLabel}
+          />
+        ))}
+      </TechnologiesGridRow>
+    </TechnologiesGridGroup>
   );
 };
 
