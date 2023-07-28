@@ -3,9 +3,9 @@ import Image from "./Image";
 import TechnologyCardItem from "./TechnologyCard/TechnologyCardItem";
 import Text from "./Text";
 
-const TechnologyCard = ({ image, title }) => {
+const TechnologyCard = ({ image, title, variant }) => {
   return (
-    <TechnologyCardItem>
+    <TechnologyCardItem variant={variant}>
       <Image {...image} />
       <Text lineHeight="md" fontSize="text" fontWeight="regular" mobileMultiplier={0.75}>
         {title}
@@ -17,6 +17,11 @@ const TechnologyCard = ({ image, title }) => {
 TechnologyCard.propTypes = {
   image: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+  variant: PropTypes.string,
+};
+
+TechnologyCard.defaultProps = {
+  variant: "",
 };
 
 export default TechnologyCard;
