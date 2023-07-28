@@ -1,4 +1,5 @@
 const { image } = require("../objects/image");
+const { link } = require("../objects/link");
 
 module.exports.technologies = `
     ... on SanityTechnologies {
@@ -16,6 +17,9 @@ module.exports.technologies = `
           _key
           technologyImage {
             ${image}
+          }
+          link {
+            ${link}
           }
         }
       }

@@ -31,7 +31,7 @@ import Reviews from "./Reviews";
 import SliderSteps from "./SliderSteps";
 import Technologies from "./Technologies";
 import TechnologyStack from "./TechnologyStack";
-import TechnologiesStackGrid from "./TechnologiesStackGrid";
+import TechnologiesStackGrid from "./TechnologiesGrid";
 import TextOne from "./TextOne";
 import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
