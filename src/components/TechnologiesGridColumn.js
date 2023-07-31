@@ -6,14 +6,16 @@ import TechnologiesGridRow from "@/components/TechnologiesGrid/TechnologiesGridR
 import TechnologyCard from "./TechnologyCard";
 
 const TechnologiesGridColumn = ({ title, items }) => {
+  console.log(items);
   return (
     <TechnologiesGridGroup>
       <TechnologiesGridGroupTitle>{title}</TechnologiesGridGroupTitle>
       <TechnologiesGridRow>
-        {items?.map(({ _key, title: cardLabel, technologyImage }) => (
+        {items?.map(({ _key, title: cardLabel, link, technologyImage }) => (
           <TechnologyCard
             variant="transparent"
             key={_key}
+            link={link}
             image={technologyImage}
             title={cardLabel}
           />
