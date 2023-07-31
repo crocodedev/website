@@ -6,7 +6,6 @@ import TechnologiesGridRow from "@/components/TechnologiesGrid/TechnologiesGridR
 import TechnologyCard from "./TechnologyCard";
 
 const TechnologiesGridColumn = ({ title, items }) => {
-  console.log(items);
   return (
     <TechnologiesGridGroup>
       <TechnologiesGridGroupTitle>{title}</TechnologiesGridGroupTitle>

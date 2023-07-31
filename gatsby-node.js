@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
       ignoreCase
     }
   }
-    allSanityCasesItem {
+  allSanityCasesItem {
     nodes {
       seo {
         description
@@ -85,6 +85,64 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
       }
       casesItemImage {
         ${image}
+      }
+      content {
+        ${benefits}
+        ${relatedArticles}
+        ${caseStudies}
+        ${challenge}
+        ${contacts}
+        ${contactUs}
+        ${ctaForm}
+        ${ctaImage}
+        ${ctaText}
+        ${development}
+        ${faq}
+        ${footer}
+        ${header}
+        ${hero}
+        ${heroMain}
+        ${heroProject}
+        ${list}
+        ${notFound}
+        ${ourClients}
+        ${ourTeam}
+        ${reviews}
+        ${sliderSteps}
+        ${technologies}
+        ${technologyStack}
+        ${textOne}
+        ${textTwo}
+        ${textThree}
+        ${blockText}
+      }
+    }
+  }
+  allSanityTechnologiesCaseItem {
+    nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
+      id
+      i18n_lang
+      sectionTitle
+      slug {
+        current
       }
       content {
         ${benefits}
@@ -402,6 +460,7 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
   );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
+  const technologiesCaseItem = data.allSanityTechnologiesCaseItem.nodes;
 
   if (redirects.length > 0) {
     redirects.forEach((redirect) => createRedirect({ ...redirect }));
@@ -461,6 +520,39 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
 
   if (casesItem.length > 0) {
     casesItem.forEach((page) => {
+      const url = page.slug.current;
+      createPage({
+        path: url,
+        component: template,
+        context: {
+          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale,
+          recaptchaKey,
+          seo: {
+            ...(page.seo || {}),
+            lang: page.i18n_lang,
+            siteUrl,
+            url,
+            name,
+          },
+          /*
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+          sections: ([...page.content, { ...page }] || [])
+            .filter(({ id }) => id)
+            .sort((a, b) => +a.position - +b.position),
+        },
+      });
+    });
+  }
+
+  if (technologiesCaseItem.length > 0) {
+    technologiesCaseItem.forEach((page) => {
       const url = page.slug.current;
       createPage({
         path: url,

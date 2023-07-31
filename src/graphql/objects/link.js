@@ -27,6 +27,12 @@ module.exports.link = `
             current
           }
         }
+
+        ... on SanityTechnologiesCaseItem {
+          slug {
+            current
+          }
+        }
       }
     }
 `;
