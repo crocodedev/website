@@ -1,13 +1,31 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { sections } from "./desk/sections";
-import { pages } from "./desk/pages";
-import { cases } from "./desk/cases";
-import { technologiesCases } from "./desk/technologiesCases";
-import { articles } from "./desk/articles";
-import { blogCategory } from "./desk/blogCategory";
-import { casesCountry } from "./desk/casesCountry";
-import { debug } from "./desk/debug";
-import { redirect } from "./desk/redirect";
+import {
+  sections
+} from "./desk/sections";
+import {
+  pages
+} from "./desk/pages";
+import {
+  cases
+} from "./desk/cases";
+import {
+  technologiesCases
+} from "./desk/technologiesCases";
+import {
+  articles
+} from "./desk/articles";
+import {
+  blogCategory
+} from "./desk/blogCategory";
+import {
+  casesCountry
+} from "./desk/casesCountry";
+import {
+  debug
+} from "./desk/debug";
+import {
+  redirect
+} from "./desk/redirect";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
@@ -30,7 +48,6 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "ourClients",
   "reviews",
   "technologyStack",
-  "technologiesGrid",
   "caseStudies",
   "technologies",
   "footer",

@@ -1,40 +1,110 @@
 const path = require("path");
 
-const { benefits } = require("./src/graphql/sections/benefits");
-const { caseStudies } = require("./src/graphql/sections/caseStudies");
-const { challenge } = require("./src/graphql/sections/challenge");
-const { contacts } = require("./src/graphql/sections/contacts");
-const { contactUs } = require("./src/graphql/sections/contactUs");
-const { ctaForm } = require("./src/graphql/sections/ctaForm");
-const { ctaImage } = require("./src/graphql/sections/ctaImage");
-const { ctaText } = require("./src/graphql/sections/ctaText");
-const { development } = require("./src/graphql/sections/development");
-const { faq } = require("./src/graphql/sections/faq");
-const { footer } = require("./src/graphql/sections/footer");
-const { header } = require("./src/graphql/sections/header");
-const { hero } = require("./src/graphql/sections/hero");
-const { heroMain } = require("./src/graphql/sections/heroMain");
-const { heroProject } = require("./src/graphql/sections/heroProject");
-const { list } = require("./src/graphql/sections/list");
-const { notFound } = require("./src/graphql/sections/notFound");
-const { ourClients } = require("./src/graphql/sections/ourClients");
-const { ourTeam } = require("./src/graphql/sections/ourTeam");
-const { reviews } = require("./src/graphql/sections/reviews");
-const { sliderSteps } = require("./src/graphql/sections/sliderSteps");
-const { technologies } = require("./src/graphql/sections/technologies");
-const { technologyStack } = require("./src/graphql/sections/technologyStack");
-const { textOne } = require("./src/graphql/sections/textOne");
-const { textTwo } = require("./src/graphql/sections/textTwo");
-const { textThree } = require("./src/graphql/sections/textThree");
-const { blockText } = require("./src/graphql/sections/blockText");
-const { image } = require("./src/graphql/objects/image");
-const { link } = require("./src/graphql/objects/link");
-const { relatedArticles } = require("./src/graphql/sections/relatedArticles");
+const {
+  benefits
+} = require("./src/graphql/sections/benefits");
+const {
+  caseStudies
+} = require("./src/graphql/sections/caseStudies");
+const {
+  challenge
+} = require("./src/graphql/sections/challenge");
+const {
+  contacts
+} = require("./src/graphql/sections/contacts");
+const {
+  contactUs
+} = require("./src/graphql/sections/contactUs");
+const {
+  ctaForm
+} = require("./src/graphql/sections/ctaForm");
+const {
+  ctaImage
+} = require("./src/graphql/sections/ctaImage");
+const {
+  ctaText
+} = require("./src/graphql/sections/ctaText");
+const {
+  development
+} = require("./src/graphql/sections/development");
+const {
+  faq
+} = require("./src/graphql/sections/faq");
+const {
+  footer
+} = require("./src/graphql/sections/footer");
+const {
+  header
+} = require("./src/graphql/sections/header");
+const {
+  hero
+} = require("./src/graphql/sections/hero");
+const {
+  heroMain
+} = require("./src/graphql/sections/heroMain");
+const {
+  heroProject
+} = require("./src/graphql/sections/heroProject");
+const {
+  list
+} = require("./src/graphql/sections/list");
+const {
+  notFound
+} = require("./src/graphql/sections/notFound");
+const {
+  ourClients
+} = require("./src/graphql/sections/ourClients");
+const {
+  ourTeam
+} = require("./src/graphql/sections/ourTeam");
+const {
+  reviews
+} = require("./src/graphql/sections/reviews");
+const {
+  sliderSteps
+} = require("./src/graphql/sections/sliderSteps");
+const {
+  technologies
+} = require("./src/graphql/sections/technologies");
+const {
+  technologyStack
+} = require("./src/graphql/sections/technologyStack");
+const {
+  textOne
+} = require("./src/graphql/sections/textOne");
+const {
+  textTwo
+} = require("./src/graphql/sections/textTwo");
+const {
+  textThree
+} = require("./src/graphql/sections/textThree");
+const {
+  blockText
+} = require("./src/graphql/sections/blockText");
+const {
+  image
+} = require("./src/graphql/objects/image");
+const {
+  link
+} = require("./src/graphql/objects/link");
+const {
+  relatedArticles
+} = require("./src/graphql/sections/relatedArticles");
 
-exports.createPages = async ({ graphql, actions: { createPage, createRedirect }, reporter }) => {
+exports.createPages = async ({
+  graphql,
+  actions: {
+    createPage,
+    createRedirect
+  },
+  reporter
+}) => {
   const template = path.resolve("./src/templates/template.js");
 
-  const { data, errors } = await graphql(`
+  const {
+    data,
+    errors
+  } = await graphql(`
   {
     allSanityRedirect {
     nodes {
@@ -47,7 +117,7 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
       ignoreCase
     }
   }
-  allSanityCasesItem {
+    allSanityCasesItem {
     nodes {
       seo {
         description
@@ -85,64 +155,6 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
       }
       casesItemImage {
         ${image}
-      }
-      content {
-        ${benefits}
-        ${relatedArticles}
-        ${caseStudies}
-        ${challenge}
-        ${contacts}
-        ${contactUs}
-        ${ctaForm}
-        ${ctaImage}
-        ${ctaText}
-        ${development}
-        ${faq}
-        ${footer}
-        ${header}
-        ${hero}
-        ${heroMain}
-        ${heroProject}
-        ${list}
-        ${notFound}
-        ${ourClients}
-        ${ourTeam}
-        ${reviews}
-        ${sliderSteps}
-        ${technologies}
-        ${technologyStack}
-        ${textOne}
-        ${textTwo}
-        ${textThree}
-        ${blockText}
-      }
-    }
-  }
-  allSanityTechnologiesCaseItem {
-    nodes {
-      seo {
-        description
-        twitterCard
-        titleTemplate
-        title
-        ogType
-        keywords
-        image {
-          altText
-          image {
-            asset {
-              url
-              height
-              width
-            }
-          }
-        }
-      }
-      id
-      i18n_lang
-      sectionTitle
-      slug {
-        current
       }
       content {
         ${benefits}
@@ -451,8 +463,15 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
   const redirects = data.allSanityRedirect.nodes;
 
   const pages = data.allSanityPage.nodes;
-  const { cookies, siteUrl, recaptchaKey, name, defaultLocale, locales } =
-    data.allSanitySettings.nodes[0];
+  const {
+    cookies,
+    siteUrl,
+    recaptchaKey,
+    name,
+    defaultLocale,
+    locales
+  } =
+  data.allSanitySettings.nodes[0];
 
   const blogPages = data.allSanityBlogCategory.nodes;
   const articles = data.allSanityArticlesItem.nodes.sort(
@@ -460,22 +479,23 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
   );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
-  const technologiesCaseItem = data.allSanityTechnologiesCaseItem.nodes;
 
   if (redirects.length > 0) {
-    redirects.forEach((redirect) => createRedirect({ ...redirect }));
+    redirects.forEach((redirect) => createRedirect({
+      ...redirect
+    }));
   }
 
   if (casesCountry.length > 0) {
     casesCountry.forEach((page) => {
       const url = page.slug.current;
       const casesCountryItem =
-        page.slug.current === "/cases"
-          ? casesItem
-          : [...casesItem].filter((el) => page._id === el.country._id);
+        page.slug.current === "/cases" ?
+        casesItem : [...casesItem].filter((el) => page._id === el.country._id);
 
       const technologyFilter = [
-        ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies), [])),
+        ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies),
+          [])),
       ];
 
       createPage({
@@ -501,17 +521,19 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
           },
           */
           sections: (
-            [
-              ...page.sections,
-              {
-                ...page,
-                casesItems: casesCountryItem,
-                countryFilter: casesCountry,
-                technologyFilter,
-              },
-            ] || []
-          )
-            .filter(({ id }) => id)
+              [
+                ...page.sections,
+                {
+                  ...page,
+                  casesItems: casesCountryItem,
+                  countryFilter: casesCountry,
+                  technologyFilter,
+                },
+              ] || []
+            )
+            .filter(({
+              id
+            }) => id)
             .sort((a, b) => +a.position - +b.position),
         },
       });
@@ -543,41 +565,12 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
             cookieName: config.googleAnalytics.cookieName,
           },
           */
-          sections: ([...page.content, { ...page }] || [])
-            .filter(({ id }) => id)
-            .sort((a, b) => +a.position - +b.position),
-        },
-      });
-    });
-  }
-
-  if (technologiesCaseItem.length > 0) {
-    technologiesCaseItem.forEach((page) => {
-      const url = page.slug.current;
-      createPage({
-        path: url,
-        component: template,
-        context: {
-          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
-          locales,
-          currentLocale: page.i18n_lang,
-          defaultLocale,
-          recaptchaKey,
-          seo: {
-            ...(page.seo || {}),
-            lang: page.i18n_lang,
-            siteUrl,
-            url,
-            name,
-          },
-          /*
-          cookieConsent: {
-            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
-            cookieName: config.googleAnalytics.cookieName,
-          },
-          */
-          sections: ([...page.content, { ...page }] || [])
-            .filter(({ id }) => id)
+          sections: ([...page.content, {
+              ...page
+            }] || [])
+            .filter(({
+              id
+            }) => id)
             .sort((a, b) => +a.position - +b.position),
         },
       });
@@ -609,8 +602,12 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
             cookieName: config.googleAnalytics.cookieName,
           },
           */
-          sections: ([...page.sections, { ...page }] || [])
-            .filter(({ id }) => id)
+          sections: ([...page.sections, {
+              ...page
+            }] || [])
+            .filter(({
+              id
+            }) => id)
             .sort((a, b) => +a.position - +b.position),
         },
       });
@@ -620,9 +617,8 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
   if (blogPages.length > 0) {
     blogPages.forEach((page) => {
       const categoryArticles =
-        page.slug.current === "/blog"
-          ? articles
-          : [...articles].filter((el) => page._id === el.categoryReference._id);
+        page.slug.current === "/blog" ?
+        articles : [...articles].filter((el) => page._id === el.categoryReference._id);
 
       const pageCount = Math.ceil(categoryArticles.length / page.numberOfPosts);
 
@@ -657,12 +653,19 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
           },
           */
             sections: (
-              [
-                ...page.sections,
-                { ...page, articles: postItems, categories: blogPages, pageCount },
-              ] || []
-            )
-              .filter(({ id }) => id)
+                [
+                  ...page.sections,
+                  {
+                    ...page,
+                    articles: postItems,
+                    categories: blogPages,
+                    pageCount
+                  },
+                ] || []
+              )
+              .filter(({
+                id
+              }) => id)
               .sort((a, b) => +a.position - +b.position),
           },
         });
@@ -695,7 +698,9 @@ exports.createPages = async ({ graphql, actions: { createPage, createRedirect },
             /* cookieName: config.googleAnalytics.cookieName, */
           },
           sections: (page.content || [])
-            .filter(({ id }) => id)
+            .filter(({
+              id
+            }) => id)
             .sort((a, b) => +a.position - +b.position),
         },
       });
