@@ -1,11 +1,31 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { sections } from "./desk/sections";
-import { pages } from "./desk/pages";
-import { cases } from "./desk/cases";
-import { articles } from "./desk/articles";
-import { blogCategory } from "./desk/blogCategory";
-import { casesCountry } from "./desk/casesCountry";
-import { debug } from "./desk/debug";
+import {
+  sections
+} from "./desk/sections";
+import {
+  pages
+} from "./desk/pages";
+import {
+  cases
+} from "./desk/cases";
+import {
+  technologiesCases
+} from "./desk/technologiesCases";
+import {
+  articles
+} from "./desk/articles";
+import {
+  blogCategory
+} from "./desk/blogCategory";
+import {
+  casesCountry
+} from "./desk/casesCountry";
+import {
+  debug
+} from "./desk/debug";
+import {
+  redirect
+} from "./desk/redirect";
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   "hero",
@@ -38,10 +58,12 @@ const DOCUMENT_TYPES_IN_STRUCTURE = [
   "relatedArticles",
   "articlesItem",
   "casesItem",
+  "technologiesCaseItem",
   "blogCategory",
   "casesCountry",
   "page",
   "settings",
+  "redirect",
 ];
 
 export default () => {
@@ -55,10 +77,13 @@ export default () => {
       casesCountry,
       cases,
       S.divider(),
+      technologiesCases,
+      S.divider(),
       blogCategory,
       articles,
       S.divider(),
       S.documentListItem().id("global-config").schemaType("settings").title("Settings"),
+      redirect,
       debug,
       S.divider(),
       // Automatically add new document types to the root pane

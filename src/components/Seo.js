@@ -52,7 +52,7 @@ const Seo = ({
               },
               {
                 property: "og:url",
-                content: `${siteUrl}${url}`,
+                content: `${siteUrl}${url}${url === "/" ? "" : "/"}`,
               },
               {
                 name: "twitter:image:src",
@@ -86,7 +86,7 @@ const Seo = ({
           : []),
       ]}
     >
-      <link rel="canonical" href={`${siteUrl}${url}`} />
+      <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
     </Helmet>
   );
 };

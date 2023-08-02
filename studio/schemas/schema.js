@@ -6,7 +6,9 @@ import page from "./documents/page";
 import blogCategory from "./documents/blogCategory";
 import settings from "./documents/settings";
 import casesItem from "./documents/casesItem";
+import technologiesCaseItem from "./documents/technologiesCaseItem";
 import casesCountry from "./documents/casesCountry";
+import redirect from "./documents/redirect";
 
 // sections
 import hero from "./sections/hero";
@@ -97,7 +99,9 @@ export default createSchema({
     locale,
     settings,
     casesItem,
+    technologiesCaseItem,
     casesCountry,
+    redirect,
 
     // sections
     hero,

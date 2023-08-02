@@ -48,6 +48,7 @@ const BenefitsDescription = styled.div`
   ${({ theme }) => theme.breakpoints.down("md")} {
     height: 446px;
     gap: 5px;
+    margin-bottom: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {

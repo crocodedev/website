@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
 import SectionWrapper from "@/components/SectionWrapper";
 import Breadcrumb from "@/components/Breadcrumb";
 import Pagination from "@/components/Pagination";
@@ -70,6 +71,7 @@ const CasesList = ({
     <SectionWrapper onlyBottomPadding>
       <Container>
         <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" disablePaddingBottom />
+        <SectionHeading titleTag="h1" title="Cases" />
         <ProjectsNavStack>
           <ProjectsNavRowWrapper>
             <Text>Tech stack:</Text>

@@ -2,8 +2,9 @@ export default {
   title: "Section",
   name: "pageSection",
   type: "reference",
-  to: [
-    { type: "hero" },
+  to: [{
+      type: "hero"
+    },
     { type: "heroMain" },
     { type: "heroProject" },
     { type: "list" },
@@ -31,13 +32,18 @@ export default {
     { type: "challenge" },
     { type: "blockText" },
     { type: "relatedArticles" },
+    { type: "technologiesCaseItem" },
   ],
 
   options: {
-    filter: ({ document }) => {
+    filter: ({
+      document
+    }) => {
       return {
         filter: "__i18n_lang == $baseLanguage",
-        params: { baseLanguage: document.i18n_lang },
+        params: {
+          baseLanguage: document.i18n_lang
+        },
       };
     },
   },

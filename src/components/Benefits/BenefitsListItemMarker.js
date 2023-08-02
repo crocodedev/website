@@ -31,9 +31,12 @@ const dynamicStyles = ({ theme, align }) => css`
 `;
 
 const BenefitsListItemMarker = styled.span`
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
+  align-self: flex-start;
+  height: 100%;
 
   &::before,
   &::after {
@@ -53,7 +56,6 @@ const BenefitsListItemMarker = styled.span`
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
     width: 40px;
-    height: 16px;
 
     &::before {
       width: 10px;
@@ -68,7 +70,6 @@ const BenefitsListItemMarker = styled.span`
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
     width: 80px;
-    height: 16px;
 
     &::before {
       width: 16px;

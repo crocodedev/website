@@ -5,22 +5,18 @@ const TechnologiesSlideStack = styled.div`
   max-width: 790px;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    grid-column-gap: 11px;
     grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
 
   ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-    grid-column-gap: 11px;
     grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    grid-column-gap: 20px;
+    gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  ${({ theme }) => theme.breakpoints.down("xl")} {
-    grid-row-gap: 20px;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {

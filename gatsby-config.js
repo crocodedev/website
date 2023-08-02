@@ -8,6 +8,7 @@ const { robots, pwa } = require("./config/site");
 const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
 
 module.exports = {
+  trailingSlash: "always",
   ...(siteUrl
     ? {
         siteMetadata: {
@@ -28,13 +29,6 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-transformer-svg-sprites",
-            options: {
-              optimize: process.env.NODE_ENV === "production",
-              skip: "",
-            },
-          },
-          {
             resolve: "gatsby-plugin-sitemap",
             options: {
               output: "/",
@@ -44,19 +38,21 @@ module.exports = {
           {
             resolve: "gatsby-plugin-robots-txt",
             options: {
-              ...(robots || {}),
+              host: "https://crocode.io",
+              sitemap: "https://crocode.io/sitemap-index.xml",
+              policy: [{ userAgent: "*", allow: "/" }],
             },
           },
         ]
       : []),
-    ...(trackingId
-      ? [
-          {
-            resolve: "gatsby-plugin-google-analytics",
-            options: { trackingId, head: false },
-          },
-        ]
-      : []),
+    // ...(trackingId
+    //   ? [
+    //       {
+    //         resolve: "gatsby-plugin-google-analytics",
+    //         options: { trackingId, head: false },
+    //       },
+    //     ]
+    //   : []),
     ...(pwa.enabled
       ? [
           {

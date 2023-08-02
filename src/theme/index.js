@@ -56,7 +56,7 @@ const theme = {
   },
   shadows: {
     header: "0 0 2px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.1)",
-    card: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.05)",
+    card: "0 0 3px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.05)",
     cardAccent: "0 0 40px rgba(0, 0, 0, 0.06)",
     popup: "0 0 4px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(0, 0, 0, 0.2)",
   },

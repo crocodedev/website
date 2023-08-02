@@ -10,7 +10,7 @@ const BenefitsDescriptionTitle = styled(Text)`
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     font-size: ${({ theme }) => theme.typography.fontSize.title3}px;
-    max-width: 320px;
+    max-width: 303px;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {

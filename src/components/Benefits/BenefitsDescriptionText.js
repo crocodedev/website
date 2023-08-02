@@ -3,7 +3,7 @@ import Text from "../Text";
 
 const BenefitsDescriptionText = styled(Text)`
   ${({ theme }) => theme.breakpoints.down("md")} {
-    max-width: 280px;
+    max-width: 230px;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {

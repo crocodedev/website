@@ -12,8 +12,26 @@ const BenefitsList = styled.div`
     }
   }
 
-  ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    padding-top: 150px;
+  &:first-of-type {
+    ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+      padding-top: 133px;
+    }
+
+    ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+      padding-top: 112px;
+    }
+
+    ${({ theme }) => theme.breakpoints.up("xl")} {
+      padding-top: 255px;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
+    padding-top: 155px;
+  }
+
+  ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
+    padding-top: 140px;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {

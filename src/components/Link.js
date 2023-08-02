@@ -4,7 +4,14 @@ import { Link as GatsbyLink } from "gatsby";
 const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
   if (linkInternal) {
     return (
-      <GatsbyLink to={`${linkInternal?.reference?.slug?.current}` || "/"} {...props}>
+      <GatsbyLink
+        to={
+          `${linkInternal?.reference?.slug?.current}${
+            linkInternal?.reference?.slug?.current === "/" ? "" : "/"
+          }` || "/"
+        }
+        {...props}
+      >
         {children}
       </GatsbyLink>
     );
@@ -13,7 +20,7 @@ const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
     <a
       href={linkExternal?.href || "/"}
       target={linkExternal?.blank ? "_blank" : ""}
-      rel="noopener noreferrer"
+      rel="noopener noreferrer nofollow"
       {...props}
     >
       {children}

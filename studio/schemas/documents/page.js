@@ -1,4 +1,6 @@
-import { MasterDetailIcon } from "@sanity/icons";
+import {
+  MasterDetailIcon
+} from "@sanity/icons";
 
 export default {
   name: "page",
@@ -13,28 +15,29 @@ export default {
     },
   },
 
-  fields: [
-    {
+  fields: [{
       name: "i18n_lang",
       type: "string",
-      // hidden: true,
+      hidden: true,
     },
     {
       name: "i18n_base",
       type: "reference",
-      to: [{ type: "page" }],
+      to: [{
+        type: "page"
+      }],
       hidden: true,
     },
     {
       name: "i18n_refs",
       type: "array",
       hidden: true,
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "page" }],
-        },
-      ],
+      of: [{
+        type: "reference",
+        to: [{
+          type: "page"
+        }],
+      }, ],
     },
     {
       name: "title",

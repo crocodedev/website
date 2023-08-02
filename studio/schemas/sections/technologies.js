@@ -27,8 +27,12 @@ export default {
       name: "component",
       type: "string",
       initialValue: "Technologies",
-      readOnly: true,
-      hidden: true,
+      options: {
+        list: [
+          { title: "Technologies", value: "Technologies" },
+          { title: "Technologies Grid", value: "TechnologiesGrid" },
+        ],
+      },
       validation: (Rule) => Rule.required(),
     },
     {
@@ -49,6 +53,18 @@ export default {
       of: [
         {
           type: "technologyCategory",
+        },
+      ],
+    },
+    {
+      title: "Breadcrumbs",
+      name: "breadcrumbs",
+      type: "array",
+
+      of: [
+        {
+          name: "link",
+          type: "link",
         },
       ],
     },

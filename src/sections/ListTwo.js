@@ -21,7 +21,7 @@ const ListTwo = ({ title, text, items, baseUrl, bgColor }) => (
           <ListTwoItem key={_key}>
             <ListTwoItemHeading>
               <ListTwoItemHeadingImage>
-                <Image {...imageWithAltText} />
+                <Image {...imageWithAltText} objectFit="contain" />
               </ListTwoItemHeadingImage>
 
               <Text fontSize="subtitle" lineHeight="sm" fontWeight="bold">

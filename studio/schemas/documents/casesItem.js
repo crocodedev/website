@@ -1,4 +1,6 @@
-import { MasterDetailIcon } from "@sanity/icons";
+import {
+  MasterDetailIcon
+} from "@sanity/icons";
 
 export default {
   preview: {
@@ -19,8 +21,7 @@ export default {
   name: "casesItem",
   type: "document",
   icon: MasterDetailIcon,
-  fields: [
-    {
+  fields: [{
       name: "i18n_lang",
       type: "string",
       hidden: true,
@@ -28,19 +29,21 @@ export default {
     {
       name: "i18n_base",
       type: "reference",
-      to: [{ type: "casesItem" }],
+      to: [{
+        type: "casesItem"
+      }],
       hidden: true,
     },
     {
       name: "i18n_refs",
       type: "array",
       hidden: true,
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "casesItem" }],
-        },
-      ],
+      of: [{
+        type: "reference",
+        to: [{
+          type: "casesItem"
+        }],
+      }, ],
     },
     {
       title: "Section Title",
@@ -65,13 +68,17 @@ export default {
       title: "Technologies",
       name: "technologies",
       type: "array",
-      of: [{ type: "string" }],
+      of: [{
+        type: "string"
+      }],
     },
     {
       title: "Country",
       name: "country",
       type: "reference",
-      to: [{ type: "casesCountry" }],
+      to: [{
+        type: "casesCountry"
+      }],
     },
     {
       title: "Text",

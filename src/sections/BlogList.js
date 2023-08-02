@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Breadcrumb from "@/components/Breadcrumb";
 import BlogListItem from "@/components/BlogList/BlogListItem";
+import SectionHeading from "@/components/SectionHeading";
 import BlogListNavigationStack from "@/components/BlogList/BlogListNavigationStack";
 import BlogListStack from "@/components/BlogList/BlogListStack";
 import Button from "@/components/Button";
@@ -28,6 +29,7 @@ const BlogList = ({
         {breadcrumbs.length > 0 && (
           <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" />
         )}
+        <SectionHeading titleTag="h1" title="Blog" />
         <BlogListNavigationStack>
           {categories.map(({ title: categoryTitle, slug: categorySlug, id }) => (
             <Button
