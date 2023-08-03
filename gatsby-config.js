@@ -40,11 +40,12 @@ module.exports = {
       {
         resolve: "gatsby-plugin-robots-txt",
         options: {
-          host: "https://crocode.io",
-          sitemap: "https://crocode.io/sitemap-index.xml",
+          // host: "https://crocode.io",
+          // sitemap: "https://crocode.io/sitemap-index.xml",
           policy: [{
             userAgent: "*",
-            allow: "/"
+            disallow: ['/']
+            // allow: "/"
           }],
         },
       },
