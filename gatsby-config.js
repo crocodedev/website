@@ -14,9 +14,6 @@ const {
 } = process.env;
 
 module.exports = {
-  developMiddleware: app => {
-    app.set('etag', 'strong')
-  },
   trailingSlash: "always",
   ...(siteUrl ? {
     siteMetadata: {
