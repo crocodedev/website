@@ -49,6 +49,27 @@ module.exports = {
           }],
         },
       },
+      {
+        resolve: 'gatsby-plugin-htaccess',
+        options: {
+          RewriteBase: '/custom/',
+          https: true,
+          www: true,
+          SymLinksIfOwnerMatch: true,
+          host: 'www.crocodelab.com', // if 'www' is set to 'false', be sure to also remove it here!
+          redirect: [
+            'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
+            {
+              from: 'crocode.io',
+              to: 'crocodelab.com',
+            },
+          ],
+          custom: `
+            # This is a custom rule!
+            # This is a another custom rule!
+        `,
+        },
+      },
     ] : []),
     // ...(trackingId
     //   ? [
@@ -92,6 +113,7 @@ module.exports = {
     }, ] : []),
     "gatsby-plugin-eslint",
     "gatsby-plugin-netlify",
+    "gatsby-plugin-htaccess",
   ],
   flags: {
     FAST_DEV: false, // Enable all experiments aimed at improving develop server start time
