@@ -550,8 +550,7 @@ exports.createPages = async ({
       const url = page.slug.current;
       const casesCountryItem =
         page.slug.current === "/cases" ?
-        casesItem :
-        [...casesItem].filter((el) => page._id === el.country._id);
+        casesItem : [...casesItem].filter((el) => page._id === el.country._id);
 
       const technologyFilter = [
         ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies),
@@ -715,8 +714,7 @@ exports.createPages = async ({
     blogPages.forEach((page) => {
       const categoryArticles =
         page.slug.current === "/blog" ?
-        articles :
-        [...articles].filter((el) => page._id === el.categoryReference._id);
+        articles : [...articles].filter((el) => page._id === el.categoryReference._id);
 
       const pageCount = Math.ceil(categoryArticles.length / page.numberOfPosts);
 
@@ -805,7 +803,7 @@ exports.createPages = async ({
     });
   }
 
-  // redirects.forEach((redirect) => {
-  //   createRedirect(redirect);
-  // });
+  redirects.forEach((redirect) => {
+    createRedirect(redirect);
+  });
 };
