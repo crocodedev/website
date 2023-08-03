@@ -3,48 +3,55 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const { robots, pwa } = require("./config/site");
+const {
+  robots,
+  pwa
+} = require("./config/site");
 
-const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
+const {
+  SITE_URL: siteUrl,
+  GOOGLE_ANALYTICS_TRACKING_ID: trackingId
+} = process.env;
 
 module.exports = {
+  developMiddleware: app => {
+    app.set('etag', 'strong')
+  },
   trailingSlash: "always",
-  ...(siteUrl
-    ? {
-        siteMetadata: {
-          siteUrl,
-        },
-      }
-    : {}),
+  ...(siteUrl ? {
+    siteMetadata: {
+      siteUrl,
+    },
+  } : {}),
   plugins: [
-    ...(siteUrl
-      ? [
-          {
-            resolve: "gatsby-source-sanity",
-            options: {
-              projectId: process.env.SANITY_PROJECT_ID,
-              dataset: process.env.SANITY_DATASET,
-              token: process.env.SANITY_TOKEN,
-              watchMode: true,
-            },
-          },
-          {
-            resolve: "gatsby-plugin-sitemap",
-            options: {
-              output: "/",
-              resolveSiteUrl: () => siteUrl,
-            },
-          },
-          {
-            resolve: "gatsby-plugin-robots-txt",
-            options: {
-              host: "https://crocode.io",
-              sitemap: "https://crocode.io/sitemap-index.xml",
-              policy: [{ userAgent: "*", allow: "/" }],
-            },
-          },
-        ]
-      : []),
+    ...(siteUrl ? [{
+        resolve: "gatsby-source-sanity",
+        options: {
+          projectId: process.env.SANITY_PROJECT_ID,
+          dataset: process.env.SANITY_DATASET,
+          token: process.env.SANITY_TOKEN,
+          watchMode: true,
+        },
+      },
+      {
+        resolve: "gatsby-plugin-sitemap",
+        options: {
+          output: "/",
+          resolveSiteUrl: () => siteUrl,
+        },
+      },
+      {
+        resolve: "gatsby-plugin-robots-txt",
+        options: {
+          host: "https://crocode.io",
+          sitemap: "https://crocode.io/sitemap-index.xml",
+          policy: [{
+            userAgent: "*",
+            allow: "/"
+          }],
+        },
+      },
+    ] : []),
     // ...(trackingId
     //   ? [
     //       {
@@ -53,14 +60,12 @@ module.exports = {
     //       },
     //     ]
     //   : []),
-    ...(pwa.enabled
-      ? [
-          {
-            resolve: "gatsby-plugin-manifest",
-            options: { ...(pwa.manifest || {}) },
-          },
-        ]
-      : []),
+    ...(pwa.enabled ? [{
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        ...(pwa.manifest || {})
+      },
+    }, ] : []),
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-image",
@@ -81,14 +86,12 @@ module.exports = {
         },
       },
     },
-    ...(pwa.enabled
-      ? [
-          {
-            resolve: "gatsby-plugin-offline",
-            options: { ...pwa.offline },
-          },
-        ]
-      : []),
+    ...(pwa.enabled ? [{
+      resolve: "gatsby-plugin-offline",
+      options: {
+        ...pwa.offline
+      },
+    }, ] : []),
     "gatsby-plugin-eslint",
     "gatsby-plugin-netlify",
   ],
