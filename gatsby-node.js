@@ -803,7 +803,7 @@ exports.createPages = async ({
     });
   }
 
-  redirects.forEach((redirect) => {
-    createRedirect(redirect);
-  });
+  // redirects.forEach((redirect) => {
+  //   createRedirect(redirect);
+  // });
 };

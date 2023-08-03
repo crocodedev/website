@@ -1,0 +1,5 @@
+# Редирект с crocode.io на crocodelab.com
+/crocode/* https://www.crocodelab.com/:splat 301!
+
+# Редирект всех страниц с crocode.io на crocodelab.com
+/* https://www.crocodelab.com/:splat 301!
