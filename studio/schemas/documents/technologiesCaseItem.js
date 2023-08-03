@@ -40,8 +40,8 @@ export default {
       }, ],
     },
     {
-      name: "title",
-      title: "Title",
+      name: "sectionTitle",
+      title: "Section title",
       type: "string",
     },
     {

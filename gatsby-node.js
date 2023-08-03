@@ -117,7 +117,7 @@ exports.createPages = async ({
       ignoreCase
     }
   }
-    allSanityCasesItem {
+  allSanityCasesItem {
     nodes {
       seo {
         description
@@ -155,6 +155,64 @@ exports.createPages = async ({
       }
       casesItemImage {
         ${image}
+      }
+      content {
+        ${benefits}
+        ${relatedArticles}
+        ${caseStudies}
+        ${challenge}
+        ${contacts}
+        ${contactUs}
+        ${ctaForm}
+        ${ctaImage}
+        ${ctaText}
+        ${development}
+        ${faq}
+        ${footer}
+        ${header}
+        ${hero}
+        ${heroMain}
+        ${heroProject}
+        ${list}
+        ${notFound}
+        ${ourClients}
+        ${ourTeam}
+        ${reviews}
+        ${sliderSteps}
+        ${technologies}
+        ${technologyStack}
+        ${textOne}
+        ${textTwo}
+        ${textThree}
+        ${blockText}
+      }
+    }
+  }
+  allSanityTechnologiesCaseItem {
+    nodes {
+      seo {
+        description
+        twitterCard
+        titleTemplate
+        title
+        ogType
+        keywords
+        image {
+          altText
+          image {
+            asset {
+              url
+              height
+              width
+            }
+          }
+        }
+      }
+      id
+      i18n_lang
+      sectionTitle
+      slug {
+        current
       }
       content {
         ${benefits}
@@ -479,6 +537,7 @@ exports.createPages = async ({
   );
   const casesCountry = data.allSanityCasesCountry.nodes;
   const casesItem = data.allSanityCasesItem.nodes;
+  const technologiesCaseItem = data.allSanityTechnologiesCaseItem.nodes;
 
   if (redirects.length > 0) {
     redirects.forEach((redirect) => createRedirect({
@@ -491,7 +550,8 @@ exports.createPages = async ({
       const url = page.slug.current;
       const casesCountryItem =
         page.slug.current === "/cases" ?
-        casesItem : [...casesItem].filter((el) => page._id === el.country._id);
+        casesItem :
+        [...casesItem].filter((el) => page._id === el.country._id);
 
       const technologyFilter = [
         ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies),
@@ -577,6 +637,43 @@ exports.createPages = async ({
     });
   }
 
+  if (technologiesCaseItem.length > 0) {
+    technologiesCaseItem.forEach((page) => {
+      const url = page.slug.current;
+      createPage({
+        path: url,
+        component: template,
+        context: {
+          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+          locales,
+          currentLocale: page.i18n_lang,
+          defaultLocale,
+          recaptchaKey,
+          seo: {
+            ...(page.seo || {}),
+            lang: page.i18n_lang,
+            siteUrl,
+            url,
+            name,
+          },
+          /*
+          cookieConsent: {
+            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+            cookieName: config.googleAnalytics.cookieName,
+          },
+          */
+          sections: ([...page.content, {
+              ...page
+            }] || [])
+            .filter(({
+              id
+            }) => id)
+            .sort((a, b) => +a.position - +b.position),
+        },
+      });
+    });
+  }
+
   if (articles.length > 0) {
     articles.forEach((page) => {
       const url = page.slug.current;
@@ -618,7 +715,8 @@ exports.createPages = async ({
     blogPages.forEach((page) => {
       const categoryArticles =
         page.slug.current === "/blog" ?
-        articles : [...articles].filter((el) => page._id === el.categoryReference._id);
+        articles :
+        [...articles].filter((el) => page._id === el.categoryReference._id);
 
       const pageCount = Math.ceil(categoryArticles.length / page.numberOfPosts);
 
