@@ -3,6 +3,12 @@ import {
 } from "@sanity/icons";
 
 export default {
+  preview: {
+    select: {
+      title: "sectionTitle",
+    },
+  },
+
   name: "technologiesCaseItem",
   type: "document",
   title: "Technologies Case Item",
