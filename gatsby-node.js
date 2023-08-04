@@ -638,38 +638,41 @@ exports.createPages = async ({
 
   if (technologiesCaseItem.length > 0) {
     technologiesCaseItem.forEach((page) => {
-      const url = page.slug.current;
-      createPage({
-        path: url,
-        component: template,
-        context: {
-          baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
-          locales,
-          currentLocale: page.i18n_lang,
-          defaultLocale,
-          recaptchaKey,
-          seo: {
-            ...(page.seo || {}),
-            lang: page.i18n_lang,
-            siteUrl,
-            url,
-            name,
+      const url = page.slug?.current;
+      if (url) {
+        createPage({
+          path: url,
+          component: template,
+          context: {
+            baseUrl: defaultLocale === page.i18n_lang ? "/" : `/${page.i18n_lang}/`,
+            locales,
+            currentLocale: page.i18n_lang,
+            defaultLocale,
+            recaptchaKey,
+            seo: {
+              ...(page.seo || {}),
+              lang: page.i18n_lang,
+              siteUrl,
+              url,
+              name,
+            },
+            /*
+            cookieConsent: {
+              ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
+              cookieName: config.googleAnalytics.cookieName,
+            },
+            */
+            sections: ([...page.content, {
+                ...page
+              }] || [])
+              .filter(({
+                id
+              }) => id)
+              .sort((a, b) => +a.position - +b.position),
           },
-          /*
-          cookieConsent: {
-            ...cookieConsent.filter((cookie) => cookie.i18n_lang === page.i18n_lang)[0],
-            cookieName: config.googleAnalytics.cookieName,
-          },
-          */
-          sections: ([...page.content, {
-              ...page
-            }] || [])
-            .filter(({
-              id
-            }) => id)
-            .sort((a, b) => +a.position - +b.position),
-        },
-      });
+        });
+      }
+
     });
   }
 
