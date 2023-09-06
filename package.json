@@ -20,6 +20,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@portabletext/react": "^1.0.6",
+    "@sanity/block-content-to-react": "^3.0.0",
     "clsx": "^1.2.0",
     "destyle.css": "^3.0.2",
     "eslint-webpack-plugin": "^3.2.0",
@@ -54,6 +55,7 @@
     "react-map-gl": "^7.0.17",
     "react-phone-input-2": "^2.15.1",
     "recaptcha-v3": "^1.10.0",
+    "sanity": "^3.16.2",
     "swiper": "^8.2.6",
     "yup": "^0.32.11"
   },

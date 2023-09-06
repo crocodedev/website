@@ -39,6 +39,7 @@ import ctaForm from "./sections/ctaForm";
 import challenge from "./sections/challenge";
 import blockText from "./sections/blockText";
 import relatedArticles from "./sections/relatedArticles";
+import imageBlock from "./sections/imageBlock";
 
 // objects
 import link from "./objects/link";
@@ -132,6 +133,7 @@ export default createSchema({
     challenge,
     blockText,
     relatedArticles,
+    imageBlock,
 
     // objects
     link,

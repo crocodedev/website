@@ -11,6 +11,7 @@ const HeroWrapper = styled.section`
     height: 35%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
     bottom: 0;
+    pointer-events: none;
   }
 `;
 
