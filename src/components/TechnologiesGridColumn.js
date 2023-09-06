@@ -5,10 +5,10 @@ import TechnologiesGridGroupTitle from "@/components/TechnologiesGrid/Technologi
 import TechnologiesGridRow from "@/components/TechnologiesGrid/TechnologiesGridRow";
 import TechnologyCard from "./TechnologyCard";
 
-const TechnologiesGridColumn = ({ title, items }) => {
+const TechnologiesGridColumn = ({slug, title, items }) => {
   return (
     <TechnologiesGridGroup>
-      <TechnologiesGridGroupTitle>{title}</TechnologiesGridGroupTitle>
+      <TechnologiesGridGroupTitle to={slug}>{title}</TechnologiesGridGroupTitle>
       <TechnologiesGridRow>
         {items?.map(({ _key, title: cardLabel, link, technologyImage }) => (
           <TechnologyCard
@@ -26,6 +26,7 @@ const TechnologiesGridColumn = ({ title, items }) => {
 
 TechnologiesGridColumn.propTypes = {
   title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       _key: PropTypes.string,

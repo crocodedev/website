@@ -33,6 +33,7 @@ export default {
     { type: "blockText" },
     { type: "relatedArticles" },
     { type: "technologiesCaseItem" },
+    { type: "imageBlock" },
   ],
 
   options: {

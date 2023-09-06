@@ -36,6 +36,7 @@ import TextOne from "./TextOne";
 import TextTwo from "./TextTwo";
 import TextThree from "./TextThree";
 import CasesList from "./CasesList";
+import RichTextComponent from "./RichTextComponent";
 
 export {
   ArticlesItem,
@@ -76,4 +77,5 @@ export {
   TextTwo,
   TextThree,
   CasesList,
+  RichTextComponent
 };

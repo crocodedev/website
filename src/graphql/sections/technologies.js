@@ -1,5 +1,9 @@
-const { image } = require("../objects/image");
-const { link } = require("../objects/link");
+const {
+  image
+} = require("../objects/image");
+const {
+  link
+} = require("../objects/link");
 
 module.exports.technologies = `
     ... on SanityTechnologies {
@@ -10,6 +14,7 @@ module.exports.technologies = `
       subtitle
       categories {
         title
+        slug
         text
         _key
         technologiesList {

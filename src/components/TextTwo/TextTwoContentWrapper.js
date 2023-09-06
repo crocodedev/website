@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 const TextTwoContentWrapper = styled.div`
   display: grid;
+  grid-template-columns: ${(props)=> props.onlyText ? '1fr !important' : ''};
+  
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;

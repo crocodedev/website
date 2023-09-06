@@ -13,3 +13,4 @@ export const technologiesCases = S.listItem()
       deLanguage: `de`
     }),
   );
+ 

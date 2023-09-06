@@ -11,8 +11,8 @@ const TechnologiesGrid = ({ title, categories, breadcrumbs, baseUrl }) => {
       <Container>
         <Breadcrumb baseUrl={baseUrl} links={breadcrumbs} color="gray" disablePaddingBottom />
         <SectionHeading title={title} />
-        {categories?.map(({ _key, title: categoryTitle, technologiesList }) => (
-          <TechnologiesGridColumn key={_key} title={categoryTitle} items={technologiesList} />
+        {categories?.map(({ _key, title: categoryTitle, technologiesList, slug }) => (
+          <TechnologiesGridColumn key={_key} slug={slug} title={categoryTitle} items={technologiesList} />
         ))}
       </Container>
     </SectionWrapper>
@@ -25,6 +25,7 @@ TechnologiesGrid.propTypes = {
     PropTypes.exact({
       _key: PropTypes.string,
       title: PropTypes.string,
+      slug: PropTypes.string,
       technologyImage: PropTypes.object,
       link: PropTypes.object,
     }),

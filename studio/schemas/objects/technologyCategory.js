@@ -8,10 +8,14 @@ export default {
   title: "Technology category",
   name: "technologyCategory",
   type: "object",
-  fields: [
-    {
+  fields: [{
       title: "Title",
       name: "title",
+      type: "string",
+    },
+    {
+      title: "Slug",
+      name: "slug",
       type: "string",
     },
     {

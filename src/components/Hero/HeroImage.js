@@ -8,6 +8,7 @@ const HeroImage = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+  filter: blur(3px);
 
   & div {
     max-width: 1920px;
