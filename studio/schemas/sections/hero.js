@@ -40,7 +40,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Subtitle",
+      title: "RichTextBlock",
+      name: "richTextBlock",
+      type: "array",
+      of: [
+        {type: 'block'}
+      ]
+    },
+    {
+      title: "DEPRECATED Subtitle",
       name: "subtitle",
       type: "text",
     },

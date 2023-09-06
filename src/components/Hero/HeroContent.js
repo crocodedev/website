@@ -7,8 +7,14 @@ const HeroContent = styled.div`
   max-width: 894px;
   text-align: center;
 
+  > div {
+    ${({ theme }) => theme.breakpoints.down("lg")} {
+      padding-bottom: 150px;
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    height: 250px;
+    height: 220px;
   }
 
   ${({ theme }) => theme.breakpoints.between("sm", "md")} {

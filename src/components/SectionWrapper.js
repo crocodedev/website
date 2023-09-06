@@ -52,6 +52,10 @@ const dynamicStyle = ({ theme, bgColor, sectionGap, onlyBottomPadding, disablePa
 const SectionWrapper = styled.section`
   width: 100%;
   ${dynamicStyle}
+
+  > div {
+    overflow: auto;
+  }
 `;
 
 export default SectionWrapper;

@@ -7,6 +7,7 @@ module.exports.textTwo = `
       component
       title
       subtitle
+      _rawRichTextBlock
       text
       bgColor
       image {

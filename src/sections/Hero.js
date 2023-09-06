@@ -8,8 +8,10 @@ import HeroImage from "@/components/Hero/HeroImage";
 import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
 import Text from "@/components/Text";
+import RichTextComponent from "./RichTextComponent";
 
-const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl }) => {
+
+const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
@@ -17,9 +19,7 @@ const Hero = ({ title, subtitle, imageWithAltText, breadcrumbs, baseUrl }) => {
           <Breadcrumb baseUrl={baseUrl} color="gray" links={breadcrumbs} />
           <SectionHeading titleTag="h1" title={title} />
           <HeroContent>
-            <Text fontSize="subtitle" mobileMultiplier={0.7}>
-              {subtitle}
-            </Text>
+            {_rawRichTextBlock && <RichTextComponent data={_rawRichTextBlock} />}
           </HeroContent>
         </Container>
       </SectionWrapper>
@@ -36,6 +36,7 @@ Hero.propTypes = {
   sectionTitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  _rawRichTextBlock: PropTypes.array,
   imageWithAltText: PropTypes.object.isRequired,
   breadcrumbs: PropTypes.array.isRequired,
 };
@@ -43,6 +44,7 @@ Hero.propTypes = {
 Hero.defaultProps = {
   color: "",
   sectionTitle: "",
+  _rawRichTextBlock: [],
 };
 
 export default Hero;

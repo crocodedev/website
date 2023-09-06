@@ -45,7 +45,18 @@ export default {
       type: "text",
     },
     {
-      title: "Text",
+      title: "RichTextBlock",
+      name: "richTextBlock",
+      type: "array",
+      of: [
+        {
+          type: 'block',
+        },
+       
+      ]
+    },
+    {
+      title: "DEPRECATED Text",
       name: "text",
       type: "text",
     },
