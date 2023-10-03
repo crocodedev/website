@@ -27,31 +27,31 @@ const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.palette.primary.contrastText};
   transition: 0.5s;
 
-  &::after {
-    content: "The site is under construction";
-    position: absolute;
+  // &::after {
+  //   content: "The site is under construction";
+  //   position: absolute;
 
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    color: white;
-    font-weight: 700;
-    background: #7dbe3b;
-    padding: 5px 10px;
-    border-radius: 0 0 10px 10px;
-    text-transform: uppercase;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   font-size: 14px;
+  //   line-height: 20px;
+  //   text-align: center;
+  //   color: white;
+  //   font-weight: 700;
+  //   background: #7dbe3b;
+  //   padding: 5px 10px;
+  //   border-radius: 0 0 10px 10px;
+  //   text-transform: uppercase;
 
-    ${({ theme }) => theme.breakpoints.down("md")} {
-      width: 100%;
-      bottom: -30px;
-    }
+  //   ${({ theme }) => theme.breakpoints.down("md")} {
+  //     width: 100%;
+  //     bottom: -30px;
+  //   }
 
-    ${({ theme }) => theme.breakpoints.up("md")} {
-      bottom: -30px;
-    }
-  }
+  //   ${({ theme }) => theme.breakpoints.up("md")} {
+  //     bottom: -30px;
+  //   }
+  // }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     height: 70px;
