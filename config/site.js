@@ -24,7 +24,8 @@ module.exports = {
       display: `standalone`,
       background_color: `#fff`,
       theme_color: `#7dbe3b`,
-      icon: "src/icons/logo.inline.svg",
+      icon: "src/icons/crolab2.gif",
+      // icon: "src/icons/logo.inline.svg",
       legacy: false,
       cache_busting_mode: "none",
       // crossOrigin: `use-credentials`, // `use-credentials` or `anonymous`
