@@ -14,6 +14,7 @@ const TechnologyCard = ({ image, title, variant, link }) => {
     >
       <Image {...image} />
       <Text lineHeight="md" fontSize="text" fontWeight="regular" mobileMultiplier={0.75}>
+        prikolchik
         {title}
       </Text>
     </TechnologyCardItem>
