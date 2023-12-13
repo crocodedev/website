@@ -17,7 +17,7 @@ const ListThree = ({ title, text, items, bgColor }) => (
         {items?.map(({ _key, title: itemTitle, text: itemText, imageWithAltText }) => (
           <ListThreeStackItem key={_key} title={itemTitle}>
             <div>
-              <ImageStatic {...imageWithAltText} />
+              <ImageStatic {...imageWithAltText} style={{maxWidth: "156px", maxHeight: "156px" }}/>
             </div>
             <Text fontSize="subtitle" textAlign="center" mobileMultiplier={0.7}>
               {itemText}
