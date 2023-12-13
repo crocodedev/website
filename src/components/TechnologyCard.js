@@ -9,12 +9,12 @@ const TechnologyCard = ({ image, title, variant, link }) => {
   return (
     <TechnologyCardItem
       as={variant === "transparent" ? Link : "div"}
+      link={link}
       to={link?.linkInternal?.reference?.slug?.current}
       variant={variant}
     >
       <Image {...image} />
       <Text lineHeight="md" fontSize="text" fontWeight="regular" mobileMultiplier={0.75}>
-        prikolchik
         {title}
       </Text>
     </TechnologyCardItem>
