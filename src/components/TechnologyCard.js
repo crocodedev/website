@@ -10,7 +10,7 @@ const TechnologyCard = ({ image, title, variant, link }) => {
   return (
     <TechnologyCardItem
       as={variant === "transparent" ? Link : "div"}
-      to={link.linkInternal.reference?.slug?.current}
+      to={link.linkInternal.reference.slug.current}
       variant={variant}
     >
       <Image {...image} />
