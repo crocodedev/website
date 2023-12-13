@@ -5,8 +5,8 @@ import Image from "./Image";
 import TechnologyCardItem from "./TechnologyCard/TechnologyCardItem";
 import Text from "./Text";
 
-const TechnologyCard = ({ image, title, variant, link }) => {
-  console.log(`${props}`);
+const TechnologyCard = ({ image, title, variant, link, ...props}) => {
+  console.log(props)
   return (
     <TechnologyCardItem
       as={variant === "transparent" ? Link : "div"}
