@@ -6,10 +6,10 @@ import TechnologyCardItem from "./TechnologyCard/TechnologyCardItem";
 import Text from "./Text";
 
 const TechnologyCard = ({ image, title, variant, link }) => {
+  console.log(`${title}:${link}`);
   return (
     <TechnologyCardItem
       as={variant === "transparent" ? Link : "div"}
-      link={link}
       to={link?.linkInternal?.reference?.slug?.current}
       variant={variant}
     >
