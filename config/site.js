@@ -1,4 +1,4 @@
-const { SITE_NAME: name, DEFAULT_LOCALE: lang } = process.env;
+const { SITE_NAME: name, DEFAULT_LOCALE: lang } = process.env
 
 module.exports = {
   googleAnalytics: {
@@ -36,4 +36,4 @@ module.exports = {
       },
     },
   },
-};
+}

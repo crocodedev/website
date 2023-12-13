@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const TechnologyCardItem = styled.div`
+const TechnologyCardItem = styled.a`
   display: flex;
   align-items: center;
   flex-direction: column;
