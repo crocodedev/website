@@ -16,7 +16,7 @@ export default function HTML(props) {
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments)}
   gtag('js', new Date());
 
   gtag('config', 'G-JRHLER8WXC');
