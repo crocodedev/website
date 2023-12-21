@@ -78,6 +78,19 @@ module.exports = {
             resolve: "gatsby-plugin-google-analytics",
             options: { trackingId, head: false },
           },
+          {
+            resolve: `gatsby-plugin-html-attributes`,
+            options: {
+           
+              lang: `en`,
+              meta: [
+                {
+                  name: `google-site-verification`,
+                  content: `jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo`,
+                },
+              ],
+            },
+          },
         ]
       : []),
     ...(pwa.enabled ? [{
