@@ -72,14 +72,14 @@ module.exports = {
       },
   
     ] : []),
-    // ...(trackingId
-    //   ? [
-    //       {
-    //         resolve: "gatsby-plugin-google-analytics",
-    //         options: { trackingId, head: false },
-    //       },
-    //     ]
-    //   : []),
+    ...(trackingId
+      ? [
+          {
+            resolve: "gatsby-plugin-google-analytics",
+            options: { trackingId, head: false },
+          },
+        ]
+      : []),
     ...(pwa.enabled ? [{
       resolve: "gatsby-plugin-manifest",
       options: {
