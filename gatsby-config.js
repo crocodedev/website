@@ -43,8 +43,7 @@ module.exports = {
               policy: [
                 {
                   userAgent: "*",
-                  disallow: ["/"],
-                  // allow: "/"
+                  allow: ["/"],
                 },
               ],
             },
