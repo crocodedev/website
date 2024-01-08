@@ -39,7 +39,7 @@ module.exports = {
             resolve: "gatsby-plugin-robots-txt",
             options: {
               host: "https://crocodelab.com",
-              sitemap: "https://crocodelab.com/sitemap.xml",
+              sitemap: "https://crocodelab.com/sitemap-index.xml",
               policy: [
                 {
                   userAgent: "*",
