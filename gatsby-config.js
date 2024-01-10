@@ -40,12 +40,6 @@ module.exports = {
             options: {
               host: "https://crocodelab.com",
               sitemap: "https://crocodelab.com/sitemap-index.xml",
-              policy: [
-                {
-                  userAgent: "*",
-                  allow: ["/"],
-                },
-              ],
             },
           },
           {
