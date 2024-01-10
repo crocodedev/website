@@ -3,88 +3,98 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const {
-  robots,
-  pwa
-} = require("./config/site");
+const { robots, pwa } = require("./config/site");
 
-const {
-  SITE_URL: siteUrl,
-  GOOGLE_ANALYTICS_TRACKING_ID: trackingId
-} = process.env;
+const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
 
 module.exports = {
   trailingSlash: "always",
-  ...(siteUrl ? {
-    siteMetadata: {
-      siteUrl,
-    },
-  } : {}),
+  ...(siteUrl
+    ? {
+        siteMetadata: {
+          siteUrl,
+        },
+      }
+    : {}),
   plugins: [
-    ...(siteUrl ? [{
-        resolve: "gatsby-source-sanity",
-        options: {
-          projectId: process.env.SANITY_PROJECT_ID,
-          dataset: process.env.SANITY_DATASET,
-          token: process.env.SANITY_TOKEN,
-          watchMode: true,
-        },
-      },
-      {
-        resolve: "gatsby-plugin-sitemap",
-        options: {
-          output: "/",
-          resolveSiteUrl: () => siteUrl,
-        },
-      },
-      {
-        resolve: "gatsby-plugin-robots-txt",
-        options: {
-          // host: "https://crocode.io",
-          // sitemap: "https://crocode.io/sitemap-index.xml",
-          policy: [{
-            userAgent: "*",
-            disallow: ['/']
-            // allow: "/"
-          }],
-        },
-      },
-      {
-        resolve: 'gatsby-plugin-htaccess',
-        options: {
-          RewriteBase: '/custom/',
-          https: true,
-          www: true,
-          SymLinksIfOwnerMatch: true,
-          host: 'www.crocodelab.com', // if 'www' is set to 'false', be sure to also remove it here!
-          redirect: [
-            'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
-            {
-              from: 'crocode.io',
-              to: 'crocodelab.com',
+    ...(siteUrl
+      ? [
+          {
+            resolve: "gatsby-source-sanity",
+            options: {
+              projectId: process.env.SANITY_PROJECT_ID,
+              dataset: process.env.SANITY_DATASET,
+              token: process.env.SANITY_TOKEN,
+              watchMode: true,
             },
-          ],
-          custom: `
+          },
+          {
+            resolve: "gatsby-plugin-sitemap",
+            options: {
+              output: "/",
+              resolveSiteUrl: () => siteUrl,
+            },
+          },
+          {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+              host: "https://crocodelab.com",
+              sitemap: "https://crocodelab.com/sitemap-index.xml",
+            },
+          },
+          {
+            resolve: "gatsby-plugin-htaccess",
+            options: {
+              RewriteBase: "/custom/",
+              https: true,
+              www: true,
+              SymLinksIfOwnerMatch: true,
+              host: "www.crocodelab.com", // if 'www' is set to 'false', be sure to also remove it here!
+              redirect: [
+                "RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]",
+                {
+                  from: "crocode.io",
+                  to: "crocodelab.com",
+                },
+              ],
+              custom: `
             # This is a custom rule!
             # This is a another custom rule!
         `,
-        },
-      },
-    ] : []),
-    // ...(trackingId
-    //   ? [
-    //       {
-    //         resolve: "gatsby-plugin-google-analytics",
-    //         options: { trackingId, head: false },
-    //       },
-    //     ]
-    //   : []),
-    ...(pwa.enabled ? [{
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        ...(pwa.manifest || {})
-      },
-    }, ] : []),
+            },
+          },
+          {
+            resolve: `gatsby-plugin-html-attributes`,
+            options: {
+              lang: `en`,
+              meta: [
+                {
+                  name: `google-site-verification`,
+                  content: `jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo`,
+                },
+              ],
+            },
+          },
+        ]
+      : []),
+    ...(trackingId
+      ? [
+          {
+            resolve: "gatsby-plugin-google-analytics",
+            options: { trackingId, head: false },
+          },
+        ]
+      : []),
+    ...(pwa.enabled
+      ? [
+          {
+            resolve: "gatsby-plugin-manifest",
+            options: {
+              ...(pwa.manifest || {}),
+            },
+          },
+        ]
+      : []),
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-image",
@@ -105,12 +115,16 @@ module.exports = {
         },
       },
     },
-    ...(pwa.enabled ? [{
-      resolve: "gatsby-plugin-offline",
-      options: {
-        ...pwa.offline
-      },
-    }, ] : []),
+    ...(pwa.enabled
+      ? [
+          {
+            resolve: "gatsby-plugin-offline",
+            options: {
+              ...pwa.offline,
+            },
+          },
+        ]
+      : []),
     "gatsby-plugin-eslint",
     "gatsby-plugin-netlify",
     "gatsby-plugin-htaccess",
