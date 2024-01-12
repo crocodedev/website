@@ -87,6 +87,7 @@ const Seo = ({
       ]}
     >
       <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
+      <meta name="google-site-verification" content="jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo" />
     </Helmet>
   );
 };
