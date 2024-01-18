@@ -5,7 +5,11 @@ require("dotenv").config({
 
 const { robots, pwa } = require("./config/site");
 
-const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
+const {
+  SITE_URL: siteUrl,
+  GOOGLE_ANALYTICS_TRACKING_ID: trackingId,
+  GOOGLE_TAGMANAGER_TRACKING_ID: tagManagerId,
+} = process.env;
 
 module.exports = {
   trailingSlash: "always",
@@ -66,14 +70,22 @@ module.exports = {
           },
         ]
       : []),
-    // ...(trackingId
-    //   ? [
-    //       {
-    //         resolve: "gatsby-plugin-google-analytics",
-    //         options: { trackingId, head: true },
-    //       },
-    //     ]
-    //   : []),
+    ...(trackingId
+      ? [
+          {
+            resolve: "gatsby-plugin-google-analytics",
+            options: { trackingId, head: true },
+          },
+        ]
+      : []),
+    ...(tagManagerId ? [
+      {
+        resolve: "gatsby-plugin-google-tagmanager",
+        options: {
+          id: tagManagerId
+        }
+      }
+    ] : []),
     ...(pwa.enabled
       ? [
           {
