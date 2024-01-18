@@ -87,13 +87,13 @@ const Seo = ({
       ]}
     >
       <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC" /> 
-      <script dangerouslySetInnerHTML={{
-        __html: `
-        window.dataLayer = window.dataLayer || []; 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC" />
+      <script>
+        {`window.dataLayer = window.dataLayer || []; 
         function gtag(){dataLayer.push(arguments);} 
         gtag('js', new Date());       
-        gtag('config', 'G-JRHLER8WXC'); `}} /> 
+        gtag('config', 'G-JRHLER8WXC'); `}
+      </script>
       <meta name="google-site-verification" content="jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo" />
     </Helmet>
   );
