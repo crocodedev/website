@@ -88,7 +88,7 @@ const Seo = ({
     >
       <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC" />
-      <script>
+      <script type="text/javascript">
         {`window.dataLayer = window.dataLayer || []; 
         function gtag(){dataLayer.push(arguments);} 
         gtag('js', new Date());       
