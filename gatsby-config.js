@@ -66,14 +66,14 @@ module.exports = {
           },
         ]
       : []),
-    ...(trackingId
-      ? [
-          {
-            resolve: "gatsby-plugin-google-analytics",
-            options: { trackingId, head: true },
-          },
-        ]
-      : []),
+    // ...(trackingId
+    //   ? [
+    //       {
+    //         resolve: "gatsby-plugin-google-analytics",
+    //         options: { trackingId, head: true },
+    //       },
+    //     ]
+    //   : []),
     ...(pwa.enabled
       ? [
           {
