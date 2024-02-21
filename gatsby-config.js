@@ -5,7 +5,11 @@ require("dotenv").config({
 
 const { robots, pwa } = require("./config/site");
 
-const { SITE_URL: siteUrl, GOOGLE_ANALYTICS_TRACKING_ID: trackingId } = process.env;
+const {
+  SITE_URL: siteUrl,
+  GOOGLE_ANALYTICS_TRACKING_ID: trackingId,
+  GOOGLE_TAGMANAGER_TRACKING_ID: tagManagerId,
+} = process.env;
 
 module.exports = {
   trailingSlash: "always",
@@ -40,6 +44,7 @@ module.exports = {
             options: {
               host: "https://crocodelab.com",
               sitemap: "https://crocodelab.com/sitemap-index.xml",
+              policy: [{ userAgent: "*", allow: "/" }],
             },
           },
           {
@@ -63,28 +68,24 @@ module.exports = {
         `,
             },
           },
-          {
-            resolve: `gatsby-plugin-html-attributes`,
-            options: {
-              lang: `en`,
-              meta: [
-                {
-                  name: `google-site-verification`,
-                  content: `jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo`,
-                },
-              ],
-            },
-          },
         ]
       : []),
     ...(trackingId
       ? [
           {
             resolve: "gatsby-plugin-google-analytics",
-            options: { trackingId, head: false },
+            options: { trackingId, head: true },
           },
         ]
       : []),
+    ...(tagManagerId ? [
+      {
+        resolve: "gatsby-plugin-google-tagmanager",
+        options: {
+          id: tagManagerId
+        }
+      }
+    ] : []),
     ...(pwa.enabled
       ? [
           {
