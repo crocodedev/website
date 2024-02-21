@@ -25,8 +25,9 @@ const CasesList = ({
   numberOfPosts,
 }) => {
   const [activeTechnologyFilters, setActiveTechnologyFilters] = useState([]);
+  const [isFirstRender, setIsFirstRender] = useState(true)
   const [currentPage, setCurrentPage] = useState(
-    (typeof window !== "undefined" && +location.search.split("=")[1]) || 1,
+    (typeof window !== "undefined" && parseInt(location?.search?.split("=")[1], 10)) || 1,
   );
 
   const [showingCasesItems, setShowingCasesItems] = useState(casesItems);
@@ -53,9 +54,20 @@ const CasesList = ({
   };
 
   useEffect(() => {
-    setCurrentPage(1);
-    navigate(``);
+    if (!isFirstRender) {
+      setCurrentPage(1);
+      navigate(``);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTechnologyFilters]);
+
+  useEffect(() => {
+    if (isFirstRender) {
+      handleSetCurrentPage(currentPage);
+      setIsFirstRender(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     setShowingCasesItems(
@@ -100,7 +112,9 @@ const CasesList = ({
                   as={GatsbyLink}
                   to={el.slug.current}
                   variant="outlined"
-                  active={typeof window !== "undefined" && location.pathname === el.slug.current}
+                  active={
+                    typeof window !== "undefined" && location.pathname === `${el.slug.current}/`
+                  }
                 >
                   {el.title}
                 </Button>

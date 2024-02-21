@@ -585,7 +585,7 @@ exports.createPages = async ({
                 {
                   ...page,
                   casesItems: casesCountryItem,
-                  countryFilter: casesCountry,
+                  countryFilter: [...casesCountry].filter(el => el.slug.current !== "/cases"),
                   technologyFilter,
                 },
               ] || []

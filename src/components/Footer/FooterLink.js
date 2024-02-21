@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Link from "@/components/Link";
 
-const dynamicStyle = ({ theme, isheading }) => css`
-  ${isheading
+const dynamicStyle = ({ theme, isHeading }) => css`
+  ${isHeading
     ? `
     font-weight: ${theme.typography.fontWeight.semiBold};
     font-size: ${theme.typography.fontSize.text};
