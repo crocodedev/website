@@ -38,7 +38,7 @@ const NetlifyForm = ({ children, formName, preSubmit, postSubmit, formValues, ..
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="bot-filed" />
+      <input type="hidden" name="bot-field" />
       {children}
     </form>
   );
