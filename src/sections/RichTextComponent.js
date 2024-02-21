@@ -97,8 +97,6 @@ const serializers = {
 };
 
 const RichTextComponent = ({ data }) => {
-  console.log("data => ", data);
-
   return (
     <RichTextContent>
       <PortableText className="test" blocks={data} serializers={serializers} />
