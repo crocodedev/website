@@ -53,9 +53,9 @@ const SectionWrapper = styled.section`
   width: 100%;
   ${dynamicStyle}
 
-  > div {
+  /* > div {
     overflow: auto;
-  }
+  } */
 `;
 
 export default SectionWrapper;
