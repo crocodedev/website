@@ -21,7 +21,7 @@ export default {
     },
     {
       title: "Item Link",
-      name: "itemlink",
+      name: "link",
       type: "link",
     },
   ],
