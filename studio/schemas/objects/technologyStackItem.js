@@ -19,5 +19,10 @@ export default {
       name: "itemimage",
       type: "imageWithAlt",
     },
+    {
+      title: "Item Link",
+      name: "itemlink",
+      type: "link",
+    },
   ],
 };
