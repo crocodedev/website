@@ -12,6 +12,9 @@ module.exports.technologyStack = `
         itemimage {
           ${image}
         }
+        link{
+          ${link}
+        }
       }
     }
 `;
