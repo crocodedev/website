@@ -29,7 +29,7 @@
     "gatsby-plugin-emotion": "^7.17.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-google-analytics": "^4.17.0",
-    "gatsby-plugin-google-tagmanager": "^5.13.0",
+
     "gatsby-plugin-htaccess": "^1.4.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-image": "^2.17.0",

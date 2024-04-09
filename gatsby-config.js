@@ -78,14 +78,7 @@ module.exports = {
           },
         ]
       : []),
-    ...(tagManagerId ? [
-      {
-        resolve: "gatsby-plugin-google-tagmanager",
-        options: {
-          id: tagManagerId
-        }
-      }
-    ] : []),
+ 
     ...(pwa.enabled
       ? [
           {
