@@ -1,4 +1,5 @@
 const { image } = require("../objects/image");
+const { link } = require("../objects/link");
 
 module.exports.technologyStack = `
     ... on SanityTechnologyStack {
@@ -11,6 +12,9 @@ module.exports.technologyStack = `
         title
         itemimage {
           ${image}
+        }
+        link{
+          ${link}
         }
       }
     }
