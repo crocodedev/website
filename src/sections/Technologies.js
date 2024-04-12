@@ -59,10 +59,12 @@ Technologies.propTypes = {
     PropTypes.exact({
       title: PropTypes.string,
       text: PropTypes.string,
+      slug: PropTypes.string,
       _key: PropTypes.string,
       technologiesList: PropTypes.arrayOf(
         PropTypes.exact({
           title: PropTypes.string,
+          link: PropTypes.any,
           _key: PropTypes.string,
           technologyImage: PropTypes.object,
         }),

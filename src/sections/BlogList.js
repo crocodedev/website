@@ -22,7 +22,8 @@ const BlogList = ({
   pageCount,
 }) => {
   const pageUrl = (typeof window !== "undefined" && window.location.pathname.split("/")) || "";
-  const currentPage = isNaN(pageUrl[pageUrl.length - 1]) ? 1 : +pageUrl[pageUrl.length - 1];
+  const currentPage = isNaN(pageUrl[pageUrl.length - 2]) ? 1 : +pageUrl[pageUrl.length - 2];
+
   return (
     <SectionWrapper>
       <Container>
@@ -36,9 +37,9 @@ const BlogList = ({
               aria-label="Category"
               as={Link}
               active={
-                isNaN(pageUrl[pageUrl.length - 1])
-                  ? pageUrl[pageUrl.length - 1] === categorySlug.current.split("/").pop()
-                  : pageUrl[pageUrl.length - 2] === categorySlug.current.split("/").pop()
+                isNaN(pageUrl[pageUrl.length - 2])
+                  ? pageUrl[pageUrl.length - 2] === categorySlug.current.split("/").pop()
+                  : pageUrl[pageUrl.length - 3] === categorySlug.current.split("/").pop()
               }
               variant="outlined"
               to={categorySlug.current}

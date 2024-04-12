@@ -101,10 +101,7 @@ exports.createPages = async ({
 }) => {
   const template = path.resolve("./src/templates/template.js");
 
-  const {
-    data,
-    errors
-  } = await graphql(`
+  const { data, errors } = await graphql(`
   {
     allSanityRedirect {
     nodes {
@@ -117,8 +114,9 @@ exports.createPages = async ({
       ignoreCase
     }
   }
-  allSanityCasesItem {
+  allSanityCasesItem(sort: {order: DESC, fields: _updatedAt}) {
     nodes {
+      _updatedAt
       seo {
         description
         twitterCard
@@ -585,7 +583,7 @@ exports.createPages = async ({
                 {
                   ...page,
                   casesItems: casesCountryItem,
-                  countryFilter: casesCountry,
+                  countryFilter: [...casesCountry].filter(el => el.slug.current !== "/cases"),
                   technologyFilter,
                 },
               ] || []

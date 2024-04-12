@@ -34,7 +34,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
           <FooterTopStack>
             {column?.map(({ title, _key, items, link: topLink }) => (
               <FooterTopColumn key={_key}>
-                <FooterLink isheading baseUrl={baseUrl} {...topLink}>
+                <FooterLink isHeading baseUrl={baseUrl} {...topLink}>
                   {title}
                 </FooterLink>
                 {items?.map(({ _key: id, link }) => (
@@ -51,7 +51,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <div>
             {bottomLinks?.map((link) => (
-              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isheading>
+              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
                 {link.title}
               </FooterLink>
             ))}

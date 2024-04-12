@@ -25,17 +25,16 @@ const Template = ({
         if (!Component) return null;
         if (component === "Header") {
           return (
-            <>
+            <React.Fragment key={id}>
               <Component
-                key={`${id} - component`}
                 baseUrl={baseUrl}
                 locales={locales}
                 currentLocale={currentLocale}
                 defaultLocale={defaultLocale}
                 {...props}
               />
-              <BackUpButton key={id} />
-            </>
+              <BackUpButton />
+            </React.Fragment>
           );
         }
         return <Component key={id} baseUrl={baseUrl} {...props} />;
