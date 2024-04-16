@@ -18,7 +18,7 @@ const TextTwo = ({ title, _rawRichTextBlock, text, image, items, bgColor }) => {
     <SectionWrapper bgColor={bgColor}>
       <Container>
         <SectionHeading title={title} />
-        <TextTwoContentWrapper onlyText={!image.image}>
+        <TextTwoContentWrapper onlyText={!image?.image}>
           <TextTwoImageWrapper>
             <Image {...image} />
           </TextTwoImageWrapper>
