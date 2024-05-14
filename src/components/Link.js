@@ -8,7 +8,7 @@ const Link = ({ linkInternal, linkExternal, baseUrl, children, ...props }) => {
         to={
           `${linkInternal?.reference?.slug?.current}${
             linkInternal?.reference?.slug?.current === "/" ? "" : "/"
-          }` || "/"
+          }`.replace(/\/\//g, "/") || "/"
         }
         {...props}
       >

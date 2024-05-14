@@ -14,9 +14,7 @@ module.exports.header = `
         agreementText {
           text
           link {
-            linkInternal {
-              label
-            }
+            ${link}
           }
         }
       }

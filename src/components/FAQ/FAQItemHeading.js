@@ -5,6 +5,7 @@ const FAQItemHeading = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  cursor: pointer;
 `;
 
 export default FAQItemHeading;

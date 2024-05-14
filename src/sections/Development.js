@@ -16,7 +16,8 @@ const Development = ({ subtitle, title, items, baseUrl }) => {
       <DevelopmentContainer>
         <SectionHeading title={title} text={subtitle} />
         <DevelopmentStack>
-          {items?.map(({ _key, title: itemTitle, text, link, image }) => (
+          {items?.map(({ _key, title: itemTitle, text, link, image }) => {
+            return (
             <DevelopmentItem key={_key}>
               <DevelopmentItemImage>
                 <Image {...image} />
@@ -35,7 +36,7 @@ const Development = ({ subtitle, title, items, baseUrl }) => {
                 )}
               </DevelopmentItemContent>
             </DevelopmentItem>
-          ))}
+          )})}
         </DevelopmentStack>
       </DevelopmentContainer>
     </SectionWrapper>

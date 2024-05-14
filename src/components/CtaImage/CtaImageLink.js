@@ -15,6 +15,10 @@ const CtaImageLink = styled(Button)`
   ${({ theme }) => theme.breakpoints.up("lg")} {
     font-size: ${({ theme }) => theme.typography.fontSize.title3}px;
   }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default CtaImageLink;

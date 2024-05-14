@@ -12,6 +12,7 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     color: ${theme.palette.primary.contrastText};
     background-color: ${theme.palette.primary.main};
     border: 1px solid ${theme.palette.primary.main};
+
     ${!disablePointerEvents ? "pointer-events: none" : ""};
     `
         : `
@@ -53,7 +54,7 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     display: flex;
     align-items: center;
     gap: 10px;
- 
+
     &:hover {
       color: ${theme.palette.secondary.dark};
 
@@ -131,7 +132,7 @@ const Button = ({
         as="span"
         disablePointerEvents={disablePointerEvents}
         active={active}
-        variant={variant}
+        variant={variant} {...props}
       >
         {children}
         {variant === ("text" || "backUp") && <span />}

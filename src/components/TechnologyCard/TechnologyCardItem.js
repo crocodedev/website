@@ -58,7 +58,7 @@ const TechnologyCardItem = styled.a`
     white-space: break-spaces;
     text-align: center;
 
-    ${({ variant }) => variant === "transparent" && "text-decoration: underline;"};
+    ${({ variant, underline}) => variant === "transparent" && underline && "text-decoration: underline;"};
   }
 `;
 
