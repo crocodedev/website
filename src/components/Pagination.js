@@ -64,16 +64,19 @@ const Pagination = ({ pageCount, currentPage, handler, isDynamic, link }) => {
 
     const dots = "...";
 
-    if (arrayOfPages.length < 6) {
+    if (arrayOfPages.length <= 5) {
       tempNumberOfButtons = arrayOfPages;
     } else if (+currentPage >= 1 && +currentPage <= 2) {
       tempNumberOfButtons = [1, 2, 3, dots, arrayOfPages.length];
     } else if (+currentPage === 3) {
       tempNumberOfButtons = [1, 2, 3, 4, dots, arrayOfPages.length];
-    } else if (+currentPage === 4) {
+    } else if (+currentPage === 4 && arrayOfPages.length <= 7) {
+      const sliced = arrayOfPages.slice(0, 5);
+      tempNumberOfButtons = [...sliced, arrayOfPages.length];
+    } else if (+currentPage === 4 && arrayOfPages.length > 7) {
       const sliced = arrayOfPages.slice(0, 5);
       tempNumberOfButtons = [...sliced, dots, arrayOfPages.length];
-    } else if (+currentPage > 4 && +currentPage < arrayOfPages.length - 2) {
+    } else if (+currentPage >= 4 && +currentPage < arrayOfPages.length - 2) {
       const sliced1 = arrayOfPages.slice(+currentPage - 2, +currentPage);
       const sliced2 = arrayOfPages.slice(+currentPage, +currentPage + 1);
       tempNumberOfButtons = [1, dots, ...sliced1, ...sliced2, dots, arrayOfPages.length];
