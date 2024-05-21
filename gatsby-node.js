@@ -114,9 +114,10 @@ exports.createPages = async ({
       ignoreCase
     }
   }
-  allSanityCasesItem(sort: {order: DESC, fields: _updatedAt}) {
+  allSanityCasesItem(sort: {order: DESC, fields: _createdAt}) {
     nodes {
       _updatedAt
+      _createdAt
       seo {
         description
         twitterCard

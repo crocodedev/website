@@ -22,7 +22,11 @@ const Challenge = ({ title, subtitle, modalContent, imagesItem }) => {
             </Text>
           </ChallengeText>
           <ChallengeImage>
-            {modalContent?.map(({ _key, title: itemTitle, text }) => (
+            {modalContent?.map(({ _key, title: itemTitle, text }) => {
+              if (itemTitle === " ") {
+                return null
+              }
+              return (
               <ChallengeDot align="left" key={_key}>
                 <ChallengeModal>
                   <Text fontWeight="bold" mobileMultiplier={0.8}>
@@ -31,7 +35,7 @@ const Challenge = ({ title, subtitle, modalContent, imagesItem }) => {
                   <Text mobileMultiplier={0.8}>{text}</Text>
                 </ChallengeModal>
               </ChallengeDot>
-            ))}
+            )})}
             <Image {...imagesItem} />
           </ChallengeImage>
         </ChallengeContent>
