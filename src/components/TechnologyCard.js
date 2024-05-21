@@ -1,17 +1,15 @@
-import { Link } from "gatsby";
-
 import PropTypes from "prop-types";
+
+import Link from "./Link";
 import Image from "./Image";
 import TechnologyCardItem from "./TechnologyCard/TechnologyCardItem";
 import Text from "./Text";
 
 const TechnologyCard = ({ image, title, variant, link }) => {
-
   return (
     <TechnologyCardItem
-      as={variant === "transparent" && link?.linkInternal?.reference?.slug?.current ? Link : "div"}
-      to={link?.linkInternal?.reference?.slug?.current}
-      href={link?.linkInternal?.reference?.slug?.current}
+      as={link?.linkInternal?.reference?.slug?.current ? Link : "div"}
+     {...link}
       variant={variant}
       underline={link?.linkInternal?.reference?.slug?.current}
     >
