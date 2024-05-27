@@ -7,7 +7,6 @@ const dynamicStyle = ({ active, theme }) => css`
   `
   border-bottom: 3px solid #4b7223;
   padding-top: 3px;
-  pointer-events: none;
 
   ${theme.breakpoints.down("md")} {
     border-bottom: none;

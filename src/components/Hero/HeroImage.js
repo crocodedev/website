@@ -9,35 +9,16 @@ const HeroImage = styled.div`
   width: 100%;
   justify-content: center;
   filter: blur(3px);
+  height: 100%;
 
   & div {
     max-width: 1920px;
     width: 100%;
+    height: 100%;
 
     img {
-      ${({ theme }) => theme.breakpoints.down("sm")} {
-        height: 435px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-        height: 425px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-        height: 574px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-        height: 715px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-        height: 940px;
-      }
-
-      ${({ theme }) => theme.breakpoints.up("2xl")} {
-        height: 1100px;
-      }
+      min-height: calc(100vh - 100px);
+      max-height: 100%;
     }
   }
 `;

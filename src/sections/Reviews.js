@@ -21,6 +21,7 @@ import ReviewsPagination from "@/components/Reviews/ReviewsPagination";
 
 import Text from "@/components/Text";
 import Image from "@/components/Image";
+import shuffle from "@/helpers/shuffleArr";
 
 const Reviews = ({ title, subtitle, items, baseUrl }) => {
   const theme = useTheme(title, subtitle, items, baseUrl);
@@ -42,7 +43,7 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
                 prevEl: ".reviews__prev-el",
               }}
             >
-              {items?.map(
+              {shuffle(items)?.map(
                 ({
                   _key,
                   title: itemTitle,

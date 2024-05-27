@@ -92,6 +92,14 @@ const Header = ({
                   baseUrl={baseUrl}
                   {...link}
                   key={link._key}
+                  onClick={() => {
+                    // eslint-disable-next-line no-self-assign
+                    if (typeof window !== "undefined" && typeof window !== "undefined" &&
+                    link?.linkInternal?.reference?.slug?.current?.split("/")[1] ===
+                      window.location.pathname.split("/")[1]) {
+                      window.location.reload()
+                    }
+                  }}
                 >
                   {link?.title}
                 </HeaderContentItem>

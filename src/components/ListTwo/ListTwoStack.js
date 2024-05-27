@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 
 const ListTwoStack = styled.div`
   display: grid;
-  gap: 55px;
+  gap: 10px;
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
     grid-template-columns: repeat(2, 1fr);
   }
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 

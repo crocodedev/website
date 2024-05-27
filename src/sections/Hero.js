@@ -7,7 +7,6 @@ import HeroWrapper from "@/components/Hero/HeroWrapper";
 import HeroImage from "@/components/Hero/HeroImage";
 import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
-import Text from "@/components/Text";
 import RichTextComponent from "./RichTextComponent";
 
 

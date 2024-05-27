@@ -7,6 +7,12 @@ const TechnologyCardItem = styled.a`
   white-space: nowrap;
   gap: 10px;
 
+  &:hover {
+    ${({ variant, theme, underline}) => variant === "transparent" && underline && ` > p {
+      color: ${theme.palette.primary.main};
+    }`};
+  }
+
   > div {
     border: ${({ variant, theme }) =>
       variant === "transparent" ? "none" : `5px solid ${theme.palette.secondary.main}`};
@@ -57,8 +63,9 @@ const TechnologyCardItem = styled.a`
   p {
     white-space: break-spaces;
     text-align: center;
+    transition: 0.3s;
 
-    ${({ variant, underline}) => variant === "transparent" && underline && "text-decoration: underline;"};
+    ${({ variant, underline}) => variant === "transparent" && underline && `text-decoration: underline;`};
   }
 `;
 
