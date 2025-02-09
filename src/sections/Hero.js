@@ -7,16 +7,18 @@ import HeroWrapper from "@/components/Hero/HeroWrapper";
 import HeroImage from "@/components/Hero/HeroImage";
 import Image from "@/components/Image";
 import HeroContent from "@/components/Hero/HeroContent";
+import HeroPdfContent from "@/components/Hero/HeroPdfContent";
 import RichTextComponent from "./RichTextComponent";
 
 
-const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl }) => {
+const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl, pdfFile }) => {
   return (
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
           <Breadcrumb baseUrl={baseUrl} color="gray" links={breadcrumbs} />
           <SectionHeading titleTag="h1" title={title} />
+          {pdfFile?.asset?.url && <HeroPdfContent title={title} src={pdfFile?.asset?.url} />}
           <HeroContent>
             {_rawRichTextBlock && <RichTextComponent data={_rawRichTextBlock} />}
           </HeroContent>
@@ -38,12 +40,18 @@ Hero.propTypes = {
   _rawRichTextBlock: PropTypes.array,
   imageWithAltText: PropTypes.object.isRequired,
   breadcrumbs: PropTypes.array.isRequired,
+  pdfFile: PropTypes.object,
 };
 
 Hero.defaultProps = {
   color: "",
   sectionTitle: "",
   _rawRichTextBlock: [],
+  pdfFile: {
+    asset: {
+      url: null
+    }
+  }
 };
 
 export default Hero;

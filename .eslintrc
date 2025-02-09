@@ -51,7 +51,8 @@
     "react/jsx-props-no-spreading": 0,
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 2,
-    "react/function-component-definition": 0
+    "react/function-component-definition": 0,
+    "jsx-a11y/control-has-associated-label": 0
   },
   "settings": {
     "import/resolver": {
