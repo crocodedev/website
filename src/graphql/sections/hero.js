@@ -16,5 +16,10 @@ module.exports.hero = `
           breadcrumbs {
             ${link}
           }
+          pdfFile {
+            asset {
+              url
+            }
+          }
         }
 `;

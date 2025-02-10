@@ -40,6 +40,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "PDF File",
+      name: "pdfFile",
+      type: "file",
+      options: {
+        accept: "application/pdf",
+      },
+    },
+    {
       title: "RichTextBlock",
       name: "richTextBlock",
       type: "array",
