@@ -12,7 +12,7 @@ import HeroPortfolioWrapper from "@/components/Hero/HeroPortfolioWrapper";
 import RichTextComponent from "./RichTextComponent";
 
 
-const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl, portfolio }) => {
+const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl, portfolio = {} }) => {
   const portfolioArray = Object.keys(portfolio)
   .filter(key => key.startsWith("altTextImage"))
   .map(key => {
