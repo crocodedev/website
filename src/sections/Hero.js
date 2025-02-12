@@ -12,21 +12,26 @@ import HeroPortfolioWrapper from "@/components/Hero/HeroPortfolioWrapper";
 import RichTextComponent from "./RichTextComponent";
 
 
-const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl, portfolio = {} }) => {
-  const portfolioArray = Object.keys(portfolio)
-  .filter(key => key.startsWith("altTextImage"))
-  .map(key => {
-    const index = key.replace("altTextImage", "");
-    const imageUrl = portfolio[`image${index}`]?.asset?.gatsbyImageData?.images?.fallback?.src;
+const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl, portfolio }) => {
 
-    if (!imageUrl) return null;
+  let portfolioArray = null
 
-    return {
-      img: imageUrl,
-      alt: portfolio[key]
-    };
-  })
-  .filter(item => item !== null);
+  if(portfolio) {
+    portfolioArray = Object.keys(portfolio)
+    .filter(key => key.startsWith("altTextImage"))
+    .map(key => {
+      const index = key.replace("altTextImage", "");
+      const imageUrl = portfolio[`image${index}`]?.asset?.gatsbyImageData?.images?.fallback?.src;
+
+      if (!imageUrl) return null;
+
+      return {
+        img: imageUrl,
+        alt: portfolio[key]
+      };
+    })
+    .filter(item => item !== null);
+  }
 
   return (
     <HeroWrapper>
