@@ -13,18 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: deploy to preview mode
-        id: pr
-        uses: thundermiracle/netlify-deploy@v3
-        with:
-          node-version: '18.17'
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
-          deploy-dir: "./public"
-          build-command: yarn testbuild
-          extra-cache-path: |
-            .cache
-            public
+      # - name: deploy to preview mode
+      #   id: pr
+      #   uses: thundermiracle/netlify-deploy@v3
+      #   with:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+      #     deploy-dir: "./public"
+      #     build-command: yarn testbuild
+      #     extra-cache-path: |
+      #       .cache
+      #       public
 
       - name: run lighthouse
         uses: foo-software/lighthouse-check-action@master
