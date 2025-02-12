@@ -40,6 +40,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Portfolio",
+      name: "portfolio",
+      type: "imagePortfolio",
+    },
+    {
       title: "RichTextBlock",
       name: "richTextBlock",
       type: "array",

@@ -1,5 +1,6 @@
 const { link } = require("../objects/link");
 const { image } = require("../objects/image");
+const { imagePortfolio } = require("../objects/imagePortfolio");
 
 module.exports.hero = `
         ... on SanityHero {
@@ -15,6 +16,9 @@ module.exports.hero = `
           }
           breadcrumbs {
             ${link}
+          }
+          portfolio {
+            ${imagePortfolio}
           }
         }
 `;

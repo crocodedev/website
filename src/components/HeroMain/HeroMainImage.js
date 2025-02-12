@@ -14,6 +14,7 @@ const HeroMainImage = styled.div`
   width: 100%;
   justify-content: center;
   display: flex;
+  height: 100%;
 
   &:after {
     content: "";
@@ -25,33 +26,13 @@ const HeroMainImage = styled.div`
   }
 
   & div {
-    width: 100%;
     max-width: 1920px;
+    width: 100%;
+    height: 100%;
 
-    & img {
-      ${({ theme }) => theme.breakpoints.down("sm")} {
-        height: 435px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-        height: 445px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-        height: 575px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-        height: 740px;
-      }
-
-      ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-        height: 990px;
-      }
-
-      ${({ theme }) => theme.breakpoints.up("2xl")} {
-        height: 1130px;
-      }
+    img {
+      min-height: calc(100vh - 100px);
+      max-height: 100%;
     }
   }
 `;

@@ -40,7 +40,7 @@ const CtaImage = ({ title, subtitle, bgColor, link, image, baseUrl }) => {
               {subtitle}
             </Text>
           </CtaImageTextWrapper>
-          <CtaImageLink variant="text" baseUrl={baseUrl}>
+          <CtaImageLink variant="text" baseUrl={baseUrl} link={link}>
             {link.title}
           </CtaImageLink>
         </CtaImageInfoWrapper>

@@ -114,9 +114,10 @@ exports.createPages = async ({
       ignoreCase
     }
   }
-  allSanityCasesItem(sort: {order: DESC, fields: _updatedAt}) {
+  allSanityCasesItem(sort: {order: DESC, fields: _createdAt}) {
     nodes {
       _updatedAt
+      _createdAt
       seo {
         description
         twitterCard
@@ -548,7 +549,7 @@ exports.createPages = async ({
       const url = page.slug.current;
       const casesCountryItem =
         page.slug.current === "/cases" ?
-        casesItem : [...casesItem].filter((el) => page._id === el.country._id);
+        casesItem : [...casesItem].filter((el) => page._id === el?.country?._id);
 
       const technologyFilter = [
         ...new Set(casesCountryItem.reduce((prev, curr) => prev.concat(curr.technologies),

@@ -13,29 +13,7 @@ const HeroContent = styled.div`
     }
   }
 
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    height: 220px;
-  }
 
-  ${({ theme }) => theme.breakpoints.between("sm", "md")} {
-    height: 240px;
-  }
-
-  ${({ theme }) => theme.breakpoints.between("md", "lg")} {
-    height: 360px;
-  }
-
-  ${({ theme }) => theme.breakpoints.between("lg", "xl")} {
-    height: 480px;
-  }
-
-  ${({ theme }) => theme.breakpoints.between("xl", "2xl")} {
-    height: 580px;
-  }
-
-  ${({ theme }) => theme.breakpoints.up("2xl")} {
-    height: 740px;
-  }
 `;
 
 export default HeroContent;

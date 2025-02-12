@@ -12,7 +12,7 @@ const ListTwoItemHeading = styled.div`
     gap: 30px;
   }
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    gap: 45px;
+    gap: 20px;
   }
 `;
 

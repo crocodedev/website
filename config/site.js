@@ -7,10 +7,16 @@ module.exports = {
   robots: {
     env: {
       development: {
-        policy: [{ userAgent: "*", disallow: ["/"] }],
+        policy: [
+          { userAgent: "*", disallow: ["/"] },
+          { userAgent: "*", disallow: ["/portfolio-1/"] },
+        ],
       },
       production: {
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [
+          { userAgent: "*", allow: "/" },
+          { userAgent: "*", disallow: ["/portfolio-1/"] },
+        ],
       },
     },
   },
@@ -24,7 +30,7 @@ module.exports = {
       display: `standalone`,
       background_color: `#fff`,
       theme_color: `#7dbe3b`,
-      icon: "src/icons/logo.inline.svg",
+      icon: "src/icons/favicon.svg",
       legacy: false,
       cache_busting_mode: "none",
       // crossOrigin: `use-credentials`, // `use-credentials` or `anonymous`

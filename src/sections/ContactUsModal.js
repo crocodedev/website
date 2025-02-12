@@ -31,10 +31,9 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
 
   const {
     text,
-    link: {
-      linkInternal: { label },
-    },
+    link
   } = agreementText;
+
 
   const schema = yup.object().shape({
     name: yup
@@ -122,7 +121,7 @@ const ContactUsModal = ({ isOpen, handler, touchUsModal }) => {
                   <ContactsUsItem>
                     <Text fontSize="captionText">
                       {text}
-                      <ContactUsModalLink>{label}</ContactUsModalLink>
+                      <ContactUsModalLink {...link}>{link?.linkInternal?.label}</ContactUsModalLink>
                     </Text>
                   </ContactsUsItem>
                   <ContactsUsItem>

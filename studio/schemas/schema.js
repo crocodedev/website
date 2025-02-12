@@ -88,6 +88,7 @@ import headerLinks from "./blocks/headerLinks";
 import blogContent from "./blocks/blogContent";
 import blogSections from "./blocks/blogSections";
 import touchUs from "./blocks/touchUs";
+import imagePortfolio from "./blocks/imagePortfolio";
 
 export default createSchema({
   name: "default",
@@ -180,5 +181,6 @@ export default createSchema({
     blogSections,
     blogContent,
     touchUs,
+    imagePortfolio,
   ]),
 });
