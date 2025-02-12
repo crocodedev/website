@@ -7,10 +7,16 @@ module.exports = {
   robots: {
     env: {
       development: {
-        policy: [{ userAgent: "*", disallow: ["/"] }],
+        policy: [
+          { userAgent: "*", disallow: ["/"] },
+          { userAgent: "*", disallow: ["/portfolio-1/"] },
+        ],
       },
       production: {
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [
+          { userAgent: "*", allow: "/" },
+          { userAgent: "*", disallow: ["/portfolio-1/"] },
+        ],
       },
     },
   },
