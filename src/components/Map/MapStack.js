@@ -30,7 +30,9 @@ const MapStack = styled.div`
     max-width: 180px;
   }
 
-  .mapboxgl-popup-tip {
+  .mapboxgl-popup-tip,
+  .mapboxgl-ctrl-bottom-right,
+  .mapboxgl-ctrl-logo {
     display: none;
   }
 `;

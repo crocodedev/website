@@ -87,13 +87,13 @@ const Seo = ({
       ]}
     >
       <link rel="canonical" href={`${siteUrl}${url}${url === "/" ? "" : "/"}`} />
-      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRHLER8WXC" />
       <script type="text/javascript">
         {`window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-JRHLER8WXC'); `}
-      </script> */}
+      </script>
       <meta name="description" content={description} />
       <meta name="google-site-verification" content="jdk_IKLpcmmGj_NAXIN1PC7OsBI4TrQzlO52SG5ZQzo" />
     </Helmet>
