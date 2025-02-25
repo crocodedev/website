@@ -7,7 +7,7 @@ const dynamicStyles = ({ theme, dir }) => css`
   }
 
   &::before {
-    transform: ${dir === "right" ? "rotate(45deg)" : "rotate(-135deg)"};
+    transform: ${dir === "right" ? "rotate(45deg)" : "rotate(-135deg)"} translate(-3px, 3px);
   }
 `;
 
@@ -45,6 +45,7 @@ const ReviewsButton = styled.button`
   &.reviews__disabled {
     pointer-events: none;
     border-color: ${({ theme }) => theme.palette.text.disabled};
+    
     &::before {
       border-top-color: ${({ theme }) => theme.palette.text.disabled};
       border-right-color: ${({ theme }) => theme.palette.text.disabled};

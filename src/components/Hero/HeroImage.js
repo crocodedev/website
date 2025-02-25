@@ -8,7 +8,7 @@ const HeroImage = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  filter: blur(3px);
+  // filter: blur(3px);
   height: 100%;
 
   & div {

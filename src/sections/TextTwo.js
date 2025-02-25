@@ -23,29 +23,38 @@ const TextTwo = ({ title, _rawRichTextBlock, text, image, items, bgColor }) => {
             <Image {...image} />
           </TextTwoImageWrapper>
           <TextTwoInfoWrapper>
-            <RichTextComponent data={_rawRichTextBlock} />
-            {/* <Text fontSize="subtitle" mobileMultiplier="0.7">
-              {richTextBlock}
-            </Text> */}
-            <TextTwoInfoValues>
-              {items &&
-                items?.map(({ _key, title: itemTitle, text: itemText }) => (
-                  <TextTwoInfoItem key={_key}>
-                    <Text
-                      fontSize="title0"
-                      mobileMultiplier="0.75"
-                      fontWeight="bold"
-                      lineHeight="2xsm"
-                      color={theme.palette.primary.main}
-                    >
-                      {itemTitle}
-                    </Text>
-                    <Text fontSize="link" mobileMultiplier="0.889">
-                      {itemText}
-                    </Text>
-                  </TextTwoInfoItem>
-                ))}
-            </TextTwoInfoValues>
+            
+            {_rawRichTextBlock && (
+              <RichTextComponent data={_rawRichTextBlock} />
+            )}
+
+            {text && (
+              <Text fontSize="subtitle" mobileMultiplier="0.7">
+                {text}
+              </Text>
+            )}
+
+            {items.length > 0 && (
+              <TextTwoInfoValues>
+                {items &&
+                  items?.map(({ _key, title: itemTitle, text: itemText }) => (
+                    <TextTwoInfoItem key={_key}>
+                      <Text
+                        fontSize="title0"
+                        mobileMultiplier="0.75"
+                        fontWeight="bold"
+                        lineHeight="2xsm"
+                        color={theme.palette.primary.main}
+                      >
+                        {itemTitle}
+                      </Text>
+                      <Text fontSize="link" mobileMultiplier="0.889">
+                        {itemText}
+                      </Text>
+                    </TextTwoInfoItem>
+                  ))}
+              </TextTwoInfoValues>
+            )}
           </TextTwoInfoWrapper>
         </TextTwoContentWrapper>
       </Container>
