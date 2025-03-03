@@ -1,5 +1,6 @@
 const { link } = require("../objects/link");
 const { image } = require("../objects/image");
+const { video } = require("../objects/video");
 
 module.exports.heroMain = `
     ... on SanityHeroMain {
@@ -19,6 +20,9 @@ module.exports.heroMain = `
       }
       bgImage {
         ${image}
+      }
+      videoFile {
+        ${video}
       }
     }
 `;

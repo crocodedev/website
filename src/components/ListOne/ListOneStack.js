@@ -21,11 +21,11 @@ const ListOneStack = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
-    gap: 55px;
+    gap: 25px;
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: center;
   }
 `;

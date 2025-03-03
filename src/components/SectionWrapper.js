@@ -43,7 +43,7 @@ const dynamicStyle = ({ theme, bgColor, sectionGap, onlyBottomPadding, disablePa
       }
 
       ${theme.breakpoints.up("xl")} {
-        padding-top: 110px;
+        padding-top: 130px;
         padding-bottom: 100px;
       }
     `}
