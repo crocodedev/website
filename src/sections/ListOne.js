@@ -9,6 +9,7 @@ import ListOneStack from "@/components/ListOne/ListOneStack";
 import ListOneStackItem from "@/components/ListOne/ListOneStackItem";
 import ListOneStackItemTitle from "@/components/ListOne/ListOneStackItemTitle";
 import ListOneStackItemText from "@/components/ListOne/ListOneStackItemText";
+import ListOneStackImage from "@/components/ListOne/ListOneStackImage";
 
 const ListOne = ({ title, items, baseUrl, bgColor }) => (
   <SectionWrapper bgColor={bgColor}>
@@ -18,7 +19,9 @@ const ListOne = ({ title, items, baseUrl, bgColor }) => (
         {items?.map(({ _key, title: itemTitle, text, imageWithAltText, link }) => (
           <ListOneStackItem key={_key}>
             <ListOneStackItemTitle>
-              <Image {...imageWithAltText} />
+              <ListOneStackImage>
+                <Image {...imageWithAltText} />
+              </ListOneStackImage>
               <Text fontSize="subtitle" fontWeight="bold" mobileMultiplier={0.9}>
                 {itemTitle}
               </Text>

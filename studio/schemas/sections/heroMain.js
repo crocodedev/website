@@ -40,6 +40,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Video File",
+      name: "videoFile",
+      type: "file",
+      options: {
+        accept: "video/*",
+      },
+    },
+    {
       title: "Logo image",
       name: "logoImage",
       type: "imageWithAlt",

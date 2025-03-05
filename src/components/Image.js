@@ -16,10 +16,16 @@ ImageStatic.propTypes = {
 };
 
 // Render inline SVG with fallback non-svg images
-const Image = ({ altText, image, ...props }) => {
+const Image = ({ type, altText, image, ...props }) => {
   const gatsbyImageData = image?.asset?.gatsbyImageData;
+
   if (gatsbyImageData)
-    return <GatsbyImage image={gatsbyImageData} alt={altText || "image"} {...props} />;
+    if (type === 'default') {
+      const src = gatsbyImageData.images.fallback.src
+      return <img src={src} alt={altText || "image"}/>
+    } else {
+      return <GatsbyImage image={gatsbyImageData} alt={altText || "image"} {...props} />;
+    }
 
   return null;
 };
@@ -27,11 +33,13 @@ const Image = ({ altText, image, ...props }) => {
 Image.propTypes = {
   altText: PropTypes.string,
   image: PropTypes.object,
+  type: PropTypes.string,
 };
 
 Image.defaultProps = {
   image: null,
   altText: "",
+  type: ''
 };
 
 export default Image;

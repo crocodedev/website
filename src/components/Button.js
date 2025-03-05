@@ -102,6 +102,21 @@ const dynamicStyle = ({ theme, variant, active, disablePointerEvents }) => css`
     }
   `
     : ""}
+    ${variant === "main"
+    ? `
+    color: ${theme.palette.primary.contrastText};
+    background-color: ${theme.palette.primary.main};
+    font-weight: ${theme.typography.fontWeight.bold};
+    padding: 15px 25px;
+    display: block;
+    font-size: ${theme.typography.fontSize.text}px;
+
+    &:hover {
+      color: ${theme.palette.primary.contrastText};
+      background-color: ${theme.palette.secondary.dark};
+    }
+  `
+    : ""}
 `;
 
 const StyledButton = styled.button`

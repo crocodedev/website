@@ -12,7 +12,7 @@ const TextTwoInfoWrapper = styled.div`
     display: contents;
   }
 
-  ${({ theme }) => theme.breakpoints.up("lg")} {
+  ${({ theme }) => theme.breakpoints.up("xl")} {
     gap: 40px;
     justify-content: center;
   }

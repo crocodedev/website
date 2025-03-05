@@ -21,7 +21,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
         <FooterTop>
           <FooterCompanyInfo>
             <a href="/">
-              <Image {...logoImage} />
+              <Image type='default' {...logoImage} />
             </a>
             <FooterSocials>
               {socialIcons?.map(({ iconImage, _key, link }) => (

@@ -21,7 +21,7 @@ const HeaderLogo = styled.a`
     padding-bottom: 14px;
   }
 
-  & > img {
+  & img {
     ${({ theme }) => theme.breakpoints.down("md")} {
       width: 101px;
       height: 26px;
@@ -35,6 +35,7 @@ const HeaderLogo = styled.a`
     ${({ theme }) => theme.breakpoints.up("2xl")} {
       width: 195px;
       height: 50px;
+      
     }
   }
 `;

@@ -21,8 +21,8 @@ const ListOneStackItem = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
-    gap: 40px;
-    padding: 70px 60px;
+    gap: 25px;
+    padding: 40px 30px;
   }
 `;
 

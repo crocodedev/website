@@ -89,7 +89,11 @@ const ContactUs = ({
       .max(40, "max message")
       .typeError("error message")
       .required("required message"),
-    tel: yup.string().min(8, "min message").max(18, "max message").required("required message"),
+    tel: yup
+      .string()
+      .min(8, "min message")
+      .max(18, "max message")
+      .required("required message"),
     text: yup
       .string()
       .min(10, "min message")
@@ -136,7 +140,7 @@ const ContactUs = ({
                       {nameText}
                     </Text>
                     <ContactsUsInput
-                      className={errors.name ? "invalid" : "valid"}
+                      className={touched.name && errors.name ? "invalid" : "valid"}
                       name="name"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -153,7 +157,7 @@ const ContactUs = ({
                     </Text>
                     <ContactsUsInput
                       name="email"
-                      className={errors.email ? "invalid" : "valid"}
+                      className={touched.email && errors.email ? "invalid" : "valid"}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={email}
@@ -171,7 +175,7 @@ const ContactUs = ({
                       {({ form: { setFieldValue } }) => (
                         <PhoneInput
                           inputProps={{ name: "tel" }}
-                          containerClass={errors.tel ? "invalid" : "valid"}
+                          containerClass={touched.tel && errors.tel ? "invalid" : "valid"}
                           onBlur={handleBlur}
                           country="us"
                           value={tel}
@@ -188,7 +192,7 @@ const ContactUs = ({
                     <Text mobileMultiplier={0.9} as="label">
                       {messageText}
                     </Text>
-                    <ContactsUsInputFile className={errors.text ? "invalid" : "valid"}>
+                    <ContactsUsInputFile className={touched.text && errors.text ? "invalid" : "valid"}>
                       <Field name="text">
                         {({ form: { setFieldValue } }) => (
                           <ContactsUsTextarea
