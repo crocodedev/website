@@ -50,16 +50,20 @@ const BlogList = ({
           ))}
         </BlogListNavigationStack>
         <BlogListStack>
+          {articles.map(({ id, ...props }) => (
+            <BlogListItem key={id} i18nLang={i18nLang} {...props} />
+          ))}
+        </BlogListStack>
+        {/* <BlogListStack>
           {articles.slice(0, Math.floor(articles.length / 2)).map(({ id, ...props }) => (
             <BlogListItem key={id} i18nLang={i18nLang} {...props} />
           ))}
         </BlogListStack>
-        <CtaForm {...articleSeparator} />
         <BlogListStack>
           {articles.slice(Math.floor(articles.length / 2)).map(({ id, ...props }) => (
             <BlogListItem key={id} i18nLang={i18nLang} {...props} />
           ))}
-        </BlogListStack>
+        </BlogListStack> */}
         {pageCount > 1 && (
           <Pagination
             link={slug.current}
@@ -68,7 +72,10 @@ const BlogList = ({
             isDynamic={false}
           />
         )}
+        <CtaForm {...articleSeparator} />
       </Container>
+        
+
     </SectionWrapper>
   );
 };

@@ -20,6 +20,8 @@ const TextTwoInfoValues = styled.div`
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
+    justify-content: center;
+    padding: 20px 0;
     gap: 20px;
   }
 `;
