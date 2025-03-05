@@ -13,7 +13,6 @@ import Button from "@/components/Button";
 import HeroVideo from "@/components/Hero/HeroVideo";
 
 const HeroMain = ({ link, bgImage, items, baseUrl, fadeColor, videoFile }) => {
-  console.log(videoFile)
   return (
     <HeroMainWrapper>
       <SectionWrapper as="div">
