@@ -35,8 +35,10 @@ const Reviews = ({ title, subtitle, items, baseUrl }) => {
 
           <ReviewsSwiperWrapper>
             <Swiper
+              loop={true}
               pagination={{ el: ".reviews-pagination" }}
               modules={[Pagination, Navigation]}
+              grabCursor={true}
               navigation={{
                 disabledClass: "reviews__disabled",
                 nextEl: ".reviews__next-el",

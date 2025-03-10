@@ -1,28 +1,19 @@
 import styled from "@emotion/styled";
 
 const ListOneStackItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: ${({ theme }) => theme.shadows.card};
-  border-radius: ${({ theme }) => theme.borderRadius.small};
   scroll-snap-align: start;
+  padding: 5px;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    gap: 15px;
-    padding: 30px 20px;
     flex: 0 0 100%;
   }
 
   ${({ theme }) => theme.breakpoints.between("md", "xl")} {
-    gap: 25px;
-    padding: 50px 40px;
-    flex: 0 0 50%;
+    flex: 0 0 calc(50% - 10px);
   }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     gap: 25px;
-    padding: 40px 30px;
   }
 `;
 
