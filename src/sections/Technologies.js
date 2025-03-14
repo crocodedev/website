@@ -32,7 +32,7 @@ const Technologies = ({ title, subtitle, categories }) => {
           {categories?.map(({ text, _key, technologiesList }) => (
             <TechnologiesSlide key={_key} active={_key === currSlide}>
               <TechnologiesSlideStack>
-                {technologiesList?.map(({ title: itemTitle, _key: itemKey, technologyImage, to, link}) => (
+                {technologiesList?.map(({ title: itemTitle, _key: itemKey, technologyImage, link}) => (
                   <TechnologyCard key={itemKey} title={itemTitle} image={technologyImage} link={link} to={link?.linkInternal?.reference?.slug?.current} />
                 ))}
               </TechnologiesSlideStack>

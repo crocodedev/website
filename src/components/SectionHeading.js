@@ -1,13 +1,25 @@
 import PropTypes from "prop-types";
+import { css } from "@emotion/react";
 
 import styled from "@emotion/styled";
 import Title from "./Title";
 import Text from "./Text";
 
+
+const dynamicStyle = ({ shadow }) => css`
+  ${shadow && `
+    padding: 20px 30px;
+    background: #f5f5f5;
+    box-shadow: 0 0 50px 50px #f5f5f5;
+    border-radius: 50px;
+  `}
+`
+
 const Component = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     gap: 10px;
@@ -16,6 +28,8 @@ const Component = styled.div`
   ${({ theme }) => theme.breakpoints.up("md")} {
     gap: 20px;
   }
+
+  ${dynamicStyle}
 `;
 
 const SectionHeadingText = styled(Text)`
@@ -24,8 +38,8 @@ const SectionHeadingText = styled(Text)`
   }
 `;
 
-const SectionHeading = ({ title, titleTag, text, isArticle }) => (
-  <Component>
+const SectionHeading = ({ shadow, title, titleTag, text, isArticle }) => (
+  <Component shadow={shadow}>
     {title && <Title tag={titleTag}>{title}</Title>}
     {text && (
       <SectionHeadingText
@@ -41,6 +55,7 @@ const SectionHeading = ({ title, titleTag, text, isArticle }) => (
 );
 
 SectionHeading.propTypes = {
+  shadow: PropTypes.bool,
   title: PropTypes.string,
   titleTag: PropTypes.string,
   text: PropTypes.string,
@@ -48,6 +63,7 @@ SectionHeading.propTypes = {
 };
 
 SectionHeading.defaultProps = {
+  shadow: false,
   title: "",
   titleTag: "h3",
   text: "",

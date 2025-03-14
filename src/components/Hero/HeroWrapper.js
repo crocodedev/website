@@ -3,8 +3,15 @@ import styled from "@emotion/styled";
 const HeroWrapper = styled.section`
   position: relative;
   z-index: 0;
-  min-height: calc(100vh - 50px);
   padding-bottom: 50px;
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    min-height: calc(100vh - 90px);
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    min-height: calc(100vh - 70px);
+  }
 
   &:after {
     content: "";
