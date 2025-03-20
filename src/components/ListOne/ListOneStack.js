@@ -6,7 +6,6 @@ const ListOneStack = styled.div`
   overflow-x: scroll;
   scrollbar-width: none;
   width: 100%;
-  padding: 5px;
 
   &::-webkit-scrollbar {
     display: none;

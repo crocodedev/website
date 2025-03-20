@@ -10,6 +10,7 @@ import ListOneStackItem from "@/components/ListOne/ListOneStackItem";
 import ListOneStackItemTitle from "@/components/ListOne/ListOneStackItemTitle";
 import ListOneStackItemText from "@/components/ListOne/ListOneStackItemText";
 import ListOneStackImage from "@/components/ListOne/ListOneStackImage";
+import ListOneStackItemInner from "@/components/ListOne/ListOneStackItemInner";
 
 const ListOne = ({ title, items, baseUrl, bgColor }) => (
   <SectionWrapper bgColor={bgColor}>
@@ -18,20 +19,22 @@ const ListOne = ({ title, items, baseUrl, bgColor }) => (
       <ListOneStack>
         {items?.map(({ _key, title: itemTitle, text, imageWithAltText, link }) => (
           <ListOneStackItem key={_key}>
-            <ListOneStackItemTitle>
-              <ListOneStackImage>
-                <Image {...imageWithAltText} />
-              </ListOneStackImage>
-              <Text fontSize="subtitle" fontWeight="bold" mobileMultiplier={0.9}>
-                {itemTitle}
-              </Text>
-            </ListOneStackItemTitle>
-            <ListOneStackItemText fontSize="text" mobileMultiplier={0.879}>
-              {text}
-            </ListOneStackItemText>
-            <Button aria-label="Order a project" variant="outlined" link={link} baseUrl={baseUrl}>
-              {link.title}
-            </Button>
+              <ListOneStackItemInner>
+                <ListOneStackItemTitle>
+                  <ListOneStackImage>
+                    <Image {...imageWithAltText} />
+                  </ListOneStackImage>
+                  <Text fontSize="subtitle" fontWeight="bold" mobileMultiplier={0.9}>
+                    {itemTitle}
+                  </Text>
+                </ListOneStackItemTitle>
+                <ListOneStackItemText fontSize="text" mobileMultiplier={0.879}>
+                  {text}
+                </ListOneStackItemText>
+                <Button aria-label="Order a project" variant="outlined" link={link} baseUrl={baseUrl}>
+                  {link.title}
+                </Button>
+              </ListOneStackItemInner>
           </ListOneStackItem>
         ))}
       </ListOneStack>
