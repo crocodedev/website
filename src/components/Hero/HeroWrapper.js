@@ -6,11 +6,11 @@ const HeroWrapper = styled.section`
   padding-bottom: 50px;
 
   ${({ theme }) => theme.breakpoints.up("md")} {
-    min-height: calc(100vh - 90px);
+    min-height: calc(70vh - 90px);
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    min-height: calc(100vh - 70px);
+    min-height: calc(70vh - 70px);
   }
 
   &:after {
