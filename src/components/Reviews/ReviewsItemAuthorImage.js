@@ -8,6 +8,8 @@ const ReviewsItemAuthorImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    max-width: 90px;
+    max-height: 90px;
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {

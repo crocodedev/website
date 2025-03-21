@@ -34,6 +34,11 @@ module.exports.footer = `
       }
       bottomLinks {
         ${link}
+        pdf {
+          asset {
+            url
+          }
+        }
       }
     }
 `;
