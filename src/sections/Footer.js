@@ -51,10 +51,10 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <div>
             {bottomLinks?.map((link) => (
-              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
-                {link.title}
-              </FooterLink>
-            ))}
+                <FooterLink linkExternal={{href: link.pdf.asset.url, blank: true}} baseUrl={baseUrl} key={link._key} isHeading>
+                  {link.title}
+                </FooterLink>
+              ))}
           </div>
         </FooterBottom>
       </Container>

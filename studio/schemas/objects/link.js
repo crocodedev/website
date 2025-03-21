@@ -36,5 +36,10 @@ export default {
       name: "linkExternal",
       type: "external",
     },
+    {
+      title: "Pdf",
+      name: "pdf",
+      type: "file"
+    }
   ],
 };
