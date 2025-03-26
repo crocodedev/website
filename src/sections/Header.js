@@ -97,7 +97,7 @@ const Header = ({
                     if (typeof window !== "undefined" && typeof window !== "undefined" &&
                     link?.linkInternal?.reference?.slug?.current?.split("/")[1] ===
                       window.location.pathname.split("/")[1]) {
-                      window.location.reload()
+                      // window.location.reload()
                     }
                   }}
                 >
