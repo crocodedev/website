@@ -79,27 +79,26 @@ const ContactUs = ({
       .string()
       .trim()
       .typeError("error message")
-      .min(4, "min message")
-      .max(50, "max message")
-      .required("required message"),
+      .min(4, "Your name length should not be less than 4")
+      .max(50, "Your name length should not be longer than 50")
+      .required("This field is required"),
     email: yup
       .string()
-      .email()
-      .min(10, "min message")
-      .max(40, "max message")
-      .typeError("error message")
-      .required("required message"),
+      .email('Invalid email')
+      .min(10, "Invalid email")
+      .max(40, "Invalid email")
+      .typeError("Invalid email")
+      .required("This field is required"),
     tel: yup
       .string()
-      .min(8, "min message")
-      .max(18, "max message")
-      .required("required message"),
+      .min(8, "The phone length cannot be less than 8")
+      .max(18, "The phone length cannot be longer than 18")
+      .required("This field is required"),
     text: yup
       .string()
-      .min(10, "min message")
-      .max(300, "max message")
-      .typeError("error message")
-      .required("required message"),
+      .min(10, "The text length should be at least 10")
+      .max(300, "The text length should be no more than 300")
+      .required("This field is required"),
   });
 
   return (
