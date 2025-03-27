@@ -136,7 +136,6 @@ const CasesList = ({
               ),
             )}
         </ProjectsStack>
-        <CtaForm {...articleSeparator} />
         <ProjectsStack>
           {showingCasesItems
             .slice(numberOfPosts * (currentPage - 1), numberOfPosts * currentPage)
@@ -151,6 +150,7 @@ const CasesList = ({
               ),
             )}
         </ProjectsStack>
+        <CtaForm {...articleSeparator} />
         {pageCount > 1 && (
           <Pagination
             pageCount={pageCount}

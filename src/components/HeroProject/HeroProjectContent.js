@@ -28,6 +28,7 @@ const HeroProjectContent = styled.div`
     }
 
     & .swiper-slide {
+      cursor: grab;
       transition: transform 1.5s;
       height: unset;
 

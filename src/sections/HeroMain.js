@@ -35,9 +35,8 @@ const HeroMain = ({ link, bgImage, items, baseUrl, fadeColor, videoFile }) => {
         </Container>
       </SectionWrapper>
       <HeroMainImage fadecolor={fadeColor}>
-        {/* <Image {...bgImage} /> */}
-        <HeroVideo loop muted playsinline autoPlay>
-          <source src={'https://cdn.sanity.io/'+videoFile?.asset?.path} type="video/mp4"/>
+        <HeroVideo loop muted playsinline autoPlay preload="auto">
+          <source src={`https://cdn.sanity.io/${videoFile?.asset?.path}`} type="video/mp4"/>
         </HeroVideo>
       </HeroMainImage>
     </HeroMainWrapper>

@@ -21,7 +21,7 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
         <FooterTop>
           <FooterCompanyInfo>
             <a href="/">
-              <Image type='default' {...logoImage} />
+              <Image type="default" {...logoImage} />
             </a>
             <FooterSocials>
               {socialIcons?.map(({ iconImage, _key, link }) => (
@@ -50,11 +50,22 @@ const Footer = ({ copyrightText, logoImage, socialIcons, column, bottomLinks, ba
         <FooterBottom>
           <Text color={theme.palette.tertiary.contrastText}>{copyrightText}</Text>
           <div>
-            {bottomLinks?.map((link) => (
-              <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
-                {link.title}
-              </FooterLink>
-            ))}
+            {bottomLinks?.map((link) =>
+              link.pdf ? (
+                <FooterLink
+                  linkExternal={{ href: link.pdf.asset.url, blank: true }}
+                  baseUrl={baseUrl}
+                  key={link._key}
+                  isHeading
+                >
+                  {link.title}
+                </FooterLink>
+              ) : (
+                <FooterLink {...link} baseUrl={baseUrl} key={link._key} isHeading>
+                  {link.title}
+                </FooterLink>
+              ),
+            )}
           </div>
         </FooterBottom>
       </Container>
