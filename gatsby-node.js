@@ -547,8 +547,9 @@ exports.createPages = async ({
   if (casesCountry.length > 0) {
     casesCountry.forEach((page) => {
       const url = page.slug.current;
+
       const casesCountryItem =
-        page.slug.current === "/cases" ?
+      url === "/cases" ?
         casesItem : [...casesItem].filter((el) => page._id === el?.country?._id);
 
       const technologyFilter = [
