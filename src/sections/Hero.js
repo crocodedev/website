@@ -50,7 +50,7 @@ const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl
     () => ({
       fullScreen: {
         enable: false,
-        zIndex: -1 
+        zIndex: -1
       },
       background: {
         color: {
@@ -126,7 +126,7 @@ const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl
     <HeroWrapper>
       <SectionWrapper as="div" disablePaddings>
         <Container>
-          <Breadcrumb baseUrl={baseUrl} color="gray" links={breadcrumbs} />
+          <Breadcrumb baseUrl={baseUrl} color="gray" links={breadcrumbs} disablePaddingBottom />
           <SectionHeading shadow={true} titleTag="h1" title={title} />
           {portfolioArray && (
             <HeroPortfolioWrapper>
@@ -139,14 +139,14 @@ const Hero = ({ title, _rawRichTextBlock, imageWithAltText, breadcrumbs, baseUrl
               <RichTextComponent data={_rawRichTextBlock} />
             </HeroContent>
           )}
-          
+
         </Container>
       </SectionWrapper>
 
       {/* <HeroImage style={{display: 'none'}}>
         <Image {...imageWithAltText} />
       </HeroImage> */}
-      
+
       {init && (
         <HeroParticles>
           <Particles
