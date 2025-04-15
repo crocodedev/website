@@ -10,6 +10,14 @@ const HeroParticles = styled.div`
   justify-content: center;
   height: 100%;
 
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    max-height: calc(70vh - 90px);
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    max-height: calc(70vh - 70px);
+  }
+
   & div {
     width: 100%;
     height: 100%;
